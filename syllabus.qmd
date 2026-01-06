@@ -45,7 +45,7 @@ By the end of the semester, you will be able to…
 
 ## Course materials
 
-Most readings in this course will come from *Introduction to Regression Analysis: A Data Science Approach*. It is freely available online ([introregression.netlify.app](https://introregression.netlify.app/)). Readings from this text and other sources will be posted under the “prepare” column on the course schedule. We will use the statistical software R. Students will be able to access R through Docker containers provided by Duke Office of Information Technology. See the [computing page](https://sta221-sp26.netlify.app/computing-access) for more information.
+Most readings in this course will come from *Introduction to Regression Analysis: A Data Science Approach*. It is freely available online (<https://intro-regression.github.io>). Readings from this text and other sources will be posted under the “prepare” column on the course schedule. We will use the statistical software R. Students will be able to access R through Docker containers provided by Duke Office of Information Technology. See the [computing page](https://sta221-sp26.netlify.app/computing-access) for more information.
 
 ## Course community
 
@@ -112,7 +112,7 @@ You are expected to bring a laptop, tablet, or any device with internet and a ke
 
 ### Teams
 
-You will work on a team for most labs throughout the semester. Teams will be assigned, and you will work with the team for 1  - 2 lab assignments. All team members are expected to contribute equally to the completion of the lab. You will be asked to complete teamwork evaluations and self-reflections throughout the semester. Failure to adequately contribute to an assignment can result in a penalty to your score relative to the team's overall mark.
+You will work on a team for most labs throughout the semester. Teams will be assigned, and you will work with the team for 1 - 2 lab assignments. All team members are expected to contribute equally to the completion of the lab. You will be asked to complete teamwork evaluations and self-reflections throughout the semester. Failure to adequately contribute to an assignment can result in a penalty to your score relative to the team's overall mark.
 
 You are expected to make use of the provided GitHub repository as the central collaborative platform. Commits to this repository will be used as one of several metrics of each team member's relative contribution for each assignment.
 
@@ -156,14 +156,14 @@ The final course grade will be calculated as follows:
 
 <center>
 
-| Category       | Percentage |
-|----------------|------------|
-| Labs           | 10%        |
-| Homework       | 15%        |
-| Exam 01        | 25%        |
-| Exam 02        | 25%        |
-| Final project  | 20%        |
-| Participation  | 5%         |
+| Category      | Percentage |
+|---------------|------------|
+| Labs          | 10%        |
+| Homework      | 15%        |
+| Exam 01       | 25%        |
+| Exam 02       | 25%        |
+| Final project | 20%        |
+| Participation | 5%         |
 
 </center>
 

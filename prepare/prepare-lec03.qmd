@@ -5,7 +5,7 @@ subtitle: Simple linear regression
 
 **Required**
 
-📖 Read [Chapter 4](https://introregression.netlify.app/04-slr)
+📖 Read [Chapter 4](https://intro-regression.github.io/04-slr)
 
 <br>
 

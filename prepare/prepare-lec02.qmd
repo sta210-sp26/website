@@ -5,7 +5,7 @@ subtitle: The big picture
 
 **Required**
 
-📖 Read [Chapter 1](https://introregression.netlify.app/01-intro)
+📖 Read [Chapter 1](https://intro-regression.github.io/01-intro)
 
 <br>
 
