@@ -1,0 +1,4 @@
+- source: project
+  netlify:
+    - id: 014c6ae0-2d6d-4d9b-b5d5-9639ba60dc85
+      url: https://lovely-tanuki-8266ed.netlify.app
