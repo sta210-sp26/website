@@ -1,1 +1,1 @@
-Sitemap: https://lovely-tanuki-8266ed.netlify.app/sitemap.xml
+Sitemap: https://sta210-sp26.netlify.app/sitemap.xml
