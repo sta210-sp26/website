@@ -1,0 +1,175 @@
+---
+title: "AE 12: Exam 02 Review"
+date: "April 15, 2025"
+editor: visual
+execute: 
+  warning: false
+  message: false
+---
+
+::: callout-important
+Go to the course GitHub organization and locate your ae-12 repo to get started.
+
+Render, commit, and push your responses to GitHub by the end of class to submit your AE.
+:::
+
+## Packages
+
+```{r}
+#| label: load-pkgs
+#| message: false
+ 
+library(tidyverse)
+library(tidymodels)
+library(knitr)
+library(pROC)
+```
+
+## Exercise 1
+
+Suppose you fit a simple linear regression model.
+
+a.  Draw or describe a scatterplot that contains an observation with large leverage but low Cook’s distance.
+
+b.  Draw or describe a scatterplot that contains an observation with large leverage and high Cook’s distance.
+
+c.  Draw or describe a scatterplot that contains an observation with a large studentized residual.
+
+## Data: Credit cards
+
+The data for this analysis is about credit card customers. It can be found in the file `credit.csv`. The following variables are in the data set:
+
+-   `income`: Income in \$1,000's
+-   `limit`: Credit limit
+-   `rating`: Credit rating
+-   `cards`: Number of credit cards
+-   `age`: Age in years
+-   `education`: Number of years of education
+-   `own`: A factor with levels `No` and `Yes` indicating whether the individual owns their home
+-   `student`: A factor with levels `No` and `Yes` indicating whether the individual was a student
+-   `married`: A factor with levels `No` and `Yes` indicating whether the individual was married
+-   `region`: A factor with levels `South`, `East`, and `West` indicating the region of the US the individual is from
+-   `balance`: Average credit card balance in \$.
+
+**The objective of this analysis is to predict whether a person has maxed out their credit card, i.e., had \$0 average card balance.**
+
+```{r}
+#| label: load-claws-data
+#| warning: false
+#| message: false
+
+credit <- read_csv("data/credit.csv") |>
+  mutate(maxed = factor(if_else(balance == 0, 1, 0)))
+```
+
+## Exercise 2
+
+-   Why is logistic regression the best modeling approach for this analysis?
+
+-   Describe where each of the following show up in the analysis:
+
+    -   log-odds ...
+
+    -   odds
+
+    -   probabilities
+
+## Exercise 3
+
+We’ll start by splitting the model into training and testing data. Then we'll using the training data to fit a model for predicting the odds of `maxed = 1` using `income`, `rating`, and `region`.
+
+```{r}
+# make training and test sets
+set.seed(210)
+credit_split <- initial_split(credit, prop = 0.8)
+credit_train <- training(credit_split)
+credit_test <- testing(credit_split)
+
+credit_fit <- glm(maxed ~ income + rating + region, data = credit_train, 
+                  family = "binomial")
+
+tidy(credit_fit) |>
+  kable(digits = 3)
+```
+
+The logistic regression model takes the following form:
+
+$$
+ \log(\frac{\pi_i}{1 - \pi_i}) = \beta_0 + \beta_1 ~ income + \beta_2 ~ rating + \beta_3 ~ regionSouth + \beta_4 ~ regionWest
+$$
+
+a.  Write the interpretation of `income` in terms of the odds of maxing out a credit card.
+
+b.  Use the equation above to show the expected change in the odds of maxing out a credit card when the credit rating increases by 10 points. Assume income and region are constant. Write your answer in terms of $\beta_0, \beta_1, \beta_2, \beta_3, \beta_4$.
+
+c.  Suppose there are two individuals. Individual 1 has an income of \$64,000, a credit rating of 590, and is from the South region. Individual 2 has an income of \$135,000, a credit rating of 695, and is from the East region. Use the equation above to show how the odds of maxing out a credit card differ between Individual 1 and Individual 2. Write your answer in terms of $\beta_0, \beta_1, \beta_2$, etc.
+
+## Exercise 4
+
+We consider adding the interaction between `region` and `income` to the current model. We'll use a drop-in-deviance test to determine whether or not to add the interaction term.
+
+a.  State the null and alternative hypotheses in words and using mathematical notation.
+b.  Describe what the test statistic $G$ means in the context of the data.
+c.  Show why the degrees of freedom for the test statistic are equal to 2.
+d.  Conduct the drop-in-deviance test and state your conclusion in the context of the data.
+
+```{r}
+#| label: drop-in-deviance-test
+
+# add code here
+
+```
+
+## Exercise 5
+
+Now let's evaluate the performance of the selected model using the testing data.
+
+Create a confusion matrix using a cutoff probability of 0.3.
+
+```{r}
+#| label: confusion-matrix
+
+# add code here
+
+```
+
+-   What is the sensitivity? What does it mean in the context of the data ?
+
+-   What is the specificity? What does it mean in the context of the data?
+
+-   What is the false positive rate? What does it mean in the context of the data?
+
+-   What is the false negative rate? What does it mean in the context of the data?
+
+## Exercise 6
+
+Produce the ROC curve.
+
+```{r}
+#| label: roc-curve
+
+# add code here
+
+```
+
+-   Describe how you can use this curve to select a cutoff probability (rather than just going with 0.5).
+
+## Exercise 7
+
+Questions about checking conditions for logistic regression:
+
+-   Do we assess conditions on the training or testing set?
+
+-   Why do we not consider categorical predictors when checking linearity?
+
+-   Why do we not need to check constant variance for logistic regression?
+
+# Submission
+
+::: callout-important
+To submit the AE:
+
+-   Render the document to produce the PDF with all of your work from today’s class.
+
+-   Push all your work to your AE repo on GitHub. You’re done! 🎉
+:::

@@ -1,0 +1,299 @@
+---
+title: "Lab 02: Inference for regression using mathematical models"
+subtitle: "Coffee ratings"
+execute:
+  freeze: auto
+  echo: true
+  eval: false
+  warning: false
+  message: false
+---
+
+::: callout-important
+This lab is due on **Thursday, February 6 at 11:59pm.** To be considered on time, the following must be done by the due date:
+
+-   Final `.qmd` and `.pdf` files pushed to your GitHub repo
+
+-   Final `.pdf` file submitted on Gradescope
+:::
+
+# Introduction
+
+In today's lab you will analyze data from over 1,000 different coffees to explore the relationship between a coffee's after taste and its overall quality. You will also meet your lab teams and start working collaboratively in GitHub.
+
+## Learning goals
+
+By the end of the lab you will...
+
+-   use mathematical models to conduct inference for the slope.
+-   assess conditions for linear regression.
+-   develop a collaborative workflow in GitHub.
+
+# **Meet your team!**
+
+[**Click here**](https://prodduke-my.sharepoint.com/:x:/g/personal/mt324_duke_edu/EdLwgl9diOVEvUuObtRMeX0BpuAgYmfPLaomlbZsXEBogw?e=yz2sKZ) to see the team assignments for STA 210. This will be your team for labs and the final project. Before you get started on the lab, complete the following:
+
+✅ Come up with a team name. You can’t use the same name as another team, so I encourage you to be creative! Your TA will get your team name by the end of lab.
+
+✅ Fill out the team agreement. This will help you figure out a plan for communication, and working together during labs and outside of class. You can find the team agreement in the GitHub repo **team-agreement-\[github_team_name\]**.
+
+-   Have **one person** from the team clone the repo and start a new RStudio project. This person will type the team’s responses as you discuss the questions in the agreement. No one else in the team should type at this point but should be contributing to the discussion.
+
+-   Be sure to push the completed agreement to GitHub. Each team member can refer to the document in this repo or download the PDF of the agreement for future reference. *You do [not]{.underline} need to submit the agreement on Gradescope.*
+
+# Getting started
+
+-   Go to the [sta210-sp25](https://www.github.com/sta210-sp25) organization on GitHub. Click on the repo with the prefix **lab-02**. It contains the starter documents you need to complete the lab.
+
+-   Clone the repo and start a new project in RStudio. See the [Lab 00 instructions](https://sta210-sp25.netlify.app/labs/lab-00#getting-started) for details on cloning a repo and starting a new project in R.
+
+-   Each person on the team should clone the repository and open a new project in RStudio. Throughout the lab, each person should get a chance to make commits and push to the repo.
+
+-   **Do not make any changes to the `.qmd` file until the instructions tell you do to so.**
+
+# Workflow: Using Git and GitHub as a team
+
+::: callout-important
+Assign each person on your team a number 1 through 4. For teams of three, Team Member 1 can take on the role of Team Member 4.
+
+The following exercises must be done in order. **Only one person should type in the `.qmd` file, commit, and push updates at a time.** When it is not your turn to type, you should still share ideas and contribute to the team's discussion.
+:::
+
+::: {.callout-important appearance="simple"}
+⌨️ **Team Member 1: Hands on the keyboard.**
+
+🙅🏽 All other team members: Hands off the keyboard until otherwise instructed![^1]
+:::
+
+[^1]: Don't trust yourself to keep your hands off the keyboard? Put them in your pocket or cross your arms. No matter how silly it might feel, resist the urge to touch your keyboard until otherwise instructed!
+
+Change the author to your team name and include each team member's name in the `author` field of the YAML in the following format: `Team Name: Member 1, Member 2, Member 3, Member 4`.
+
+::: render-commit-push
+**Team Member 1:** Render the document and confirm that the changes are visible in the PDF. Then, commit (with an informative commit message) both the `.qmd` and PDF documents, and finally push the changes to GitHub.
+
+<br>
+:::
+
+::: pull
+**Team Members 2, 3, 4:** Once Team Member 1 is done rendering, committing, and pushing, confirm that the changes are visible on GitHub in your team's lab repo. Then, in RStudio, click the **Pull** button in the Git pane to get the updated document. You should see the updated name in your `.qmd` file.
+:::
+
+# Packages
+
+The following packages are used in the lab.
+
+```{r}
+#| message: false
+#| warning: false 
+
+
+library(tidyverse)
+library(tidymodels)
+library(knitr)
+```
+
+# Data: Coffee ratings
+
+The data set for this lab comes from the [Coffee Quality Database](https://github.com/jldbc/coffee-quality-database) and was obtained from the [#TidyTuesday GitHub repo](https://github.com/rfordatascience/tidytuesday/blob/master/data/2020/2020-07-07/readme.md). It includes information about the origin, producer, measures of various characteristics, and the quality measure for over 1,000 coffees. The coffees can be reasonably be treated as a random sample.
+
+This lab will focus on the following variables:
+
+-   `aftertaste`: Aftertaste grade, 0 (worst aftertaste) - 10 (best aftertaste)
+-   `total_cup_points`: Rating of overall quality, 0 (worst quality) - 10 (best quality)
+
+[Click here](https://github.com/rfordatascience/tidytuesday/blob/master/data/2020/2020-07-07/readme.md) for the definitions of all variables in the data set. [Click here](http://www.scaa.org/?page=resources&d=cupping-protocols&mod=article_inline) for more details about how these measures are obtained.
+
+```{r}
+coffee <- read_csv("data/coffee-ratings.csv")
+```
+
+# Exercises
+
+------------------------------------------------------------------------
+
+::: callout-important
+Write all code and narrative in your Quarto file. Write all narrative in complete sentences. Make sure the teaching team can read all of your code in your PDF document. This means you will need to break up long lines of code. One way to help avoid long lines of code is is start a new line after every pipe (`|>`) and plus sign (`+`).
+:::
+
+**Goal**: The goal of this analysis is to use linear regression to understand variability in overall quality rating based on the aftertaste rating in coffee.
+
+::: render-commit-push
+**Team Member 1**: Type the team’s responses to exercises 1 - 2.
+:::
+
+## Exercise 1
+
+Visualize the relationship between the aftertaste grade and total cup points. Write two observations from the plot.
+
+## Exercise 2
+
+Fit the linear model using the aftertaste grade to understand variability in the total cup points. Neatly display the model using three digits and include the **98%** confidence interval for the model coefficients in the output.
+
+::: render-commit-push
+**Team Member 1**: Knit, commit and push your changes to GitHub with an appropriate commit message again. Make sure to commit and push all changed files so that your Git pane is cleared up afterwards.
+:::
+
+::: pull
+**All other team members**: **Pull** to get the updated documents from GitHub. Click on the .qmd file, and you should see the responses to exercises 1- 2.
+
+**Team Member 2**: It’s your turn! Type the team’s response to exercises 3 - 5.
+:::
+
+## Exercise 3
+
+a.  Interpret the slope in the context of the data.
+b.  Assume you are a coffee drinker. Would you drink a coffee represented by the intercept? Why or why not?
+
+## Exercise 4
+
+You can obtain the predicted values and other observation-level statistics from the model using the `augment()` function. Create a data frame called `coffee_aug` by putting the name of your model in the code below.
+
+```{r}
+#|eval: false
+coffee_aug <- augment(_____)
+```
+
+a.  Write code to "manually" compute the residuals. The predicted values are in the column `.fitted` of `coffee_aug`. Save the residuals but do not print them out.
+b.  Write code to compute the regression standard error, $\hat{\sigma}_\epsilon$ using the residuals from part (a).
+c.  State the definition of the regression standard error in the context of the data.
+
+::: callout-tip
+You can check your answer to part (b) by using the code below to obtain $\hat{\sigma}_\epsilon$
+
+<center>`glance(model_name)$sigma`</center>
+:::
+
+### Exercise 5
+
+Do the data provide evidence of a statistically significant linear relationship between aftertaste grade and total cup points? Conduct a hypothesis test using mathematical models to answer this question.
+
+a.  State the null and alternative hypotheses in words and in mathematical notation.
+b.  What is the test statistic? State what the test statistic means in the context of this problem.
+c.  What distribution was used to calculate the p-value? Be specific.
+d.  State the conclusion in the context of the data using a threshold of $\alpha = 0.02$ to make your decision.
+
+::: render-commit-push
+**Team Member 2**: Knit, commit and push your changes to GitHub with an appropriate commit message again. Make sure to commit and push all changed files so that your Git pane is cleared up afterwards.
+:::
+
+::: pull
+**All other team members**: **Pull** to get the updated documents from GitHub. Click on the .qmd file, and you should see the responses to exercises 3 - 5.
+
+**Team Member 3**: It’s your turn! Type the team’s response to exercises 6 - 8.
+:::
+
+## Exercise 6
+
+a.  What is the critical value used to calculate the confidence interval displayed in Exercise 2? Show the code and output used to get your response.
+
+b.  Is the confidence interval consistent with the conclusions from the hypothesis test? Briefly explain why or why not.
+
+## Exercise 7
+
+a.  Calculate the 98% confidence interval for the mean total cup points grade for coffees with aftertaste grade of 8.25. Interpret this value in the context of the data.
+
+b.  One coffee produced by the Ethiopia Commodity Exchange has an aftertaste of 8.25. Calculate the the 98% prediction interval for the total cup points grade for this coffee. Interpret this value in the context of the data.
+
+c.  How do the intervals in parts (a) and (b) compare? If there are differences in the predictions and/or intervals, briefly explain why.
+
+## Exercise 8
+
+We have conducted the inference in the previous exercises making some inherent assumptions about the data. Therefore, we will check some model conditions to assess whether the assumptions and hold and the reliability of the inferential results. To do so, we will use the data frame `coffee_aug` from Exercise 4 that includes the residuals, predicted values, and other observation-level statistics from the model.
+
+a.  Make a scatterplot of the residuals (`.resid`) vs. fitted values (`.fitted`). Use [`geom_hline()`](https://ggplot2.tidyverse.org/reference/geom_abline.html) to add a horizontal dotted line at $residuals = 0$.
+
+::: callout-note
+The **linearity condition** is satisfied if there is random scatter of the residuals (no distinguishable pattern or structure) in the plot of residuals vs. fitted values.\
+\
+The **constant variance** condition is satisfied if the vertical spread of the residuals is relatively equal across the plot.
+:::
+
+b.  Is the linearity condition satisfied? Briefly explain why or why not.
+
+c.  Is the constant variance condition satisfied? Briefly explain why or why not.
+
+::: render-commit-push
+**Team Member 3**: Knit, commit and push your changes to GitHub with an appropriate commit message again. Make sure to commit and push all changed files so that your Git pane is cleared up afterwards.
+:::
+
+::: pull
+**All other team members**: **Pull** to get the updated documents from GitHub. Click on the .qmd file, and you should see the responses to exercises 6 - 8.
+
+**Team Member 4**: It’s your turn! Type the team’s response to exercises 9 - 10.
+:::
+
+## Exercise 9
+
+::: callout-note
+The **normality** condition is satisfied if the distribution of the residuals is approximately normal. This condition can be relaxed if the sample size is sufficiently large $(n > 30)$.
+:::
+
+a.  Make a histogram or density plot of the residuals (`.resid`).
+b.  Is the normality condition satisfied? Briefly explain why or why not. If not, can it be relaxed for this data set? Briefly explain.
+
+## Exercise 10
+
+::: callout-note
+The **independence** condition means that knowing one residual will not provide information about another. We often check this by assessing whether the observations are independent based on what we know about the subject matter and how the data were collected.
+
+This condition is sometimes difficult to fully assess, so we just want to consider whether it is reasonably satisfied based on the information and data available.
+:::
+
+Is the independence condition satisfied for these data? Briefly explain why or why not.
+
+::: render-commit-push
+**Team Member 4**: Render, commit and push your changes to GitHub with an appropriate commit message again. Make sure to commit and push all changed files so that your Git pane is cleared up afterwards and the rest of the team can see the completed lab.
+:::
+
+::: pull
+**All other team members**: **Pull** to get the updated documents from GitHub. Click on the .qmd file, and you should see the team’s completed lab!
+:::
+
+# Wrapping up
+
+::: render-commit-push
+**Team Member 2**: Render the document and confirm that the changes are visible in the PDF. Then, commit (with an informative commit message) both the .qmd and PDF documents, and finally push the changes to GitHub. Make sure to commit and push all changed files so that your Git pane is empty afterwards.
+:::
+
+::: pull
+**All other team members**: Once Team Member 2 is done rendering, committing, and pushing, confirm that the changes are visible on GitHub in your team’s lab repo. Then, in RStudio, click the Pull button in the Git pane to get the updated document. You should see the final version of your .qmd file.
+:::
+
+# Submission
+
+::: callout-warning
+Before you wrap up the assignment, make sure all documents are updated on your GitHub repo. We will be checking these to make sure you have been practicing how to commit and push changes.
+
+Remember -- you must turn in a PDF file to the Gradescope page before the submission deadline for full credit.
+:::
+
+To submit your assignment:
+
+-   Access Gradescope through the [STA 210 Canvas site](https://canvas.duke.edu/courses/47067).
+
+-   Click on the assignment, and you’ll be prompted to submit it.
+
+-   Select all team members’ names, so they receive credit on the assignment. [Click here](https://help.gradescope.com/article/m5qz2xsnjy-student-add-group-members) for video on adding team members to assignment on Gradescope.
+
+-   Mark the pages associated with each exercise. All of the pages of your lab should be associated with at least one question (i.e., should be “checked”).
+
+-   Select the first page of your .PDF submission to be associated with the *“Workflow & formatting”* section.
+
+# Grading (50 points)
+
+<br>
+
+| Component                                                  | Points |
+|:-----------------------------------------------------------|:-------|
+| Ex 1                                                       | 4      |
+| Ex 2                                                       | 3      |
+| Ex 3                                                       | 4      |
+| Ex 4                                                       | 5      |
+| Ex 5                                                       | 8      |
+| Ex 6                                                       | 4      |
+| Ex 7                                                       | 6      |
+| Ex 8                                                       | 5      |
+| Ex 9                                                       | 4      |
+| Ex 10                                                      | 2      |
+| Workflow & formatting (Includes completing team agreement) | 5      |

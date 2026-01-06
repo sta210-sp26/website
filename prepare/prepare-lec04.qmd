@@ -1,0 +1,9 @@
+---
+title: "Prepare for Lecture 04: Inference - bootstrap confidence intervals"
+---
+
+<br>
+
+📖 Read [Inference for simple linear regression, Section 5. 1- 5.3](https://introregression.netlify.app/05-slr-inference)
+
+📖 Read [Bootstrap confidence intervals, Section 5.5](https://introregression.netlify.app/05-slr-inference#sec-bootstrap-ci)

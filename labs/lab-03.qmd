@@ -1,0 +1,207 @@
+---
+title: "Lab 03: Model comparison"
+subtitle: "Candy competition"
+execute:
+  freeze: auto
+  echo: true
+  eval: false
+  warning: false
+  message: false
+---
+
+::: callout-important
+This lab is due on **Thursday, February 13 at 11:59pm.**
+:::
+
+## Introduction
+
+In today's lab you will analyze data about candy that was collected from an online experiment conducted at [FiveThirtyEight](https://fivethirtyeight.com/).
+
+### Learning goals
+
+By the end of the lab you will be able to
+
+-   transform and create new variables
+
+-   compare models
+
+-   continue developing a collaborative workflow with your teammates
+
+# Getting started
+
+-   Go to the [sta210-sp25](https://www.github.com/sta210-sp25) organization on GitHub. Click on the repo with the prefix **lab-03**. It contains the starter documents you need to complete the lab.
+
+-   Clone the repo and start a new project in RStudio. See the [Lab 00 instructions](https://sta210-sp25.netlify.app/labs/lab-00#getting-started) for details on cloning a repo and starting a new project in R.
+
+-   Each person on the team should clone the repository and open a new project in RStudio. Throughout the lab, each person should get a chance to make commits and push to the repo.
+
+-   **Do not make any changes to the `.qmd` file until the instructions tell you do to so.**
+
+## Workflow: Using Git and GitHub as a team
+
+::: callout-important
+There are no Team Member markers in this lab; however, you should use a similar workflow as in Lab 02. Only one person should type in the group's .qmd file at a time. Once that person has finished typing the group's responses, they should *render, commit, and push* the changes to GitHub. All other teammates can *pull* to see the updates in RStudio.
+
+Every teammate must have at least one commit in the lab. Everyone is expected to contribute to discussion even when they are not typing.
+:::
+
+# Packages
+
+The following packages are used in the lab.
+
+```{r}
+#| eval: true
+#| message: false
+#| warning: false
+#| echo: true
+
+library(tidyverse)
+library(tidymodels)
+library(knitr)
+library(fivethirtyeight)
+```
+
+# Data: Candy competition
+
+The data from this lab comes from the the article FiveThirtyEight [*The Ultimate Halloween Candy Power Ranking*](https://fivethirtyeight.com/features/the-ultimate-halloween-candy-power-ranking) by Walt Hickey. To collect data, Hickey and collaborators at FiveThirtyEight set up an experiment people could vote on a series of randomly generated candy matchups (e.g. Reeses vs. Skittles). Click [here](http://walthickey.com/2017/10/18/whats-the-best-halloween-candy/) to check out some of the match ups.
+
+The data set contains the characteristics and win percentage from 85 candies in the experiment. The variables are
+
+| Variable | Description |
+|----|----|
+| `chocolate` | Does it contain chocolate? |
+| `fruity` | Is it fruit flavored? |
+| `caramel` | Is there caramel in the candy? |
+| `peanutalmondy` | Does it contain peanuts, peanut butter or almonds? |
+| `nougat` | Does it contain nougat? |
+| `crispedricewafer` | Does it contain crisped rice, wafers, or a cookie component? |
+| `hard` | Is it a hard candy? |
+| `bar` | Is it a candy bar? |
+| `pluribus` | Is it one of many candies in a bag or box? |
+| `sugarpercent` | The percentile of sugar it falls under within the data set. Values 0 - 1. |
+| `pricepercent` | The unit price percentile compared to the rest of the set. Values 0 - 1. |
+| `winpercent` | The overall win percentage according to 269,000 matchups. Values 0 - 100. |
+
+Use the code below to get a glimpse of the `candy_rankings` data frame in the **fivethirtyeight** R package.
+
+```{r eval = T}
+glimpse(candy_rankings)
+```
+
+# Exercises
+
+The goal of this analysis is to use multiple linear regression to understand the factors that make a good candy, as measured by `winpercent`.
+
+## Exercise 1
+
+a.  Visualize the relationship between the response variable `winpercent` and one potential quantitative predictor. Write an observation from the graph.
+
+b.  Visualize the relationship between the response variable and one potential categorical predictor. Write an observation from the graph.
+
+## Exercise 2
+
+Split the data into training (80%) and testing sets (20%). Use a seed of `210`.
+
+## Exercise 3
+
+We will do some feature engineering[^1] to transform and create new variables to consider for the model. Conduct the following steps to the **training** data set.
+
+[^1]: "Feature engineering entails reformatting predictor values to make them easier for a model to use effectively. This includes transformations and encodings of the data to best represent their important characteristics." -from [Tidy Modeling with R](https://www.tmwr.org/recipes)
+
+-   Create a categorical variable that breaks `sugarpercent` into quartiles:
+
+    -   "Q1" If `sugarpercent` $<$ the $25^{th}$ percentile.
+
+    -   "Q2" if $25^{th}$ percentile $\leq$ `sugarpercent` $<$ $50^{th}$ percentile.
+
+    -   "Q3" if $50^{th}$ percentile $\leq$ `sugarpercent` $<$ $75^{th}$ percentile.
+
+    -   "Q4" if `sugarpercent` $\geq$ $75^{th}$ percentile.
+
+-   Multiply `pricepercent` \* 100, so the variable ranges from 0 - 100% instead of 0 - 1.
+
+::: callout-important
+You will use these variables whenever `sugarpercent` and `pricepercent` are referenced in the remainder of the lab.
+:::
+
+## Exercise 4
+
+a.  Fit a model using `sugarpercent`, `pricepercent`, `chocolate`, `peanutalmondy`, the interaction between `pricepercent` and `chocolate`, and the interaction between `chocolate` and `peanutalmondy` to predict `winpercent`. Neatly display the model using 3 digits.
+
+b.  Interpret the intercept in the context of the data.
+
+## Exercise 5
+
+Use the model from the previous exercise to interpret the following in the context of the data:
+
+a.  Coefficient of `sugarpercent = Q3`.
+
+b.  Coefficient of `pricepercent:chocolateTRUE`
+
+c.  Effect of `peanutalmondy` for chocolate candy
+
+## Exercise 6
+
+Let's consider another model. Use the training data to fit a model that meets the following criteria:
+
+-   Includes variables `chocolate`, `pricepercent`, `crispedricewafer`, `peanutyalmondy`, `sugarpercent`
+-   Update `pricepercent` so it ranges from 0 to 100 (instead of 0 to 1)
+-   Makes `sugarpercent` a factor where the levels equal the four quartiles: 0 - 0.25, 0.25 - 0.50, 0.50 - 0.75, 0.75 - 1
+-   Includes the interaction between `pricepercent` and `peanutyalmondy`
+
+## Exercise 7
+
+a.  Consider the model from Exercise 4 as "Model 1" and the model fit in Exercise 6 as "Model 2". Use the `glance()` function to calculate $Adj. R^2$ for both models.
+
+b.  Compute RMSE for the both models.
+
+c.  Which model would you choose based on the results from parts (a) and (b)? Briefly explain.
+
+## Exercise 8
+
+Now let's use the testing data to evaluate the performance of the model selected in the previous exercise.
+
+a.  Compute RMSE on the testing data for the model selected in Exercise 7.
+b.  Interpret RMSE in the context of the data.
+c.  How does this RMSE compare to the value from Exercise 7? Is this what you expected? Briefly explain.
+
+## Exercise 9
+
+Use the model you selected to describe what generally makes a good candy, as measured by the win percentage.
+
+# Submission
+
+::: callout-warning
+Before you wrap up the assignment, make sure all documents are updated on your GitHub repo. We will be checking these to make sure you have been practicing how to commit and push changes.
+
+Remember -- you must turn in a PDF file to the Gradescope page before the submission deadline for full credit.
+:::
+
+To submit your assignment:
+
+-   Access Gradescope through the [STA 210 Canvas site](https://canvas.duke.edu/courses/47067).
+
+-   Click on the assignment, and you’ll be prompted to submit it.
+
+-   Select all team members’ names, so they receive credit on the assignment. [Click here](https://help.gradescope.com/article/m5qz2xsnjy-student-add-group-members) for video on adding team members to assignment on Gradescope.
+
+-   Mark the pages associated with each exercise. All of the pages of your lab should be associated with at least one question (i.e., should be “checked”).
+
+-   Select the first page of your .PDF submission to be associated with the *“Workflow & formatting”* section.
+
+# Grading (50 points)
+
+<br>
+
+| Component             | Points |
+|:----------------------|:-------|
+| Ex 1                  | 6      |
+| Ex 2                  | 3      |
+| Ex 3                  | 5      |
+| Ex 4                  | 5      |
+| Ex 5                  | 8      |
+| Ex 6                  | 3      |
+| Ex 7                  | 6      |
+| Ex 8                  | 5      |
+| Ex 9                  | 4      |
+| Workflow & formatting | 5      |

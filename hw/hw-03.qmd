@@ -1,0 +1,203 @@
+---
+title: "HW 03: Multiple linear regression"
+subtitle: "Conditions and variable transformations"
+editor: visual
+execute:
+  freeze: auto
+  echo: true
+  eval: false
+  warning: false
+  message: false
+bibliography: references.bib
+---
+
+::: callout-important
+## Due date
+
+This assignment is due on **Tuesday, March 18 at 11:59pm.** To be considered on time, the following must be done by the due date:
+
+-   Final `.qmd` and `.pdf` files pushed to your GitHub repo
+
+-   Final `.pdf` file submitted on Gradescope
+:::
+
+# Introduction
+
+In this assignment you will use linear regression to explore the relationship between multiple variables. You will also examine model diagnostics and variable transformations.
+
+# Learning goals
+
+In this assignment, you will…
+
+-   use model diagnostics to identify influential points.
+-   examine multicollinearity and consider strategies to handle it.
+-   fit and interpret models with transformed variables.
+
+# Getting started
+
+-   Go to the [sta210-sp25](https://www.github.com/sta210-sp25) organization on GitHub. Click on the repo with the prefix **hw-03**. It contains the starter documents you need to complete the lab.
+
+-   Clone the repo and start a new project in RStudio. See the [Lab 00](https://sta210-sp25.netlify.app/labs/lab-00#getting-started) for details on cloning a repo and starting a new project in R.
+
+# Packages
+
+The following packages are used in this assignment:
+
+```{r}
+#| eval: false
+
+library(tidyverse)
+library(tidymodels)
+library(knitr)
+library(rms)
+
+# load other packages as needed
+```
+
+# Exercises
+
+::: callout-important
+All narrative should be written in complete sentences, and all visualizations should have informative titles and axis labels.
+:::
+
+## Data: Age of abalones
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+#| eval: true
+
+library(tidyverse)
+abalone <- read_csv("data/abalone_clean.csv")
+```
+
+The data for this analysis contains measurements for abalones, a type of marine snail. These measurements were collected and analyzed by researchers in @warwick1994population. [Click here](https://www.researchgate.net/profile/Warwick-Nash/publication/287546509_7he_Population_Biology_of_Abalone_Haliotis_species_in_Tasmania_I_Blacklip_Abalone_H_rubra_from_the_North_Coast_and_Islands_of_Bass_Strait/links/5d949460458515202b7bf592/7he-Population-Biology-of-Abalone-Haliotis-species-in-Tasmania-I-Blacklip-Abalone-H-rubra-from-the-North-Coast-and-Islands-of-Bass-Strait.pdf) for the publication.
+
+The `r nrow(abalone)` abalones in this study can be reasonably treated as a random sample.
+
+The data are available in the file `abalone.csv` in the `data` folder. This analysis will focus on the following variables:
+
+-   `Sex`: Male (M), Female (F), Infant (I)
+
+-   `Length`: Longest shell measurement (in millimeters)
+
+-   `Diameter`: Measured perpendicular to length (in millimeters)
+
+-   `Height` : Measured with meat in shell (in millimeters)
+
+-   `Whole_Weight`: Total weight of abalone (in grams)
+
+-   `Age`: Age (in year)
+
+**The goal of the analysis is to use a variety of measurements from abalones to explain variability in the age.**
+
+## Exercise 1
+
+a.  Fit a model using `Sex`, `Length`, `Diameter`, `Height` and `Whole_Weight` to understand variability in `Age`. Neatly display the model using 3 digits.
+b.  Check the four model conditions - Linearity, Constant Variance, Normality, and Independence. For each condition: (1) state whether or not it is satisfied; (2) explain your response showing any visualizations and/or statistics used to make your assessment.
+
+## Exercise 2
+
+Now let's take a look at the model diagnostics.
+
+a.  Are there any influential observations in the data set? Briefly explain, showing any work or output used to make the determination.
+b.  Consider the observation with the highest value for Cook’s distance. What is the value of leverage for this observation? Does this observation have large leverage? Briefly explain, showing any work or output used to make the determination.
+c.  Again consider the observation with the highest value for Cook’s distance. What is the standardized residual for this observation? Is this observation an outlier? Briefly explain showing any work or output used to make the determination.
+
+## Exercise 3
+
+Now let's look at the relationship between predictors.
+
+a.  Compute the Variance Inflation Factors (VIF) for the model from Exercise 1. Display the results.
+b.  Use the equation for VIF to "manually" compute the VIF for `Whole_Weight`.
+c.  What predictors appear to be collinear?
+d.  Select a strategy to fit a model that does not have an issue with multicollinearity.
+    -   Briefly describe your strategy.
+    -   Select a final model.
+    -   Briefly explain your selection, showing the work and statistics used to choose a final model.
+
+## Data: 2000 U.S. Presidential Election[^1]
+
+[^1]: This analysis was motivated by exercises in @ledolter2003statistical.
+
+<!--# motivated by Statistical Sleuth-->
+
+We will examine data about the [2000 U.S. presidential election](https://en.wikipedia.org/wiki/2000_United_States_presidential_election) between George W. Bush and Al Gore. It was one of the closest elections in history that ultimately came down to the state of Florida. One county in particular, Palm Beach County, was at the center of the controversy due to the design of their ballots - the infamous [butterfly ballots](http://news.bbc.co.uk/2/hi/in_depth/americas/2000/us_elections/glossary/a-b/1037172.stm). It is believed that many people who intended to vote for Al Gore accidentally voted for Pat Buchanan due to how the spots to mark the candidate were arranged next to the names.
+
+The variables in the data are
+
+-   `County`: County name
+
+-   `Bush2000`: Number of votes for George W. Bush
+
+-   `Buchanan2000`: Number of votes for Pat Buchanan
+
+The data are available in the file `florida-votes-2000.csv` in the `data` folder of your repo.
+
+## Exercise 4
+
+The goal is to fit a model that uses the number of votes for Bush to predict the number of votes for Buchanan. Using this model, we’ll investigate whether the data support the claim that votes for Gore may have accidentally gone to Buchanan.
+
+a.  Visualize the relationship between the number of votes for Buchanan versus the number of votes for Bush. Describe what you observe in the visualization, including a description of the relationship between the votes for Buchanan and votes for Bush.
+b.  What is the county with the extreme outlier number of votes for Buchanan? Create a new data frame that doesn’t include the outlying county. **You will use this updated data frame for the remainder of this exercise and Exercise 5.**
+c.  Fit a model to predict the number of votes for Buchanan based on the number of votes for Bush in the county.
+    -   Make a plot of the standardized residuals versus the fitted values.
+    -   Is the constant variance condition satisfied? Briefly explain.
+
+## Exercise 5
+
+Now let's consider potential models with transformations on the response and/or predictor variables. The four candidate models are the following:
+
+| Model                      | Response variable | Predictor variable |
+|----------------------------|-------------------|--------------------|
+| 1 (from previous exercise) | Buchanan2000      | Bush2000           |
+| 2                          | log(Buchanan2000) | Bush2000           |
+| 3                          | Buchanan2000      | log(Bush2000)      |
+| 4                          | log(Buchanan2000) | log(Bush2000)      |
+
+Which model best fits the data? Briefly explain, showing any work and output used to determine the response. **(Note: Use the data set without the outlying county to find the candidate models.)**
+
+## Exercise 6
+
+a.  Use the model you chose in the previous exercise to compute the predicted number of votes for Buchanan in the outlying county identified in Exercise 4. If you selected a model with a transformation, be sure to report your answer in terms of votes, not log(votes).
+
+b.  Compute the 95% prediction interval for this county. If you selected a model with a transformation, be sure to report your answer in terms of votes, not log(votes).
+
+c.  It is assumed that some of the votes for Buchanan in that county were actually intended to be for Gore. Based on your results in the previous question, does your model support this claim?
+
+    -   If no, briefly explain.
+
+    -   If yes, about how many votes were possibly intended for Gore? Show any calculations and output used to determine your answer. If you selected a model with a transformation, be sure to report your answer in terms of votes, not log(votes).
+
+# Submission
+
+::: callout-warning
+Before you wrap up the assignment, make sure all documents are updated on your GitHub repo. We will be checking these to make sure you have been practicing how to commit and push changes.
+
+Remember -- you must turn in a PDF file to the Gradescope page before the submission deadline for full credit.
+:::
+
+To submit your assignment:
+
+-   Access Gradescope through the [STA 210 Canvas site](https://canvas.duke.edu/courses/47067).
+
+-   Click on the assignment, and you’ll be prompted to submit it.
+
+-   Mark the pages associated with each exercise. All of the pages of your lab should be associated with at least one question (i.e., should be “checked”).
+
+-   Select the first page of your .PDF submission to be associated with the *“Workflow & formatting”* section.
+
+# Grading
+
+| Component             | Points |
+|-----------------------|--------|
+| Ex 1                  | 10     |
+| Ex 2                  | 6      |
+| Ex 3                  | 8      |
+| Ex 4                  | 8      |
+| Ex 5                  | 6      |
+| Ex 6                  | 8      |
+| Workflow & formatting | 4      |
+
+The "Workflow & formatting" grade is to assess the reproducible workflow and document format for the applied exercises. This includes having at least 3 informative commit messages, a neatly organized document with readable code and your name and the date updated in the YAML.

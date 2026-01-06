@@ -1,0 +1,52 @@
+---
+title: "STA 210 - Regression Analysis"
+subtitle: "Spring 2025 - Dr. Maria Tackett"
+navbar: false
+---
+
+# Overview
+
+In STA 210, students will learn how linear and logistic regression models are used to explore multivariable relationships and apply these methods to answer relevant and engaging questions using a data-driven approach. Students will develop computing skills to implement a reproducible data analysis workflow and gain experience communicating statistical results. Throughout the semester, students will work on a team project where they will develop a research question, answer it using methods learned in the course, and share results through a written report and presentation.
+
+Topics include applications of linear and logistic regression, interpretation, diagnostics, model selection, and model assessment. Students will gain experience using the computing tools R and GitHub to analyze real-world data from a variety of fields. This class emphasizes data analysis over mathematical theory.
+
+## Pre-requisites
+
+100-level Statistical Science course or Statistical Science 230, 231, or 240L
+
+# Class meetings
+
+|             |                         |                   |
+|-------------|-------------------------|-------------------|
+| **Lecture** | Tue & Thu 3:05 - 4:20pm | Old Chemistry 116 |
+| **Lab 01**  | Mon 3:05 - 4:20pm       | Old Chemistry 001 |
+| **Lab 02**  | Mon 4:40 - 5:55pm       | Perkins Link #5   |
+
+# Teaching team
+
+### Instructor
+
+[Maria Tackett](https://www2.stat.duke.edu/~mt324) is an Assistant Professor of the Practice in the Department of Statistical Science at Duke University. Her work focuses on understanding how active learning strategies can be used to promote engagement and student motivation in undergraduate statistics courses. She also studies how classroom practices in introductory math and statistics courses impact students' sense of community, self-efficacy, and learning outcomes.
+
+**See Canvas for office hours times and locations.**
+
+## Teaching assistants
+
++----------------+----------------+
+| **Name**       | **Role**       |
++----------------+----------------+
+| Sylvia Vincent | Head TA\       |
+|                | Lab 01L leader |
+|                |                |
+|                | Lab 02L leader |
++----------------+----------------+
+| Ishrit Gupta   | Lab 02L leader |
++----------------+----------------+
+| Kareena Legare | Lab 01L helper |
++----------------+----------------+
+
+**See Canvas for office hours times and locations.**
+
+# License
+
+<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">![Creative Commons License](https://i.creativecommons.org/l/by-nc/4.0/88x31.png){alt="Creative Commons License" style="border-width:0"}</a><br />All content on this website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.

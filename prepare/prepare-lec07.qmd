@@ -1,0 +1,9 @@
+---
+title: "Prepare for Lecture 06: Multiple linear regression"
+---
+
+<br>
+
+📖 Read [Multiple linear regression, Section 7.1 - 7.4](https://introregression.netlify.app/06-mlr#learning-objectives)
+
+📖 Read [Multiple linear regression, Section 7.6.1](https://introregression.netlify.app/06-mlr#interpreting-the-coefficients)

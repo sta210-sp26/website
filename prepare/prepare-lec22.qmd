@@ -1,0 +1,9 @@
+---
+title: "Prepare for Lecture 22: Multinomial Logistic Regression pt2"
+---
+
+<br>
+
+📖 [juliasilge.com/blog/multinomial-volcano-eruptions](https://juliasilge.com/blog/multinomial-volcano-eruptions/)
+
+📖 [juliasilge.com/blog/nber-papers](https://juliasilge.com/blog/nber-papers/)

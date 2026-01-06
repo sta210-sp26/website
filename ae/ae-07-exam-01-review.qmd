@@ -1,0 +1,153 @@
+---
+title: "AE 07: Exam 01 review"
+subtitle: "Trail users"
+date: "February 13, 2025"
+editor: visual
+---
+
+::: callout-important
+Go to the [course GitHub organization](https://github.com/sta210-sp25) and locate your `ae-07`- to get started.
+
+Render, commit, and push your responses to GitHub by the end of class.
+:::
+
+## Packages
+
+```{r load-packages}
+#| message: false
+library(tidyverse)
+library(tidymodels)
+library(knitr)
+```
+
+## Trail users
+
+The Pioneer Valley Planning Commission (PVPC) collected data for ninety days from April 5, 2005 to November 15, 2005. Data collectors set up a laser sensor, with breaks in the laser beam recording when a rail-trail user passed the data collection station.
+
+We will use regression analysis to predict the number of trail users based on weather and other features describing the day.
+
+The variables we'll focus on for this analysis are
+
+-   `volume` estimated number of trail users that day (number of breaks recorded)
+-   `hightemp` daily high temperature (in degrees Fahrenheit)
+-   `season` one of "Fall", "Spring", or "Summer"
+-   `daytype` one of "weekday" or "weekend"
+
+View the data set[^1] to see the remaining variables.
+
+[^1]: Source: [Pioneer Valley Planning Commission](http://www.fvgreenway.org/pdfs/Northampton-Bikepath-Volume-Counts%20_05_LTA.pdf) via the **mosaicData** package.
+
+```{r}
+#| message: false
+
+rail_trail <- read_csv("data/rail-trail.csv")
+```
+
+## Exploratory analysis
+
+### Exercise 1
+
+Visualize, summarize, and describe the distribution of `volume`.
+
+### Exercise 2
+
+-   Visualize and describe the relationship between `hightemp` and `volume`.
+-   Modify the plot to consider if the relationship between these variables differs by `daytype`.
+
+## Modeling
+
+Fit a model using `hightemp` and `daytype` to predict the `volume` for this trail.
+
+### Exercise 3
+
+-   Write the statistical model.
+
+-   Fit the model and write the estimated regression equation. Neatly display the results using 3 digits and the 90% confidence interval for the coefficients.
+
+### Exercise 4
+
+Interpret the slope of `hightemp` in the context of the data.
+
+### Exercise 5
+
+-   Does it make sense to interpret the intercept? Explain your reasoning.
+-   If not, what can we do to make the interpretation meaningful?
+
+## Inference for coefficients
+
+### Exercise 6
+
+The following code can be used to create a bootstrap distribution for the model coefficients. Describe what each line of code does, supplemented by any visualizations that might help with your description.
+
+```{r}
+#| label: ex-6
+
+set.seed(1234)
+
+boot_dist <- rail_trail |> # <1>
+  specify(volume ~ hightemp + daytype) |> # <2>
+  generate(reps = 100, type = "bootstrap") |> # <3>
+  fit() # <4>
+```
+
+1.  \_\_\_
+
+2.  \_\_\_
+
+3.  \_\_\_
+
+4.  \_\_\_
+
+### Exercise 7
+
+Use the bootstrap distribution created in Exercise 6, `boot_dist`, to construct a 90% confidence interval for the coefficient of `hightemp` using bootstrapping and the percentile method and interpret it in context of the data.
+
+### Exercise 8
+
+Conduct a hypothesis test for the coefficient of `hightemp` significance level using permutation with 100 reps. State the hypotheses in words and mathematical notation. Also include a visualization of the null distribution of the slope with the observed slope marked as a vertical line.
+
+### Exercise 9
+
+Now repeat Exercises 7 and 8 using approaches based on mathematical models. You can reference output from previous exercises and/or write new code as needed.
+
+## Inference for prediction
+
+### Exercise 10
+
+Based on your model, predict the volume for a weekday with high temperature of degrees.
+
+### Exercise 11
+
+Suppose you're asked to construct a confidence and a prediction interval for your finding in the previous exercise. Which one would you expect to be wider and why? In your answer clearly state the difference between these intervals.
+
+### Exercise 12
+
+Now construct the intervals and comment on whether your guess is confirmed.
+
+## Interaction terms
+
+### Exercise 13
+
+Now fit the model using `hightemp` and `daytype` to predict volume such that the effect of `hightemp` can differ by `daytype`.
+
+### Exercise 14
+
+-   Write the estimated regression equation for weekends.
+-   Write the estimated regression equation for weekdays.
+
+### Exercise 15
+
+According to this model, does the effect of `hightemp` differ for weekends vs. weekdays? Explain.
+
+## Model comparison
+
+### Exercise 16
+
+Which model is a better fit for the data - the model with or without the interaction? Show any work to support your choice.
+
+::: callout-important
+To submit the AE:
+
+-   Render the document to produce the PDF with all of your work from today's class.
+-   Push all your work to your `ae-07-` repo on GitHub. (You do not submit AEs on Gradescope).
+:::

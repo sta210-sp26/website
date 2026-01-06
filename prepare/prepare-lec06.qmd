@@ -1,0 +1,7 @@
+---
+title: "Prepare for Lecture 06: Inference - Mathematical models"
+---
+
+<br>
+
+📖 Read [Inference for simple linear regression, Section 5.9](https://introregression.netlify.app/05-slr-inference#sec-slr-inf-clt)

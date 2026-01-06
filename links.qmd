@@ -1,0 +1,11 @@
+---
+title: "Useful links"
+---
+
+|  |  |
+|--------------------|---------------------------------------------------|
+| RStudio containers | 🔗 for [Duke Container Manager](https://cmgr.oit.duke.edu/containers) |
+| Course GitHub organization | 🔗 for [GitHub](https://github.com/sta221-sp25) |
+| Course Canvas site | 🔗 for [Canvas](https://canvas.duke.edu/courses/47067) |
+| Discussion forum | 🔗 to [Ed Discussion](https://edstem.org/us/courses/70992/discussion) |
+| Assignment submission | 🔗 to [Gradescope](https://www.gradescope.com/courses/938130) |

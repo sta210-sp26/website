@@ -1,0 +1,231 @@
+---
+title: "Lab 06: Multinomial logistic regression"
+execute:
+  freeze: auto
+  echo: false
+  warning: false
+  message: false
+format: html
+bibliography: references.bib
+---
+
+::: callout-important
+# Due date
+
+This lab is due on **Tuesday, April 15 11:59pm.** To be considered on time, the following must be done by the due date:
+
+-   Final `.qmd` and `.pdf` files pushed to your team's GitHub repo
+-   Final `.pdf` file submitted on Gradescope
+:::
+
+# Multinomial logistic regression
+
+In this lab, you will use multinomial logistic regression to understand how different conditions of a crime and suspect lineup impact individuals' ability to correctly identify the perpetrator. You will also use cross validation to compare and evaluate candidate models. The data are from a mock crime scenario in a 2014 experiment.
+
+# Learning goals
+
+By the end of the lab you will be able to…
+
+-   interpret visualizations in the exploratory data analysis for multinomial logistic regression.
+
+-   fit and interpret multinomial logistic regression model.
+
+-   use cross validation to fit and compare models.
+
+# Packages
+
+Fill in the packages you need to complete the assignment in your R Markdown document.
+
+```{r}
+#| echo: true
+library(tidyverse)
+library(tidymodels)
+library(knitr)
+library(nnet)
+
+# Include other packages as needed
+```
+
+# Data
+
+For this assignment, we will analyze data from the eye witness identification experiment in @carlson2014evaluation. In this experiment, participants were asked to watch a video of a mock crime (from the first person perspective), spend a few minutes completing a random task, and then identify the perpetrator of the mock crime from a line up shown on the screen. Every lineup in this analysis included the true perpetrator from the video. After viewing the line-up , each participant was asked to make a decision. This decision is the **response variable**
+
+-   `id`: Decision made by participant. It takes one of the following values:
+
+    -   `correct`: correctly identified the true perpetrator
+
+    -   `foil`: incorrectly identified the "foil", i.e. a person who looks very similar to the perpetrator
+
+    -   `reject`: incorrectly concluded the true perpetrator is not in the lineup
+
+The main objective of the analysis is to understand how different conditions of the mock crime and suspect lineup affect the decision made by the participant. We will consider the following conditions to describe the decisions. These are the **predictor variables**:
+
+-   `lineup`: How potential suspects are shown to the participants
+    -   `Simultaneous Lineup`: Participants were shown photos of all 6 potential suspects at the same time and were required to make a single decision (identify someone from the lineup or reject the lineup).
+    -   `Sequential 5 Lineup`: Photos of the 6 suspects were shown one at a time. The participant was required to make a decision (choose or don't choose) as each photo was shown. Once a decision was made, participants were not allowed to reexamine a photo. If the participant made an identification, the remaining photos were not shown. In each of these lineups the true perpetrator was always the 5<sup>th</sup> photo in the lineup.
+-   `weapon`: Whether or not a weapon was present in the video of the mock crime.
+-   `feature`: Whether or not the perpetrator had a distinctive marking on his face. In this experiment, the distinctive feature was a large "N" sticker on one cheek. (The letter "N" was chosen to represent the first author's alma mater - University of Nebraska.)
+
+<br>
+
+The data may be found in `eyewitness.csv` in the `data` folder.
+
+# Exercises
+
+## Exercise 1
+
+Let's begin by doing the exploratory data analysis. Univariate and bivariate plots are shown below.
+
+```{r echo = F}
+# univariate EDA
+library(patchwork)
+
+ew <- read_csv("data/eyewitness.csv")
+p1 <- ggplot(data = ew, aes(x = id)) +
+  geom_bar() + 
+  labs(title = "ID decision", 
+       x = "")
+p2 <- ggplot(data = ew, aes(x = lineup)) +
+  geom_bar() + 
+  labs(title = "Lineup", 
+       x = "")
+
+p3 <- ggplot(data = ew, aes(x = weapon)) +
+  geom_bar() + 
+  labs(title = "Weapon", 
+       x = "")
+
+p4 <- ggplot(data = ew, aes(x = feature)) +
+  geom_bar() + 
+  labs(title = "Feature", 
+       x = "")
+
+(p1 + p2)/ (p3 + p4) + plot_annotation(title = "Univariate EDA")
+
+
+# bivariate EDA
+p5 <- ggplot(data = ew, aes(x = lineup, fill = id)) + 
+  geom_bar(position = "fill") + 
+  labs(title = "ID vs. lineup",
+       x = "",
+       y = "Proportion") +
+  theme(legend.position = "none")
+
+p6 <- ggplot(data = ew, aes(x = weapon, fill = id)) + 
+  geom_bar(position = "fill") + 
+  labs(title = "ID vs. weapon",
+       x = "",
+       y = "Proportion") +
+  theme(legend.position = "bottom")
+
+p7 <- ggplot(data = ew, aes(x = feature, fill = id)) + 
+  geom_bar(position = "fill") + 
+  labs(title = "ID vs. feature",
+       x = "",
+       y = "Proportion",
+       fill = "ID") +
+  theme(legend.position = "none")
+
+p5 + p6 + p7 + plot_annotation(title = "Bivariate EDA")
+```
+
+a.  Write two observations from the univariate EDA.
+b.  Write two observations from the bivariate EDA.
+
+## Exercise 2
+
+Make all the variables factor variable types. Then, split the data into training (75%) and test (25%) sets. Use seed `210`.
+
+How many observations are in the training set?
+
+## Exercise 3
+
+a.  Briefly explain a multinomial logistic regression model is an appropriate model choice for predicting `id` using `lineup`, `weapon` and `feature`.
+b.  Use the training data to fit a multinomial logistic model using only the main effects for `lineup` , `weapon`, and `feature`. Neatly display the model using 3 digits.
+
+## Exercise 4
+
+a.  What is the baseline category for the response variable?
+b.  What experimental conditions are described by the intercept?
+c.  Interpret the coefficients of `lineup` for each part of the model in terms of the odds.
+d.  Use the coefficients and inferential statistics to describe the association between `lineup` and `id`.
+
+## Exercise 5
+
+You are considering a model that includes all possible interactions between the predictors `lineup` , `weapon`, and `feature` . You will use 5-fold cross validation to choose between the main effects model fit in Exercise 3 and the model with interaction effects.
+
+::: callout-tip
+See [Cross Validation](https://sta210-sp25.netlify.app/slides/23-cross-validation#/title-slide) notes for relevant code.
+:::
+
+a.  Use the training data and seed `210` to create 5 folds. How many observations are in the assessment set for each fold?
+b.  Fit the main effects model on the 5 folds.
+c.  What is the average accuracy across all folds? What is the average AUC?
+
+## Exercise 6
+
+a.  Fit the interaction model on the 5 folds from the previous exercise.
+b.  What is the average accuracy across all folds? What is the average AUC?
+c.  Based on the cross validation results, do you choose the main effects model or the model with interactions? Briefly explain your response.
+
+## Exercise 7
+
+If needed, fit the model selected in the previous exercise on the full training data.
+
+Next, use the testing data to predict the classes of `id`, and make a confusion matrix of the actual versus predicted classes of `id`.
+
+Lastly, use the confusion matrix to comment on the model performance.
+
+::: callout-tip
+Below is template code to compute predicted classes on a test set:
+
+```{r}
+#| eval: false
+#| echo: true
+
+pred_class <- predict(model_name, test_set, type = "class")
+
+```
+
+See [Multinomial Logistic Regression: Inference + Prediction](https://sta210-sp25.netlify.app/slides/22-multinomial-pt2#/title-slide) notes for additional help with code.
+:::
+
+# Submission
+
+Submit your completed assignment as a **PDF** to Gradescope. Follow the instructions carefully to ensure your submission is complete.
+
+::: callout-warning
+Before you wrap up the assignment, make sure all documents are updated on your GitHub repo. We will be checking these to make sure you have been practicing how to commit and push changes.
+
+Remember – you must turn in a PDF file to the Gradescope page before the submission deadline for full credit.
+:::
+
+To submit your assignment:
+
+-   Access Gradescope through the [STA 210 Canvas site](https://canvas.duke.edu/courses/47067).
+
+-   Click on the assignment, and you’ll be prompted to submit it.
+
+-   Select all team members’ names, so they receive credit on the assignment. [Click here](https://help.gradescope.com/article/m5qz2xsnjy-student-add-group-members) for video on adding team members to assignment on Gradescope.
+
+-   Mark the pages associated with each exercise. All of the pages of your lab should be associated with at least one question (i.e., should be “checked”).
+
+-   Select the first page of your .PDF submission to be associated with the *“Workflow & formatting”* section.
+
+# Grading
+
+| Component             | **Points** |
+|-----------------------|:----------:|
+| Exercise 1            |     4      |
+| Exercise 2            |     4      |
+| Exercise 3            |     4      |
+| Exercise 4            |     10     |
+| Exercise 5            |     8      |
+| Exercise 6            |     6      |
+| Exercise 7            |     9      |
+| Workflow & formatting |     5      |
+| **Total**             |   **50**   |
+
+The “Workflow & formatting” grade is to assess the reproducible workflow and collaboration. This includes having at least one meaningful commit from each team member, a neatly organized document with readable code, and updating the team name and date in the YAML.
+
+# References

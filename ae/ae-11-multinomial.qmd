@@ -1,0 +1,124 @@
+---
+title: "AE 11: Multinomial logistic regression"
+subtitle: "Sesame Street"
+author: "Insert your name"
+date: "`r Sys.Date()`"
+execute:
+    warning: false
+    message: false
+---
+
+::: callout-important
+Go to the course GitHub organization and locate your ae-10 repo to get started.
+
+Render, commit, and push your responses to GitHub by the end of class to submit your AE.
+:::
+
+# Introduction
+
+```{r}
+#| label: load-pakages
+
+library(tidyverse)
+library(knitr)
+library(broom)
+library(nnet) # for multinomial logistic regression
+```
+
+Today's data comes from [an experiment](https://files.eric.ed.gov/fulltext/ED122799.pdf) by the Educational Testing Service to test the effectiveness of the children's program *Sesame Street*. *Sesame Street* is an educational program designed to teach young children basic educational skills such as counting and the alphabet
+
+As part of the experiment, children were assigned to one of two groups: those who were encouraged to watch the program and those who were not.
+
+The show is only effective if children watch it, so we want to understand what effect the encouragement had on the frequency children watched the program.
+
+**Response:**
+
+-   `viewcat`
+    -   1: rarely watched show
+    -   2: watched once or twice a week
+    -   3: watched three to five times a week
+    -   4: watched show on average more than five times a week
+
+**Predictors:**
+
+-   `age`: child's age in months
+-   `prenumb`: score on numbers pretest (0 to 54)
+-   `prelet`: score on letters pretest (0 to 58)
+-   `viewenc`: 1: encouraged to watch, 0: not encouraged
+-   `site:`
+    -   1: three to five year old from urban area
+    -   2: four year old from suburban area
+    -   3: from rural area with high socioeconomic status
+    -   4: from rural area with low socioeconomic status
+    -   5: from Spanish speaking home
+
+```{r}
+#| label: load-prep-data
+
+# read in dataset
+sesame <- read_csv("https://bit.ly/sesame-street-data")
+
+# mean-center relevant continuous variables, make categorical variables factors
+sesame <- sesame |> 
+  mutate(viewcat = factor(viewcat), 
+         site = factor(site), 
+         prenumbCent = prenumb - mean(prenumb), 
+         preletCent = prelet - mean(prelet), 
+         ageCent = age - mean(age),
+         viewenc = factor(if_else(viewenc == 1, "1", "0"))
+  )
+```
+
+# Exercises
+
+## Exercise 1
+
+Create a plot to visualize the relationship between the response, `viewcat` and the primary variable of interest in this analysis, `viewenc`. What do you observe from the plot?
+
+## Exercise 2
+
+Create a plot to visualize the relationship between the response, `viewcat` and `age`. What do you observe from the plot?
+
+## Exercise 3
+
+Fit a model using the `ageCent` and `viewenc` to understand the odds a child is in a given category of `viewcat`. Display the model including 95% confidence intervals for the coefficients.
+
+## Exercise 4
+
+-   What is the baseline category for `viewcat`? What is the baseline category for `viewenc`?
+
+-   Interpret the intercept associated with the odds of a child being in the category `viewcat == 2` versus the baseline.
+
+-   Interpret the effect of age in terms of the odds of a child being in the category `viewcat == 2` versus the baseline. Based on the confidence interval for the coefficient, is the numeric predictor a statistically significant predictor of viewership?
+
+## Exercise 5
+
+Should the interaction between `ageCent` and `viewenc` be included in the model? Show any analysis used to make your conclusion.
+
+## Exercise 6
+
+The primary objective of the experiment was to understand the effect of encouragement on viewership. Does encouragement have a significant effect on viewership after adjusting for age? If so, describe the effect. Otherwise, explain why not.
+
+## Exercise 7
+
+-   Use the model selected in Exercise 5 to compute the predicted probabilities and predicted classes for `viewcat`.
+
+-   Make a confusion matrix.
+
+-   What percentage of observations were correctly classified?
+
+## Exercise 8
+
+-   Assess the overall model performance.
+
+-   Were there particular categories in which the model has a harder time differentiating?
+
+# Submission
+
+::: callout-important
+To submit the AE:
+
+-   Render the document to produce the PDF with all of your work from today’s class.
+
+-   Push all your work to your AE repo on GitHub. You’re done! 🎉
+:::

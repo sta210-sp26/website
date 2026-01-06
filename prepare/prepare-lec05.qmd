@@ -1,0 +1,9 @@
+---
+title: "Prepare for Lecture 05: Inference - permutation tests"
+---
+
+<br>
+
+📖 Read [Inference for simple linear regression, Section 5. 1- 5.3](https://introregression.netlify.app/05-slr-inference)
+
+📖 Read [Inference for simple linear regression, Section 5.6 - 5.8](https://introregression.netlify.app/05-slr-inference#sec-hypothesis-test-overview)
