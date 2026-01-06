@@ -1,9 +1,14 @@
 ---
-title: "Prepare for Lecture 03: Simple linear regression"
+title: "Prepare for Lecture 03"
+subtitle: Simple linear regression
 ---
+
+**Required**
+
+📖 Read [Chapter 4](https://introregression.netlify.app/04-slr)
 
 <br>
 
-📖 Read [Simple linear regression, Section 4.1 - 4.6](https://introregression.netlify.app/04-slr)
+**Optional**
 
-📖 Read [Simple linear regression, Section 4.8](https://introregression.netlify.app/04-slr#simple-linear-regression-in-r)
+Read [Chapter 3](https://introregression.netlify.app/03-eda) for review of exploratory data analysis

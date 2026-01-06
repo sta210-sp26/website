@@ -1,7 +1,0 @@
----
-title: "Prepare for Lecture 10: Inference + Model conditions"
----
-
-<br>
-
-📖 Read [Model conditions](https://introregression.netlify.app/05-5-conditions)
