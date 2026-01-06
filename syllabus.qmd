@@ -10,26 +10,15 @@ format:
 
 ### Class meetings
 
-|             |                         |                   |
-|-------------|-------------------------|-------------------|
-| **Lecture** | Tue & Thu 3:05 - 4:20pm | Old Chemistry 116 |
-| **Lab 01**  | Mon 3:05 - 4:20pm       | Old Chemistry 001 |
-| **Lab 02**  | Mon 4:40 - 5:55pm       | Perkins Link #5   |
+See Canvas for class meeting times and locations.
 
 ### Teaching team
 
-+---------------------+----------------+
-| Name                | Role           |
-+=====================+================+
-| Prof. Maria Tackett | Instructor     |
-+---------------------+----------------+
-| Sylvia Vincent      | Head TA\       |
-|                     | Lab 01L leader |
-+---------------------+----------------+
-| Ishrit Gupta        | Lab 02L leader |
-+---------------------+----------------+
-| Kareena Legare      | Lab 01L helper |
-+---------------------+----------------+
+| Name                | Role       |
+|---------------------|------------|
+| Prof. Maria Tackett | Instructor |
+| Adeli Hutton        | Lab leader |
+| Shane Rybacki       | Lab leader |
 
 **See Canvas for office hours.**
 
@@ -48,20 +37,15 @@ Topics include applications of linear and logistic regression, interpretation, d
 By the end of the semester, you will be able to…
 
 -   analyze real-world data to answer questions about multivariable relationships.
-
 -   use R to fit and evaluate linear and logistic regression models.
-
 -   assess whether a proposed model is appropriate and describe its limitations.
-
 -   implement a reproducible analysis workflow using R for analysis, Quarto to write reports and GitHub for version control and collaboration.
-
 -   effectively communicate statistical results to a general audience.
-
 -   assess the ethical considerations and implications of analysis decisions.
 
 ## Course materials
 
-While there is no official textbook for the course; readings will primarily be made available as they are assigned. We will use the statistical software R. Students will be able to access R through Docker containers provided by Duke Office of Information Technology. See the [computing page](computing-access.qmd) for more information.
+Most readings in this course will come from *Introduction to Regression Analysis: A Data Science Approach*. It is freely available online ([introregression.netlify.app](https://introregression.netlify.app/)). Readings from this text and other sources will be posted under the “prepare” column on the course schedule. We will use the statistical software R. Students will be able to access R through Docker containers provided by Duke Office of Information Technology. See the [computing page](https://sta221-sp26.netlify.app/computing-access) for more information.
 
 ## Course community
 
@@ -76,7 +60,7 @@ Furthermore, I would like to create a learning environment for my students that 
 
 ### Pronouns
 
-Pronouns are meaningful tools to communicate identities and experiences, and using pronouns supports a campus environment where all community members can thrive. Please update your gender pronouns in Duke Hub. You can find instructions to do so [here](https://students.duke.edu/belonging/icr/csgd/pronouns/dukehub-zoom/). You can learn more at the [Center for Sexual and Gender Diversity's website](https://students.duke.edu/belonging/icr/csgd/pronouns/).
+Using pronouns can help foster a respectful campus environment where all community members can thrive. Sharing pronouns is always optional for members of the Duke community. If you would like to share yours, you can update them in DukeHub. You can learn more at the [DukeHub & Zoom Tutorials](https://students.duke.edu/belonging/icr/csgd/pronouns/dukehub-zoom/).
 
 ### Accessibility
 
@@ -86,7 +70,7 @@ The [Student Disability Access Office (SDAO)](https://access.duke.edu/students) 
 
 ### Communication
 
-All lecture notes, assignment instructions, an up-to-date schedule, and other course materials may be found on the course website, <https://sta210-sp25.netlify.app>.
+All lecture notes, assignment instructions, an up-to-date schedule, and other course materials may be found on the course website, <https://sta210-sp26.netlify.app>.
 
 Links to Zoom meetings may be found in Canvas. Periodic announcements will be sent via email and will also be available through Ed Discussion and Canvas Announcements. Please check your email regularly to ensure you have the latest announcements for the course.
 
@@ -96,25 +80,25 @@ If you have questions about assignment extensions, accommodations, or any other 
 
 ## Five tips for success
 
-Your success on this course depends very much on you and the effort you put into it. Your TAs and I will help you be providing you with materials and answering questions and setting a pace, but for this to work you must do the following:
+The TAs and I will provide materials, answer questions, and provide guidance to help you learn the material in this course. Below are five things you can do to be successful in STA 210:
 
-1.  Complete all the preparation work before class.
+1.  Complete all “prepare” readings and tasks before class.
 
-2.  Ask questions. As often as you can. In class, out of class. Ask me, ask the TAs, ask your friends, ask the person sitting next to you. This will help you more than anything else. If you get a question wrong on an assessment, ask us why. If you're not sure about the homework, ask. If you hear something on the news that sounds related to what we discussed, ask. If the reading is confusing, ask.
+2.  Actively participate and engage in lectures and labs.
 
-3.  Do the readings and other preparation work.
+3.  Ask questions frequently during lecture, in office hours, on Ed Discussion, and among your classmates.
 
-4.  Do the homework and lab.The earlier you start, the better. It's not enough to just mechanically plow through the exercises. You should ask yourself how these exercises relate to earlier material, and imagine how they might be changed (to make questions for an exam, for example.)
+4.  Complete all homework and labs, asking yourself “why” questions as you go through the steps to complete each exercise.
 
-5.  Don't procrastinate. The content builds upon what was taught in previous weeks, so if something is confusing to you in Week 2, Week 3 will become more confusing, Week 4 even worse, etc. Don't let the week end with unanswered questions. But if you find yourself falling behind and not knowing where to begin asking, come to office hours and work with a member of the teaching team to help you identify a good (re)starting point.
+5.  Stay current with the course material, as each new concept builds on previous ones.
 
 ## Getting help in the course
 
 -   If you have a question during lecture or lab, feel free to ask it! There are likely other students with the same question, so by asking you will create a learning opportunity for everyone.
 -   The teaching team is here to help you be successful in the course. You are encouraged to attend *office hours*[^1] to ask questions about the course content and assignments. Many questions are most effectively answered as you discuss them with others, so office hours are a valuable resource. You are encouraged to use them!
--   Outside of class and office hours, any general questions about course content or assignments should be posted on the class discussion forum [Ed Discussion](https://edstem.org/). There is a chance another student has already asked a similar question, so please check the other posts in Ed Discussion before adding a new question. If you know the answer to a question posted in the discussion forum, you are encouraged to respond!
+-   Outside of class and office hours, any general questions about course content or assignments should be posted on the class discussion forum Ed Discussion. There is a chance another student has already asked a similar question, so please check the other posts in Ed Discussion before adding a new question. If you know the answer to a question posted in the discussion forum, you are encouraged to respond!
 
-[^1]: Office hours are times the teaching team set aside each week to meet with students. [Click here](https://academicguides.duke.edu/reasons-to-attend-office-hours/) to learn more about how to effectively use office hours.
+[^1]: Office hours are times the teaching team set aside each week to meet with students.
 
 Check out the [Support](support.qmd) page for more resources.
 
@@ -128,23 +112,23 @@ You are expected to bring a laptop, tablet, or any device with internet and a ke
 
 ### Teams
 
-You will be assigned to a team at the beginning of the semester. You are encouraged to sit with your teammates in lecture and you will also work with them in the lab sessions. All team members are expected to contribute equally to the completion of the group activities, labs and the final project. You will be asked to complete teamwork evaluations and self-reflections throughout the semester. Failure to adequately contribute to an assignment can result in a penalty to your score relative to the team's overall mark.
+You will work on a team for most labs throughout the semester. Teams will be assigned, and you will work with the team for 1  - 2 lab assignments. All team members are expected to contribute equally to the completion of the lab. You will be asked to complete teamwork evaluations and self-reflections throughout the semester. Failure to adequately contribute to an assignment can result in a penalty to your score relative to the team's overall mark.
 
-You are expected to make use of the provided GitHub repository as the central collaborative platform. Commits to this repository will be used as one of several metrics of each team member's relative contribution for each project.
+You are expected to make use of the provided GitHub repository as the central collaborative platform. Commits to this repository will be used as one of several metrics of each team member's relative contribution for each assignment.
 
 ## Activities & Assessment
 
-You will be assessed based on six components: application exercises, homework, labs, exams, project, and teamwork.
+You will be assessed based on five components: labs, homework, exams, final project, and participation.
 
 ### Labs
 
-In labs, you will apply the concepts discussed in lecture to various data analysis scenarios, with a focus on the computation and communication. Most lab assignments will be completed in teams, and all team members are expected to contribute equally to the completion of each assignment. You are expected to use the team's Git repository in the course's GitHub organization as the central platform for collaboration. Commits to this repository will be used as a metric of each team member's relative contribution for each lab, and there will be periodic peer evaluation on the team collaboration. Lab assignments will be completed using Quarto, correspond to an appropriate GitHub repository, and submitted for grading in Gradescope.
+In labs, you will apply the concepts discussed in lecture to various data analysis scenarios, with a focus on the computation and communication. Most lab assignments will be completed in teams, and all team members are expected to contribute equally to the completion of each assignment. You are expected to use the team's Git repository in the course's GitHub organization as the central platform for collaboration. Commits to this repository will be used as a metric of each team member's relative contribution for each lab. Lab assignments will be completed using Quarto, correspond to an appropriate GitHub repository, and submitted for grading in Gradescope.
 
-*The lowest lab grade will be dropped at the end of the semester.*
+*Labs will be graded based on completion and workflow. The lowest lab grade will be dropped at the end of the semester. The lowest lab grade will be dropped at the end of the semester.*
 
 ### Homework
 
-In homework, you will apply what you've learned during lecture and lab to complete data analysis tasks and explain concepts. You may discuss homework assignments with other students; however, homework should be completed and submitted individually. Similar to lab assignments, homework must be typed up using Quarto and GitHub and submitted as a PDF in Gradescope.
+In homework, you will apply what you've learned during lecture and lab to complete data analysis exercises and explain concepts. You may discuss homework assignments with other students; however, homework should be completed and submitted individually. Similar to lab assignments, homework must be typed up using Quarto and GitHub and submitted as a PDF in Gradescope.
 
 One homework assignment will be dedicated to a ***statistics experience***. The statistics experience is an opportunity to engage with statistics and data science outside of the classroom through podcasts, books, seminars, data analysis competitions, and other activities. As you complete these experiences, the goal is to consider how the material you're learning in the course connects with society more broadly.
 
@@ -152,25 +136,19 @@ One homework assignment will be dedicated to a ***statistics experience***. The 
 
 ### Exams
 
-There will be two exams in this course. Each exam will include a closed-notes in-class component and an open-note take-home component. Through these exams you have the opportunity to demonstrate what you've learned in the course thus far. The exams will focus on both conceptual understanding and application through analysis and computational tasks. The exams will be based on content in reading assignments, lectures, application exercises, homework, and lab assignments. More detail about the exams will be given during the semester.
+There will be two exams in this course. Each exam will include a closed-note in-class component and an open-note take-home component. Through these exams you have the opportunity to demonstrate what you've learned in the course thus far. The exams will focus on both conceptual understanding and application through analysis and computational tasks. The exams will be based on content in prepare assignments, lectures, in-class activities, homework, and lab assignments. More detail about the exams will be given during the semester.
+
+*If you miss Exam 01 due to a reason documented by a Dean’s Excuse, the Exam 02 score will replace the missed exam score. If you miss Exam 02 due to a reason documented by a Dean’s Excuse, you will make up the exam during the final exam period.*
 
 ### Project
 
-The purpose of the final project is to apply what you've learned to analyze an interesting data-driven research question. The project will be completed with your lab teams, and each team will present their work through a written report and presentation. More information about the project will be provided during the semester. You can learn more on the [final project](project.qmd) page.
+The purpose of the final project is to apply what you've learned to analyze an interesting data-driven research question. More information about the project will be provided during the semester. You can learn more on the [Project](project.qmd) page.
 
-### Participation (Application exercises + teamwork)
+### Participation
 
-#### Application exercises
+Attending and actively engaging in lecture is important to help you be successful in the course. Attendance and participation will be tracked by turning in some deliverable during lecture (e.g., responding to an online poll question, minute paper, etc.). There are 26 lectures this semester (this does not include exam days). You must participate in at least 18 lectures to get full credit on the participation component of the final course grade. Otherwise, the component is calculated as the percentage of lectures you attended and participated.
 
-You will get the most out of the course if you actively participate in class and when working with your team. Parts of some lectures will be dedicated to working on Application Exercises (AEs). AEs are submitted by pushing your work to the relevant GitHub repo.
-
-AEs will be graded based on making a good-faith effort to attempt all questions covered in class. You are welcome to, but not required, to work on AEs beyond lecture.
-
-*Successful effort on at least 80% of AEs will result in full credit for AEs in the final course grade.*
-
-#### Teamwork
-
-Given the collaborative nature of statistics and data science work, teamwork will be a key part of this course. You will work in teams for in-class activities, lab assignments, and the final course project. There will be periodic peer and self-evaluations to reflect on the team's collaboration. These evaluations will be counted as part of the participation grade.
+*There are no make ups for the participation activities.*
 
 ## Grading
 
@@ -178,14 +156,14 @@ The final course grade will be calculated as follows:
 
 <center>
 
-| Category                       | Percentage |
-|--------------------------------|------------|
-| Homework                       | 30%        |
-| Final project                  | 15%        |
-| Labs                           | 10%        |
-| Exam 01                        | 20%        |
-| Exam 02                        | 20%        |
-| Participation (AEs + Teamwork) | 5%         |
+| Category       | Percentage |
+|----------------|------------|
+| Labs           | 10%        |
+| Homework       | 15%        |
+| Exam 01        | 25%        |
+| Exam 02        | 25%        |
+| Final project  | 20%        |
+| Participation  | 5%         |
 
 </center>
 
@@ -244,7 +222,7 @@ To uphold the Duke Community Standard, students agree:
 
     -   **AI tools for code:** You may make use of the technology for coding examples on assignments; if you do so, you must explicitly cite where you obtained the code. Any recycled code that is discovered and is not explicitly cited will be treated as plagiarism. You may use [these guidelines](https://guides.lib.monash.edu/c.php?g=219786&p=6972087) for citing AI-generated content.
 
-    -   **No AI tools for narrative:** Unless instructed otherwise, AI is [**not**]{.underline} permitted for writing narrative on assignments. In general, you may use AI as a resource as you complete assignments but not to answer the exercises for you. You are ultimately responsible for the work you turn in; it should reflect your understanding of the course content.
+    -   **No AI tools for narrative:** Unless instructed otherwise, AI is [**not**]{.underline} permitted for writing narrative that is copy and pasted into the assignment. In general, you may use AI as a resource as you complete assignments but not to answer the exercises for you. You are ultimately responsible for the work you turn in; it should reflect your understanding of the course content.
 
 [^2]: These guiding principles are based on [*Course Policies related to ChatGPT and other AI Tools*](https://docs.google.com/document/d/1WpCeTyiWCPQ9MNCsFeKMDQLSTsg1oKfNIH6MzoSFXqQ/preview) developed by Joel Gladd, Ph.D.[↩︎](https://sta101-f23.github.io/course-syllabus.html#fnref1)
 
@@ -256,6 +234,8 @@ Regardless of course delivery format, it is the responsibility of all students t
 
 The due dates for assignments are there to help you keep up with the course material and to ensure the teaching team can provide feedback in a timely manner. We understand that things come up periodically that could make it difficult to submit an assignment by the deadline. *Note that the lowest homework and lab assignment will be dropped to accommodate such circumstances.*
 
+-   There is no late work permitted on lab assignments. These are graded for completion, so a lab assignment will be graded as “Not complete” if it is submitted after the deadline.
+
 -   Homework and labs may be submitted up to 2 days late. There will be a 5% deduction for each 24-hour period the assignment is late.
 
 -   The late work policy for exams will be provided with the exam instructions.
@@ -264,7 +244,7 @@ The due dates for assignments are there to help you keep up with the course mate
 
 ### Waiver for extenuating circumstances
 
-If there are circumstances that prevent you from completing a lab or homework assignment by the stated due date, you may email me at maria.tackett\@duke.edu before the deadline to waive the late penalty. In your email, you only need to request the waiver; you do not need to provide explanation. *This waiver may only be used once in the semester, so only use it for a truly extenuating circumstance.*
+If there are circumstances that prevent you from completing a homework assignment by the stated due date, you may email me at [maria.tackett\@duke.edu](mailto:maria.tackett@duke.edu) before the deadline to waive the late penalty. In your email, you only need to request the waiver; you do not need to provide explanation. *This waiver may only be used once in the semester, so only use it for a truly extenuating circumstance.*
 
 If there are circumstances that are having a longer-term impact on your academic performance, please let your academic dean know, as they can be a resource. Please let me know if you need help contacting your academic dean.
 
@@ -272,7 +252,7 @@ If there are circumstances that are having a longer-term impact on your academic
 
 Regrade requests must be submitted on Gradescope within a week of when an assignment is returned. Regrade requests will be considered if there was an error in the grade calculation or if you feel a correct answer was mistakenly marked as incorrect. Requests to dispute the number of points deducted for an incorrect response will not be considered. Note that by submitting a regrade request, the entire question will be graded which could potentially result in losing points.
 
-*No grades will be changed after the final project presentations.*
+*No grades will be changed after the last day of classes.*
 
 ### Attendance policy
 
@@ -282,9 +262,9 @@ More details on Trinity attendance policies are available [here](https://trinity
 
 ### Lecture recording request
 
-Lectures will be recorded on Panopto and will be made available to students with an excused absence upon request. Videos shared with such students will be available for a week after the lecture date. To request a particular lecture's video, please fill out the form at the link below. Please submit the form within 24 hours of missing lecture to ensure you have sufficient time to watch the recording. Please also make sure that any official documentation, such as STINFs, Dean's excuses, NOVAPs, and quarantine/removal from class notices from student health are also uploaded to the form.
+Lectures will be recorded on Panopto and will be made available to students with an excused absence upon request. Videos shared with such students will be available for a week after the lecture date. To request a particular lecture's video, please fill out the form at the link below. Please submit the form within 24 hours of missing lecture to ensure you have sufficient time to watch the recording. Please also make sure that any official documentation, such as incapacitation forms, Dean's excuses, NOVAPs, and quarantine/removal from class notices from student health are also uploaded to the form.
 
-🔗 <https://forms.office.com/r/RPkWfBB4vf>
+🔗 <https://forms.office.com/r/TwGidRkmb0>
 
 About one week before each exam, the class recordings will be available to all students. These recordings will be available until the start of the exam.
 
@@ -298,26 +278,27 @@ If you need accommodations for this class, you will need to register with the St
 
 Students are permitted by university policy to be absent from class to observe a religious holiday. Accordingly, Trinity College of Arts & Sciences and the Pratt School of Engineering have established procedures to be followed by students for notifying their instructors of an absence necessitated by the observance of a religious holiday. Please submit requests for religious accommodations at the beginning of the semester so that we can work to make suitable arrangements well ahead of time. You can find the policy and relevant notification form here: [trinity.duke.edu/undergraduate/academic-policies/religious-holidays](https://trinity.duke.edu/undergraduate/academic-policies/religious-holidays)
 
-## Academic and wellness support
+## Academic support
 
 ### Academic Resource Center
 
-There are times may need help with the class that is beyond what can be provided by the teaching team. In those instances, I encourage you to visit the Academic Resource Center. The [Academic Resource Center (ARC)](https://arc.duke.edu) offers free services to all students during their undergraduate careers at Duke. Services include Learning Consultations, Peer Tutoring and Study Groups, ADHD/LD Coaching, Outreach Workshops, and more. Because learning is a process unique to every individual, they work with each student to discover and develop their own academic strategy for success at Duke. Contact the ARC to schedule an appointment. Undergraduates in any year, studying any discipline can benefit! Contact <a href="mailto:arc@duke.edu" title="email">ARC\@duke.edu</a>, 919-684-5917.
+The [Academic Resource Center](https://arc.duke.edu/) (the ARC) offers services to support students academically during their undergraduate careers at Duke. The ARC can provide support with time management, academic skills and strategies, course-specific tutoring, presentation skills, public speaking, and more. ARC services are available free to all Duke undergraduate students studying any discipline. Learn more:
 
-### CAPS
+-   [Learning Consultations](https://arc.duke.edu/learning-consultations/) – time management, study strategies, learning preferences, and more
 
-[Duke Counseling & Psychological Services (CAPS)](https://studentaffairs.duke.edu/caps) helps Duke Students enhance strengths and develop abilities to successfully live, grow and learn in their personal and academic lives. CAPS recognizes that we are living in unprecedented times and that the changes, challenges and stressors brought on by the COVID-19 pandemic have impacted everyone, often in ways that are tax our well-being. CAPS offers many services to Duke undergraduate students, including brief individual and group counseling, couples counseling and more. CAPS staff also provides outreach to student groups, particularly programs supportive of at-risk populations, on a wide range of issues impacting them in various aspects of campus life. CAPS provides services to students via Telehealth. To initiate services, you can contact their front desk at 919-660-1000.
+-   [VOICE Lab](https://arc.duke.edu/voice-lab/) – strengthen public speaking, practice presentations, and more
+
+You can contact the Academic Resource Center by phone at (919) 684-5917, by email at [theARC\@duke.edu,](mailto:theARC@duke.edu) or by visiting <http://arc.duke.edu/>.
 
 ## Important dates
 
--   **January 8**: Classes begin
--   **January 20**: Martin Luther King Jr. Day holiday.
--   **January 22**: Drop/Add ends
--   **March 10 - 14**: Spring break
--   **March 26**: Last day to withdraw with “W”
--   **November 27 - 29**: Thanksgiving recess
--   **April 23**: Classes end
--   **April 24 - 27**: Reading period
--   **April 28 - May 3**: Final exam period
+-   **January 7**: Classes begin
+-   **January 19**: Martin Luther King Jr. Day holiday.
+-   **January 21**: Drop/Add ends
+-   **March 9 - 13**: Spring break
+-   **March 25**: Last day to withdraw with “W”
+-   **April 22**: Classes end
+-   **April 23-26**: Reading period
+-   **April 27 - May 2**: Final exam period
 
-[Click here](https://registrar.duke.edu/2024-2025-academic-calendar/#spring2025) for the full Duke academic calendar.
+[Click here](https://registrar.duke.edu/2025-2026-academic-calendar/) for the full Duke academic calendar.
