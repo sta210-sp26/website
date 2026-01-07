@@ -3,7 +3,7 @@ title: "Welcome to STA 210!"
 author: "Prof. Maria Tackett"
 date: "01-08-2026"
 date-format: "MMMMM DD, YYYY"
-footer: "[🔗 sta210-sp26.github.io(https://sta210-sp26.github.io)"
+footer: "🔗 [sta210-sp26.github.io](https://sta210-sp26.github.io)"
 logo: "../images/logo.png"
 format: 
   revealjs: 
@@ -106,17 +106,20 @@ Pew Research Center conducted the 2025 [What Web Browsing Data Tells Us About Ho
 
 Researchers used logistic regression to classify online articles in which AI was a central focus versus an incidental mention.
 
-::::: columns
-::: {.column width="70%"}
-![Source: Pew Research Center](images/clipboard-598876154.png){fig-align="center" width="50%"}
+:::::: columns
+::: {.column width="40%"}
+![Source: Pew Research Center](images/clipboard-598876154.png){fig-align="center" width="100%"}
 :::
 
-::: {.column width="30%"}
+:::: {.column width="60%"}
+
+::: midi
 $$
 \log\Big(\frac{\pi}{1-\pi}\Big) = \beta_0 + \beta_1X_1 + \dots + \beta_pX_p
 $$
 :::
-:::::
+::::
+::::::
 
 # STA 210
 
