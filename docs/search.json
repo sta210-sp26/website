@@ -535,15 +535,956 @@
     "text": "Before next class\n\nComplete Lecture 02 Prepare\nReview the syllabus\nLabs start on Monday, January 12\nOffice hours start on Monday, January 12"
   },
   {
-    "objectID": "computing-access.html",
-    "href": "computing-access.html",
-    "title": "Computing access",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "STA 210 - Regression Analysis",
     "section": "",
-    "text": "To access computing resources for the introductory data science courses offered by the Duke University Department of Statistical Science, go to the Duke Container Manager website, cmgr.oit.duke.edu/containers.\nIf this is your first time accessing the containers, click on reserve STA210 on the Reservations available menu on the right. You only need to do this once, and when you do, you’ll see this container moved to the My reservations menu on the left.\nNext, click on STA210 under My reservations to access the RStudio instance you’ll use for the course.",
+    "text": "This page contains an outline of the topics, content, and assignments for the semester. Note that this schedule will be updated as the semester progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\nweek\ndow\ndate\ntopic\nprepare\nslides\nnotes\nae\nhw\nlab\nproject\ndue\n\n\n\n\n1\nTh\nJan 8\nWelcome to STA 210!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n2\nM\nJan 12\nLab 00\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nJan 13\nThe big picture\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nJan 15\nSimple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n3\nM\nJan 19\nNo lab: Martin Luther King Jr. Day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nJan 20\nInference: Bootstrap confidence intervals\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nJan 22\nInference: Permutation tests\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n4\nM\nJan 26\nLab 01\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nJan 27\nInference: Mathematical models\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 01 due\n\n\n\nTh\nJan 29\nMultiple linear regression (MLR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 01 due\n\n\n5\nM\nFeb 2\nLab 02\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nFeb 3\nMLR: Types of predictors\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nFeb 5\nInference for MLR\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 02 due\n\n\n6\nM\nFeb 9\nLab 03\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nFeb 10\nModel conditions + diagnostics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 02 due\n\n\n\nTh\nFeb 12\nExam 01 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 03 due\n\n\n7\nM\nFeb 16\nLab 04: Exam 01 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 04 due at end of lab\n\n\n\nTu\nFeb 17\nExam 01\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nFeb 19\nVariable transformations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n8\nM\nFeb 23\nLab: Project proposal\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nFeb 24\nModel selection\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nFeb 26\nCross validation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n9\nM\nMar 2\nLab 06\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nMar 3\nWrapping up MLR\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nMar 5\nEthics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 05 due\n\n\n10\nM\nMar 9\nNo Lab: Spring break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nMar 10\nNo Lecture: Spring Break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nMar 12\nNo Lecture: Spring break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n11\nM\nMar 16\nLab\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nMar 17\nLogistic regression (LR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 03 due\n\n\n\nTh\nMar 19\nLR: Prediction + Assessment\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n12\nM\nMar 23\nLab 06\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nMar 24\nLR: Inference\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nMar 26\nLR: Model selection\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 06 due\n\n\n13\nM\nMar 30\nLab 07\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nMar 31\nSpecial topic/ Catch up\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 04 due\n\n\n\nTh\nApr 2\nExam 02 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 07 due\n\n\n14\nM\nApr 6\nLab 08: Exam 02 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 08 due at end of lab\n\n\n\nTu\nApr 7\nExam 02\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nApr 9\nSpecial topic\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n15\nM\nApr 13\nProject work day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nApr 14\nProject presentations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nApr 16\nProject presentations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n16\nM\nApr 20\nLab: Draft peer review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nApr 21\nProject meetings\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStatistics experience due\n\n\nExam period",
+    "crumbs": [
+      "Schedule"
+    ]
+  },
+  {
+    "objectID": "computing-r-resources.html",
+    "href": "computing-r-resources.html",
+    "title": "Resources for learning R",
+    "section": "",
+    "text": "Below are freely available resources to learn or review the following in R: data wrangling, data visualization, Quarto basics.",
     "crumbs": [
       "Computing",
-      "Access"
+      "R resources"
     ]
+  },
+  {
+    "objectID": "computing-r-resources.html#in-depth-introduction",
+    "href": "computing-r-resources.html#in-depth-introduction",
+    "title": "Resources for learning R",
+    "section": "In-depth introduction",
+    "text": "In-depth introduction\nCoursera: Data Visualization and Transformation with R by Mine Çetinkaya-Rundel and Elijah Meyer\n\nIncludes videos, readings, practice exercise, quizzes, and other resources\nYou can select content within the modules you want to complete.\nFocus on Modules 2 and 3. Review the content in Module 1 as needed.s\nClick here for instructions to register for Coursera for free as a Duke student",
+    "crumbs": [
+      "Computing",
+      "R resources"
+    ]
+  },
+  {
+    "objectID": "computing-r-resources.html#in-depth-review",
+    "href": "computing-r-resources.html#in-depth-review",
+    "title": "Resources for learning R",
+    "section": "In-depth review",
+    "text": "In-depth review\nData Science with R videos by Mine Çetinkaya-Rundel and Elijah Meyer\n\nVideos from the data science Coursera course\nFocus on videos on visualizing and summarizing data\nYou need to join the Coursera course to access the files from the code along videos.\n\nLearn R: An interactive introduction to data analysis with R\n\nHands-on tutorial that can be completed within the site (no RStudio required)\nFocus on Chapters 4 - 6",
+    "crumbs": [
+      "Computing",
+      "R resources"
+    ]
+  },
+  {
+    "objectID": "computing-r-resources.html#shorter-review",
+    "href": "computing-r-resources.html#shorter-review",
+    "title": "Resources for learning R",
+    "section": "Shorter review",
+    "text": "Shorter review\nR for Data Science (2nd ed) by Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund\n\nFocus on Chapters 1 - 3, 10",
+    "crumbs": [
+      "Computing",
+      "R resources"
+    ]
+  },
+  {
+    "objectID": "computing-r-resources.html#additional-resources",
+    "href": "computing-r-resources.html#additional-resources",
+    "title": "Resources for learning R",
+    "section": "Additional resources",
+    "text": "Additional resources\n\nTidy Modeling with R by Max Kuhn & Julia Silge\nPosit Cheatsheets\nR workshops by Duke Center for Data and Visualization Sciences",
+    "crumbs": [
+      "Computing",
+      "R resources"
+    ]
+  },
+  {
+    "objectID": "ae/ae-01-movies.html",
+    "href": "ae/ae-01-movies.html",
+    "title": "AE 01: Movie Budgets and Revenues",
+    "section": "",
+    "text": "Important\n\n\n\nFor this AE, you will discuss the questions in groups and submit answers on Ed Discussion. This AE does not count towards the Application Exercise grade.\nWe will look at the relationship between budget and revenue for movies made in the United States in 1986 to 2020. The dataset is created based on data from the Internet Movie Database (IMDB).\nlibrary(readr)\nlibrary(tidyverse)\nlibrary(viridis)\nlibrary(DT)"
+  },
+  {
+    "objectID": "ae/ae-01-movies.html#data",
+    "href": "ae/ae-01-movies.html#data",
+    "title": "AE 01: Movie Budgets and Revenues",
+    "section": "Data",
+    "text": "Data\nThe movies data set includes basic information about each movie including budget, genre, movie studio, director, etc. A full list of the variables may be found here.\n\nmovies &lt;- read_csv(\"https://raw.githubusercontent.com/danielgrijalva/movie-stats/master/movies.csv\")\n\nView the first 10 rows of data.\n\nmovies |&gt;\n  slice(1:10)\n\n# A tibble: 10 × 15\n   name   rating genre  year released score  votes director writer star  country\n   &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt; &lt;dbl&gt; &lt;chr&gt;    &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;    &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt;  \n 1 The S… R      Drama  1980 June 13…   8.4 9.27e5 Stanley… Steph… Jack… United…\n 2 The B… R      Adve…  1980 July 2,…   5.8 6.5 e4 Randal … Henry… Broo… United…\n 3 Star … PG     Acti…  1980 June 20…   8.7 1.20e6 Irvin K… Leigh… Mark… United…\n 4 Airpl… PG     Come…  1980 July 2,…   7.7 2.21e5 Jim Abr… Jim A… Robe… United…\n 5 Caddy… R      Come…  1980 July 25…   7.3 1.08e5 Harold … Brian… Chev… United…\n 6 Frida… R      Horr…  1980 May 9, …   6.4 1.23e5 Sean S.… Victo… Bets… United…\n 7 The B… R      Acti…  1980 June 20…   7.9 1.88e5 John La… Dan A… John… United…\n 8 Ragin… R      Biog…  1980 Decembe…   8.2 3.30e5 Martin … Jake … Robe… United…\n 9 Super… PG     Acti…  1980 June 19…   6.8 1.01e5 Richard… Jerry… Gene… United…\n10 The L… R      Biog…  1980 May 16,…   7   1   e4 Walter … Bill … Davi… United…\n# ℹ 4 more variables: budget &lt;dbl&gt;, gross &lt;dbl&gt;, company &lt;chr&gt;, runtime &lt;dbl&gt;"
+  },
+  {
+    "objectID": "ae/ae-01-movies.html#analysis",
+    "href": "ae/ae-01-movies.html#analysis",
+    "title": "AE 01: Movie Budgets and Revenues",
+    "section": "Analysis",
+    "text": "Analysis\nWe begin by looking at how the average gross revenue (gross) has changed over time. Since we want to visualize the results, we will choose a few genres of interest for the analysis.\n\ngenre_list &lt;- c(\"Comedy\", \"Action\", \"Animation\", \"Horror\")\n\n\nmovies |&gt;\n  filter(genre %in% genre_list) |&gt; \n  group_by(genre,year) |&gt;\n  summarise(avg_gross = mean(gross)) |&gt;\n  ggplot(mapping = aes(x = year, y = avg_gross, color=genre)) +\n    geom_point() + \n    geom_line() +\n    ylab(\"Average Gross Revenue (in US Dollars)\") +\n    ggtitle(\"Gross Revenue Over Time\") +\n    scale_color_viridis_d()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWhat do you observe from the plot?\n\n\n\nNext, let’s see the relationship between a movie’s budget and its gross revenue.\n\nmovies |&gt;\n  filter(genre %in% genre_list, budget &gt; 0) |&gt; \n  ggplot(mapping = aes(x=log(budget), y = log(gross), color=genre)) +\n  geom_point() +\n  geom_smooth(method=\"lm\",se=FALSE) + \n  xlab(\"Log-transformed Budget\")+\n  ylab(\"Log-transformed Gross Revenue\") +\n  facet_wrap(~ genre) + \n  scale_color_viridis_d()"
+  },
+  {
+    "objectID": "ae/ae-01-movies.html#exercises",
+    "href": "ae/ae-01-movies.html#exercises",
+    "title": "AE 01: Movie Budgets and Revenues",
+    "section": "Exercises",
+    "text": "Exercises\n\nSuppose we fit a regression model for each genre that uses budget to predict gross revenue. What are the signs of the correlation between budget and gross and the slope in each regression equation?\nSuppose we fit the regression model from the previous question. Which genre would you expect to have the smallest residuals, on average (residual = observed revenue - predicted revenue)?\nPost your response on ED Discussion.\nhttps://edstem.org/us/courses/70992/discussion/5951333\n[Time permitting] Discuss the following: Notice in the graph above that budget and gross are log-transformed. Why are the log-transformed values of the variables displayed rather than the original values (in U.S. dollars)? Post your group’s response in the AE 01 Movie Budgets comments on Ed Discussion."
+  },
+  {
+    "objectID": "ae/ae-01-movies.html#references",
+    "href": "ae/ae-01-movies.html#references",
+    "title": "AE 01: Movie Budgets and Revenues",
+    "section": "References",
+    "text": "References\n\ngithub.com/danielgrijalva/movie-stats\nInternet Movie Database"
+  },
+  {
+    "objectID": "ae/ae-01-movies.html#appendix",
+    "href": "ae/ae-01-movies.html#appendix",
+    "title": "AE 01: Movie Budgets and Revenues",
+    "section": "Appendix",
+    "text": "Appendix\nBelow is a list of genres in the data set:\n\nmovies |&gt; \n  arrange(genre) |&gt; \n  select(genre) |&gt;\n  distinct() |&gt;\n  datatable()"
+  },
+  {
+    "objectID": "ae/ae-10-logistic-compare.html",
+    "href": "ae/ae-10-logistic-compare.html",
+    "title": "AE 10: Comparing logistic regression models",
+    "section": "",
+    "text": "Important\n\n\n\nGo to the course GitHub organization and locate your ae-10 repo to get started.\nRender, commit, and push your responses to GitHub by the end of class to submit your AE."
+  },
+  {
+    "objectID": "ae/ae-10-logistic-compare.html#packages",
+    "href": "ae/ae-10-logistic-compare.html#packages",
+    "title": "AE 10: Comparing logistic regression models",
+    "section": "Packages",
+    "text": "Packages\n\nlibrary(tidyverse)\nlibrary(tidymodels)\nlibrary(knitr)"
+  },
+  {
+    "objectID": "ae/ae-10-logistic-compare.html#response-to-leukemia-treatment",
+    "href": "ae/ae-10-logistic-compare.html#response-to-leukemia-treatment",
+    "title": "AE 10: Comparing logistic regression models",
+    "section": "Response to Leukemia treatment",
+    "text": "Response to Leukemia treatment\nToday’s data is from a study where 51 untreated adult patients with Acute Myeloid Leukemia who were given a course of treatment, and they were assessed as to their response to the treatment.1\nThe goal of today’s analysis is to use pre-treatment factors to predict how likely it is a patient will respond to the treatment.\nWe will use the following variables:\n\nAge: Age at diagnosis (in years)\nSmear: Differential percentage of blasts\nInfil: Percentage of absolute marrow leukemia infiltrate\nIndex: Percentage labeling index of the bone marrow leukemia cells\nBlasts: Absolute number of blasts, in thousands\nTemp: Highest temperature of the patient prior to treatment, in degrees Fahrenheit\nResp: 1 = responded to treatment or 0 = failed to respond\n\n\nleukemia &lt;- read_csv(\"data/leukemia.csv\") |&gt;\n  mutate(Resp = factor(Resp))"
+  },
+  {
+    "objectID": "ae/ae-10-logistic-compare.html#comparing-models",
+    "href": "ae/ae-10-logistic-compare.html#comparing-models",
+    "title": "AE 10: Comparing logistic regression models",
+    "section": "Comparing models",
+    "text": "Comparing models\n\nConsider a model with all the pre-treatment variables: Age, Smear, Infil, Index, Blasts and Temp. Fit a model using these six variables to predict whether a patient responded to the treatment. Call the model full_model. Display the model.\n\n\n# add code\n\n\nBased on the model, which pre-treatment variables are statistically significant using a threshold of \\(\\alpha = 0.05\\)? (We will talk more about inference for logistic regression coefficients in an upcoming lecture.)\nFit a model that only includes the statistically significant predictors. Call the model reduced_model.\n\n\n# add code\n\n\nUse a drop-in-deviance test to compare a model that includes only the significant predictors to the full model. Which model do you choose based on the results of this test?\n\n\n# add code\n\n\nIs your choice based on AIC consistent with your choice from the previous exercise? What about a choice based on BIC?\n\n\n# add code"
+  },
+  {
+    "objectID": "ae/ae-10-logistic-compare.html#submission",
+    "href": "ae/ae-10-logistic-compare.html#submission",
+    "title": "AE 10: Comparing logistic regression models",
+    "section": "Submission",
+    "text": "Submission\n\n\n\n\n\n\nImportant\n\n\n\nTo submit the AE:\nRender the document to produce the PDF with all of your work from today’s class.\nPush all your work to your AE repo on GitHub. You’re done! 🎉"
+  },
+  {
+    "objectID": "ae/ae-10-logistic-compare.html#footnotes",
+    "href": "ae/ae-10-logistic-compare.html#footnotes",
+    "title": "AE 10: Comparing logistic regression models",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nThe data set is from the Stat2Data R package. This AE is adapted from exercises in Stat 2.↩︎"
+  },
+  {
+    "objectID": "ae/ae-06-model-compare.html",
+    "href": "ae/ae-06-model-compare.html",
+    "title": "AE 06: Model comparison",
+    "section": "",
+    "text": "Important\n\n\n\nRender, commit, and push your responses to GitHub by the end of class.\nlibrary(tidyverse)\nlibrary(tidymodels)\nlibrary(knitr)"
+  },
+  {
+    "objectID": "ae/ae-06-model-compare.html#data",
+    "href": "ae/ae-06-model-compare.html#data",
+    "title": "AE 06: Model comparison",
+    "section": "Data",
+    "text": "Data\nWhich variables help us predict the amount customers tip at a restaurant? To answer this question, we will use data collected in 2011 by a student at St. Olaf who worked at a local restaurant.\nThe variables we’ll focus on for this analysis are\n\nTip: amount of the tip\nParty: number of people in the party\nMeal: Time of day (Lunch, Dinner, Late Night)\nAge: Age category of person paying the bill (Yadult, Middle, SenCit)\nDay: Day of the week (includes every day but Monday)\n\nView the data set to see the remaining variables.\n\ntips &lt;- read_csv(\"data/tip-data.csv\")"
+  },
+  {
+    "objectID": "ae/ae-06-model-compare.html#exercise-1",
+    "href": "ae/ae-06-model-compare.html#exercise-1",
+    "title": "AE 06: Model comparison",
+    "section": "Exercise 1",
+    "text": "Exercise 1\nSplit the data into training (80%) and testing (20%) sets. Use seed 2025."
+  },
+  {
+    "objectID": "ae/ae-06-model-compare.html#exercise-2",
+    "href": "ae/ae-06-model-compare.html#exercise-2",
+    "title": "AE 06: Model comparison",
+    "section": "Exercise 2",
+    "text": "Exercise 2\nUse the training data to fit a model using Party, Age, and Meal to predict tips. Compute the \\(R^2\\) and \\(Adj. R^2\\) for this model."
+  },
+  {
+    "objectID": "ae/ae-06-model-compare.html#exercise-3",
+    "href": "ae/ae-06-model-compare.html#exercise-3",
+    "title": "AE 06: Model comparison",
+    "section": "Exercise 3",
+    "text": "Exercise 3\nNow fit a model predicting tips using Party, Age, and Meal, such that the effect of party can differ by Meal. Compute \\(R^2\\) and \\(Adj. R^2\\) for this model."
+  },
+  {
+    "objectID": "ae/ae-06-model-compare.html#exercise-4",
+    "href": "ae/ae-06-model-compare.html#exercise-4",
+    "title": "AE 06: Model comparison",
+    "section": "Exercise 4",
+    "text": "Exercise 4\n\nWhich model do you choose - the model from Exercise 2 or Exercise 3? Why?\nCompute RMSE for the selected model."
+  },
+  {
+    "objectID": "ae/ae-06-model-compare.html#exercise-5",
+    "href": "ae/ae-06-model-compare.html#exercise-5",
+    "title": "AE 06: Model comparison",
+    "section": "Exercise 5",
+    "text": "Exercise 5\nNow let’s use the testing data to assess the performance of the model selected in Exercise 4.\n\nCompute the predicted tips for the testing data. Add the predictions to the testing data set.\nCompute RMSE and \\(R^2\\) for the testing data.\n\n\n# add code here"
+  },
+  {
+    "objectID": "ae/ae-06-model-compare.html#exercise-6",
+    "href": "ae/ae-06-model-compare.html#exercise-6",
+    "title": "AE 06: Model comparison",
+    "section": "Exercise 6",
+    "text": "Exercise 6\n\nHow do RMSE compare between the training and testing data?\nHow does \\(R^2\\) compare between the training and testing data?\nIs this what you expect? Why?"
+  },
+  {
+    "objectID": "ae/ae-06-model-compare.html#exercise-7",
+    "href": "ae/ae-06-model-compare.html#exercise-7",
+    "title": "AE 06: Model comparison",
+    "section": "Exercise 7",
+    "text": "Exercise 7\nWhy can we use \\(R^2\\) as an assessment of performance on the testing data even if we can’t use it to compare models?"
+  },
+  {
+    "objectID": "ae/ae-06-model-compare.html#to-submit-the-ae",
+    "href": "ae/ae-06-model-compare.html#to-submit-the-ae",
+    "title": "AE 06: Model comparison",
+    "section": "To submit the AE:",
+    "text": "To submit the AE:\n\n\n\n\n\n\nImportant\n\n\n\n\nRender the document to produce the PDF with all of your work from today’s class.\nPush all your work to your repo on GitHub. (You do not submit AEs on Gradescope)."
+  },
+  {
+    "objectID": "ae/ae-11-multinomial.html",
+    "href": "ae/ae-11-multinomial.html",
+    "title": "AE 11: Multinomial logistic regression",
+    "section": "",
+    "text": "Important\n\n\n\nGo to the course GitHub organization and locate your ae-10 repo to get started.\nRender, commit, and push your responses to GitHub by the end of class to submit your AE."
+  },
+  {
+    "objectID": "ae/ae-11-multinomial.html#exercise-1",
+    "href": "ae/ae-11-multinomial.html#exercise-1",
+    "title": "AE 11: Multinomial logistic regression",
+    "section": "Exercise 1",
+    "text": "Exercise 1\nCreate a plot to visualize the relationship between the response, viewcat and the primary variable of interest in this analysis, viewenc. What do you observe from the plot?"
+  },
+  {
+    "objectID": "ae/ae-11-multinomial.html#exercise-2",
+    "href": "ae/ae-11-multinomial.html#exercise-2",
+    "title": "AE 11: Multinomial logistic regression",
+    "section": "Exercise 2",
+    "text": "Exercise 2\nCreate a plot to visualize the relationship between the response, viewcat and age. What do you observe from the plot?"
+  },
+  {
+    "objectID": "ae/ae-11-multinomial.html#exercise-3",
+    "href": "ae/ae-11-multinomial.html#exercise-3",
+    "title": "AE 11: Multinomial logistic regression",
+    "section": "Exercise 3",
+    "text": "Exercise 3\nFit a model using the ageCent and viewenc to understand the odds a child is in a given category of viewcat. Display the model including 95% confidence intervals for the coefficients."
+  },
+  {
+    "objectID": "ae/ae-11-multinomial.html#exercise-4",
+    "href": "ae/ae-11-multinomial.html#exercise-4",
+    "title": "AE 11: Multinomial logistic regression",
+    "section": "Exercise 4",
+    "text": "Exercise 4\n\nWhat is the baseline category for viewcat? What is the baseline category for viewenc?\nInterpret the intercept associated with the odds of a child being in the category viewcat == 2 versus the baseline.\nInterpret the effect of age in terms of the odds of a child being in the category viewcat == 2 versus the baseline. Based on the confidence interval for the coefficient, is the numeric predictor a statistically significant predictor of viewership?"
+  },
+  {
+    "objectID": "ae/ae-11-multinomial.html#exercise-5",
+    "href": "ae/ae-11-multinomial.html#exercise-5",
+    "title": "AE 11: Multinomial logistic regression",
+    "section": "Exercise 5",
+    "text": "Exercise 5\nShould the interaction between ageCent and viewenc be included in the model? Show any analysis used to make your conclusion."
+  },
+  {
+    "objectID": "ae/ae-11-multinomial.html#exercise-6",
+    "href": "ae/ae-11-multinomial.html#exercise-6",
+    "title": "AE 11: Multinomial logistic regression",
+    "section": "Exercise 6",
+    "text": "Exercise 6\nThe primary objective of the experiment was to understand the effect of encouragement on viewership. Does encouragement have a significant effect on viewership after adjusting for age? If so, describe the effect. Otherwise, explain why not."
+  },
+  {
+    "objectID": "ae/ae-11-multinomial.html#exercise-7",
+    "href": "ae/ae-11-multinomial.html#exercise-7",
+    "title": "AE 11: Multinomial logistic regression",
+    "section": "Exercise 7",
+    "text": "Exercise 7\n\nUse the model selected in Exercise 5 to compute the predicted probabilities and predicted classes for viewcat.\nMake a confusion matrix.\nWhat percentage of observations were correctly classified?"
+  },
+  {
+    "objectID": "ae/ae-11-multinomial.html#exercise-8",
+    "href": "ae/ae-11-multinomial.html#exercise-8",
+    "title": "AE 11: Multinomial logistic regression",
+    "section": "Exercise 8",
+    "text": "Exercise 8\n\nAssess the overall model performance.\nWere there particular categories in which the model has a harder time differentiating?"
+  },
+  {
+    "objectID": "ae/ae-08-multicollinearity.html",
+    "href": "ae/ae-08-multicollinearity.html",
+    "title": "AE 08: Multicollinearity",
+    "section": "",
+    "text": "Important\n\n\n\nGo to the course GitHub organization and locate your ae-08 repo to get started.\nRender, commit, and push your responses to GitHub by the end of class to submit your AE.\nlibrary(tidyverse)\nlibrary(knitr)\nlibrary(tidymodels)\nlibrary(rms) #calculate VIF"
+  },
+  {
+    "objectID": "ae/ae-08-multicollinearity.html#exercise-1",
+    "href": "ae/ae-08-multicollinearity.html#exercise-1",
+    "title": "AE 08: Multicollinearity",
+    "section": "Exercise 1",
+    "text": "Exercise 1\n\nFit the regression model using high temperature, average temperature, season, and precipitation to predict volume.\nAre there any coefficients that may be not what you expected?"
+  },
+  {
+    "objectID": "ae/ae-08-multicollinearity.html#exercise-2",
+    "href": "ae/ae-08-multicollinearity.html#exercise-2",
+    "title": "AE 08: Multicollinearity",
+    "section": "Exercise 2",
+    "text": "Exercise 2\nUse the formula\n\\[\nVIF_j = \\frac{1}{1 - R^2_j}\n\\]\nto calculate the VIF for avgtemp."
+  },
+  {
+    "objectID": "ae/ae-08-multicollinearity.html#exercise-3",
+    "href": "ae/ae-08-multicollinearity.html#exercise-3",
+    "title": "AE 08: Multicollinearity",
+    "section": "Exercise 3",
+    "text": "Exercise 3\nBased on the VIF from the previous exercise, does avgtemp have a linear dependency with one or more other predictors? Explain."
+  },
+  {
+    "objectID": "ae/ae-08-multicollinearity.html#exercise-4",
+    "href": "ae/ae-08-multicollinearity.html#exercise-4",
+    "title": "AE 08: Multicollinearity",
+    "section": "Exercise 4",
+    "text": "Exercise 4\n\nUse the vif function to compute VIF for all the predictors in Exercise 1.\nAre there predictors with near-linear dependencies? If so, which ones?"
+  },
+  {
+    "objectID": "ae/ae-08-multicollinearity.html#exercise-5",
+    "href": "ae/ae-08-multicollinearity.html#exercise-5",
+    "title": "AE 08: Multicollinearity",
+    "section": "Exercise 5",
+    "text": "Exercise 5\nLet’s address the issue of multicollinearity. Choose a strategy to address the multicollinearity. Apply it, then use relevant statistics to select a final model."
+  },
+  {
+    "objectID": "ae/ae-04-bootstrap.html",
+    "href": "ae/ae-04-bootstrap.html",
+    "title": "AE 04: Bootstrap confidence intervals",
+    "section": "",
+    "text": "Important\n\n\n\nGo to the course GitHub organization and locate your ae-04 repo to get started.\nRender, commit, and push your responses to GitHub by the end of class.\nlibrary(tidyverse)\nlibrary(tidymodels)\nlibrary(openintro)\nlibrary(knitr)"
+  },
+  {
+    "objectID": "ae/ae-04-bootstrap.html#data",
+    "href": "ae/ae-04-bootstrap.html#data",
+    "title": "AE 04: Bootstrap confidence intervals",
+    "section": "Data",
+    "text": "Data\nThe data are on houses that were sold in the Duke Forest neighborhood of Durham, NC around November 2020. It was originally scraped from Zillow, and can be found in the duke_forest data set in the openintro R package.\n\nglimpse(duke_forest)\n\nRows: 98\nColumns: 13\n$ address    &lt;chr&gt; \"1 Learned Pl, Durham, NC 27705\", \"1616 Pinecrest Rd, Durha…\n$ price      &lt;dbl&gt; 1520000, 1030000, 420000, 680000, 428500, 456000, 1270000, …\n$ bed        &lt;dbl&gt; 3, 5, 2, 4, 4, 3, 5, 4, 4, 3, 4, 4, 3, 5, 4, 5, 3, 4, 4, 3,…\n$ bath       &lt;dbl&gt; 4.0, 4.0, 3.0, 3.0, 3.0, 3.0, 5.0, 3.0, 5.0, 2.0, 3.0, 3.0,…\n$ area       &lt;dbl&gt; 6040, 4475, 1745, 2091, 1772, 1950, 3909, 2841, 3924, 2173,…\n$ type       &lt;chr&gt; \"Single Family\", \"Single Family\", \"Single Family\", \"Single …\n$ year_built &lt;dbl&gt; 1972, 1969, 1959, 1961, 2020, 2014, 1968, 1973, 1972, 1964,…\n$ heating    &lt;chr&gt; \"Other, Gas\", \"Forced air, Gas\", \"Forced air, Gas\", \"Heat p…\n$ cooling    &lt;fct&gt; central, central, central, central, central, central, centr…\n$ parking    &lt;chr&gt; \"0 spaces\", \"Carport, Covered\", \"Garage - Attached, Covered…\n$ lot        &lt;dbl&gt; 0.97, 1.38, 0.51, 0.84, 0.16, 0.45, 0.94, 0.79, 0.53, 0.73,…\n$ hoa        &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…\n$ url        &lt;chr&gt; \"https://www.zillow.com/homedetails/1-Learned-Pl-Durham-NC-…"
+  },
+  {
+    "objectID": "ae/ae-04-bootstrap.html#exploratory-data-analysis",
+    "href": "ae/ae-04-bootstrap.html#exploratory-data-analysis",
+    "title": "AE 04: Bootstrap confidence intervals",
+    "section": "Exploratory data analysis",
+    "text": "Exploratory data analysis\n\nggplot(duke_forest, aes(x = area, y = price)) +\n  geom_point(alpha = 0.7) +\n  labs(\n    x = \"Area (square feet)\",\n    y = \"Sale price (USD)\",\n    title = \"Price and area of houses in Duke Forest\"\n  ) +\n  scale_y_continuous(labels = label_dollar())"
+  },
+  {
+    "objectID": "ae/ae-04-bootstrap.html#model",
+    "href": "ae/ae-04-bootstrap.html#model",
+    "title": "AE 04: Bootstrap confidence intervals",
+    "section": "Model",
+    "text": "Model\n\ndf_fit &lt;- lm(price ~ area, data = duke_forest)\n\ntidy(df_fit) |&gt;\n  kable(digits = 2)\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n116652.33\n53302.46\n2.19\n0.03\n\n\narea\n159.48\n18.17\n8.78\n0.00"
+  },
+  {
+    "objectID": "ae/ae-04-bootstrap.html#bootstrap-confidence-interval",
+    "href": "ae/ae-04-bootstrap.html#bootstrap-confidence-interval",
+    "title": "AE 04: Bootstrap confidence intervals",
+    "section": "Bootstrap confidence interval",
+    "text": "Bootstrap confidence interval\n\n1. Calculate the observed fit (slope)\n\nobserved_fit &lt;- duke_forest |&gt;\n  specify(price ~ area) |&gt;\n  fit()\n\nobserved_fit\n\n# A tibble: 2 × 2\n  term      estimate\n  &lt;chr&gt;        &lt;dbl&gt;\n1 intercept  116652.\n2 area          159.\n\n\n\n\n2. Take n_iter bootstrap samples and fit models to each one.\nFill in the code, then set eval: true .\n\nn_iter = 100\nset.seed(091222)\n\nboot_fits &lt;- ______ |&gt;\n  specify(______) |&gt;\n  generate(reps = ____, type = \"bootstrap\") |&gt;\n  fit()\n\nboot_fits\n\n\nWhy do we set a seed before taking the bootstrap samples?\nMake a histogram of the bootstrap samples to visualize the bootstrap distribution.\n\n# Code for histogram\n\n\n\n\n3. Compute the 95% confidence interval as the middle 95% of the bootstrap distribution\nFill in the code, then set eval: true .\n\nget_confidence_interval(\n  boot_fits, \n  point_estimate = _____, \n  level = ____,\n  type = \"percentile\"\n)"
+  },
+  {
+    "objectID": "ae/ae-04-bootstrap.html#changing-confidence-level",
+    "href": "ae/ae-04-bootstrap.html#changing-confidence-level",
+    "title": "AE 04: Bootstrap confidence intervals",
+    "section": "Changing confidence level",
+    "text": "Changing confidence level\n\nModify the code from Step 3 to create a 90% confidence interval.\n\n# Code for the 90% confidence interval\n\n\n\nModify the code from Step 3 to create a 99% confidence interval.\n\n# Code for the 99% confidence interval\n\n\nWhich confidence level produces the most accurate confidence interval (90%, 95%, 99%)? Explain\nWhich confidence level produces the most precise confidence interval (90%, 95%, 99%)? Explain\nIf we want to be very certain that we capture the population parameter, should we use a wider or a narrower interval? What drawbacks are associated with using a wider interval?\n\n\n\n\n\n\n\nImportant\n\n\n\nTo submit the AE:\n\nRender the document to produce the PDF with all of your work from today’s class.\nPush all your work to your ae-04 repo on GitHub. (You do not submit AEs on Gradescope)."
+  },
+  {
+    "objectID": "prepare/prepare-lec01.html",
+    "href": "prepare/prepare-lec01.html",
+    "title": "Prepare for Lecture 01",
+    "section": "",
+    "text": "📖 Read the syllabus"
+  },
+  {
+    "objectID": "prepare/prepare-lec02.html",
+    "href": "prepare/prepare-lec02.html",
+    "title": "Prepare for Lecture 02",
+    "section": "",
+    "text": "Required\n📖 Read Chapter 1\n\nOptional computing introduction/ review\n📖 Read GitHub for supporting, reusing, contributing, and failing safely\n🎥 Watch Meet the Toolkit: R + RStudio\n🎥 Watch Meet the Toolkit: Quarto"
+  },
+  {
+    "objectID": "hw/hw-02.html",
+    "href": "hw/hw-02.html",
+    "title": "HW 02",
+    "section": "",
+    "text": "To be posted.",
+    "crumbs": [
+      "Homework",
+      "HW 02"
+    ]
+  },
+  {
+    "objectID": "hw/hw-01.html",
+    "href": "hw/hw-01.html",
+    "title": "HW 01",
+    "section": "",
+    "text": "To be posted.",
+    "crumbs": [
+      "Homework",
+      "HW 01"
+    ]
+  },
+  {
+    "objectID": "overview.html",
+    "href": "overview.html",
+    "title": "STA 210 - Regression Analysis",
+    "section": "",
+    "text": "In STA 210, students will learn how linear and logistic regression models are used to explore multivariable relationships and apply these methods to answer relevant and engaging questions using a data-driven approach. Students will develop computing skills to implement a reproducible data analysis workflow and gain experience communicating statistical results. Throughout the semester, students will work on a team project where they will develop a research question, answer it using methods learned in the course, and share results through a written report and presentation.\nTopics include applications of linear and logistic regression, interpretation, diagnostics, model selection, and model assessment. Students will gain experience using the computing tools R and GitHub to analyze real-world data from a variety of fields. This class emphasizes data analysis over mathematical theory.\n\n\n100-level Statistical Science course or Statistical Science 230, 231, or 240L",
+    "crumbs": [
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "overview.html#pre-requisites",
+    "href": "overview.html#pre-requisites",
+    "title": "STA 210 - Regression Analysis",
+    "section": "",
+    "text": "100-level Statistical Science course or Statistical Science 230, 231, or 240L",
+    "crumbs": [
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "overview.html#teaching-assistants",
+    "href": "overview.html#teaching-assistants",
+    "title": "STA 210 - Regression Analysis",
+    "section": "Teaching assistants",
+    "text": "Teaching assistants\n\n\n\nName\nRole\n\n\nAdeli Hutton\nLab leader\n\n\nShane Rybacki\nLab leader\n\n\n\nSee Canvas for office hours times and locations.",
+    "crumbs": [
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "labs/lab-06.html",
+    "href": "labs/lab-06.html",
+    "title": "Lab 06",
+    "section": "",
+    "text": "To be posted.",
+    "crumbs": [
+      "Labs",
+      "Lab 06"
+    ]
+  },
+  {
+    "objectID": "labs/lab-05.html",
+    "href": "labs/lab-05.html",
+    "title": "Lab 05",
+    "section": "",
+    "text": "To be posted.",
+    "crumbs": [
+      "Labs",
+      "Lab 05"
+    ]
+  },
+  {
+    "objectID": "labs/lab-00.html",
+    "href": "labs/lab-00.html",
+    "title": "Lab 00: Getting started",
+    "section": "",
+    "text": "Important\n\n\n\nPlease complete all tasks before leaving lab today.",
+    "crumbs": [
+      "Labs",
+      "Lab 00"
+    ]
+  },
+  {
+    "objectID": "labs/lab-00.html#rstudio",
+    "href": "labs/lab-00.html#rstudio",
+    "title": "Lab 00: Getting started",
+    "section": "RStudio",
+    "text": "RStudio\n\n\n\n\n\n\nTip\n\n\n\nR is the name of the programming language itself and RStudio is a convenient interface.\n\n\n\nReserve RStudio container\n\nGo to https://cmgr.oit.duke.edu/containers. You will log in using your NetID credentials.\nClick “Reserve STA 210” to reserve an RStudio container. Be sure you reserve the container labeled STA 210 to ensure you have the computing set up you need for the class.\n\nYou only need to reserve a container once per semester.\n\n\nOpen RStudio container\n\nGo to https://cmgr.oit.duke.edu/containers and log in with your Duke NetID and Password.\nClick STA210 to log into the Docker container. You should now see the RStudio environment.",
+    "crumbs": [
+      "Labs",
+      "Lab 00"
+    ]
+  },
+  {
+    "objectID": "labs/lab-00.html#git-and-github",
+    "href": "labs/lab-00.html#git-and-github",
+    "title": "Lab 00: Getting started",
+    "section": "Git and GitHub",
+    "text": "Git and GitHub\nIn addition to R and RStudio, we will use git and GitHub for version control and collaboration.\n\n\n\n\n\n\nTip\n\n\n\nGit is a version control system (like “Track Changes” features from Microsoft Word but more powerful) and GitHub is the home for your Git-based projects on the internet (like DropBox but much better).\n\n\n\nSign up for GitHub account\nYou will need a GitHub account to access the assignments, project, and in-class exercises for the course.\n\nIf you do not have a GitHub account, go to https://github.com and sign up for an account. If you already have a GitHub account, you can move on to the next step.\n\n\n\n\n\n\n\nTip\n\n\n\nClick here for advice on choosing a username.",
+    "crumbs": [
+      "Labs",
+      "Lab 00"
+    ]
+  },
+  {
+    "objectID": "labs/lab-00.html#connect-rstudio-and-github",
+    "href": "labs/lab-00.html#connect-rstudio-and-github",
+    "title": "Lab 00: Getting started",
+    "section": "Connect RStudio and GitHub",
+    "text": "Connect RStudio and GitHub\nNow that you have RStudio and a GitHub account, we will configure git so that RStudio and GitHub communicate with one another.\n\nSet up your SSH Key\nYou will authenticate GitHub using SSH. An outline of the authentication steps is below; you are encouraged to follow along as your TA demonstrates the steps.\n\n\n\n\n\n\nNote\n\n\n\nYou only need to do this authentication process one time on a single system.\n\n\n\nStep 0: Open your STA 210 RStudio container.\nStep 1: Type credentials::ssh_setup_github() into the console on the bottom left of the RStudio environment.\nStep 2: R will ask “No SSH key found. Generate one now?” Click 1 for yes.\nStep 3: You will generate a key. It will begin with “ssh-rsa….” R will then ask “Would you like to open a browser now?” Click 1 for yes.\nStep 4: You may be asked to provide your username and password to log into GitHub. This would be the ones associated with your account that you set up. After entering this information, paste the key in and give it a name. You might name it in a way that indicates where the key will be used, e.g., sta210)\n\n\n\nConfigure git\nThe last thing we need to do is configure your git so that RStudio can communicate with GitHub. This requires two pieces of information: your name and email address.\nTo do so, you will use the use_git_config() function from the usethis package.\nType the following lines of code in the console in RStudio filling in your name and the email address associated with your GitHub account.\n\nusethis::use_git_config(\n  user.name = \"Your name\", \n  user.email = \"Email associated with your GitHub account\")\n\nFor example, mine would be\n\nusethis::use_git_config(\n  user.name = \"Maria Tackett\",\n  user.email = \"maria.tackett@duke.edu\")\n\nIt may look like nothing happened but you are now ready interact between GitHub and RStudio!",
+    "crumbs": [
+      "Labs",
+      "Lab 00"
+    ]
+  },
+  {
+    "objectID": "labs/lab-00.html#getting-started",
+    "href": "labs/lab-00.html#getting-started",
+    "title": "Lab 00: Getting started",
+    "section": "Getting started",
+    "text": "Getting started\n\nClick here to create your individual lab-00 repo: https://classroom.github.com/a/covo7pM-\nClick to open your lab-00 repo.\nClick on the green CODE button, select Use SSH (this might already be selected by default, and if it is, you’ll see the text Clone with SSH). Click on the clipboard icon to copy the repo URL.\nIn RStudio, go to File → New Project → Version Control → Git.\nCopy and paste the URL of your assignment repo into the dialog box Repository URL. Again, please make sure to have SSH highlighted under Clone when you copy the address.\nClick Create Project, and the files from your GitHub repo will be displayed in the Files pane in RStudio.\nClick lab-00.qmd to open the template Quarto file. This is where you will write up your code and narrative for the lab.",
+    "crumbs": [
+      "Labs",
+      "Lab 00"
+    ]
+  },
+  {
+    "objectID": "labs/lab-00.html#update-the-quarto-document",
+    "href": "labs/lab-00.html#update-the-quarto-document",
+    "title": "Lab 00: Getting started",
+    "section": "Update the Quarto document",
+    "text": "Update the Quarto document\n\nTask 1: Change the author name at the top of the document to your name. Render the document. You will see your name at the top of the rendered PDF.\nTask 2: The plot shows the relationship between the daily temperature and number of bike rentals in Washington, D.C.’s Capital Bikeshare in 2012.\n\n\n\n\n\n\n\n\n\n\nWrite 1 - 2 observations from the plot. Render the document. You will see your response in the rendered PDF.",
+    "crumbs": [
+      "Labs",
+      "Lab 00"
+    ]
+  },
+  {
+    "objectID": "labs/lab-00.html#commit-and-push-changes-to-github",
+    "href": "labs/lab-00.html#commit-and-push-changes-to-github",
+    "title": "Lab 00: Getting started",
+    "section": "Commit and push changes to GitHub",
+    "text": "Commit and push changes to GitHub\n\nOnce you have made your final updates, go to the Git pane in your RStudio instance. This is a tab in the top right corner of the RStudio window.\nCheck the appropriate boxes on every file in the Git pane. All checked files will be sent to GitHub.\nNext, write a meaningful commit message (for instance, “updated author name”) in the Commit message box.\nClick Commit. Note that every commit needs to have a commit message associated with it.\nNow that you have made an update and committed this change, click Push to send the changes to GitHub.\nGo to your GitHub repo and refresh the page. You should see your commit message next to the updated files. If you see this, all your changes are on GitHub and you’re good to go!",
+    "crumbs": [
+      "Labs",
+      "Lab 00"
+    ]
+  },
+  {
+    "objectID": "labs/lab-03.html",
+    "href": "labs/lab-03.html",
+    "title": "Lab 03",
+    "section": "",
+    "text": "To be posted.",
+    "crumbs": [
+      "Labs",
+      "Lab 03"
+    ]
+  },
+  {
+    "objectID": "labs/lab-02.html",
+    "href": "labs/lab-02.html",
+    "title": "Lab 02",
+    "section": "",
+    "text": "To be posted.",
+    "crumbs": [
+      "Labs",
+      "Lab 02"
+    ]
+  },
+  {
+    "objectID": "labs/lab-01.html",
+    "href": "labs/lab-01.html",
+    "title": "Lab 01",
+    "section": "",
+    "text": "To be posted.",
+    "crumbs": [
+      "Labs",
+      "Lab 01"
+    ]
+  },
+  {
+    "objectID": "labs/lab-04.html",
+    "href": "labs/lab-04.html",
+    "title": "Lab 04",
+    "section": "",
+    "text": "To be posted.",
+    "crumbs": [
+      "Labs",
+      "Lab 04"
+    ]
+  },
+  {
+    "objectID": "labs/lab-07.html",
+    "href": "labs/lab-07.html",
+    "title": "Lab 07",
+    "section": "",
+    "text": "To be posted.",
+    "crumbs": [
+      "Labs",
+      "Lab 07"
+    ]
+  },
+  {
+    "objectID": "labs/lab-08.html",
+    "href": "labs/lab-08.html",
+    "title": "Lab 08",
+    "section": "",
+    "text": "To be posted.",
+    "crumbs": [
+      "Labs",
+      "Lab 08"
+    ]
+  },
+  {
+    "objectID": "hw/hw-04.html",
+    "href": "hw/hw-04.html",
+    "title": "HW 04",
+    "section": "",
+    "text": "To be posted.",
+    "crumbs": [
+      "Homework",
+      "HW 04"
+    ]
+  },
+  {
+    "objectID": "hw/hw-03.html",
+    "href": "hw/hw-03.html",
+    "title": "HW 03",
+    "section": "",
+    "text": "To be posted.",
+    "crumbs": [
+      "Homework",
+      "HW 03"
+    ]
+  },
+  {
+    "objectID": "hw/stats-experience.html",
+    "href": "hw/stats-experience.html",
+    "title": "Statistics Experience",
+    "section": "",
+    "text": "To be posted.",
+    "crumbs": [
+      "Homework",
+      "Statistics experience"
+    ]
+  },
+  {
+    "objectID": "prepare/prepare-lec03.html",
+    "href": "prepare/prepare-lec03.html",
+    "title": "Prepare for Lecture 03",
+    "section": "",
+    "text": "Required\n📖 Read Chapter 4\n\nOptional\nRead Chapter 3 for review of exploratory data analysis"
+  },
+  {
+    "objectID": "ae/ae-07-exam-01-review.html",
+    "href": "ae/ae-07-exam-01-review.html",
+    "title": "AE 07: Exam 01 review",
+    "section": "",
+    "text": "Important\n\n\n\nGo to the course GitHub organization and locate your ae-07- to get started.\nRender, commit, and push your responses to GitHub by the end of class."
+  },
+  {
+    "objectID": "ae/ae-07-exam-01-review.html#packages",
+    "href": "ae/ae-07-exam-01-review.html#packages",
+    "title": "AE 07: Exam 01 review",
+    "section": "Packages",
+    "text": "Packages\n\nlibrary(tidyverse)\nlibrary(tidymodels)\nlibrary(knitr)"
+  },
+  {
+    "objectID": "ae/ae-07-exam-01-review.html#trail-users",
+    "href": "ae/ae-07-exam-01-review.html#trail-users",
+    "title": "AE 07: Exam 01 review",
+    "section": "Trail users",
+    "text": "Trail users\nThe Pioneer Valley Planning Commission (PVPC) collected data for ninety days from April 5, 2005 to November 15, 2005. Data collectors set up a laser sensor, with breaks in the laser beam recording when a rail-trail user passed the data collection station.\nWe will use regression analysis to predict the number of trail users based on weather and other features describing the day.\nThe variables we’ll focus on for this analysis are\n\nvolume estimated number of trail users that day (number of breaks recorded)\nhightemp daily high temperature (in degrees Fahrenheit)\nseason one of “Fall”, “Spring”, or “Summer”\ndaytype one of “weekday” or “weekend”\n\nView the data set1 to see the remaining variables.\n\nrail_trail &lt;- read_csv(\"data/rail-trail.csv\")"
+  },
+  {
+    "objectID": "ae/ae-07-exam-01-review.html#exploratory-analysis",
+    "href": "ae/ae-07-exam-01-review.html#exploratory-analysis",
+    "title": "AE 07: Exam 01 review",
+    "section": "Exploratory analysis",
+    "text": "Exploratory analysis\n\nExercise 1\nVisualize, summarize, and describe the distribution of volume.\n\n\nExercise 2\n\nVisualize and describe the relationship between hightemp and volume.\nModify the plot to consider if the relationship between these variables differs by daytype."
+  },
+  {
+    "objectID": "ae/ae-07-exam-01-review.html#modeling",
+    "href": "ae/ae-07-exam-01-review.html#modeling",
+    "title": "AE 07: Exam 01 review",
+    "section": "Modeling",
+    "text": "Modeling\nFit a model using hightemp and daytype to predict the volume for this trail.\n\nExercise 3\n\nWrite the statistical model.\nFit the model and write the estimated regression equation. Neatly display the results using 3 digits and the 90% confidence interval for the coefficients.\n\n\n\nExercise 4\nInterpret the slope of hightemp in the context of the data.\n\n\nExercise 5\n\nDoes it make sense to interpret the intercept? Explain your reasoning.\nIf not, what can we do to make the interpretation meaningful?"
+  },
+  {
+    "objectID": "ae/ae-07-exam-01-review.html#inference-for-coefficients",
+    "href": "ae/ae-07-exam-01-review.html#inference-for-coefficients",
+    "title": "AE 07: Exam 01 review",
+    "section": "Inference for coefficients",
+    "text": "Inference for coefficients\n\nExercise 6\nThe following code can be used to create a bootstrap distribution for the model coefficients. Describe what each line of code does, supplemented by any visualizations that might help with your description.\n\nset.seed(1234)\n\n1boot_dist &lt;- rail_trail |&gt;\n2  specify(volume ~ hightemp + daytype) |&gt;\n3  generate(reps = 100, type = \"bootstrap\") |&gt;\n4  fit()\n\n\n1\n\n___\n\n2\n\n___\n\n3\n\n___\n\n4\n\n___\n\n\n\n\n\n\nExercise 7\nUse the bootstrap distribution created in Exercise 6, boot_dist, to construct a 90% confidence interval for the coefficient of hightemp using bootstrapping and the percentile method and interpret it in context of the data.\n\n\nExercise 8\nConduct a hypothesis test for the coefficient of hightemp significance level using permutation with 100 reps. State the hypotheses in words and mathematical notation. Also include a visualization of the null distribution of the slope with the observed slope marked as a vertical line.\n\n\nExercise 9\nNow repeat Exercises 7 and 8 using approaches based on mathematical models. You can reference output from previous exercises and/or write new code as needed."
+  },
+  {
+    "objectID": "ae/ae-07-exam-01-review.html#inference-for-prediction",
+    "href": "ae/ae-07-exam-01-review.html#inference-for-prediction",
+    "title": "AE 07: Exam 01 review",
+    "section": "Inference for prediction",
+    "text": "Inference for prediction\n\nExercise 10\nBased on your model, predict the volume for a weekday with high temperature of degrees.\n\n\nExercise 11\nSuppose you’re asked to construct a confidence and a prediction interval for your finding in the previous exercise. Which one would you expect to be wider and why? In your answer clearly state the difference between these intervals.\n\n\nExercise 12\nNow construct the intervals and comment on whether your guess is confirmed."
+  },
+  {
+    "objectID": "ae/ae-07-exam-01-review.html#interaction-terms",
+    "href": "ae/ae-07-exam-01-review.html#interaction-terms",
+    "title": "AE 07: Exam 01 review",
+    "section": "Interaction terms",
+    "text": "Interaction terms\n\nExercise 13\nNow fit the model using hightemp and daytype to predict volume such that the effect of hightemp can differ by daytype.\n\n\nExercise 14\n\nWrite the estimated regression equation for weekends.\nWrite the estimated regression equation for weekdays.\n\n\n\nExercise 15\nAccording to this model, does the effect of hightemp differ for weekends vs. weekdays? Explain."
+  },
+  {
+    "objectID": "ae/ae-07-exam-01-review.html#model-comparison",
+    "href": "ae/ae-07-exam-01-review.html#model-comparison",
+    "title": "AE 07: Exam 01 review",
+    "section": "Model comparison",
+    "text": "Model comparison\n\nExercise 16\nWhich model is a better fit for the data - the model with or without the interaction? Show any work to support your choice.\n\n\n\n\n\n\nImportant\n\n\n\nTo submit the AE:\n\nRender the document to produce the PDF with all of your work from today’s class.\nPush all your work to your ae-07- repo on GitHub. (You do not submit AEs on Gradescope)."
+  },
+  {
+    "objectID": "ae/ae-07-exam-01-review.html#footnotes",
+    "href": "ae/ae-07-exam-01-review.html#footnotes",
+    "title": "AE 07: Exam 01 review",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nSource: Pioneer Valley Planning Commission via the mosaicData package.↩︎"
+  },
+  {
+    "objectID": "ae/ae-02-life-expectancy.html",
+    "href": "ae/ae-02-life-expectancy.html",
+    "title": "AE 02: Life expectancy and healthcare expenditure",
+    "section": "",
+    "text": "Important\n\n\n\nFor this AE, you will discuss the questions in groups. This AE does not count towards the Application Exercise grade.\nlibrary(tidyverse)\nlibrary(readxl)\nlibrary(tidymodels)\nlibrary(patchwork)"
+  },
+  {
+    "objectID": "ae/ae-02-life-expectancy.html#introduction",
+    "href": "ae/ae-02-life-expectancy.html#introduction",
+    "title": "AE 02: Life expectancy and healthcare expenditure",
+    "section": "Introduction",
+    "text": "Introduction\nThe data set comes from Zarulli et al. (2021), who analyze the effects of a country’s healthcare expenditures and other factors on the country’s life expectancy. The data are originally from the Human Development Database and World Health Organization.\nThis AE will focus on the following variables:\n\nlife_exp: The average number of years that a newborn could expect to live, if he or she were to pass through life exposed to the sex- and age-specific death rates prevailing at the time of his or her birth, for a specific year, in a given country, territory, or geographic area. ( from the World Health Organization)\nhealth_pct_gdp: Spending on healthcare goods and services, expressed as a percentage of GDP. It excludes capital health expenditures such as buildings, machinery, information technology and stocks of vaccines for emergency or outbreaks.\n\nClick here for the original research paper and a full list of variables in the original data set.\n\nlife_exp &lt;- read_excel(\"data/life-expectancy-data.xlsx\") |&gt; \n  rename(life_exp = `Life_expectancy_at_birth`, \n         health_pct_gdp = `Domestic_general_government_health_expenditure_pct_of_GDP`)\n\n\nlife_exp |&gt;\n  select(life_exp, health_pct_gdp) |&gt;\n  glimpse()\n\nRows: 140\nColumns: 2\n$ life_exp       &lt;dbl&gt; 63.8, 78.2, 59.9, 76.2, 74.6, 83.0, 81.3, 72.5, 71.8, 7…\n$ health_pct_gdp &lt;dbl&gt; 5, 41, 44, 74, 16, 68, 73, 20, 18, 61, 84, 66, 21, 74, …"
+  },
+  {
+    "objectID": "ae/ae-02-life-expectancy.html#exercises",
+    "href": "ae/ae-02-life-expectancy.html#exercises",
+    "title": "AE 02: Life expectancy and healthcare expenditure",
+    "section": "Exercises",
+    "text": "Exercises\nWe begin by visualizing the distributions of life expectancy, health expenditure percentage, and the relationship between these two variables.\n\np1 &lt;- ggplot(life_exp, aes(x = life_exp)) +\n  geom_histogram() + \n  labs(x = \"Life expectancy\")\n\np2 &lt;- ggplot(life_exp, aes(x = health_pct_gdp)) +\n  geom_histogram() + \n  labs(x = \"% Health expenditure\")\n\np3 &lt;- ggplot(life_exp, aes(x = health_pct_gdp, y = life_exp)) +\n  geom_point() + \n  labs(x = \"% Health expenditure\", \n       y = \"Life expectancy\")\n\n(p1 | p2) / p3\n\n\n\n\n\n\n\n\n\nExercise 1\nDescribe the relationship between life expectancy and healthcare expenditure as a percentage of the GDP. Comment on how we expect the life expectancy to change as the percentage on healthcare expenditure changes.\n\n\nExercise 2\nSuppose you want to fit a model so you can use the healthcare expenditure as a percentage of GDP to predict life expectancy. Would a model of the form\n\\[\\text{life_exp} = \\beta_0 + \\beta_1 ~ \\text{health_pct_gdp} + \\epsilon\\]\nbe a useful model for the data? Why or why not?"
+  },
+  {
+    "objectID": "ae/ae-12-exam-02-review.html",
+    "href": "ae/ae-12-exam-02-review.html",
+    "title": "AE 12: Exam 02 Review",
+    "section": "",
+    "text": "Important\n\n\n\nGo to the course GitHub organization and locate your ae-12 repo to get started.\nRender, commit, and push your responses to GitHub by the end of class to submit your AE."
+  },
+  {
+    "objectID": "ae/ae-12-exam-02-review.html#packages",
+    "href": "ae/ae-12-exam-02-review.html#packages",
+    "title": "AE 12: Exam 02 Review",
+    "section": "Packages",
+    "text": "Packages\n\nlibrary(tidyverse)\nlibrary(tidymodels)\nlibrary(knitr)\nlibrary(pROC)"
+  },
+  {
+    "objectID": "ae/ae-12-exam-02-review.html#exercise-1",
+    "href": "ae/ae-12-exam-02-review.html#exercise-1",
+    "title": "AE 12: Exam 02 Review",
+    "section": "Exercise 1",
+    "text": "Exercise 1\nSuppose you fit a simple linear regression model.\n\nDraw or describe a scatterplot that contains an observation with large leverage but low Cook’s distance.\nDraw or describe a scatterplot that contains an observation with large leverage and high Cook’s distance.\nDraw or describe a scatterplot that contains an observation with a large studentized residual."
+  },
+  {
+    "objectID": "ae/ae-12-exam-02-review.html#data-credit-cards",
+    "href": "ae/ae-12-exam-02-review.html#data-credit-cards",
+    "title": "AE 12: Exam 02 Review",
+    "section": "Data: Credit cards",
+    "text": "Data: Credit cards\nThe data for this analysis is about credit card customers. It can be found in the file credit.csv. The following variables are in the data set:\n\nincome: Income in $1,000’s\nlimit: Credit limit\nrating: Credit rating\ncards: Number of credit cards\nage: Age in years\neducation: Number of years of education\nown: A factor with levels No and Yes indicating whether the individual owns their home\nstudent: A factor with levels No and Yes indicating whether the individual was a student\nmarried: A factor with levels No and Yes indicating whether the individual was married\nregion: A factor with levels South, East, and West indicating the region of the US the individual is from\nbalance: Average credit card balance in $.\n\nThe objective of this analysis is to predict whether a person has maxed out their credit card, i.e., had $0 average card balance.\n\ncredit &lt;- read_csv(\"data/credit.csv\") |&gt;\n  mutate(maxed = factor(if_else(balance == 0, 1, 0)))"
+  },
+  {
+    "objectID": "ae/ae-12-exam-02-review.html#exercise-2",
+    "href": "ae/ae-12-exam-02-review.html#exercise-2",
+    "title": "AE 12: Exam 02 Review",
+    "section": "Exercise 2",
+    "text": "Exercise 2\n\nWhy is logistic regression the best modeling approach for this analysis?\nDescribe where each of the following show up in the analysis:\n\nlog-odds …\nodds\nprobabilities"
+  },
+  {
+    "objectID": "ae/ae-12-exam-02-review.html#exercise-3",
+    "href": "ae/ae-12-exam-02-review.html#exercise-3",
+    "title": "AE 12: Exam 02 Review",
+    "section": "Exercise 3",
+    "text": "Exercise 3\nWe’ll start by splitting the model into training and testing data. Then we’ll using the training data to fit a model for predicting the odds of maxed = 1 using income, rating, and region.\n\n# make training and test sets\nset.seed(210)\ncredit_split &lt;- initial_split(credit, prop = 0.8)\ncredit_train &lt;- training(credit_split)\ncredit_test &lt;- testing(credit_split)\n\ncredit_fit &lt;- glm(maxed ~ income + rating + region, data = credit_train, \n                  family = \"binomial\")\n\ntidy(credit_fit) |&gt;\n  kable(digits = 3)\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n10.097\n1.687\n5.987\n0.000\n\n\nincome\n0.115\n0.026\n4.444\n0.000\n\n\nrating\n-0.058\n0.009\n-6.428\n0.000\n\n\nregionSouth\n-0.632\n0.715\n-0.884\n0.377\n\n\nregionWest\n-0.332\n0.724\n-0.458\n0.647\n\n\n\n\n\nThe logistic regression model takes the following form:\n\\[\n\\log(\\frac{\\pi_i}{1 - \\pi_i}) = \\beta_0 + \\beta_1 ~ income + \\beta_2 ~ rating + \\beta_3 ~ regionSouth + \\beta_4 ~ regionWest\n\\]\n\nWrite the interpretation of income in terms of the odds of maxing out a credit card.\nUse the equation above to show the expected change in the odds of maxing out a credit card when the credit rating increases by 10 points. Assume income and region are constant. Write your answer in terms of \\(\\beta_0, \\beta_1, \\beta_2, \\beta_3, \\beta_4\\).\nSuppose there are two individuals. Individual 1 has an income of $64,000, a credit rating of 590, and is from the South region. Individual 2 has an income of $135,000, a credit rating of 695, and is from the East region. Use the equation above to show how the odds of maxing out a credit card differ between Individual 1 and Individual 2. Write your answer in terms of \\(\\beta_0, \\beta_1, \\beta_2\\), etc."
+  },
+  {
+    "objectID": "ae/ae-12-exam-02-review.html#exercise-4",
+    "href": "ae/ae-12-exam-02-review.html#exercise-4",
+    "title": "AE 12: Exam 02 Review",
+    "section": "Exercise 4",
+    "text": "Exercise 4\nWe consider adding the interaction between region and income to the current model. We’ll use a drop-in-deviance test to determine whether or not to add the interaction term.\n\nState the null and alternative hypotheses in words and using mathematical notation.\nDescribe what the test statistic \\(G\\) means in the context of the data.\nShow why the degrees of freedom for the test statistic are equal to 2.\nConduct the drop-in-deviance test and state your conclusion in the context of the data.\n\n\n# add code here"
+  },
+  {
+    "objectID": "ae/ae-12-exam-02-review.html#exercise-5",
+    "href": "ae/ae-12-exam-02-review.html#exercise-5",
+    "title": "AE 12: Exam 02 Review",
+    "section": "Exercise 5",
+    "text": "Exercise 5\nNow let’s evaluate the performance of the selected model using the testing data.\nCreate a confusion matrix using a cutoff probability of 0.3.\n\n# add code here\n\n\nWhat is the sensitivity? What does it mean in the context of the data ?\nWhat is the specificity? What does it mean in the context of the data?\nWhat is the false positive rate? What does it mean in the context of the data?\nWhat is the false negative rate? What does it mean in the context of the data?"
+  },
+  {
+    "objectID": "ae/ae-12-exam-02-review.html#exercise-6",
+    "href": "ae/ae-12-exam-02-review.html#exercise-6",
+    "title": "AE 12: Exam 02 Review",
+    "section": "Exercise 6",
+    "text": "Exercise 6\nProduce the ROC curve.\n\n# add code here\n\n\nDescribe how you can use this curve to select a cutoff probability (rather than just going with 0.5)."
+  },
+  {
+    "objectID": "ae/ae-12-exam-02-review.html#exercise-7",
+    "href": "ae/ae-12-exam-02-review.html#exercise-7",
+    "title": "AE 12: Exam 02 Review",
+    "section": "Exercise 7",
+    "text": "Exercise 7\nQuestions about checking conditions for logistic regression:\n\nDo we assess conditions on the training or testing set?\nWhy do we not consider categorical predictors when checking linearity?\nWhy do we not need to check constant variance for logistic regression?"
+  },
+  {
+    "objectID": "ae/ae-05-sim-testing.html",
+    "href": "ae/ae-05-sim-testing.html",
+    "title": "AE 05: Permutation test for the slope",
+    "section": "",
+    "text": "Important\n\n\n\nGo to the course GitHub organization and locate your ae-05 repo to get started.\nRender, commit, and push your responses to GitHub by the end of class.\nlibrary(tidyverse)\nlibrary(tidymodels)\nlibrary(openintro)\nlibrary(knitr)"
+  },
+  {
+    "objectID": "ae/ae-05-sim-testing.html#data",
+    "href": "ae/ae-05-sim-testing.html#data",
+    "title": "AE 05: Permutation test for the slope",
+    "section": "Data",
+    "text": "Data\nThe data are on houses that were sold in the Duke Forest neighborhood of Durham, NC around November 2020. It was originally scraped from Zillow, and can be found in the duke_forest data set in the openintro R package.\nGoal: Use statistical inference to evaluate whether there is a relationship between the age of the house at time of sale and its price."
+  },
+  {
+    "objectID": "ae/ae-05-sim-testing.html#exploratory-data-analysis",
+    "href": "ae/ae-05-sim-testing.html#exploratory-data-analysis",
+    "title": "AE 05: Permutation test for the slope",
+    "section": "Exploratory data analysis",
+    "text": "Exploratory data analysis\nLet’s begin by creating a new variable that is the age of the house in 2020.\n\nduke_forest &lt;- duke_forest |&gt;\n  mutate(age_2020 = 2020 - year_built)\n\nNow let’s visualize the relationship between the age of the house in 2020 and the sales price.\n\nggplot(duke_forest, aes(x = age_2020, y = price)) +\n  geom_point(alpha = 0.7) +\n  labs(\n    x = \"Age in 2020 (years)\",\n    y = \"Sale price (USD)\",\n    title = \"Price and age of houses in Duke Forest\"\n  ) +\n  scale_y_continuous(labels = label_dollar())"
+  },
+  {
+    "objectID": "ae/ae-05-sim-testing.html#model",
+    "href": "ae/ae-05-sim-testing.html#model",
+    "title": "AE 05: Permutation test for the slope",
+    "section": "Model",
+    "text": "Model\n\ndf_fit &lt;- lm(price ~ age_2020, data = duke_forest)\n\ntidy(df_fit) |&gt;\n  kable(digits = 3)\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n690891.015\n68637.793\n10.066\n0.000\n\n\nage_2020\n-2473.935\n1225.191\n-2.019\n0.046"
+  },
+  {
+    "objectID": "ae/ae-05-sim-testing.html#hypothesis-test",
+    "href": "ae/ae-05-sim-testing.html#hypothesis-test",
+    "title": "AE 05: Permutation test for the slope",
+    "section": "Hypothesis test",
+    "text": "Hypothesis test\n\n\n\n\n\n\nTip\n\n\n\nFor code chunks with fill-in-the-blank code, change code chunk option to #| eval: true once you’ve filled in the code.\n\n\n\nState the null and alternative hypotheses\nWrite the null and alternative hypotheses in words and mathematical notation.\n\n\nGenerate null distribution using permutation\nFill in the code, then set eval: true .\n\nn = 100\nset.seed(01232025)\n\nnull_dist &lt;- _____ |&gt;\n  specify(______) |&gt;\n  hypothesize(null = \"independence\") |&gt;\n  generate(reps = _____, type = \"permute\") |&gt;\n  fit()\n\n\n\nVisualize distribution\n\n# Code for histogram of null distribution\n\n\n\nCalculate the p-value.\n\n# get observed fit \nobserved_fit &lt;- duke_forest |&gt;\n  specify(price ~ age_2020) |&gt;\n  fit()\n\n# calculate p-value\nget_p_value(\n  ____,\n  obs_stat = ____,\n  direction = \"two-sided\"\n)\n\n\n\nState conclusion\nWrite your conclusion in the context of the data. You can use 0.05 as the decision-making threshold."
+  },
+  {
+    "objectID": "ae/ae-05-sim-testing.html#bootstrap-ci-time-permitting",
+    "href": "ae/ae-05-sim-testing.html#bootstrap-ci-time-permitting",
+    "title": "AE 05: Permutation test for the slope",
+    "section": "Bootstrap CI (time permitting)",
+    "text": "Bootstrap CI (time permitting)\n\nConstruct the bootstrap CI\nConstruct a 95% bootstrap confidence interval.\n\n\nDraw conclusion\n\nInterpret the interval in the context of the data.\nIs the interval consistent with the conclusion from your hypothesis test? Briefly explain why or why not.\n\n\n\n\n\n\n\nImportant\n\n\n\nTo submit the AE:\n\nRender the document to produce the PDF with all of your work from today’s class.\nPush all your work to your ae-05 repo on GitHub. (You do not submit AEs on Gradescope)."
+  },
+  {
+    "objectID": "ae/ae-03-slr.html",
+    "href": "ae/ae-03-slr.html",
+    "title": "AE 03: Simple linear regression",
+    "section": "",
+    "text": "Important\n\n\n\nGo to the course GitHub organization and locate your ae-03 repo to get started. If you do not see an ae-03 repo, use the link below to create one:\nhttps://classroom.github.com/a/jxxCTVVo\nThis AE does not count towards the participation grade.\nlibrary(tidyverse)\nlibrary(tidymodels)\nlibrary(patchwork)"
+  },
+  {
+    "objectID": "ae/ae-03-slr.html#exercise-1",
+    "href": "ae/ae-03-slr.html#exercise-1",
+    "title": "AE 03: Simple linear regression",
+    "section": "Exercise 1",
+    "text": "Exercise 1\nVisualizations for the univariate and bivariate exploratory data analysis of daily bike rentals and temperature are below.\n\np1 &lt;- ggplot(bikeshare, aes(x = count)) +\n  geom_histogram(binwidth = 250) + \n  labs(x = \"Daily bike rentals\")\n\np2 &lt;- ggplot(bikeshare, aes(x = temp_orig)) +\n  geom_histogram() + \n  labs(x = \"Temperature (Celsius)\")\n\np3 &lt;- ggplot(bikeshare, aes(y = count, x = temp_orig)) +\n  geom_point() + \n  labs(x = \"Temperature (Celsius)\", \n       y = \"Daily bike rentals\")\n\n(p1 | p2) / p3\n\n\n\n\n\n\n\n\nThere appears to be one day with a very small number of bike rentals. What was the day? Why were the number of bike rentals so low on that day? Hint: You can Google the date to figure out what was going on that day."
+  },
+  {
+    "objectID": "ae/ae-03-slr.html#exercise-2",
+    "href": "ae/ae-03-slr.html#exercise-2",
+    "title": "AE 03: Simple linear regression",
+    "section": "Exercise 2",
+    "text": "Exercise 2\nIn the raw data, seasons are coded as 1, 2, 3, 4, numeric values that correspond to winter, spring, summer, and fall respectively. Complete the code below to make season a categorical variable with levels corresponding to season names stored in the original order.\n\nbikeshare &lt;- bikeshare |&gt;\n  mutate(season = case_when(\n    season == 1 ~ \"Winter\", \n    season == 2 ~ \"Spring\", \n    season == 3 ~ \"Summer\", \n    season == 4 ~ \"Fall\"\n  ))"
+  },
+  {
+    "objectID": "ae/ae-03-slr.html#exercise-3",
+    "href": "ae/ae-03-slr.html#exercise-3",
+    "title": "AE 03: Simple linear regression",
+    "section": "Exercise 3",
+    "text": "Exercise 3\nWe want to evaluate whether the relationship between temperature and daily bike rentals is the same for each season. To answer this question, begin by creating a scatter plot of daily bike rentals vs. temperature faceted by season.\n\n# add code developed during livecoding here"
+  },
+  {
+    "objectID": "ae/ae-03-slr.html#exercise-4",
+    "href": "ae/ae-03-slr.html#exercise-4",
+    "title": "AE 03: Simple linear regression",
+    "section": "Exercise 4",
+    "text": "Exercise 4\n\nWhich season appears to have the strongest relationship between temperature and daily bike rentals? Why do you think the relationship is strongest in this season?\nWhich season appears to have the weakest relationship between temperature and daily bike rentals? Why do you think the relationship is weakest in this season?"
+  },
+  {
+    "objectID": "ae/ae-03-slr.html#exercise-5",
+    "href": "ae/ae-03-slr.html#exercise-5",
+    "title": "AE 03: Simple linear regression",
+    "section": "Exercise 5",
+    "text": "Exercise 5\nFilter your data for the season with the strongest apparent relationship between temperature and daily bike rentals.\n\n# add code developed during livecoding here"
+  },
+  {
+    "objectID": "ae/ae-03-slr.html#exercise-6",
+    "href": "ae/ae-03-slr.html#exercise-6",
+    "title": "AE 03: Simple linear regression",
+    "section": "Exercise 6",
+    "text": "Exercise 6\nUsing the data from Exercise 5, fit a linear model to predict daily bike rentals using temperature for this season.\n\n# add code developed during livecoding here"
+  },
+  {
+    "objectID": "ae/ae-03-slr.html#exercise-7",
+    "href": "ae/ae-03-slr.html#exercise-7",
+    "title": "AE 03: Simple linear regression",
+    "section": "Exercise 7",
+    "text": "Exercise 7\nUse the output to write out the estimated regression equation."
+  },
+  {
+    "objectID": "ae/ae-03-slr.html#exercise-8",
+    "href": "ae/ae-03-slr.html#exercise-8",
+    "title": "AE 03: Simple linear regression",
+    "section": "Exercise 8",
+    "text": "Exercise 8\n\nInterpret the slope in the context of the data.\nDoes it make sense to interpret the intercept? If so, interpret the intercept in the context of the data. Otherwise, explain why not."
+  },
+  {
+    "objectID": "ae/ae-03-slr.html#exercise-9",
+    "href": "ae/ae-03-slr.html#exercise-9",
+    "title": "AE 03: Simple linear regression",
+    "section": "Exercise 9",
+    "text": "Exercise 9\nSuppose you work for a bike share company in Durham, NC, and they want to predict daily bike rentals in 2024. What is one reason you might recommend they use your analysis for this task? What is one reason you would recommend they not use your analysis for this task?"
+  },
+  {
+    "objectID": "ae/ae-09-prob-odds.html",
+    "href": "ae/ae-09-prob-odds.html",
+    "title": "AE 09: Probabilities, Odds, Odds ratios",
+    "section": "",
+    "text": "Important\n\n\n\nGo to the course GitHub organization and locate your ae-09 repo to get started.\nRender, commit, and push your responses to GitHub by the end of class to submit your AE.\nlibrary(tidyverse)\nlibrary(knitr)\nlibrary(tidymodels)"
+  },
+  {
+    "objectID": "ae/ae-09-prob-odds.html#exercise-1",
+    "href": "ae/ae-09-prob-odds.html#exercise-1",
+    "title": "AE 09: Probabilities, Odds, Odds ratios",
+    "section": "Exercise 1",
+    "text": "Exercise 1\n\nWhat is the probability a randomly selected respondent has heard a lot about AI?\nWhat are the odds a randomly selected respondent has heard a lot about AI?"
+  },
+  {
+    "objectID": "ae/ae-09-prob-odds.html#exercise-2",
+    "href": "ae/ae-09-prob-odds.html#exercise-2",
+    "title": "AE 09: Probabilities, Odds, Odds ratios",
+    "section": "Exercise 2",
+    "text": "Exercise 2\n\nWhat is the probability a randomly selected respondent who is concerned about increased use of AI in daily life has heard a lot about AI?\nWhat are the odds a randomly selected respondent who is concerned about increased use of AI in daily life has heard a lot about AI?"
+  },
+  {
+    "objectID": "ae/ae-09-prob-odds.html#exercise-3",
+    "href": "ae/ae-09-prob-odds.html#exercise-3",
+    "title": "AE 09: Probabilities, Odds, Odds ratios",
+    "section": "Exercise 3",
+    "text": "Exercise 3\nMake a plot to visualize the relationship between how much a respondent has heard about AI and being concerned with increased use of AI in daily life. Use the plot to describe the relationship between the two variables."
+  },
+  {
+    "objectID": "ae/ae-09-prob-odds.html#exercise-4",
+    "href": "ae/ae-09-prob-odds.html#exercise-4",
+    "title": "AE 09: Probabilities, Odds, Odds ratios",
+    "section": "Exercise 4",
+    "text": "Exercise 4\n\nHow do the odds of being concerned about increased use of AI in daily life for a randomly selected respondent who has heard nothing about AI compare to the odds for a randomly selected respondent who has heard a lot about AI?\nHow do the odds of being concerned about increased use of AI in daily life for a randomly selected respondent who has heard a little about AI compare to the odds for a randomly selected respondent who has heard a lot about AI?"
+  },
+  {
+    "objectID": "ae/ae-09-prob-odds.html#exercise-5",
+    "href": "ae/ae-09-prob-odds.html#exercise-5",
+    "title": "AE 09: Probabilities, Odds, Odds ratios",
+    "section": "Exercise 5",
+    "text": "Exercise 5\nWe can use a logistic regression model to understand the relationship between how much someone has heard about AI and whether they are concerned about increased use of AI in daily life. (We will discuss this in detail next class, but will get a preview for now.)\nLet \\(p\\) be the probability a randomly selected respondent is concerned about increased use of AI in daily life. The statistical model is\n\\[\n\\begin{aligned}\n\\log\\Big(\\frac{p_i}{1-p_i}\\Big) = \\beta_0 &+ \\beta_1\\boldsymbol{1}(ai\\_heard_i = \\text{A little}) \\\\ &+ \\beta_2\\mathbf{1}(ai\\_heard_i = \\text{Nothing}) \\\\  &+ \\beta_3\\mathbf{1}(ai\\_heard_i = \\text{Refused})\n\\end{aligned}\n\\]\nThe code and output to fit this model is shown below:\n\nai_concern_fit &lt;- glm(ai_concern ~ ai_heard, data = pew_data,\n                      family = \"binomial\")\ntidy(ai_concern_fit) |&gt; \n  kable(digits = 3)\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n-0.065\n0.031\n-2.082\n0.037\n\n\nai_heardA little\n0.383\n0.040\n9.504\n0.000\n\n\nai_heardNothing at all\n-0.276\n0.079\n-3.505\n0.000\n\n\nai_heardRefused\n-0.697\n0.459\n-1.520\n0.129\n\n\n\n\n\n\nInterpret the intercept in the context of the data in terms of the log-odds of being concerned about increased use of AI in daily life.\nInterpret the coefficient of ai_heardA little in the context of the data in terms of the log-odds of being concerned about increased use of AI in daily life.\nInterpret the coefficient of ai_heardNothing at all in the context of the data in terms of the odds of being concerned about the increased use of AI in daily life. How does this compare to your response to Exercise 4?\n\n\n\n\n\n\n\nImportantSubmission\n\n\n\nTo submit the AE:\nRender the document to produce the PDF with all of your work from today’s class.\nPush all your work to your AE repo on GitHub. You’re done! 🎉"
   },
   {
     "objectID": "support.html",
@@ -646,890 +1587,43 @@
     ]
   },
   {
-    "objectID": "ae/ae-09-prob-odds.html",
-    "href": "ae/ae-09-prob-odds.html",
-    "title": "AE 09: Probabilities, Odds, Odds ratios",
+    "objectID": "computing-access.html",
+    "href": "computing-access.html",
+    "title": "Computing access",
     "section": "",
-    "text": "Important\n\n\n\nGo to the course GitHub organization and locate your ae-09 repo to get started.\nRender, commit, and push your responses to GitHub by the end of class to submit your AE.\nlibrary(tidyverse)\nlibrary(knitr)\nlibrary(tidymodels)"
-  },
-  {
-    "objectID": "ae/ae-09-prob-odds.html#exercise-1",
-    "href": "ae/ae-09-prob-odds.html#exercise-1",
-    "title": "AE 09: Probabilities, Odds, Odds ratios",
-    "section": "Exercise 1",
-    "text": "Exercise 1\n\nWhat is the probability a randomly selected respondent has heard a lot about AI?\nWhat are the odds a randomly selected respondent has heard a lot about AI?"
-  },
-  {
-    "objectID": "ae/ae-09-prob-odds.html#exercise-2",
-    "href": "ae/ae-09-prob-odds.html#exercise-2",
-    "title": "AE 09: Probabilities, Odds, Odds ratios",
-    "section": "Exercise 2",
-    "text": "Exercise 2\n\nWhat is the probability a randomly selected respondent who is concerned about increased use of AI in daily life has heard a lot about AI?\nWhat are the odds a randomly selected respondent who is concerned about increased use of AI in daily life has heard a lot about AI?"
-  },
-  {
-    "objectID": "ae/ae-09-prob-odds.html#exercise-3",
-    "href": "ae/ae-09-prob-odds.html#exercise-3",
-    "title": "AE 09: Probabilities, Odds, Odds ratios",
-    "section": "Exercise 3",
-    "text": "Exercise 3\nMake a plot to visualize the relationship between how much a respondent has heard about AI and being concerned with increased use of AI in daily life. Use the plot to describe the relationship between the two variables."
-  },
-  {
-    "objectID": "ae/ae-09-prob-odds.html#exercise-4",
-    "href": "ae/ae-09-prob-odds.html#exercise-4",
-    "title": "AE 09: Probabilities, Odds, Odds ratios",
-    "section": "Exercise 4",
-    "text": "Exercise 4\n\nHow do the odds of being concerned about increased use of AI in daily life for a randomly selected respondent who has heard nothing about AI compare to the odds for a randomly selected respondent who has heard a lot about AI?\nHow do the odds of being concerned about increased use of AI in daily life for a randomly selected respondent who has heard a little about AI compare to the odds for a randomly selected respondent who has heard a lot about AI?"
-  },
-  {
-    "objectID": "ae/ae-09-prob-odds.html#exercise-5",
-    "href": "ae/ae-09-prob-odds.html#exercise-5",
-    "title": "AE 09: Probabilities, Odds, Odds ratios",
-    "section": "Exercise 5",
-    "text": "Exercise 5\nWe can use a logistic regression model to understand the relationship between how much someone has heard about AI and whether they are concerned about increased use of AI in daily life. (We will discuss this in detail next class, but will get a preview for now.)\nLet \\(p\\) be the probability a randomly selected respondent is concerned about increased use of AI in daily life. The statistical model is\n\\[\n\\begin{aligned}\n\\log\\Big(\\frac{p_i}{1-p_i}\\Big) = \\beta_0 &+ \\beta_1\\boldsymbol{1}(ai\\_heard_i = \\text{A little}) \\\\ &+ \\beta_2\\mathbf{1}(ai\\_heard_i = \\text{Nothing}) \\\\  &+ \\beta_3\\mathbf{1}(ai\\_heard_i = \\text{Refused})\n\\end{aligned}\n\\]\nThe code and output to fit this model is shown below:\n\nai_concern_fit &lt;- glm(ai_concern ~ ai_heard, data = pew_data,\n                      family = \"binomial\")\ntidy(ai_concern_fit) |&gt; \n  kable(digits = 3)\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n-0.065\n0.031\n-2.082\n0.037\n\n\nai_heardA little\n0.383\n0.040\n9.504\n0.000\n\n\nai_heardNothing at all\n-0.276\n0.079\n-3.505\n0.000\n\n\nai_heardRefused\n-0.697\n0.459\n-1.520\n0.129\n\n\n\n\n\n\nInterpret the intercept in the context of the data in terms of the log-odds of being concerned about increased use of AI in daily life.\nInterpret the coefficient of ai_heardA little in the context of the data in terms of the log-odds of being concerned about increased use of AI in daily life.\nInterpret the coefficient of ai_heardNothing at all in the context of the data in terms of the odds of being concerned about the increased use of AI in daily life. How does this compare to your response to Exercise 4?\n\n\n\n\n\n\n\nImportantSubmission\n\n\n\nTo submit the AE:\nRender the document to produce the PDF with all of your work from today’s class.\nPush all your work to your AE repo on GitHub. You’re done! 🎉"
-  },
-  {
-    "objectID": "ae/ae-03-slr.html",
-    "href": "ae/ae-03-slr.html",
-    "title": "AE 03: Simple linear regression",
-    "section": "",
-    "text": "Important\n\n\n\nGo to the course GitHub organization and locate your ae-03 repo to get started. If you do not see an ae-03 repo, use the link below to create one:\nhttps://classroom.github.com/a/jxxCTVVo\nThis AE does not count towards the participation grade.\nlibrary(tidyverse)\nlibrary(tidymodels)\nlibrary(patchwork)"
-  },
-  {
-    "objectID": "ae/ae-03-slr.html#exercise-1",
-    "href": "ae/ae-03-slr.html#exercise-1",
-    "title": "AE 03: Simple linear regression",
-    "section": "Exercise 1",
-    "text": "Exercise 1\nVisualizations for the univariate and bivariate exploratory data analysis of daily bike rentals and temperature are below.\n\np1 &lt;- ggplot(bikeshare, aes(x = count)) +\n  geom_histogram(binwidth = 250) + \n  labs(x = \"Daily bike rentals\")\n\np2 &lt;- ggplot(bikeshare, aes(x = temp_orig)) +\n  geom_histogram() + \n  labs(x = \"Temperature (Celsius)\")\n\np3 &lt;- ggplot(bikeshare, aes(y = count, x = temp_orig)) +\n  geom_point() + \n  labs(x = \"Temperature (Celsius)\", \n       y = \"Daily bike rentals\")\n\n(p1 | p2) / p3\n\n\n\n\n\n\n\n\nThere appears to be one day with a very small number of bike rentals. What was the day? Why were the number of bike rentals so low on that day? Hint: You can Google the date to figure out what was going on that day."
-  },
-  {
-    "objectID": "ae/ae-03-slr.html#exercise-2",
-    "href": "ae/ae-03-slr.html#exercise-2",
-    "title": "AE 03: Simple linear regression",
-    "section": "Exercise 2",
-    "text": "Exercise 2\nIn the raw data, seasons are coded as 1, 2, 3, 4, numeric values that correspond to winter, spring, summer, and fall respectively. Complete the code below to make season a categorical variable with levels corresponding to season names stored in the original order.\n\nbikeshare &lt;- bikeshare |&gt;\n  mutate(season = case_when(\n    season == 1 ~ \"Winter\", \n    season == 2 ~ \"Spring\", \n    season == 3 ~ \"Summer\", \n    season == 4 ~ \"Fall\"\n  ))"
-  },
-  {
-    "objectID": "ae/ae-03-slr.html#exercise-3",
-    "href": "ae/ae-03-slr.html#exercise-3",
-    "title": "AE 03: Simple linear regression",
-    "section": "Exercise 3",
-    "text": "Exercise 3\nWe want to evaluate whether the relationship between temperature and daily bike rentals is the same for each season. To answer this question, begin by creating a scatter plot of daily bike rentals vs. temperature faceted by season.\n\n# add code developed during livecoding here"
-  },
-  {
-    "objectID": "ae/ae-03-slr.html#exercise-4",
-    "href": "ae/ae-03-slr.html#exercise-4",
-    "title": "AE 03: Simple linear regression",
-    "section": "Exercise 4",
-    "text": "Exercise 4\n\nWhich season appears to have the strongest relationship between temperature and daily bike rentals? Why do you think the relationship is strongest in this season?\nWhich season appears to have the weakest relationship between temperature and daily bike rentals? Why do you think the relationship is weakest in this season?"
-  },
-  {
-    "objectID": "ae/ae-03-slr.html#exercise-5",
-    "href": "ae/ae-03-slr.html#exercise-5",
-    "title": "AE 03: Simple linear regression",
-    "section": "Exercise 5",
-    "text": "Exercise 5\nFilter your data for the season with the strongest apparent relationship between temperature and daily bike rentals.\n\n# add code developed during livecoding here"
-  },
-  {
-    "objectID": "ae/ae-03-slr.html#exercise-6",
-    "href": "ae/ae-03-slr.html#exercise-6",
-    "title": "AE 03: Simple linear regression",
-    "section": "Exercise 6",
-    "text": "Exercise 6\nUsing the data from Exercise 5, fit a linear model to predict daily bike rentals using temperature for this season.\n\n# add code developed during livecoding here"
-  },
-  {
-    "objectID": "ae/ae-03-slr.html#exercise-7",
-    "href": "ae/ae-03-slr.html#exercise-7",
-    "title": "AE 03: Simple linear regression",
-    "section": "Exercise 7",
-    "text": "Exercise 7\nUse the output to write out the estimated regression equation."
-  },
-  {
-    "objectID": "ae/ae-03-slr.html#exercise-8",
-    "href": "ae/ae-03-slr.html#exercise-8",
-    "title": "AE 03: Simple linear regression",
-    "section": "Exercise 8",
-    "text": "Exercise 8\n\nInterpret the slope in the context of the data.\nDoes it make sense to interpret the intercept? If so, interpret the intercept in the context of the data. Otherwise, explain why not."
-  },
-  {
-    "objectID": "ae/ae-03-slr.html#exercise-9",
-    "href": "ae/ae-03-slr.html#exercise-9",
-    "title": "AE 03: Simple linear regression",
-    "section": "Exercise 9",
-    "text": "Exercise 9\nSuppose you work for a bike share company in Durham, NC, and they want to predict daily bike rentals in 2024. What is one reason you might recommend they use your analysis for this task? What is one reason you would recommend they not use your analysis for this task?"
-  },
-  {
-    "objectID": "ae/ae-05-sim-testing.html",
-    "href": "ae/ae-05-sim-testing.html",
-    "title": "AE 05: Permutation test for the slope",
-    "section": "",
-    "text": "Important\n\n\n\nGo to the course GitHub organization and locate your ae-05 repo to get started.\nRender, commit, and push your responses to GitHub by the end of class.\nlibrary(tidyverse)\nlibrary(tidymodels)\nlibrary(openintro)\nlibrary(knitr)"
-  },
-  {
-    "objectID": "ae/ae-05-sim-testing.html#data",
-    "href": "ae/ae-05-sim-testing.html#data",
-    "title": "AE 05: Permutation test for the slope",
-    "section": "Data",
-    "text": "Data\nThe data are on houses that were sold in the Duke Forest neighborhood of Durham, NC around November 2020. It was originally scraped from Zillow, and can be found in the duke_forest data set in the openintro R package.\nGoal: Use statistical inference to evaluate whether there is a relationship between the age of the house at time of sale and its price."
-  },
-  {
-    "objectID": "ae/ae-05-sim-testing.html#exploratory-data-analysis",
-    "href": "ae/ae-05-sim-testing.html#exploratory-data-analysis",
-    "title": "AE 05: Permutation test for the slope",
-    "section": "Exploratory data analysis",
-    "text": "Exploratory data analysis\nLet’s begin by creating a new variable that is the age of the house in 2020.\n\nduke_forest &lt;- duke_forest |&gt;\n  mutate(age_2020 = 2020 - year_built)\n\nNow let’s visualize the relationship between the age of the house in 2020 and the sales price.\n\nggplot(duke_forest, aes(x = age_2020, y = price)) +\n  geom_point(alpha = 0.7) +\n  labs(\n    x = \"Age in 2020 (years)\",\n    y = \"Sale price (USD)\",\n    title = \"Price and age of houses in Duke Forest\"\n  ) +\n  scale_y_continuous(labels = label_dollar())"
-  },
-  {
-    "objectID": "ae/ae-05-sim-testing.html#model",
-    "href": "ae/ae-05-sim-testing.html#model",
-    "title": "AE 05: Permutation test for the slope",
-    "section": "Model",
-    "text": "Model\n\ndf_fit &lt;- lm(price ~ age_2020, data = duke_forest)\n\ntidy(df_fit) |&gt;\n  kable(digits = 3)\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n690891.015\n68637.793\n10.066\n0.000\n\n\nage_2020\n-2473.935\n1225.191\n-2.019\n0.046"
-  },
-  {
-    "objectID": "ae/ae-05-sim-testing.html#hypothesis-test",
-    "href": "ae/ae-05-sim-testing.html#hypothesis-test",
-    "title": "AE 05: Permutation test for the slope",
-    "section": "Hypothesis test",
-    "text": "Hypothesis test\n\n\n\n\n\n\nTip\n\n\n\nFor code chunks with fill-in-the-blank code, change code chunk option to #| eval: true once you’ve filled in the code.\n\n\n\nState the null and alternative hypotheses\nWrite the null and alternative hypotheses in words and mathematical notation.\n\n\nGenerate null distribution using permutation\nFill in the code, then set eval: true .\n\nn = 100\nset.seed(01232025)\n\nnull_dist &lt;- _____ |&gt;\n  specify(______) |&gt;\n  hypothesize(null = \"independence\") |&gt;\n  generate(reps = _____, type = \"permute\") |&gt;\n  fit()\n\n\n\nVisualize distribution\n\n# Code for histogram of null distribution\n\n\n\nCalculate the p-value.\n\n# get observed fit \nobserved_fit &lt;- duke_forest |&gt;\n  specify(price ~ age_2020) |&gt;\n  fit()\n\n# calculate p-value\nget_p_value(\n  ____,\n  obs_stat = ____,\n  direction = \"two-sided\"\n)\n\n\n\nState conclusion\nWrite your conclusion in the context of the data. You can use 0.05 as the decision-making threshold."
-  },
-  {
-    "objectID": "ae/ae-05-sim-testing.html#bootstrap-ci-time-permitting",
-    "href": "ae/ae-05-sim-testing.html#bootstrap-ci-time-permitting",
-    "title": "AE 05: Permutation test for the slope",
-    "section": "Bootstrap CI (time permitting)",
-    "text": "Bootstrap CI (time permitting)\n\nConstruct the bootstrap CI\nConstruct a 95% bootstrap confidence interval.\n\n\nDraw conclusion\n\nInterpret the interval in the context of the data.\nIs the interval consistent with the conclusion from your hypothesis test? Briefly explain why or why not.\n\n\n\n\n\n\n\nImportant\n\n\n\nTo submit the AE:\n\nRender the document to produce the PDF with all of your work from today’s class.\nPush all your work to your ae-05 repo on GitHub. (You do not submit AEs on Gradescope)."
-  },
-  {
-    "objectID": "ae/ae-12-exam-02-review.html",
-    "href": "ae/ae-12-exam-02-review.html",
-    "title": "AE 12: Exam 02 Review",
-    "section": "",
-    "text": "Important\n\n\n\nGo to the course GitHub organization and locate your ae-12 repo to get started.\nRender, commit, and push your responses to GitHub by the end of class to submit your AE."
-  },
-  {
-    "objectID": "ae/ae-12-exam-02-review.html#packages",
-    "href": "ae/ae-12-exam-02-review.html#packages",
-    "title": "AE 12: Exam 02 Review",
-    "section": "Packages",
-    "text": "Packages\n\nlibrary(tidyverse)\nlibrary(tidymodels)\nlibrary(knitr)\nlibrary(pROC)"
-  },
-  {
-    "objectID": "ae/ae-12-exam-02-review.html#exercise-1",
-    "href": "ae/ae-12-exam-02-review.html#exercise-1",
-    "title": "AE 12: Exam 02 Review",
-    "section": "Exercise 1",
-    "text": "Exercise 1\nSuppose you fit a simple linear regression model.\n\nDraw or describe a scatterplot that contains an observation with large leverage but low Cook’s distance.\nDraw or describe a scatterplot that contains an observation with large leverage and high Cook’s distance.\nDraw or describe a scatterplot that contains an observation with a large studentized residual."
-  },
-  {
-    "objectID": "ae/ae-12-exam-02-review.html#data-credit-cards",
-    "href": "ae/ae-12-exam-02-review.html#data-credit-cards",
-    "title": "AE 12: Exam 02 Review",
-    "section": "Data: Credit cards",
-    "text": "Data: Credit cards\nThe data for this analysis is about credit card customers. It can be found in the file credit.csv. The following variables are in the data set:\n\nincome: Income in $1,000’s\nlimit: Credit limit\nrating: Credit rating\ncards: Number of credit cards\nage: Age in years\neducation: Number of years of education\nown: A factor with levels No and Yes indicating whether the individual owns their home\nstudent: A factor with levels No and Yes indicating whether the individual was a student\nmarried: A factor with levels No and Yes indicating whether the individual was married\nregion: A factor with levels South, East, and West indicating the region of the US the individual is from\nbalance: Average credit card balance in $.\n\nThe objective of this analysis is to predict whether a person has maxed out their credit card, i.e., had $0 average card balance.\n\ncredit &lt;- read_csv(\"data/credit.csv\") |&gt;\n  mutate(maxed = factor(if_else(balance == 0, 1, 0)))"
-  },
-  {
-    "objectID": "ae/ae-12-exam-02-review.html#exercise-2",
-    "href": "ae/ae-12-exam-02-review.html#exercise-2",
-    "title": "AE 12: Exam 02 Review",
-    "section": "Exercise 2",
-    "text": "Exercise 2\n\nWhy is logistic regression the best modeling approach for this analysis?\nDescribe where each of the following show up in the analysis:\n\nlog-odds …\nodds\nprobabilities"
-  },
-  {
-    "objectID": "ae/ae-12-exam-02-review.html#exercise-3",
-    "href": "ae/ae-12-exam-02-review.html#exercise-3",
-    "title": "AE 12: Exam 02 Review",
-    "section": "Exercise 3",
-    "text": "Exercise 3\nWe’ll start by splitting the model into training and testing data. Then we’ll using the training data to fit a model for predicting the odds of maxed = 1 using income, rating, and region.\n\n# make training and test sets\nset.seed(210)\ncredit_split &lt;- initial_split(credit, prop = 0.8)\ncredit_train &lt;- training(credit_split)\ncredit_test &lt;- testing(credit_split)\n\ncredit_fit &lt;- glm(maxed ~ income + rating + region, data = credit_train, \n                  family = \"binomial\")\n\ntidy(credit_fit) |&gt;\n  kable(digits = 3)\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n10.097\n1.687\n5.987\n0.000\n\n\nincome\n0.115\n0.026\n4.444\n0.000\n\n\nrating\n-0.058\n0.009\n-6.428\n0.000\n\n\nregionSouth\n-0.632\n0.715\n-0.884\n0.377\n\n\nregionWest\n-0.332\n0.724\n-0.458\n0.647\n\n\n\n\n\nThe logistic regression model takes the following form:\n\\[\n\\log(\\frac{\\pi_i}{1 - \\pi_i}) = \\beta_0 + \\beta_1 ~ income + \\beta_2 ~ rating + \\beta_3 ~ regionSouth + \\beta_4 ~ regionWest\n\\]\n\nWrite the interpretation of income in terms of the odds of maxing out a credit card.\nUse the equation above to show the expected change in the odds of maxing out a credit card when the credit rating increases by 10 points. Assume income and region are constant. Write your answer in terms of \\(\\beta_0, \\beta_1, \\beta_2, \\beta_3, \\beta_4\\).\nSuppose there are two individuals. Individual 1 has an income of $64,000, a credit rating of 590, and is from the South region. Individual 2 has an income of $135,000, a credit rating of 695, and is from the East region. Use the equation above to show how the odds of maxing out a credit card differ between Individual 1 and Individual 2. Write your answer in terms of \\(\\beta_0, \\beta_1, \\beta_2\\), etc."
-  },
-  {
-    "objectID": "ae/ae-12-exam-02-review.html#exercise-4",
-    "href": "ae/ae-12-exam-02-review.html#exercise-4",
-    "title": "AE 12: Exam 02 Review",
-    "section": "Exercise 4",
-    "text": "Exercise 4\nWe consider adding the interaction between region and income to the current model. We’ll use a drop-in-deviance test to determine whether or not to add the interaction term.\n\nState the null and alternative hypotheses in words and using mathematical notation.\nDescribe what the test statistic \\(G\\) means in the context of the data.\nShow why the degrees of freedom for the test statistic are equal to 2.\nConduct the drop-in-deviance test and state your conclusion in the context of the data.\n\n\n# add code here"
-  },
-  {
-    "objectID": "ae/ae-12-exam-02-review.html#exercise-5",
-    "href": "ae/ae-12-exam-02-review.html#exercise-5",
-    "title": "AE 12: Exam 02 Review",
-    "section": "Exercise 5",
-    "text": "Exercise 5\nNow let’s evaluate the performance of the selected model using the testing data.\nCreate a confusion matrix using a cutoff probability of 0.3.\n\n# add code here\n\n\nWhat is the sensitivity? What does it mean in the context of the data ?\nWhat is the specificity? What does it mean in the context of the data?\nWhat is the false positive rate? What does it mean in the context of the data?\nWhat is the false negative rate? What does it mean in the context of the data?"
-  },
-  {
-    "objectID": "ae/ae-12-exam-02-review.html#exercise-6",
-    "href": "ae/ae-12-exam-02-review.html#exercise-6",
-    "title": "AE 12: Exam 02 Review",
-    "section": "Exercise 6",
-    "text": "Exercise 6\nProduce the ROC curve.\n\n# add code here\n\n\nDescribe how you can use this curve to select a cutoff probability (rather than just going with 0.5)."
-  },
-  {
-    "objectID": "ae/ae-12-exam-02-review.html#exercise-7",
-    "href": "ae/ae-12-exam-02-review.html#exercise-7",
-    "title": "AE 12: Exam 02 Review",
-    "section": "Exercise 7",
-    "text": "Exercise 7\nQuestions about checking conditions for logistic regression:\n\nDo we assess conditions on the training or testing set?\nWhy do we not consider categorical predictors when checking linearity?\nWhy do we not need to check constant variance for logistic regression?"
-  },
-  {
-    "objectID": "ae/ae-02-life-expectancy.html",
-    "href": "ae/ae-02-life-expectancy.html",
-    "title": "AE 02: Life expectancy and healthcare expenditure",
-    "section": "",
-    "text": "Important\n\n\n\nFor this AE, you will discuss the questions in groups. This AE does not count towards the Application Exercise grade.\nlibrary(tidyverse)\nlibrary(readxl)\nlibrary(tidymodels)\nlibrary(patchwork)"
-  },
-  {
-    "objectID": "ae/ae-02-life-expectancy.html#introduction",
-    "href": "ae/ae-02-life-expectancy.html#introduction",
-    "title": "AE 02: Life expectancy and healthcare expenditure",
-    "section": "Introduction",
-    "text": "Introduction\nThe data set comes from Zarulli et al. (2021), who analyze the effects of a country’s healthcare expenditures and other factors on the country’s life expectancy. The data are originally from the Human Development Database and World Health Organization.\nThis AE will focus on the following variables:\n\nlife_exp: The average number of years that a newborn could expect to live, if he or she were to pass through life exposed to the sex- and age-specific death rates prevailing at the time of his or her birth, for a specific year, in a given country, territory, or geographic area. ( from the World Health Organization)\nhealth_pct_gdp: Spending on healthcare goods and services, expressed as a percentage of GDP. It excludes capital health expenditures such as buildings, machinery, information technology and stocks of vaccines for emergency or outbreaks.\n\nClick here for the original research paper and a full list of variables in the original data set.\n\nlife_exp &lt;- read_excel(\"data/life-expectancy-data.xlsx\") |&gt; \n  rename(life_exp = `Life_expectancy_at_birth`, \n         health_pct_gdp = `Domestic_general_government_health_expenditure_pct_of_GDP`)\n\n\nlife_exp |&gt;\n  select(life_exp, health_pct_gdp) |&gt;\n  glimpse()\n\nRows: 140\nColumns: 2\n$ life_exp       &lt;dbl&gt; 63.8, 78.2, 59.9, 76.2, 74.6, 83.0, 81.3, 72.5, 71.8, 7…\n$ health_pct_gdp &lt;dbl&gt; 5, 41, 44, 74, 16, 68, 73, 20, 18, 61, 84, 66, 21, 74, …"
-  },
-  {
-    "objectID": "ae/ae-02-life-expectancy.html#exercises",
-    "href": "ae/ae-02-life-expectancy.html#exercises",
-    "title": "AE 02: Life expectancy and healthcare expenditure",
-    "section": "Exercises",
-    "text": "Exercises\nWe begin by visualizing the distributions of life expectancy, health expenditure percentage, and the relationship between these two variables.\n\np1 &lt;- ggplot(life_exp, aes(x = life_exp)) +\n  geom_histogram() + \n  labs(x = \"Life expectancy\")\n\np2 &lt;- ggplot(life_exp, aes(x = health_pct_gdp)) +\n  geom_histogram() + \n  labs(x = \"% Health expenditure\")\n\np3 &lt;- ggplot(life_exp, aes(x = health_pct_gdp, y = life_exp)) +\n  geom_point() + \n  labs(x = \"% Health expenditure\", \n       y = \"Life expectancy\")\n\n(p1 | p2) / p3\n\n\n\n\n\n\n\n\n\nExercise 1\nDescribe the relationship between life expectancy and healthcare expenditure as a percentage of the GDP. Comment on how we expect the life expectancy to change as the percentage on healthcare expenditure changes.\n\n\nExercise 2\nSuppose you want to fit a model so you can use the healthcare expenditure as a percentage of GDP to predict life expectancy. Would a model of the form\n\\[\\text{life_exp} = \\beta_0 + \\beta_1 ~ \\text{health_pct_gdp} + \\epsilon\\]\nbe a useful model for the data? Why or why not?"
-  },
-  {
-    "objectID": "ae/ae-07-exam-01-review.html",
-    "href": "ae/ae-07-exam-01-review.html",
-    "title": "AE 07: Exam 01 review",
-    "section": "",
-    "text": "Important\n\n\n\nGo to the course GitHub organization and locate your ae-07- to get started.\nRender, commit, and push your responses to GitHub by the end of class."
-  },
-  {
-    "objectID": "ae/ae-07-exam-01-review.html#packages",
-    "href": "ae/ae-07-exam-01-review.html#packages",
-    "title": "AE 07: Exam 01 review",
-    "section": "Packages",
-    "text": "Packages\n\nlibrary(tidyverse)\nlibrary(tidymodels)\nlibrary(knitr)"
-  },
-  {
-    "objectID": "ae/ae-07-exam-01-review.html#trail-users",
-    "href": "ae/ae-07-exam-01-review.html#trail-users",
-    "title": "AE 07: Exam 01 review",
-    "section": "Trail users",
-    "text": "Trail users\nThe Pioneer Valley Planning Commission (PVPC) collected data for ninety days from April 5, 2005 to November 15, 2005. Data collectors set up a laser sensor, with breaks in the laser beam recording when a rail-trail user passed the data collection station.\nWe will use regression analysis to predict the number of trail users based on weather and other features describing the day.\nThe variables we’ll focus on for this analysis are\n\nvolume estimated number of trail users that day (number of breaks recorded)\nhightemp daily high temperature (in degrees Fahrenheit)\nseason one of “Fall”, “Spring”, or “Summer”\ndaytype one of “weekday” or “weekend”\n\nView the data set1 to see the remaining variables.\n\nrail_trail &lt;- read_csv(\"data/rail-trail.csv\")"
-  },
-  {
-    "objectID": "ae/ae-07-exam-01-review.html#exploratory-analysis",
-    "href": "ae/ae-07-exam-01-review.html#exploratory-analysis",
-    "title": "AE 07: Exam 01 review",
-    "section": "Exploratory analysis",
-    "text": "Exploratory analysis\n\nExercise 1\nVisualize, summarize, and describe the distribution of volume.\n\n\nExercise 2\n\nVisualize and describe the relationship between hightemp and volume.\nModify the plot to consider if the relationship between these variables differs by daytype."
-  },
-  {
-    "objectID": "ae/ae-07-exam-01-review.html#modeling",
-    "href": "ae/ae-07-exam-01-review.html#modeling",
-    "title": "AE 07: Exam 01 review",
-    "section": "Modeling",
-    "text": "Modeling\nFit a model using hightemp and daytype to predict the volume for this trail.\n\nExercise 3\n\nWrite the statistical model.\nFit the model and write the estimated regression equation. Neatly display the results using 3 digits and the 90% confidence interval for the coefficients.\n\n\n\nExercise 4\nInterpret the slope of hightemp in the context of the data.\n\n\nExercise 5\n\nDoes it make sense to interpret the intercept? Explain your reasoning.\nIf not, what can we do to make the interpretation meaningful?"
-  },
-  {
-    "objectID": "ae/ae-07-exam-01-review.html#inference-for-coefficients",
-    "href": "ae/ae-07-exam-01-review.html#inference-for-coefficients",
-    "title": "AE 07: Exam 01 review",
-    "section": "Inference for coefficients",
-    "text": "Inference for coefficients\n\nExercise 6\nThe following code can be used to create a bootstrap distribution for the model coefficients. Describe what each line of code does, supplemented by any visualizations that might help with your description.\n\nset.seed(1234)\n\n1boot_dist &lt;- rail_trail |&gt;\n2  specify(volume ~ hightemp + daytype) |&gt;\n3  generate(reps = 100, type = \"bootstrap\") |&gt;\n4  fit()\n\n\n1\n\n___\n\n2\n\n___\n\n3\n\n___\n\n4\n\n___\n\n\n\n\n\n\nExercise 7\nUse the bootstrap distribution created in Exercise 6, boot_dist, to construct a 90% confidence interval for the coefficient of hightemp using bootstrapping and the percentile method and interpret it in context of the data.\n\n\nExercise 8\nConduct a hypothesis test for the coefficient of hightemp significance level using permutation with 100 reps. State the hypotheses in words and mathematical notation. Also include a visualization of the null distribution of the slope with the observed slope marked as a vertical line.\n\n\nExercise 9\nNow repeat Exercises 7 and 8 using approaches based on mathematical models. You can reference output from previous exercises and/or write new code as needed."
-  },
-  {
-    "objectID": "ae/ae-07-exam-01-review.html#inference-for-prediction",
-    "href": "ae/ae-07-exam-01-review.html#inference-for-prediction",
-    "title": "AE 07: Exam 01 review",
-    "section": "Inference for prediction",
-    "text": "Inference for prediction\n\nExercise 10\nBased on your model, predict the volume for a weekday with high temperature of degrees.\n\n\nExercise 11\nSuppose you’re asked to construct a confidence and a prediction interval for your finding in the previous exercise. Which one would you expect to be wider and why? In your answer clearly state the difference between these intervals.\n\n\nExercise 12\nNow construct the intervals and comment on whether your guess is confirmed."
-  },
-  {
-    "objectID": "ae/ae-07-exam-01-review.html#interaction-terms",
-    "href": "ae/ae-07-exam-01-review.html#interaction-terms",
-    "title": "AE 07: Exam 01 review",
-    "section": "Interaction terms",
-    "text": "Interaction terms\n\nExercise 13\nNow fit the model using hightemp and daytype to predict volume such that the effect of hightemp can differ by daytype.\n\n\nExercise 14\n\nWrite the estimated regression equation for weekends.\nWrite the estimated regression equation for weekdays.\n\n\n\nExercise 15\nAccording to this model, does the effect of hightemp differ for weekends vs. weekdays? Explain."
-  },
-  {
-    "objectID": "ae/ae-07-exam-01-review.html#model-comparison",
-    "href": "ae/ae-07-exam-01-review.html#model-comparison",
-    "title": "AE 07: Exam 01 review",
-    "section": "Model comparison",
-    "text": "Model comparison\n\nExercise 16\nWhich model is a better fit for the data - the model with or without the interaction? Show any work to support your choice.\n\n\n\n\n\n\nImportant\n\n\n\nTo submit the AE:\n\nRender the document to produce the PDF with all of your work from today’s class.\nPush all your work to your ae-07- repo on GitHub. (You do not submit AEs on Gradescope)."
-  },
-  {
-    "objectID": "ae/ae-07-exam-01-review.html#footnotes",
-    "href": "ae/ae-07-exam-01-review.html#footnotes",
-    "title": "AE 07: Exam 01 review",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\nSource: Pioneer Valley Planning Commission via the mosaicData package.↩︎"
-  },
-  {
-    "objectID": "prepare/prepare-lec03.html",
-    "href": "prepare/prepare-lec03.html",
-    "title": "Prepare for Lecture 03",
-    "section": "",
-    "text": "Required\n📖 Read Chapter 4\n\nOptional\nRead Chapter 3 for review of exploratory data analysis"
-  },
-  {
-    "objectID": "hw/stats-experience.html",
-    "href": "hw/stats-experience.html",
-    "title": "Statistics Experience",
-    "section": "",
-    "text": "To be posted.",
-    "crumbs": [
-      "Homework",
-      "Statistics experience"
-    ]
-  },
-  {
-    "objectID": "hw/hw-03.html",
-    "href": "hw/hw-03.html",
-    "title": "HW 03",
-    "section": "",
-    "text": "To be posted.",
-    "crumbs": [
-      "Homework",
-      "HW 03"
-    ]
-  },
-  {
-    "objectID": "hw/hw-04.html",
-    "href": "hw/hw-04.html",
-    "title": "HW 04",
-    "section": "",
-    "text": "To be posted.",
-    "crumbs": [
-      "Homework",
-      "HW 04"
-    ]
-  },
-  {
-    "objectID": "labs/lab-08.html",
-    "href": "labs/lab-08.html",
-    "title": "Lab 08",
-    "section": "",
-    "text": "To be posted.",
-    "crumbs": [
-      "Labs",
-      "Lab 08"
-    ]
-  },
-  {
-    "objectID": "labs/lab-07.html",
-    "href": "labs/lab-07.html",
-    "title": "Lab 07",
-    "section": "",
-    "text": "To be posted.",
-    "crumbs": [
-      "Labs",
-      "Lab 07"
-    ]
-  },
-  {
-    "objectID": "labs/lab-04.html",
-    "href": "labs/lab-04.html",
-    "title": "Lab 04",
-    "section": "",
-    "text": "To be posted.",
-    "crumbs": [
-      "Labs",
-      "Lab 04"
-    ]
-  },
-  {
-    "objectID": "labs/lab-01.html",
-    "href": "labs/lab-01.html",
-    "title": "Lab 01",
-    "section": "",
-    "text": "To be posted.",
-    "crumbs": [
-      "Labs",
-      "Lab 01"
-    ]
-  },
-  {
-    "objectID": "labs/lab-02.html",
-    "href": "labs/lab-02.html",
-    "title": "Lab 02",
-    "section": "",
-    "text": "To be posted.",
-    "crumbs": [
-      "Labs",
-      "Lab 02"
-    ]
-  },
-  {
-    "objectID": "labs/lab-03.html",
-    "href": "labs/lab-03.html",
-    "title": "Lab 03",
-    "section": "",
-    "text": "To be posted.",
-    "crumbs": [
-      "Labs",
-      "Lab 03"
-    ]
-  },
-  {
-    "objectID": "labs/lab-00.html",
-    "href": "labs/lab-00.html",
-    "title": "Lab 00",
-    "section": "",
-    "text": "To be posted.",
-    "crumbs": [
-      "Labs",
-      "Lab 00"
-    ]
-  },
-  {
-    "objectID": "labs/lab-05.html",
-    "href": "labs/lab-05.html",
-    "title": "Lab 05",
-    "section": "",
-    "text": "To be posted.",
-    "crumbs": [
-      "Labs",
-      "Lab 05"
-    ]
-  },
-  {
-    "objectID": "labs/lab-06.html",
-    "href": "labs/lab-06.html",
-    "title": "Lab 06",
-    "section": "",
-    "text": "To be posted.",
-    "crumbs": [
-      "Labs",
-      "Lab 06"
-    ]
-  },
-  {
-    "objectID": "overview.html",
-    "href": "overview.html",
-    "title": "STA 210 - Regression Analysis",
-    "section": "",
-    "text": "In STA 210, students will learn how linear and logistic regression models are used to explore multivariable relationships and apply these methods to answer relevant and engaging questions using a data-driven approach. Students will develop computing skills to implement a reproducible data analysis workflow and gain experience communicating statistical results. Throughout the semester, students will work on a team project where they will develop a research question, answer it using methods learned in the course, and share results through a written report and presentation.\nTopics include applications of linear and logistic regression, interpretation, diagnostics, model selection, and model assessment. Students will gain experience using the computing tools R and GitHub to analyze real-world data from a variety of fields. This class emphasizes data analysis over mathematical theory.\n\n\n100-level Statistical Science course or Statistical Science 230, 231, or 240L",
-    "crumbs": [
-      "Overview"
-    ]
-  },
-  {
-    "objectID": "overview.html#pre-requisites",
-    "href": "overview.html#pre-requisites",
-    "title": "STA 210 - Regression Analysis",
-    "section": "",
-    "text": "100-level Statistical Science course or Statistical Science 230, 231, or 240L",
-    "crumbs": [
-      "Overview"
-    ]
-  },
-  {
-    "objectID": "overview.html#teaching-assistants",
-    "href": "overview.html#teaching-assistants",
-    "title": "STA 210 - Regression Analysis",
-    "section": "Teaching assistants",
-    "text": "Teaching assistants\n\n\n\nName\nRole\n\n\nAdeli Hutton\nLab leader\n\n\nShane Rybacki\nLab leader\n\n\n\nSee Canvas for office hours times and locations.",
-    "crumbs": [
-      "Overview"
-    ]
-  },
-  {
-    "objectID": "hw/hw-01.html",
-    "href": "hw/hw-01.html",
-    "title": "HW 01",
-    "section": "",
-    "text": "To be posted.",
-    "crumbs": [
-      "Homework",
-      "HW 01"
-    ]
-  },
-  {
-    "objectID": "hw/hw-02.html",
-    "href": "hw/hw-02.html",
-    "title": "HW 02",
-    "section": "",
-    "text": "To be posted.",
-    "crumbs": [
-      "Homework",
-      "HW 02"
-    ]
-  },
-  {
-    "objectID": "prepare/prepare-lec02.html",
-    "href": "prepare/prepare-lec02.html",
-    "title": "Prepare for Lecture 02",
-    "section": "",
-    "text": "Required\n📖 Read Chapter 1\n\nOptional computing introduction/ review\n📖 Read GitHub for supporting, reusing, contributing, and failing safely\n🎥 Watch Meet the Toolkit: R + RStudio\n🎥 Watch Meet the Toolkit: Quarto"
-  },
-  {
-    "objectID": "prepare/prepare-lec01.html",
-    "href": "prepare/prepare-lec01.html",
-    "title": "Prepare for Lecture 01",
-    "section": "",
-    "text": "📖 Read the syllabus"
-  },
-  {
-    "objectID": "ae/ae-04-bootstrap.html",
-    "href": "ae/ae-04-bootstrap.html",
-    "title": "AE 04: Bootstrap confidence intervals",
-    "section": "",
-    "text": "Important\n\n\n\nGo to the course GitHub organization and locate your ae-04 repo to get started.\nRender, commit, and push your responses to GitHub by the end of class.\nlibrary(tidyverse)\nlibrary(tidymodels)\nlibrary(openintro)\nlibrary(knitr)"
-  },
-  {
-    "objectID": "ae/ae-04-bootstrap.html#data",
-    "href": "ae/ae-04-bootstrap.html#data",
-    "title": "AE 04: Bootstrap confidence intervals",
-    "section": "Data",
-    "text": "Data\nThe data are on houses that were sold in the Duke Forest neighborhood of Durham, NC around November 2020. It was originally scraped from Zillow, and can be found in the duke_forest data set in the openintro R package.\n\nglimpse(duke_forest)\n\nRows: 98\nColumns: 13\n$ address    &lt;chr&gt; \"1 Learned Pl, Durham, NC 27705\", \"1616 Pinecrest Rd, Durha…\n$ price      &lt;dbl&gt; 1520000, 1030000, 420000, 680000, 428500, 456000, 1270000, …\n$ bed        &lt;dbl&gt; 3, 5, 2, 4, 4, 3, 5, 4, 4, 3, 4, 4, 3, 5, 4, 5, 3, 4, 4, 3,…\n$ bath       &lt;dbl&gt; 4.0, 4.0, 3.0, 3.0, 3.0, 3.0, 5.0, 3.0, 5.0, 2.0, 3.0, 3.0,…\n$ area       &lt;dbl&gt; 6040, 4475, 1745, 2091, 1772, 1950, 3909, 2841, 3924, 2173,…\n$ type       &lt;chr&gt; \"Single Family\", \"Single Family\", \"Single Family\", \"Single …\n$ year_built &lt;dbl&gt; 1972, 1969, 1959, 1961, 2020, 2014, 1968, 1973, 1972, 1964,…\n$ heating    &lt;chr&gt; \"Other, Gas\", \"Forced air, Gas\", \"Forced air, Gas\", \"Heat p…\n$ cooling    &lt;fct&gt; central, central, central, central, central, central, centr…\n$ parking    &lt;chr&gt; \"0 spaces\", \"Carport, Covered\", \"Garage - Attached, Covered…\n$ lot        &lt;dbl&gt; 0.97, 1.38, 0.51, 0.84, 0.16, 0.45, 0.94, 0.79, 0.53, 0.73,…\n$ hoa        &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…\n$ url        &lt;chr&gt; \"https://www.zillow.com/homedetails/1-Learned-Pl-Durham-NC-…"
-  },
-  {
-    "objectID": "ae/ae-04-bootstrap.html#exploratory-data-analysis",
-    "href": "ae/ae-04-bootstrap.html#exploratory-data-analysis",
-    "title": "AE 04: Bootstrap confidence intervals",
-    "section": "Exploratory data analysis",
-    "text": "Exploratory data analysis\n\nggplot(duke_forest, aes(x = area, y = price)) +\n  geom_point(alpha = 0.7) +\n  labs(\n    x = \"Area (square feet)\",\n    y = \"Sale price (USD)\",\n    title = \"Price and area of houses in Duke Forest\"\n  ) +\n  scale_y_continuous(labels = label_dollar())"
-  },
-  {
-    "objectID": "ae/ae-04-bootstrap.html#model",
-    "href": "ae/ae-04-bootstrap.html#model",
-    "title": "AE 04: Bootstrap confidence intervals",
-    "section": "Model",
-    "text": "Model\n\ndf_fit &lt;- lm(price ~ area, data = duke_forest)\n\ntidy(df_fit) |&gt;\n  kable(digits = 2)\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n116652.33\n53302.46\n2.19\n0.03\n\n\narea\n159.48\n18.17\n8.78\n0.00"
-  },
-  {
-    "objectID": "ae/ae-04-bootstrap.html#bootstrap-confidence-interval",
-    "href": "ae/ae-04-bootstrap.html#bootstrap-confidence-interval",
-    "title": "AE 04: Bootstrap confidence intervals",
-    "section": "Bootstrap confidence interval",
-    "text": "Bootstrap confidence interval\n\n1. Calculate the observed fit (slope)\n\nobserved_fit &lt;- duke_forest |&gt;\n  specify(price ~ area) |&gt;\n  fit()\n\nobserved_fit\n\n# A tibble: 2 × 2\n  term      estimate\n  &lt;chr&gt;        &lt;dbl&gt;\n1 intercept  116652.\n2 area          159.\n\n\n\n\n2. Take n_iter bootstrap samples and fit models to each one.\nFill in the code, then set eval: true .\n\nn_iter = 100\nset.seed(091222)\n\nboot_fits &lt;- ______ |&gt;\n  specify(______) |&gt;\n  generate(reps = ____, type = \"bootstrap\") |&gt;\n  fit()\n\nboot_fits\n\n\nWhy do we set a seed before taking the bootstrap samples?\nMake a histogram of the bootstrap samples to visualize the bootstrap distribution.\n\n# Code for histogram\n\n\n\n\n3. Compute the 95% confidence interval as the middle 95% of the bootstrap distribution\nFill in the code, then set eval: true .\n\nget_confidence_interval(\n  boot_fits, \n  point_estimate = _____, \n  level = ____,\n  type = \"percentile\"\n)"
-  },
-  {
-    "objectID": "ae/ae-04-bootstrap.html#changing-confidence-level",
-    "href": "ae/ae-04-bootstrap.html#changing-confidence-level",
-    "title": "AE 04: Bootstrap confidence intervals",
-    "section": "Changing confidence level",
-    "text": "Changing confidence level\n\nModify the code from Step 3 to create a 90% confidence interval.\n\n# Code for the 90% confidence interval\n\n\n\nModify the code from Step 3 to create a 99% confidence interval.\n\n# Code for the 99% confidence interval\n\n\nWhich confidence level produces the most accurate confidence interval (90%, 95%, 99%)? Explain\nWhich confidence level produces the most precise confidence interval (90%, 95%, 99%)? Explain\nIf we want to be very certain that we capture the population parameter, should we use a wider or a narrower interval? What drawbacks are associated with using a wider interval?\n\n\n\n\n\n\n\nImportant\n\n\n\nTo submit the AE:\n\nRender the document to produce the PDF with all of your work from today’s class.\nPush all your work to your ae-04 repo on GitHub. (You do not submit AEs on Gradescope)."
-  },
-  {
-    "objectID": "ae/ae-08-multicollinearity.html",
-    "href": "ae/ae-08-multicollinearity.html",
-    "title": "AE 08: Multicollinearity",
-    "section": "",
-    "text": "Important\n\n\n\nGo to the course GitHub organization and locate your ae-08 repo to get started.\nRender, commit, and push your responses to GitHub by the end of class to submit your AE.\nlibrary(tidyverse)\nlibrary(knitr)\nlibrary(tidymodels)\nlibrary(rms) #calculate VIF"
-  },
-  {
-    "objectID": "ae/ae-08-multicollinearity.html#exercise-1",
-    "href": "ae/ae-08-multicollinearity.html#exercise-1",
-    "title": "AE 08: Multicollinearity",
-    "section": "Exercise 1",
-    "text": "Exercise 1\n\nFit the regression model using high temperature, average temperature, season, and precipitation to predict volume.\nAre there any coefficients that may be not what you expected?"
-  },
-  {
-    "objectID": "ae/ae-08-multicollinearity.html#exercise-2",
-    "href": "ae/ae-08-multicollinearity.html#exercise-2",
-    "title": "AE 08: Multicollinearity",
-    "section": "Exercise 2",
-    "text": "Exercise 2\nUse the formula\n\\[\nVIF_j = \\frac{1}{1 - R^2_j}\n\\]\nto calculate the VIF for avgtemp."
-  },
-  {
-    "objectID": "ae/ae-08-multicollinearity.html#exercise-3",
-    "href": "ae/ae-08-multicollinearity.html#exercise-3",
-    "title": "AE 08: Multicollinearity",
-    "section": "Exercise 3",
-    "text": "Exercise 3\nBased on the VIF from the previous exercise, does avgtemp have a linear dependency with one or more other predictors? Explain."
-  },
-  {
-    "objectID": "ae/ae-08-multicollinearity.html#exercise-4",
-    "href": "ae/ae-08-multicollinearity.html#exercise-4",
-    "title": "AE 08: Multicollinearity",
-    "section": "Exercise 4",
-    "text": "Exercise 4\n\nUse the vif function to compute VIF for all the predictors in Exercise 1.\nAre there predictors with near-linear dependencies? If so, which ones?"
-  },
-  {
-    "objectID": "ae/ae-08-multicollinearity.html#exercise-5",
-    "href": "ae/ae-08-multicollinearity.html#exercise-5",
-    "title": "AE 08: Multicollinearity",
-    "section": "Exercise 5",
-    "text": "Exercise 5\nLet’s address the issue of multicollinearity. Choose a strategy to address the multicollinearity. Apply it, then use relevant statistics to select a final model."
-  },
-  {
-    "objectID": "ae/ae-11-multinomial.html",
-    "href": "ae/ae-11-multinomial.html",
-    "title": "AE 11: Multinomial logistic regression",
-    "section": "",
-    "text": "Important\n\n\n\nGo to the course GitHub organization and locate your ae-10 repo to get started.\nRender, commit, and push your responses to GitHub by the end of class to submit your AE."
-  },
-  {
-    "objectID": "ae/ae-11-multinomial.html#exercise-1",
-    "href": "ae/ae-11-multinomial.html#exercise-1",
-    "title": "AE 11: Multinomial logistic regression",
-    "section": "Exercise 1",
-    "text": "Exercise 1\nCreate a plot to visualize the relationship between the response, viewcat and the primary variable of interest in this analysis, viewenc. What do you observe from the plot?"
-  },
-  {
-    "objectID": "ae/ae-11-multinomial.html#exercise-2",
-    "href": "ae/ae-11-multinomial.html#exercise-2",
-    "title": "AE 11: Multinomial logistic regression",
-    "section": "Exercise 2",
-    "text": "Exercise 2\nCreate a plot to visualize the relationship between the response, viewcat and age. What do you observe from the plot?"
-  },
-  {
-    "objectID": "ae/ae-11-multinomial.html#exercise-3",
-    "href": "ae/ae-11-multinomial.html#exercise-3",
-    "title": "AE 11: Multinomial logistic regression",
-    "section": "Exercise 3",
-    "text": "Exercise 3\nFit a model using the ageCent and viewenc to understand the odds a child is in a given category of viewcat. Display the model including 95% confidence intervals for the coefficients."
-  },
-  {
-    "objectID": "ae/ae-11-multinomial.html#exercise-4",
-    "href": "ae/ae-11-multinomial.html#exercise-4",
-    "title": "AE 11: Multinomial logistic regression",
-    "section": "Exercise 4",
-    "text": "Exercise 4\n\nWhat is the baseline category for viewcat? What is the baseline category for viewenc?\nInterpret the intercept associated with the odds of a child being in the category viewcat == 2 versus the baseline.\nInterpret the effect of age in terms of the odds of a child being in the category viewcat == 2 versus the baseline. Based on the confidence interval for the coefficient, is the numeric predictor a statistically significant predictor of viewership?"
-  },
-  {
-    "objectID": "ae/ae-11-multinomial.html#exercise-5",
-    "href": "ae/ae-11-multinomial.html#exercise-5",
-    "title": "AE 11: Multinomial logistic regression",
-    "section": "Exercise 5",
-    "text": "Exercise 5\nShould the interaction between ageCent and viewenc be included in the model? Show any analysis used to make your conclusion."
-  },
-  {
-    "objectID": "ae/ae-11-multinomial.html#exercise-6",
-    "href": "ae/ae-11-multinomial.html#exercise-6",
-    "title": "AE 11: Multinomial logistic regression",
-    "section": "Exercise 6",
-    "text": "Exercise 6\nThe primary objective of the experiment was to understand the effect of encouragement on viewership. Does encouragement have a significant effect on viewership after adjusting for age? If so, describe the effect. Otherwise, explain why not."
-  },
-  {
-    "objectID": "ae/ae-11-multinomial.html#exercise-7",
-    "href": "ae/ae-11-multinomial.html#exercise-7",
-    "title": "AE 11: Multinomial logistic regression",
-    "section": "Exercise 7",
-    "text": "Exercise 7\n\nUse the model selected in Exercise 5 to compute the predicted probabilities and predicted classes for viewcat.\nMake a confusion matrix.\nWhat percentage of observations were correctly classified?"
-  },
-  {
-    "objectID": "ae/ae-11-multinomial.html#exercise-8",
-    "href": "ae/ae-11-multinomial.html#exercise-8",
-    "title": "AE 11: Multinomial logistic regression",
-    "section": "Exercise 8",
-    "text": "Exercise 8\n\nAssess the overall model performance.\nWere there particular categories in which the model has a harder time differentiating?"
-  },
-  {
-    "objectID": "ae/ae-06-model-compare.html",
-    "href": "ae/ae-06-model-compare.html",
-    "title": "AE 06: Model comparison",
-    "section": "",
-    "text": "Important\n\n\n\nRender, commit, and push your responses to GitHub by the end of class.\nlibrary(tidyverse)\nlibrary(tidymodels)\nlibrary(knitr)"
-  },
-  {
-    "objectID": "ae/ae-06-model-compare.html#data",
-    "href": "ae/ae-06-model-compare.html#data",
-    "title": "AE 06: Model comparison",
-    "section": "Data",
-    "text": "Data\nWhich variables help us predict the amount customers tip at a restaurant? To answer this question, we will use data collected in 2011 by a student at St. Olaf who worked at a local restaurant.\nThe variables we’ll focus on for this analysis are\n\nTip: amount of the tip\nParty: number of people in the party\nMeal: Time of day (Lunch, Dinner, Late Night)\nAge: Age category of person paying the bill (Yadult, Middle, SenCit)\nDay: Day of the week (includes every day but Monday)\n\nView the data set to see the remaining variables.\n\ntips &lt;- read_csv(\"data/tip-data.csv\")"
-  },
-  {
-    "objectID": "ae/ae-06-model-compare.html#exercise-1",
-    "href": "ae/ae-06-model-compare.html#exercise-1",
-    "title": "AE 06: Model comparison",
-    "section": "Exercise 1",
-    "text": "Exercise 1\nSplit the data into training (80%) and testing (20%) sets. Use seed 2025."
-  },
-  {
-    "objectID": "ae/ae-06-model-compare.html#exercise-2",
-    "href": "ae/ae-06-model-compare.html#exercise-2",
-    "title": "AE 06: Model comparison",
-    "section": "Exercise 2",
-    "text": "Exercise 2\nUse the training data to fit a model using Party, Age, and Meal to predict tips. Compute the \\(R^2\\) and \\(Adj. R^2\\) for this model."
-  },
-  {
-    "objectID": "ae/ae-06-model-compare.html#exercise-3",
-    "href": "ae/ae-06-model-compare.html#exercise-3",
-    "title": "AE 06: Model comparison",
-    "section": "Exercise 3",
-    "text": "Exercise 3\nNow fit a model predicting tips using Party, Age, and Meal, such that the effect of party can differ by Meal. Compute \\(R^2\\) and \\(Adj. R^2\\) for this model."
-  },
-  {
-    "objectID": "ae/ae-06-model-compare.html#exercise-4",
-    "href": "ae/ae-06-model-compare.html#exercise-4",
-    "title": "AE 06: Model comparison",
-    "section": "Exercise 4",
-    "text": "Exercise 4\n\nWhich model do you choose - the model from Exercise 2 or Exercise 3? Why?\nCompute RMSE for the selected model."
-  },
-  {
-    "objectID": "ae/ae-06-model-compare.html#exercise-5",
-    "href": "ae/ae-06-model-compare.html#exercise-5",
-    "title": "AE 06: Model comparison",
-    "section": "Exercise 5",
-    "text": "Exercise 5\nNow let’s use the testing data to assess the performance of the model selected in Exercise 4.\n\nCompute the predicted tips for the testing data. Add the predictions to the testing data set.\nCompute RMSE and \\(R^2\\) for the testing data.\n\n\n# add code here"
-  },
-  {
-    "objectID": "ae/ae-06-model-compare.html#exercise-6",
-    "href": "ae/ae-06-model-compare.html#exercise-6",
-    "title": "AE 06: Model comparison",
-    "section": "Exercise 6",
-    "text": "Exercise 6\n\nHow do RMSE compare between the training and testing data?\nHow does \\(R^2\\) compare between the training and testing data?\nIs this what you expect? Why?"
-  },
-  {
-    "objectID": "ae/ae-06-model-compare.html#exercise-7",
-    "href": "ae/ae-06-model-compare.html#exercise-7",
-    "title": "AE 06: Model comparison",
-    "section": "Exercise 7",
-    "text": "Exercise 7\nWhy can we use \\(R^2\\) as an assessment of performance on the testing data even if we can’t use it to compare models?"
-  },
-  {
-    "objectID": "ae/ae-06-model-compare.html#to-submit-the-ae",
-    "href": "ae/ae-06-model-compare.html#to-submit-the-ae",
-    "title": "AE 06: Model comparison",
-    "section": "To submit the AE:",
-    "text": "To submit the AE:\n\n\n\n\n\n\nImportant\n\n\n\n\nRender the document to produce the PDF with all of your work from today’s class.\nPush all your work to your repo on GitHub. (You do not submit AEs on Gradescope)."
-  },
-  {
-    "objectID": "ae/ae-10-logistic-compare.html",
-    "href": "ae/ae-10-logistic-compare.html",
-    "title": "AE 10: Comparing logistic regression models",
-    "section": "",
-    "text": "Important\n\n\n\nGo to the course GitHub organization and locate your ae-10 repo to get started.\nRender, commit, and push your responses to GitHub by the end of class to submit your AE."
-  },
-  {
-    "objectID": "ae/ae-10-logistic-compare.html#packages",
-    "href": "ae/ae-10-logistic-compare.html#packages",
-    "title": "AE 10: Comparing logistic regression models",
-    "section": "Packages",
-    "text": "Packages\n\nlibrary(tidyverse)\nlibrary(tidymodels)\nlibrary(knitr)"
-  },
-  {
-    "objectID": "ae/ae-10-logistic-compare.html#response-to-leukemia-treatment",
-    "href": "ae/ae-10-logistic-compare.html#response-to-leukemia-treatment",
-    "title": "AE 10: Comparing logistic regression models",
-    "section": "Response to Leukemia treatment",
-    "text": "Response to Leukemia treatment\nToday’s data is from a study where 51 untreated adult patients with Acute Myeloid Leukemia who were given a course of treatment, and they were assessed as to their response to the treatment.1\nThe goal of today’s analysis is to use pre-treatment factors to predict how likely it is a patient will respond to the treatment.\nWe will use the following variables:\n\nAge: Age at diagnosis (in years)\nSmear: Differential percentage of blasts\nInfil: Percentage of absolute marrow leukemia infiltrate\nIndex: Percentage labeling index of the bone marrow leukemia cells\nBlasts: Absolute number of blasts, in thousands\nTemp: Highest temperature of the patient prior to treatment, in degrees Fahrenheit\nResp: 1 = responded to treatment or 0 = failed to respond\n\n\nleukemia &lt;- read_csv(\"data/leukemia.csv\") |&gt;\n  mutate(Resp = factor(Resp))"
-  },
-  {
-    "objectID": "ae/ae-10-logistic-compare.html#comparing-models",
-    "href": "ae/ae-10-logistic-compare.html#comparing-models",
-    "title": "AE 10: Comparing logistic regression models",
-    "section": "Comparing models",
-    "text": "Comparing models\n\nConsider a model with all the pre-treatment variables: Age, Smear, Infil, Index, Blasts and Temp. Fit a model using these six variables to predict whether a patient responded to the treatment. Call the model full_model. Display the model.\n\n\n# add code\n\n\nBased on the model, which pre-treatment variables are statistically significant using a threshold of \\(\\alpha = 0.05\\)? (We will talk more about inference for logistic regression coefficients in an upcoming lecture.)\nFit a model that only includes the statistically significant predictors. Call the model reduced_model.\n\n\n# add code\n\n\nUse a drop-in-deviance test to compare a model that includes only the significant predictors to the full model. Which model do you choose based on the results of this test?\n\n\n# add code\n\n\nIs your choice based on AIC consistent with your choice from the previous exercise? What about a choice based on BIC?\n\n\n# add code"
-  },
-  {
-    "objectID": "ae/ae-10-logistic-compare.html#submission",
-    "href": "ae/ae-10-logistic-compare.html#submission",
-    "title": "AE 10: Comparing logistic regression models",
-    "section": "Submission",
-    "text": "Submission\n\n\n\n\n\n\nImportant\n\n\n\nTo submit the AE:\nRender the document to produce the PDF with all of your work from today’s class.\nPush all your work to your AE repo on GitHub. You’re done! 🎉"
-  },
-  {
-    "objectID": "ae/ae-10-logistic-compare.html#footnotes",
-    "href": "ae/ae-10-logistic-compare.html#footnotes",
-    "title": "AE 10: Comparing logistic regression models",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\nThe data set is from the Stat2Data R package. This AE is adapted from exercises in Stat 2.↩︎"
-  },
-  {
-    "objectID": "ae/ae-01-movies.html",
-    "href": "ae/ae-01-movies.html",
-    "title": "AE 01: Movie Budgets and Revenues",
-    "section": "",
-    "text": "Important\n\n\n\nFor this AE, you will discuss the questions in groups and submit answers on Ed Discussion. This AE does not count towards the Application Exercise grade.\nWe will look at the relationship between budget and revenue for movies made in the United States in 1986 to 2020. The dataset is created based on data from the Internet Movie Database (IMDB).\nlibrary(readr)\nlibrary(tidyverse)\nlibrary(viridis)\nlibrary(DT)"
-  },
-  {
-    "objectID": "ae/ae-01-movies.html#data",
-    "href": "ae/ae-01-movies.html#data",
-    "title": "AE 01: Movie Budgets and Revenues",
-    "section": "Data",
-    "text": "Data\nThe movies data set includes basic information about each movie including budget, genre, movie studio, director, etc. A full list of the variables may be found here.\n\nmovies &lt;- read_csv(\"https://raw.githubusercontent.com/danielgrijalva/movie-stats/master/movies.csv\")\n\nView the first 10 rows of data.\n\nmovies |&gt;\n  slice(1:10)\n\n# A tibble: 10 × 15\n   name   rating genre  year released score  votes director writer star  country\n   &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt; &lt;dbl&gt; &lt;chr&gt;    &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;    &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt;  \n 1 The S… R      Drama  1980 June 13…   8.4 9.27e5 Stanley… Steph… Jack… United…\n 2 The B… R      Adve…  1980 July 2,…   5.8 6.5 e4 Randal … Henry… Broo… United…\n 3 Star … PG     Acti…  1980 June 20…   8.7 1.20e6 Irvin K… Leigh… Mark… United…\n 4 Airpl… PG     Come…  1980 July 2,…   7.7 2.21e5 Jim Abr… Jim A… Robe… United…\n 5 Caddy… R      Come…  1980 July 25…   7.3 1.08e5 Harold … Brian… Chev… United…\n 6 Frida… R      Horr…  1980 May 9, …   6.4 1.23e5 Sean S.… Victo… Bets… United…\n 7 The B… R      Acti…  1980 June 20…   7.9 1.88e5 John La… Dan A… John… United…\n 8 Ragin… R      Biog…  1980 Decembe…   8.2 3.30e5 Martin … Jake … Robe… United…\n 9 Super… PG     Acti…  1980 June 19…   6.8 1.01e5 Richard… Jerry… Gene… United…\n10 The L… R      Biog…  1980 May 16,…   7   1   e4 Walter … Bill … Davi… United…\n# ℹ 4 more variables: budget &lt;dbl&gt;, gross &lt;dbl&gt;, company &lt;chr&gt;, runtime &lt;dbl&gt;"
-  },
-  {
-    "objectID": "ae/ae-01-movies.html#analysis",
-    "href": "ae/ae-01-movies.html#analysis",
-    "title": "AE 01: Movie Budgets and Revenues",
-    "section": "Analysis",
-    "text": "Analysis\nWe begin by looking at how the average gross revenue (gross) has changed over time. Since we want to visualize the results, we will choose a few genres of interest for the analysis.\n\ngenre_list &lt;- c(\"Comedy\", \"Action\", \"Animation\", \"Horror\")\n\n\nmovies |&gt;\n  filter(genre %in% genre_list) |&gt; \n  group_by(genre,year) |&gt;\n  summarise(avg_gross = mean(gross)) |&gt;\n  ggplot(mapping = aes(x = year, y = avg_gross, color=genre)) +\n    geom_point() + \n    geom_line() +\n    ylab(\"Average Gross Revenue (in US Dollars)\") +\n    ggtitle(\"Gross Revenue Over Time\") +\n    scale_color_viridis_d()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWhat do you observe from the plot?\n\n\n\nNext, let’s see the relationship between a movie’s budget and its gross revenue.\n\nmovies |&gt;\n  filter(genre %in% genre_list, budget &gt; 0) |&gt; \n  ggplot(mapping = aes(x=log(budget), y = log(gross), color=genre)) +\n  geom_point() +\n  geom_smooth(method=\"lm\",se=FALSE) + \n  xlab(\"Log-transformed Budget\")+\n  ylab(\"Log-transformed Gross Revenue\") +\n  facet_wrap(~ genre) + \n  scale_color_viridis_d()"
-  },
-  {
-    "objectID": "ae/ae-01-movies.html#exercises",
-    "href": "ae/ae-01-movies.html#exercises",
-    "title": "AE 01: Movie Budgets and Revenues",
-    "section": "Exercises",
-    "text": "Exercises\n\nSuppose we fit a regression model for each genre that uses budget to predict gross revenue. What are the signs of the correlation between budget and gross and the slope in each regression equation?\nSuppose we fit the regression model from the previous question. Which genre would you expect to have the smallest residuals, on average (residual = observed revenue - predicted revenue)?\nPost your response on ED Discussion.\nhttps://edstem.org/us/courses/70992/discussion/5951333\n[Time permitting] Discuss the following: Notice in the graph above that budget and gross are log-transformed. Why are the log-transformed values of the variables displayed rather than the original values (in U.S. dollars)? Post your group’s response in the AE 01 Movie Budgets comments on Ed Discussion."
-  },
-  {
-    "objectID": "ae/ae-01-movies.html#references",
-    "href": "ae/ae-01-movies.html#references",
-    "title": "AE 01: Movie Budgets and Revenues",
-    "section": "References",
-    "text": "References\n\ngithub.com/danielgrijalva/movie-stats\nInternet Movie Database"
-  },
-  {
-    "objectID": "ae/ae-01-movies.html#appendix",
-    "href": "ae/ae-01-movies.html#appendix",
-    "title": "AE 01: Movie Budgets and Revenues",
-    "section": "Appendix",
-    "text": "Appendix\nBelow is a list of genres in the data set:\n\nmovies |&gt; \n  arrange(genre) |&gt; \n  select(genre) |&gt;\n  distinct() |&gt;\n  datatable()"
-  },
-  {
-    "objectID": "computing-r-resources.html",
-    "href": "computing-r-resources.html",
-    "title": "Resources for learning R",
-    "section": "",
-    "text": "Below are freely available resources to learn or review the following in R: data wrangling, data visualization, Quarto basics.",
+    "text": "To access computing resources for the introductory data science courses offered by the Duke University Department of Statistical Science, go to the Duke Container Manager website, cmgr.oit.duke.edu/containers.\nIf this is your first time accessing the containers, click on reserve STA210 on the Reservations available menu on the right. You only need to do this once, and when you do, you’ll see this container moved to the My reservations menu on the left.\nNext, click on STA210 under My reservations to access the RStudio instance you’ll use for the course.",
     "crumbs": [
       "Computing",
-      "R resources"
+      "Access"
     ]
   },
   {
-    "objectID": "computing-r-resources.html#in-depth-introduction",
-    "href": "computing-r-resources.html#in-depth-introduction",
-    "title": "Resources for learning R",
-    "section": "In-depth introduction",
-    "text": "In-depth introduction\nCoursera: Data Visualization and Transformation with R by Mine Çetinkaya-Rundel and Elijah Meyer\n\nIncludes videos, readings, practice exercise, quizzes, and other resources\nYou can select content within the modules you want to complete.\nFocus on Modules 2 and 3. Review the content in Module 1 as needed.s\nClick here for instructions to register for Coursera for free as a Duke student",
-    "crumbs": [
-      "Computing",
-      "R resources"
-    ]
+    "objectID": "slides/lab-00.html#meet-your-lab-ta",
+    "href": "slides/lab-00.html#meet-your-lab-ta",
+    "title": "Welcome to STA 210 labs!",
+    "section": "Meet your lab TA!",
+    "text": "Meet your lab TA!"
   },
   {
-    "objectID": "computing-r-resources.html#in-depth-review",
-    "href": "computing-r-resources.html#in-depth-review",
-    "title": "Resources for learning R",
-    "section": "In-depth review",
-    "text": "In-depth review\nData Science with R videos by Mine Çetinkaya-Rundel and Elijah Meyer\n\nVideos from the data science Coursera course\nFocus on videos on visualizing and summarizing data\nYou need to join the Coursera course to access the files from the code along videos.\n\nLearn R: An interactive introduction to data analysis with R\n\nHands-on tutorial that can be completed within the site (no RStudio required)\nFocus on Chapters 4 - 6",
-    "crumbs": [
-      "Computing",
-      "R resources"
-    ]
+    "objectID": "slides/lab-00.html#meet-your-classmates",
+    "href": "slides/lab-00.html#meet-your-classmates",
+    "title": "Welcome to STA 210 labs!",
+    "section": "Meet your classmates!",
+    "text": "Meet your classmates!\n\nPlease share the following with the class:\n\nName\nYear in school\nMajor / academic interests\nOne boring fact\n\n\n\n\n\n−+\n03:00"
   },
   {
-    "objectID": "computing-r-resources.html#shorter-review",
-    "href": "computing-r-resources.html#shorter-review",
-    "title": "Resources for learning R",
-    "section": "Shorter review",
-    "text": "Shorter review\nR for Data Science (2nd ed) by Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund\n\nFocus on Chapters 1 - 3, 10",
-    "crumbs": [
-      "Computing",
-      "R resources"
-    ]
+    "objectID": "slides/lab-00.html#what-to-expect-in-lab",
+    "href": "slides/lab-00.html#what-to-expect-in-lab",
+    "title": "Welcome to STA 210 labs!",
+    "section": "What to expect in lab",
+    "text": "What to expect in lab\n\nIntroduction to the lab assignment (~ 5 - 10 minutes)\nReview lecture content, as needed (~ 10 minutes)\nWork on the lab assignment (individual in the beginning and with teams for the remainder of the semester)\nStarting with Lab 01, you will find the starter materials for lab in your repo in the course GitHub organization."
   },
   {
-    "objectID": "computing-r-resources.html#additional-resources",
-    "href": "computing-r-resources.html#additional-resources",
-    "title": "Resources for learning R",
-    "section": "Additional resources",
-    "text": "Additional resources\n\nTidy Modeling with R by Max Kuhn & Julia Silge\nPosit Cheatsheets\nR workshops by Duke Center for Data and Visualization Sciences",
-    "crumbs": [
-      "Computing",
-      "R resources"
-    ]
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "STA 210 - Regression Analysis",
-    "section": "",
-    "text": "This page contains an outline of the topics, content, and assignments for the semester. Note that this schedule will be updated as the semester progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\nweek\ndow\ndate\ntopic\nprepare\nslides\nnotes\nae\nhw\nlab\nproject\ndue\n\n\n\n\n1\nTh\nJan 8\nWelcome to STA 210!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n2\nM\nJan 12\nLab 00\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nJan 13\nThe big picture\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nJan 15\nSimple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n3\nM\nJan 19\nNo lab: Martin Luther King Jr. Day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nJan 20\nInference: Bootstrap confidence intervals\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nJan 22\nInference: Permutation tests\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n4\nM\nJan 26\nLab 01\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nJan 27\nInference: Mathematical models\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 01 due\n\n\n\nTh\nJan 29\nMultiple linear regression (MLR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 01 due\n\n\n5\nM\nFeb 2\nLab 02\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nFeb 3\nMLR: Types of predictors\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nFeb 5\nInference for MLR\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 02 due\n\n\n6\nM\nFeb 9\nLab 03\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nFeb 10\nModel conditions + diagnostics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 02 due\n\n\n\nTh\nFeb 12\nExam 01 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 03 due\n\n\n7\nM\nFeb 16\nLab 04: Exam 01 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 04 due at end of lab\n\n\n\nTu\nFeb 17\nExam 01\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nFeb 19\nVariable transformations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n8\nM\nFeb 23\nLab: Project proposal\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nFeb 24\nModel selection\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nFeb 26\nCross validation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n9\nM\nMar 2\nLab 06\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nMar 3\nWrapping up MLR\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nMar 5\nEthics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 05 due\n\n\n10\nM\nMar 9\nNo Lab: Spring break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nMar 10\nNo Lecture: Spring Break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nMar 12\nNo Lecture: Spring break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n11\nM\nMar 16\nLab\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nMar 17\nLogistic regression (LR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 03 due\n\n\n\nTh\nMar 19\nLR: Prediction + Assessment\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n12\nM\nMar 23\nLab 06\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nMar 24\nLR: Inference\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nMar 26\nLR: Model selection\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 06 due\n\n\n13\nM\nMar 30\nLab 07\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nMar 31\nSpecial topic/ Catch up\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 04 due\n\n\n\nTh\nApr 2\nExam 02 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 07 due\n\n\n14\nM\nApr 6\nLab 08: Exam 02 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 08 due at end of lab\n\n\n\nTu\nApr 7\nExam 02\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nApr 9\nSpecial topic\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n15\nM\nApr 13\nProject work day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nApr 14\nProject presentations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nApr 16\nProject presentations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n16\nM\nApr 20\nLab: Draft peer review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nApr 21\nProject meetings\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStatistics experience due\n\n\nExam period",
-    "crumbs": [
-      "Schedule"
-    ]
+    "objectID": "slides/lab-00.html#todays-lab",
+    "href": "slides/lab-00.html#todays-lab",
+    "title": "Welcome to STA 210 labs!",
+    "section": "Today’s lab",
+    "text": "Today’s lab\nThe rest of the today’s lab is focused on setting up the computing for the course and completing the class survey. Click the link below for the Lab 00 instructions. The instructions are available on the course website.\nYour TA will demonstrate the steps to set up computing and interact with RStudio and GitHub.\n\n🔗 https://sta210-sp26.github.io/labs/lab-00.html"
   },
   {
     "objectID": "about.html",

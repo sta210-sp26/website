@@ -1,0 +1,67 @@
+---
+title: "Welcome to STA 210 labs!"
+date: "01-12-2026"
+date-format: "MMMM DD, YYYY"
+footer: "🔗 [sta210-sp26.github.io](https://sta210-sp26.github.io)"
+format: 
+  revealjs:
+    theme: slides.scss
+    multiplex: false
+    transition: fade
+    slide-number: true
+    incremental: false 
+    chalkboard: true
+execute:
+  freeze: auto
+  echo: true
+knitr:
+  opts_chunk: 
+    R.options:      
+    width: 200
+---
+
+## Meet your lab TA!
+
+![](images/hello-sticker.jpeg){fig-alt="Sticker that says \"Hello my name is\"" fig-align="center" width="80%"}
+
+## Meet your classmates!
+
+::: midi
+Please share the following with the class:
+
+-   Name
+
+-   Year in school
+
+-   Major / academic interests
+
+-   One boring fact
+:::
+
+```{r}
+#| echo: false 
+
+countdown::countdown(minutes  = 3)
+```
+
+## What to expect in lab
+
+-   Introduction to the lab assignment (\~ 5 - 10 minutes)
+
+-   Review lecture content, as needed (\~ 10 minutes)
+
+-   Work on the lab assignment (individual in the beginning and with teams for the remainder of the semester)
+
+-   Starting with Lab 01, you will find the starter materials for lab in your repo in the course GitHub organization.
+
+# Any questions?
+
+## Today's lab {.midi}
+
+The rest of the today's lab is focused on setting up the computing for the course and completing the class survey. Click the link below for the Lab 00 instructions. The instructions are available on the course website.
+
+Your TA will demonstrate the steps to set up computing and interact with RStudio and GitHub.
+
+<br>
+
+🔗 <https://sta210-sp26.github.io/labs/lab-00.html>
