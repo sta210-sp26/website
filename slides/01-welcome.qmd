@@ -2,7 +2,7 @@
 title: "Welcome to STA 210!"
 author: "Prof. Maria Tackett"
 date: "01-08-2026"
-date-format: "MMMMM DD, YYYY"
+date-format: "MMMM DD, YYYY"
 footer: "🔗 [sta210-sp26.github.io](https://sta210-sp26.github.io)"
 logo: "../images/logo.png"
 format: 
@@ -46,15 +46,24 @@ bibliography: references.bib
 
 -   Shane Rybacki (PhD): Lab 01 leader
 
-## Meet your classmates - UPDATE
+## Meet your classmates
+
+::: question
+Find a partner and share the following:
+
+1.  Name
+2.  Year
+3.  Major or academic interests
+4.  Highlight / something you enjoyed during winter break
+
+Everyone will introduce their partner to the class.
+:::
 
 ## Topics
 
 -   Introduction to the course
 
 -   Syllabus activity
-
--   Data exploration (time permitting)
 
 ## Data science workflow
 
@@ -155,7 +164,7 @@ By the end of the semester, you will be able to...
 
 -   assess the ethical considerations and implications of analysis decisions.
 
-## Course topics {.midi}
+## Course topics {.small}
 
 ::::::::: columns
 :::: {.column width="48%"}
@@ -185,7 +194,7 @@ By the end of the semester, you will be able to...
 ::: {.fragment fragment-index="3"}
 ### Special topics {style="color: #993399"}
 
--   TBD
+<br>
 :::
 
 ::: {.fragment fragment-index="4"}
@@ -243,7 +252,7 @@ By the end of the semester, you will be able to...
 
 -   Facilitates version control and collaboration
 
--   All work in [STA 210 course organization](https://github.com/sta210-sp25)
+-   All work in [STA 210 course organization](https://github.com/sta210-sp26)
 :::
 :::::
 :::::::::
@@ -280,42 +289,38 @@ It is my intent that students from all diverse backgrounds and perspectives be w
 5.  The reporter will share a summary with the class.
 :::
 
-## Syllabus activity assignments - UPDATE
+## Syllabus activity assignments
 
--   Group 1: [What to expect in the course](https://sta210-sp25.netlify.app/syllabus#what-to-expect-in-the-course)
+-   Group 1: [Labs](https://sta210-sp26.github.io/syllabus.html#labs)
 
--   Group 2: [Homework and lab assignments](https://sta210-sp25.netlify.app/syllabus#labs)
+-   Group 2: [Homework](https://sta210-sp26.github.io/syllabus.html#homework)
 
--   Group 3: [Exams Project, Participation](https://sta210-sp25.netlify.app/syllabus#exams)
+-   Group 3: [Exams](https://sta210-sp26.github.io/syllabus.html#exams)
 
--   Group 4: [Academic honesty (except AI policy)](https://sta210-sp25.netlify.app/syllabus#academic-honesty)
+-   Group 4: [Participation](https://sta210-sp26.github.io/syllabus.html#participation)
 
--   Group 5: [Artificial intelligence policy](https://sta210-sp25.netlify.app/syllabus#academic-honesty)
+-   Group 5: [Academic honesty (except AI policy)](https://sta210-sp26.github.io/syllabus.html#academic-honesty)
 
--   Group 6:[Late work policy and waiver for extenuating circumstances](https://sta210-sp25.netlify.app/syllabus#late-work-policy)
+-   Group 6: [AI policy](https://sta210-sp26.github.io/syllabus.html#academic-honesty)
 
--   Group 7: [Attendance and lecture recording request](https://sta210-sp25.netlify.app/syllabus#attendance-policy)
+-   Group 7: [Late work policy and waiver for extenuating circumstances](https://sta210-sp26.github.io/syllabus.html#late-work-policy)
 
--   Group 8: [Getting help in the course](https://sta210-sp25.netlify.app/syllabus#getting-help-in-the-course)
-
-## Syllabus activity report out - UPDATE
+## Syllabus activity report out
 
 ::: incremental
--   Group 1: [What to expect in the course](https://sta210-sp25.netlify.app/syllabus#what-to-expect-in-the-course)
+-   Group 1: [Labs](https://sta210-sp26.github.io/syllabus.html#labs)
 
--   Group 2: [Homework and lab assignments](https://sta210-sp25.netlify.app/syllabus#labs)
+-   Group 2: [Homework](https://sta210-sp26.github.io/syllabus.html#homework)
 
--   Group 3: [Exams Project, Participation](https://sta210-sp25.netlify.app/syllabus#exams)
+-   Group 3: [Exams](https://sta210-sp26.github.io/syllabus.html#exams)
 
--   Group 4: [Academic honesty (except AI policy)](https://sta210-sp25.netlify.app/syllabus#academic-honesty)
+-   Group 4: [Participation](https://sta210-sp26.github.io/syllabus.html#participation)
 
--   Group 5: [Artificial intelligence policy](https://sta210-sp25.netlify.app/syllabus#academic-honesty)
+-   Group 5: [Academic honesty (except AI policy)](https://sta210-sp26.github.io/syllabus.html#academic-honesty)
 
--   Group 6:[Late work policy and waiver for extenuating circumstances](https://sta210-sp25.netlify.app/syllabus#late-work-policy)
+-   Group 6: [AI policy](https://sta210-sp26.github.io/syllabus.html#academic-honesty)
 
--   Group 7: [Attendance and lecture recording request](https://sta210-sp25.netlify.app/syllabus#attendance-policy)
-
--   Group 8: [Getting help in the course](https://sta210-sp25.netlify.app/syllabus#getting-help-in-the-course)
+-   Group 7: [Late work policy and waiver for extenuating circumstances](https://sta210-sp26.github.io/syllabus.html#late-work-policy)
 :::
 
 ## Grading
@@ -331,7 +336,7 @@ It is my intent that students from all diverse backgrounds and perspectives be w
 
 ## Five tips for success in STA 210
 
-1.  Complete all “prepare” readings and tasks before class.
+1.  Complete all prepare readings and tasks before class.
 
 2.  Actively participate and engage in lectures and labs.
 
@@ -343,11 +348,19 @@ It is my intent that students from all diverse backgrounds and perspectives be w
 
 # Questions?
 
-# Let's look at data!  - UPDATE!
+## Minute paper  {.midi}
 
-::: appex
-📋 [sta210-sp25.netlify.app/ae/ae-01-movies.html](https://sta210-sp25.netlify.app/ae/ae-01-movies.html)
-:::
+Submit your response to the question below. The form will record your NetID. 🔗 <https://forms.office.com/r/r6fsAxjCqQ>
+
+<center>
+
+```{=html}
+<iframe width="640px" height="480px" src="https://forms.office.com/Pages/ResponsePage.aspx?id=TsVyyzFKnk2xSh6jbfrJTBw0r2_bKCVMs9lST1_-2sxUMFExWkI5VkdUTjFYQkI3NzI0SkdOWDUwRy4u&amp;embed=true" frameborder="0" marginwidth="0" marginheight="0" style="border: none; max-width:100%; max-height:100vh" allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen>
+
+</iframe>
+```
+
+</center>
 
 ## Before next class
 
