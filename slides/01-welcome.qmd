@@ -121,7 +121,6 @@ Researchers used logistic regression to classify online articles in which AI was
 :::
 
 :::: {.column width="60%"}
-
 ::: midi
 $$
 \log\Big(\frac{\pi}{1-\pi}\Big) = \beta_0 + \beta_1X_1 + \dots + \beta_pX_p
@@ -348,7 +347,7 @@ It is my intent that students from all diverse backgrounds and perspectives be w
 
 # Questions?
 
-## Minute paper  {.midi}
+## Minute paper {.midi}
 
 Submit your response to the question below. The form will record your NetID. 🔗 <https://forms.office.com/r/r6fsAxjCqQ>
 
