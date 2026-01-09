@@ -237,7 +237,7 @@ By the end of the semester, you will be able to...
 
 -   Write reproducible reports in Quarto
 
--   Access RStudio through [STA 210 Docker Containers](https://cmgr.oit.duke.edu/containers)
+-   Access RStudio through [Docker Containers](https://cmgr.oit.duke.edu/containers) (use containers labeled STA221)
 :::
 :::::
 
