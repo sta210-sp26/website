@@ -1395,7 +1395,7 @@
     "href": "ae/ae-03-slr.html",
     "title": "AE 03: Simple linear regression",
     "section": "",
-    "text": "Important\n\n\n\nGo to the course GitHub organization and locate your ae-03 repo to get started. If you do not see an ae-03 repo, use the link below to create one:\nhttps://classroom.github.com/a/jxxCTVVo\nThis AE does not count towards the participation grade.\nlibrary(tidyverse)\nlibrary(tidymodels)\nlibrary(patchwork)"
+    "text": "Important\n\n\n\nGo to the course GitHub organization and locate your ae-03 repo to get started. If you do not see an ae-03 repo, use the link below to create one:\nhttps://classroom.github.com/a/jxxCTVVo - UPDATE\nlibrary(tidyverse)\nlibrary(tidymodels)\nlibrary(patchwork)"
   },
   {
     "objectID": "ae/ae-03-slr.html#exercise-1",
@@ -1451,14 +1451,14 @@
     "href": "ae/ae-03-slr.html#exercise-8",
     "title": "AE 03: Simple linear regression",
     "section": "Exercise 8",
-    "text": "Exercise 8\n\nInterpret the slope in the context of the data.\nDoes it make sense to interpret the intercept? If so, interpret the intercept in the context of the data. Otherwise, explain why not."
+    "text": "Exercise 8\n\nInterpret the slope in the context of the data.\nDoes the intercept have a meaningful interpretation? If so, interpret the intercept in the context of the data. Otherwise, explain why not."
   },
   {
     "objectID": "ae/ae-03-slr.html#exercise-9",
     "href": "ae/ae-03-slr.html#exercise-9",
     "title": "AE 03: Simple linear regression",
     "section": "Exercise 9",
-    "text": "Exercise 9\nSuppose you work for a bike share company in Durham, NC, and they want to predict daily bike rentals in 2024. What is one reason you might recommend they use your analysis for this task? What is one reason you would recommend they not use your analysis for this task?"
+    "text": "Exercise 9\nSuppose you work for a bike share company in Durham, NC, and they want to predict daily bike rentals in 2026. What is one reason you might recommend they use your analysis for this task? What is one reason you would recommend they not use your analysis for this task?"
   },
   {
     "objectID": "ae/ae-09-prob-odds.html",
@@ -2140,7 +2140,7 @@
     "href": "syllabus.html#course-community",
     "title": "STA 210 Syllabus",
     "section": "Course community",
-    "text": "Course community\n\nInclusive community\nIt is my intent that students from all diverse backgrounds and perspectives be well-served by this course, that students’ learning needs be addressed both in and out of class, and that the diversity that the students bring to this class be viewed as a resource, strength, and benefit. It is my intent to present materials and activities that are respectful of diversity and in alignment with Duke’s Commitment to Diversity and Inclusion. Your suggestions are encouraged and appreciated. Please let me know ways to improve the effectiveness of the course for you personally, or for other students or student groups.\nFurthermore, I would like to create a learning environment for my students that supports a diversity of thoughts, perspectives and experiences, and honors your identities. To help accomplish this:\n\nIf you feel like your performance in the class is being impacted by your experiences outside of class, please don’t hesitate to come and talk with me. If you prefer to speak with someone outside of the course, your academic dean is an excellent resource.\nI (like many people) am still in the process of learning about diverse perspectives and identities. If something was said in class (by anyone) that made you feel uncomfortable, please let me or a member of the teaching team know.\n\n\n\nPronouns\nUsing pronouns can help foster a respectful campus environment where all community members can thrive. Sharing pronouns is always optional for members of the Duke community. If you would like to share yours, you can update them in DukeHub. You can learn more at the DukeHub & Zoom Tutorials.\n\n\nAccessibility\nIf there is any portion of the course that is not accessible to you due to challenges with technology or the course format, please let me know so we can make appropriate accommodations.\nThe Student Disability Access Office (SDAO) is available to ensure that students are able to engage with their courses and related assignments. Students should be in touch with the Student Disability Access Office to request or update accommodations under these circumstances.\n\n\nCommunication\nAll lecture notes, assignment instructions, an up-to-date schedule, and other course materials may be found on the course website, https://sta210-sp26.netlify.app.\nLinks to Zoom meetings may be found in Canvas. Periodic announcements will be sent via email and will also be available through Ed Discussion and Canvas Announcements. Please check your email regularly to ensure you have the latest announcements for the course.\n\n\nEmail\nIf you have questions about assignment extensions, accommodations, or any other matter not appropriate for the class discussion forum, please email me directly at maria.tackett@duke.edu. If you email me, please include “STA 210” in the subject line. Barring extenuating circumstances, I will respond to STA 210 emails within 48 hours Monday - Friday. Response time may be slower for emails sent Friday evening - Sunday.",
+    "text": "Course community\n\nInclusive community\nIt is my intent that students from all diverse backgrounds and perspectives be well-served by this course, that students’ learning needs be addressed both in and out of class, and that the diversity that the students bring to this class be viewed as a resource, strength, and benefit. It is my intent to present materials and activities that are respectful of diversity and in alignment with Duke’s Commitment to Diversity and Inclusion. Your suggestions are encouraged and appreciated. Please let me know ways to improve the effectiveness of the course for you personally, or for other students or student groups.\nFurthermore, I would like to create a learning environment for my students that supports a diversity of thoughts, perspectives and experiences, and honors your identities. To help accomplish this:\n\nIf you feel like your performance in the class is being impacted by your experiences outside of class, please don’t hesitate to come and talk with me. If you prefer to speak with someone outside of the course, your academic dean is an excellent resource.\nI (like many people) am still in the process of learning about diverse perspectives and identities. If something was said in class (by anyone) that made you feel uncomfortable, please let me or a member of the teaching team know.\n\n\n\nPronouns\nUsing pronouns can help foster a respectful campus environment where all community members can thrive. Sharing pronouns is always optional for members of the Duke community. If you would like to share yours, you can update them in DukeHub. You can learn more at the DukeHub & Zoom Tutorials.\n\n\nAccessibility\nIf there is any portion of the course that is not accessible to you due to challenges with technology or the course format, please let me know so we can make appropriate accommodations.\nThe Student Disability Access Office (SDAO) is available to ensure that students are able to engage with their courses and related assignments. Students should be in touch with the Student Disability Access Office to request or update accommodations under these circumstances.\n\n\nCommunication\nAll lecture notes, assignment instructions, an up-to-date schedule, and other course materials may be found on the course website, https://sta210-sp26.github.io.\nLinks to Zoom meetings may be found in Canvas. Periodic announcements will be sent via email and will also be available through Ed Discussion and Canvas Announcements. Please check your email regularly to ensure you have the latest announcements for the course.\n\n\nEmail\nIf you have questions about assignment extensions, accommodations, or any other matter not appropriate for the class discussion forum, please email me directly at maria.tackett@duke.edu. If you email me, please include “STA 210” in the subject line. Barring extenuating circumstances, I will respond to STA 210 emails within 48 hours Monday - Friday. Response time may be slower for emails sent Friday evening - Sunday.",
     "crumbs": [
       "Syllabus"
     ]
@@ -2497,6 +2497,230 @@
   {
     "objectID": "slides/03-slr-intro.html#next-class",
     "href": "slides/03-slr-intro.html#next-class",
+    "title": "Simple Linear Regression",
+    "section": "Next Class",
+    "text": "Next Class\n\nInference: Bootstrap confidence intervals\n\n\n\nComplete Lecture 04 Prepare"
+  },
+  {
+    "objectID": "slides/03-slr-intro-notes.html",
+    "href": "slides/03-slr-intro-notes.html",
+    "title": "Simple Linear Regression",
+    "section": "",
+    "text": "No lab Monday, January 20 - Martin Luther King Jr. Holiday"
+  },
+  {
+    "objectID": "slides/03-slr-intro-notes.html#announcements",
+    "href": "slides/03-slr-intro-notes.html#announcements",
+    "title": "Simple Linear Regression",
+    "section": "",
+    "text": "No lab Monday, January 20 - Martin Luther King Jr. Holiday"
+  },
+  {
+    "objectID": "slides/03-slr-intro-notes.html#topics",
+    "href": "slides/03-slr-intro-notes.html#topics",
+    "title": "Simple Linear Regression",
+    "section": "Topics",
+    "text": "Topics\n\n\nUse simple linear regression to describe the relationship between a quantitative predictor and quantitative response variable.\nEstimate the slope and intercept of the regression line using the least squares method.\nInterpret the slope and intercept of the regression line.\nPredict the response given a value of the predictor variable.\nFit linear regression models in R"
+  },
+  {
+    "objectID": "slides/03-slr-intro-notes.html#computation-set-up",
+    "href": "slides/03-slr-intro-notes.html#computation-set-up",
+    "title": "Simple Linear Regression",
+    "section": "Computation set up",
+    "text": "Computation set up\n\n# load packages\nlibrary(tidyverse)       # for data wrangling\nlibrary(tidymodels)      # for modeling\nlibrary(knitr)          # for formatting tables\n\n# set default theme and larger font size for ggplot2\nggplot2::theme_set(ggplot2::theme_bw(base_size = 16))\n\n# set default figure parameters for knitr\nknitr::opts_chunk$set(\n  fig.width = 8,\n  fig.asp = 0.618,\n  fig.retina = 3,\n  dpi = 300,\n  out.width = \"80%\"\n)"
+  },
+  {
+    "objectID": "slides/03-slr-intro-notes.html#movie-scores",
+    "href": "slides/03-slr-intro-notes.html#movie-scores",
+    "title": "Simple Linear Regression",
+    "section": "Movie scores",
+    "text": "Movie scores\n\n\n\nData behind the FiveThirtyEight story Be Suspicious Of Online Movie Ratings, Especially Fandango’s\nData originally from the fandango data frame in fivethirtyeight package. Available in movie-scores.csv\nContains every film released in 2014 and 2015 that has at least 30 fan reviews on Fandango, an IMDb score, Rotten Tomatoes critic and user ratings, and Metacritic critic and user scores"
+  },
+  {
+    "objectID": "slides/03-slr-intro-notes.html#data-overview",
+    "href": "slides/03-slr-intro-notes.html#data-overview",
+    "title": "Simple Linear Regression",
+    "section": "Data overview",
+    "text": "Data overview\n\nmovie_scores &lt;- read_csv(\"https://intro-regression.github.io/data/movie-scores.csv\")\n\nglimpse(movie_scores)\n\nRows: 146\nColumns: 4\n$ film           &lt;chr&gt; \"Avengers: Age of Ultron\", \"Cinderella\", \"Ant-Man\", \"Do…\n$ year           &lt;dbl&gt; 2015, 2015, 2015, 2015, 2015, 2015, 2015, 2014, 2015, 2…\n$ critics_score  &lt;dbl&gt; 74, 85, 80, 18, 14, 63, 42, 86, 99, 89, 84, 82, 99, 51,…\n$ audience_score &lt;dbl&gt; 86, 80, 90, 84, 28, 62, 53, 64, 82, 87, 77, 60, 79, 70,…"
+  },
+  {
+    "objectID": "slides/03-slr-intro-notes.html#movie-scores-data",
+    "href": "slides/03-slr-intro-notes.html#movie-scores-data",
+    "title": "Simple Linear Regression",
+    "section": "Movie scores data",
+    "text": "Movie scores data\nThe data set contains the “Tomatometer” score (critics_score) and audience score (audience_score) for 146 movies rated on rottentomatoes.com."
+  },
+  {
+    "objectID": "slides/03-slr-intro-notes.html#movie-ratings-data",
+    "href": "slides/03-slr-intro-notes.html#movie-ratings-data",
+    "title": "Simple Linear Regression",
+    "section": "Movie ratings data",
+    "text": "Movie ratings data\nGoal: Fit a line to describe the relationship between the critics score and audience score."
+  },
+  {
+    "objectID": "slides/03-slr-intro-notes.html#why-fit-a-line",
+    "href": "slides/03-slr-intro-notes.html#why-fit-a-line",
+    "title": "Simple Linear Regression",
+    "section": "Why fit a line?",
+    "text": "Why fit a line?\nWe fit a line to accomplish one or both of the following:\n. . .\n\nPrediction\n\nWhat is the audience score expected to be for an upcoming movie that received 35% from the critics?\n\n. . .\n\nInference\n\nIs the critics score a useful predictor of the audience score? By how much is the audience score expected to change for each additional point in the critics score?"
+  },
+  {
+    "objectID": "slides/03-slr-intro-notes.html#terminology",
+    "href": "slides/03-slr-intro-notes.html#terminology",
+    "title": "Simple Linear Regression",
+    "section": "Terminology",
+    "text": "Terminology\n\n\n\nResponse, Y: variable describing the outcome of interest\nPredictor, X: variable we use to help understand the variability in the response"
+  },
+  {
+    "objectID": "slides/03-slr-intro-notes.html#regression-model",
+    "href": "slides/03-slr-intro-notes.html#regression-model",
+    "title": "Simple Linear Regression",
+    "section": "Regression model",
+    "text": "Regression model\nA regression model is a function that describes the relationship between the response, \\(Y\\), and the predictor, \\(X\\).\n\\[\\begin{aligned} Y &= \\color{black}{\\textbf{Model}} + \\text{Error} \\\\[8pt]\n&= \\color{black}{\\mathbf{f(X)}} + \\epsilon \\\\[8pt]\n&= \\color{black}{\\mathbf{E(Y|X)}} + \\epsilon\\end{aligned}\\]"
+  },
+  {
+    "objectID": "slides/03-slr-intro-notes.html#regression-model-1",
+    "href": "slides/03-slr-intro-notes.html#regression-model-1",
+    "title": "Simple Linear Regression",
+    "section": "Regression model",
+    "text": "Regression model\n\n\n\\[\\begin{aligned} Y &= {\\color{purple} \\textbf{Model}} + \\textbf{Error} \\\\[8pt]\n&= {\\color{purple} \\mathbf{f(X)}} + \\epsilon \\\\[8pt]\n&= {\\color{purple} \\mathbf{E(Y|X)}} + \\epsilon \\\\ \\end{aligned}\\]\n\n\n\n\n\n\n\n\n\n\n\n\n\\(E(Y|X) = \\mu_{Y|X}\\) is the mean value of \\(Y\\) given a particular value of \\(X\\)."
+  },
+  {
+    "objectID": "slides/03-slr-intro-notes.html#regression-model-2",
+    "href": "slides/03-slr-intro-notes.html#regression-model-2",
+    "title": "Simple Linear Regression",
+    "section": "Regression model",
+    "text": "Regression model\n\n\n\\[\n\\begin{aligned} Y &= \\color{purple}{\\textbf{Model}} + \\color{blue}{\\textbf{Error}} \\\\[8pt]\n&= \\color{purple}{\\mathbf{f(X)}} + \\color{blue}{\\boldsymbol{\\epsilon}} \\\\[8pt]\n&= \\color{purple}{\\mathbf{E(Y|X)}} + \\color{blue}{\\boldsymbol{\\epsilon}} \\\\\n\\end{aligned}\n\\]"
+  },
+  {
+    "objectID": "slides/03-slr-intro-notes.html#slr-statistical-model-theoretical",
+    "href": "slides/03-slr-intro-notes.html#slr-statistical-model-theoretical",
+    "title": "Simple Linear Regression",
+    "section": "SLR: Statistical model (Theoretical)",
+    "text": "SLR: Statistical model (Theoretical)\nWhen we have a quantitative response, \\(Y\\), and a single quantitative predictor, \\(X\\), we can use a simple linear regression model to describe the relationship between \\(Y\\) and \\(X\\).\n\n\\[y_i = \\beta_0 + \\beta_1 x_i + \\epsilon_i\\]\n\n. . .\n\n\\(\\beta_1\\): True slope of the relationship between \\(X\\) and \\(Y\\)\n\\(\\beta_0\\): True intercept of the relationship between \\(X\\) and \\(Y\\)\n\\(\\epsilon_i\\): Error for the \\(i^{th}\\) observation"
+  },
+  {
+    "objectID": "slides/03-slr-intro-notes.html#slr-regression-equation-fitted",
+    "href": "slides/03-slr-intro-notes.html#slr-regression-equation-fitted",
+    "title": "Simple Linear Regression",
+    "section": "SLR: Regression equation (Fitted)",
+    "text": "SLR: Regression equation (Fitted)\n\n\\[\n\\hat{y}_i = \\hat{\\beta}_0 + \\hat{\\beta}_1 x_i\n\\]\n\n\n\\(\\hat{\\beta}_1\\): Estimated slope of the relationship between \\(X\\) and \\(Y\\)\n\\(\\hat{\\beta}_0\\): Estimated intercept of the relationship between \\(X\\) and \\(Y\\)\nNo error term!\n\n. . .\n\nWhy is there no error term in the estimated regression equation?"
+  },
+  {
+    "objectID": "slides/03-slr-intro-notes.html#computing-estimates-hatbeta_1-and-hatbeta_0",
+    "href": "slides/03-slr-intro-notes.html#computing-estimates-hatbeta_1-and-hatbeta_0",
+    "title": "Simple Linear Regression",
+    "section": "Computing estimates \\(\\hat{\\beta}_1\\) and \\(\\hat{\\beta}_0\\)",
+    "text": "Computing estimates \\(\\hat{\\beta}_1\\) and \\(\\hat{\\beta}_0\\)"
+  },
+  {
+    "objectID": "slides/03-slr-intro-notes.html#residuals",
+    "href": "slides/03-slr-intro-notes.html#residuals",
+    "title": "Simple Linear Regression",
+    "section": "Residuals",
+    "text": "Residuals\n\n\n\n\n\n\n\n\n\n\\[\\text{residual} = \\text{observed} - \\text{predicted} = y_i - \\hat{y}_i\\]"
+  },
+  {
+    "objectID": "slides/03-slr-intro-notes.html#least-squares-line",
+    "href": "slides/03-slr-intro-notes.html#least-squares-line",
+    "title": "Simple Linear Regression",
+    "section": "Least squares line",
+    "text": "Least squares line\n\nThe residual for the \\(i^{th}\\) observation is\n\n\\[e_i = \\text{observed} - \\text{predicted}\n= y_i - \\hat{y}_i\\]\n\nThe sum of squared residuals is\n\n\\[e^2_1 + e^2_2 + \\dots + e^2_n\\]\n\nThe Ordinary Least Squares (OLS) line is the one that minimizes the sum of squared residuals"
+  },
+  {
+    "objectID": "slides/03-slr-intro-notes.html#least-squares-estimator-of-hatbeta_0",
+    "href": "slides/03-slr-intro-notes.html#least-squares-estimator-of-hatbeta_0",
+    "title": "Simple Linear Regression",
+    "section": "Least-squares estimator of \\(\\hat{\\beta}_0\\)",
+    "text": "Least-squares estimator of \\(\\hat{\\beta}_0\\)\n\n\n\nClick here for full details on estimating and .for full details on estimating \\(\\hat{\\beta}_0\\) and \\(\\hat{\\beta}_1\\) for simple linear regression."
+  },
+  {
+    "objectID": "slides/03-slr-intro-notes.html#properties-of-least-squares-regression",
+    "href": "slides/03-slr-intro-notes.html#properties-of-least-squares-regression",
+    "title": "Simple Linear Regression",
+    "section": "Properties of least squares regression",
+    "text": "Properties of least squares regression\n\n\nThe regression line goes through the center of mass point, the coordinates corresponding to average \\(X\\) and average \\(Y\\): \\(\\hat{\\beta}_0 = \\bar{y} - \\hat{\\beta}_1\\bar{x}\\)\nThe slope has the same sign as the correlation coefficient: \\(\\hat{\\beta}_1 = r \\frac{s_Y}{s_X}\\)\nThe sum of the residuals is approximately zero: \\(\\sum_{i = 1}^n e_i \\approx 0\\)\nThe residuals and \\(X\\) values are uncorrelated"
+  },
+  {
+    "objectID": "slides/03-slr-intro-notes.html#estimating-the-slope",
+    "href": "slides/03-slr-intro-notes.html#estimating-the-slope",
+    "title": "Simple Linear Regression",
+    "section": "Estimating the slope",
+    "text": "Estimating the slope\n\\[\\large{\\hat{\\beta}_1 = r \\frac{s_Y}{s_X}}\\]\n\n\n\\[\\begin{aligned}\ns_X &= 30.1688 \\\\\ns_Y &=  20.0244 \\\\\nr &= 0.7814\n\\end{aligned}\\]\n\n\\[\\begin{aligned}\n\\hat{\\beta}_1 &= 0.7814 \\times \\frac{20.0244}{30.1688} \\\\\n&= 0.5187\\end{aligned}\\]"
+  },
+  {
+    "objectID": "slides/03-slr-intro-notes.html#estimating-the-intercept",
+    "href": "slides/03-slr-intro-notes.html#estimating-the-intercept",
+    "title": "Simple Linear Regression",
+    "section": "Estimating the intercept",
+    "text": "Estimating the intercept\n\\[\\large{\\hat{\\beta}_0 = \\bar{y} - \\hat{\\beta}_1\\bar{x}}\\]\n\n\n\\[\\begin{aligned}\n&\\bar{x} = 60.8493 \\\\\n&\\bar{y} = 63.8767 \\\\\n&\\hat{\\beta}_1 = 0.5187\n\\end{aligned}\\]\n\n\\[\\begin{aligned}\\hat{\\beta}_0 &= 63.8767 - 0.5187 \\times 60.8493 \\\\\n&= 32.3142\n\\end{aligned}\\]"
+  },
+  {
+    "objectID": "slides/03-slr-intro-notes.html#interpretation---update-to-ms-form",
+    "href": "slides/03-slr-intro-notes.html#interpretation---update-to-ms-form",
+    "title": "Simple Linear Regression",
+    "section": "Interpretation - UPDATE to MS FORM",
+    "text": "Interpretation - UPDATE to MS FORM\n\\[\n\\widehat{\\text{audience}} = 32.3142 + 0.5187 \\times \\text{critics}\n\\]\n\nAnswer the following questions on Ed Discussion:\n\nThe slope of the model for predicting audience score from critics score is 0.5187 . Which of the following is the best interpretation of this value?\n32.3142 is the predicted mean audience score for what type of movies?\n\n🔗 https://edstem.org/us/courses/70992/discussion/5978732"
+  },
+  {
+    "objectID": "slides/03-slr-intro-notes.html#does-it-make-sense-to-interpret-the-intercept",
+    "href": "slides/03-slr-intro-notes.html#does-it-make-sense-to-interpret-the-intercept",
+    "title": "Simple Linear Regression",
+    "section": "Does it make sense to interpret the intercept?",
+    "text": "Does it make sense to interpret the intercept?\n. . .\n✅ The intercept is meaningful in the context of the data if\n\nthe predictor can feasibly take values equal to or near zero, or\nthere are values near zero in the observed data.\n\n. . .\n🛑 Otherwise, the intercept may not be meaningful!"
+  },
+  {
+    "objectID": "slides/03-slr-intro-notes.html#making-a-prediction",
+    "href": "slides/03-slr-intro-notes.html#making-a-prediction",
+    "title": "Simple Linear Regression",
+    "section": "Making a prediction",
+    "text": "Making a prediction\nSuppose that a movie has a critics score of 70. According to this model, what is the movie’s predicted audience score?\n\\[\\begin{aligned}\n\\widehat{\\text{audience_score}} &= 32.3142 + 0.5187 \\times \\text{critics_score} \\\\\n&= 32.3142 + 0.5187 \\times 70 \\\\\n&= 68.6232\n\\end{aligned}\\]\n\n. . .\n\n\n\n\n\n\nCaution\n\n\n\nUsing the model to predict for values outside the range of the original data is extrapolation. Why do we want to avoid extrapolation?"
+  },
+  {
+    "objectID": "slides/03-slr-intro-notes.html#fit-the-model",
+    "href": "slides/03-slr-intro-notes.html#fit-the-model",
+    "title": "Simple Linear Regression",
+    "section": "Fit the model",
+    "text": "Fit the model\nUse the lm() function to fit a linear regression model\n\n\nmovie_fit &lt;- lm(audience_score ~ critics_score, data = movie_scores)\nmovie_fit\n\n\nCall:\nlm(formula = audience_score ~ critics_score, data = movie_scores)\n\nCoefficients:\n  (Intercept)  critics_score  \n      32.3155         0.5187"
+  },
+  {
+    "objectID": "slides/03-slr-intro-notes.html#tidy-results",
+    "href": "slides/03-slr-intro-notes.html#tidy-results",
+    "title": "Simple Linear Regression",
+    "section": "Tidy results",
+    "text": "Tidy results\nUse the tidy() function from the broom R package to “tidy” the model output\n\n\nmovie_fit &lt;- lm(audience_score ~ critics_score, data = movie_scores)\ntidy(movie_fit)\n\n# A tibble: 2 × 5\n  term          estimate std.error statistic  p.value\n  &lt;chr&gt;            &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;\n1 (Intercept)     32.3      2.34        13.8 4.03e-28\n2 critics_score    0.519    0.0345      15.0 2.70e-31"
+  },
+  {
+    "objectID": "slides/03-slr-intro-notes.html#format-results",
+    "href": "slides/03-slr-intro-notes.html#format-results",
+    "title": "Simple Linear Regression",
+    "section": "Format results",
+    "text": "Format results\nUse the kable() function from the knitr package to neatly format the results\n\n\n\nmovie_fit &lt;- lm(audience_score ~ critics_score, data = movie_scores)\ntidy(movie_fit) |&gt;\n  kable(digits = 3)\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n32.316\n2.343\n13.795\n0\n\n\ncritics_score\n0.519\n0.035\n15.028\n0"
+  },
+  {
+    "objectID": "slides/03-slr-intro-notes.html#prediction-1",
+    "href": "slides/03-slr-intro-notes.html#prediction-1",
+    "title": "Simple Linear Regression",
+    "section": "Prediction",
+    "text": "Prediction\nUse the predict() function to calculate predictions for new observations\n\nSingle observation\n\nnew_movie &lt;- tibble(critics_score = 70)\npredict(movie_fit, new_movie)\n\n       1 \n68.62297"
+  },
+  {
+    "objectID": "slides/03-slr-intro-notes.html#prediction-2",
+    "href": "slides/03-slr-intro-notes.html#prediction-2",
+    "title": "Simple Linear Regression",
+    "section": "Prediction",
+    "text": "Prediction\nUse the predict() function to calculate predictions for new observations\n\nMultiple observations\n\nmore_new_movies &lt;- tibble(critics_score = c(24,70, 85))\npredict(movie_fit, more_new_movies)\n\n       1        2        3 \n44.76379 68.62297 76.40313"
+  },
+  {
+    "objectID": "slides/03-slr-intro-notes.html#recap",
+    "href": "slides/03-slr-intro-notes.html#recap",
+    "title": "Simple Linear Regression",
+    "section": "Recap",
+    "text": "Recap\n\n\nUsed simple linear regression to describe the relationship between a quantitative predictor and quantitative response variable.\nUsed the least squares method to estimate the slope and intercept.\nInterpreted the slope and intercept.\nPredicted the response given a value of the predictor variable.\nUsed R to fit the regression line and calculate predictions"
+  },
+  {
+    "objectID": "slides/03-slr-intro-notes.html#next-class",
+    "href": "slides/03-slr-intro-notes.html#next-class",
     "title": "Simple Linear Regression",
     "section": "Next Class",
     "text": "Next Class\n\nInference: Bootstrap confidence intervals\n\n\n\nComplete Lecture 04 Prepare"

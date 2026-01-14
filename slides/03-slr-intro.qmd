@@ -528,15 +528,15 @@ more_new_movies <- tibble(critics_score = c(24,70, 85))
 predict(movie_fit, more_new_movies)
 ```
 
-# Application exercise - UPDATE
+# Application exercise 
 
 ::: appex
-📋 <https://sta210-sp25.netlify.app/ae/ae-03-slr.html>
+📋 [sta210-sp26.github.io/ae/ae-03-slr.html](https://sta210-sp26.github.io/ae/ae-03-slr.html)
 :::
 
 -   Find your `ae-03` repo in the course GitHub organization.
 
--   If you do not see an `ae-03` repo, use the link to create one: <https://classroom.github.com/a/jxxCTVVo>
+-   If you do not see an `ae-03` repo, use the link to create one: <https://classroom.github.com/a/aW6NsEK2>
 
 ## Recap
 

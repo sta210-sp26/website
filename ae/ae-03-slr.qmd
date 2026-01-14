@@ -1,16 +1,17 @@
 ---
 title: "AE 03: Simple linear regression" 
 subtitle: "Bike rentals in Washington, DC"
-date: "January 16, 2025"
+date: "January 15, 2026"
 editor: visual
+execute: 
+  warning: false
+  message: false
 ---
 
 ::: callout-important
-Go to the [course GitHub organization](https://github.com/sta210-sp25) and locate your `ae-03` repo to get started. If you do not see an `ae-03` repo, use the link below to create one:
+Go to the [course GitHub organization](https://github.com/sta210-sp26) and locate your `ae-03` repo to get started. If you do not see an `ae-03` repo, use the link below to create one:
 
-<https://classroom.github.com/a/jxxCTVVo>
-
-**This AE does not count towards the participation grade.**
+<https://classroom.github.com/a/aW6NsEK2>
 :::
 
 ```{r}
@@ -124,17 +125,18 @@ Use the output to write out the estimated regression equation.
 
 -   Interpret the slope in the context of the data.
 
--   Does it make sense to interpret the intercept? If so, interpret the intercept in the context of the data. Otherwise, explain why not.
+-   Does the intercept have a meaningful interpretation? If so, interpret the intercept in the context of the data. Otherwise, explain why not.
 
 ## Exercise 9
 
-Suppose you work for a bike share company in Durham, NC, and they want to predict daily bike rentals in 2024. What is one reason you might recommend they use your analysis for this task? What is one reason you would recommend they [**not**]{.underline} use your analysis for this task?
+Suppose you work for a bike share company in Durham, NC, and they want to predict daily bike rentals in 2026. What is one reason you might recommend they use your analysis for this task? What is one reason you would recommend they [**not**]{.underline} use your analysis for this task?
 
-# Submission
+# Wrapping up
 
 ::: callout-important
-To submit the AE:
+Once you’ve completed the AE:
 
--   Render the document to produce the PDF with all of your work from today's class.
--   Push all your work to your `ae-03-` repo on GitHub. (AEs are not submitted on Gradescope.)
+-   Render the document to produce the PDF with all of your work from today’s class.
+
+-   Push all your work to your AE repo on GitHub. You’re done! 🎉
 :::
