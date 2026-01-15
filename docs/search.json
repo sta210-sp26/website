@@ -676,6 +676,76 @@
     "text": "Exercise 5\nWe can use a logistic regression model to understand the relationship between how much someone has heard about AI and whether they are concerned about increased use of AI in daily life. (We will discuss this in detail next class, but will get a preview for now.)\nLet \\(p\\) be the probability a randomly selected respondent is concerned about increased use of AI in daily life. The statistical model is\n\\[\n\\begin{aligned}\n\\log\\Big(\\frac{p_i}{1-p_i}\\Big) = \\beta_0 &+ \\beta_1\\boldsymbol{1}(ai\\_heard_i = \\text{A little}) \\\\ &+ \\beta_2\\mathbf{1}(ai\\_heard_i = \\text{Nothing}) \\\\  &+ \\beta_3\\mathbf{1}(ai\\_heard_i = \\text{Refused})\n\\end{aligned}\n\\]\nThe code and output to fit this model is shown below:\n\nai_concern_fit &lt;- glm(ai_concern ~ ai_heard, data = pew_data,\n                      family = \"binomial\")\ntidy(ai_concern_fit) |&gt; \n  kable(digits = 3)\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n-0.065\n0.031\n-2.082\n0.037\n\n\nai_heardA little\n0.383\n0.040\n9.504\n0.000\n\n\nai_heardNothing at all\n-0.276\n0.079\n-3.505\n0.000\n\n\nai_heardRefused\n-0.697\n0.459\n-1.520\n0.129\n\n\n\n\n\n\nInterpret the intercept in the context of the data in terms of the log-odds of being concerned about increased use of AI in daily life.\nInterpret the coefficient of ai_heardA little in the context of the data in terms of the log-odds of being concerned about increased use of AI in daily life.\nInterpret the coefficient of ai_heardNothing at all in the context of the data in terms of the odds of being concerned about the increased use of AI in daily life. How does this compare to your response to Exercise 4?\n\n\n\n\n\n\n\nImportantSubmission\n\n\n\nTo submit the AE:\nRender the document to produce the PDF with all of your work from today’s class.\nPush all your work to your AE repo on GitHub. You’re done! 🎉"
   },
   {
+    "objectID": "ae/ae-03-slr.html",
+    "href": "ae/ae-03-slr.html",
+    "title": "AE 03: Simple linear regression",
+    "section": "",
+    "text": "Important\n\n\n\nGo to the course GitHub organization and locate your ae-03 repo to get started. If you do not see an ae-03 repo, use the link below to create one:\nhttps://classroom.github.com/a/aW6NsEK2\nlibrary(tidyverse)\nlibrary(tidymodels)\nlibrary(patchwork)"
+  },
+  {
+    "objectID": "ae/ae-03-slr.html#exercise-1",
+    "href": "ae/ae-03-slr.html#exercise-1",
+    "title": "AE 03: Simple linear regression",
+    "section": "Exercise 1",
+    "text": "Exercise 1\nVisualizations for the univariate and bivariate exploratory data analysis of daily bike rentals and temperature are below.\n\np1 &lt;- ggplot(bikeshare, aes(x = count)) +\n  geom_histogram(binwidth = 250) + \n  labs(x = \"Daily bike rentals\")\n\np2 &lt;- ggplot(bikeshare, aes(x = temp_orig)) +\n  geom_histogram() + \n  labs(x = \"Temperature (Celsius)\")\n\np3 &lt;- ggplot(bikeshare, aes(y = count, x = temp_orig)) +\n  geom_point() + \n  labs(x = \"Temperature (Celsius)\", \n       y = \"Daily bike rentals\")\n\n(p1 | p2) / p3\n\n\n\n\n\n\n\n\nThere appears to be one day with a very small number of bike rentals. What was the day? Why were the number of bike rentals so low on that day? Hint: You can Google the date to figure out what was going on that day."
+  },
+  {
+    "objectID": "ae/ae-03-slr.html#exercise-2",
+    "href": "ae/ae-03-slr.html#exercise-2",
+    "title": "AE 03: Simple linear regression",
+    "section": "Exercise 2",
+    "text": "Exercise 2\nIn the raw data, seasons are coded as 1, 2, 3, 4, numeric values that correspond to winter, spring, summer, and fall respectively. Complete the code below to make season a categorical variable with levels corresponding to season names stored in the original order.\n\nbikeshare &lt;- bikeshare |&gt;\n  mutate(season = case_when(\n    season == 1 ~ \"Winter\", \n    season == 2 ~ \"Spring\", \n    season == 3 ~ \"Summer\", \n    season == 4 ~ \"Fall\"\n  ))"
+  },
+  {
+    "objectID": "ae/ae-03-slr.html#exercise-3",
+    "href": "ae/ae-03-slr.html#exercise-3",
+    "title": "AE 03: Simple linear regression",
+    "section": "Exercise 3",
+    "text": "Exercise 3\nWe want to evaluate whether the relationship between temperature and daily bike rentals is the same for each season. To answer this question, begin by creating a scatter plot of daily bike rentals vs. temperature faceted by season.\n\n# add code developed during livecoding here"
+  },
+  {
+    "objectID": "ae/ae-03-slr.html#exercise-4",
+    "href": "ae/ae-03-slr.html#exercise-4",
+    "title": "AE 03: Simple linear regression",
+    "section": "Exercise 4",
+    "text": "Exercise 4\n\nWhich season appears to have the strongest relationship between temperature and daily bike rentals? Why do you think the relationship is strongest in this season?\nWhich season appears to have the weakest relationship between temperature and daily bike rentals? Why do you think the relationship is weakest in this season?"
+  },
+  {
+    "objectID": "ae/ae-03-slr.html#exercise-5",
+    "href": "ae/ae-03-slr.html#exercise-5",
+    "title": "AE 03: Simple linear regression",
+    "section": "Exercise 5",
+    "text": "Exercise 5\nFilter your data for the season with the strongest apparent relationship between temperature and daily bike rentals.\n\n# add code developed during livecoding here"
+  },
+  {
+    "objectID": "ae/ae-03-slr.html#exercise-6",
+    "href": "ae/ae-03-slr.html#exercise-6",
+    "title": "AE 03: Simple linear regression",
+    "section": "Exercise 6",
+    "text": "Exercise 6\nUsing the data from Exercise 5, fit a linear model to predict daily bike rentals using temperature for this season.\n\n# add code developed during livecoding here"
+  },
+  {
+    "objectID": "ae/ae-03-slr.html#exercise-7",
+    "href": "ae/ae-03-slr.html#exercise-7",
+    "title": "AE 03: Simple linear regression",
+    "section": "Exercise 7",
+    "text": "Exercise 7\nUse the output to write out the estimated regression equation."
+  },
+  {
+    "objectID": "ae/ae-03-slr.html#exercise-8",
+    "href": "ae/ae-03-slr.html#exercise-8",
+    "title": "AE 03: Simple linear regression",
+    "section": "Exercise 8",
+    "text": "Exercise 8\n\nInterpret the slope in the context of the data.\nDoes the intercept have a meaningful interpretation? If so, interpret the intercept in the context of the data. Otherwise, explain why not."
+  },
+  {
+    "objectID": "ae/ae-03-slr.html#exercise-9",
+    "href": "ae/ae-03-slr.html#exercise-9",
+    "title": "AE 03: Simple linear regression",
+    "section": "Exercise 9",
+    "text": "Exercise 9\nSuppose you work for a bike share company in Durham, NC, and they want to predict daily bike rentals in 2026. What is one reason you might recommend they use your analysis for this task? What is one reason you would recommend they not use your analysis for this task?"
+  },
+  {
     "objectID": "ae/ae-05-sim-testing.html",
     "href": "ae/ae-05-sim-testing.html",
     "title": "AE 05: Permutation test for the slope",

@@ -2,7 +2,6 @@
 title: "AE 03: Simple linear regression" 
 subtitle: "Bike rentals in Washington, DC"
 date: "January 15, 2026"
-format: pdf
 editor: visual
 execute: 
   warning: false
