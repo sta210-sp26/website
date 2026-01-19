@@ -550,23 +550,29 @@ df_boot_samples_1000_hist
 
 ## Bootstrap sampling distribution 
 
+```{r}
+#| echo: false
+
+boot_dist_sd <- df_boot_samples_1000_fit |> ungroup() |> filter(term == "area") |> summarise(sd(estimate)) |> pull() 
+```
+
 :::: panel-tabset
 ## Question
 
 ::: midi
 -   What is the approximate center of the bootstrap sampling distribution?
 
--   What does the spread of the bootstrap sampling distribution represent?
+-   The standard deviation of the bootstrap sampling distribution is `r  round(boot_dist_sd, 3)`. What does this value represent?
 :::
 
-## Submit - UPDATE!
+## Submit 
 
 ```{=html}
-<center><iframe width="640px" height="480px" src="https://forms.office.com/Pages/ResponsePage.aspx?id=TsVyyzFKnk2xSh6jbfrJTBw0r2_bKCVMs9lST1_-2sxUNUZEOUxISDJERFIyNzUyQTg5MjVUN1VOWi4u&embed=true" frameborder="0" marginwidth="0" marginheight="0" style="border: none; max-width:100%; max-height:100vh" allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen> </iframe></center>
+<center><iframe width="640px" height="480px" src="https://forms.office.com/r/naWVT11vBu?embed=true" frameborder="0" marginwidth="0" marginheight="0" style="border: none; max-width:100%; max-height:100vh" allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen> </iframe></center>
 ```
 ::::
 
-🔗 <https://forms.office.com/r/NYMZZguyqP>
+🔗 <https://forms.office.com/r/naWVT11vBu>
 
 ## Confidence level
 
