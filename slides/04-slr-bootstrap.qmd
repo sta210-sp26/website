@@ -50,55 +50,22 @@ ggplot2::theme_set(ggplot2::theme_bw(base_size = 16))
 
 ## Announcements
 
--   HW 01 due Tuesday, January 28 at 11:59pm
+-   HW 01 due Tuesday, January 27 at 11:59pm
 
     -   Released after class today
+    -   AI Disclosure
 
-# AE 03 Follow-up
-
-## AE 03 Follow-up {.midi}
-
-**Goal:** Use simple linear regression to model the relationship between temperature and daily bike rentals in the **winter** season
-
-```{r}
-#| include: false
-
-
-winter <- read_csv("../ae/data/dcbikeshare.csv") |>
-  mutate(season = case_when(
-    season == 1 ~ "winter", 
-    season == 2 ~ "spring", 
-    season == 3 ~ "summer", 
-    season == 4 ~ "fall"
-  ), 
-  season = factor(season)) |>
-  filter(season == "winter")
-```
-
-```{r}
-#| echo: false
-#| eval: true
-#| out-width: "65%"
-
-ggplot(data = winter, aes(x = temp_orig, y = count)) + 
-  geom_point() + 
-  labs(x = "Temperature in Celsius", 
-       y = "Daily bike rentals", 
-       title = "Capital Bikeshare daily bike rentals vs. temperature", 
-       subtitle = "in winter months")
-```
-
-# Application exercise
+# AE 03
 
 ::: appex
-📋 <https://sta210-sp25.netlify.app/ae/ae-03-slr.html>
+📋 [sta210-sp26.github.io/ae/ae-03-slr.html](../ae/ae-03-slr.html)
 
-Complete exercises 6 - 9.
+Complete Ex 5 - 9.
 :::
 
 -   Find your `ae-03` repo in the course GitHub organization.
 
--   If you do not see an `ae-03` repo, use the link to create one: <https://classroom.github.com/a/jxxCTVVo>
+-   If you do not see an `ae-03` repo, use the link to create one: <https://classroom.github.com/a/JpQEbKBU>
 
 # Simulation-based inference
 
@@ -151,7 +118,7 @@ ggplot(duke_forest, aes(x = area, y = price)) +
   geom_point(alpha = 0.7) +
   labs(
     x = "Area (square feet)",
-    y = "sales price (USD)",
+    y = "Sales price (USD)",
     title = "Price and area of houses in Duke Forest"
   ) +
   scale_y_continuous(labels = label_dollar()) 
@@ -176,7 +143,7 @@ slope <- tidy(df_fit) |> filter(term == "area") |> pull(estimate) |> round()
 ```
 
 -   **Intercept:** Duke Forest houses that are 0 square feet are expected to sell, for `r dollar(intercept)`, on average.
-    -   Is this interpretation useful?
+    -   Is this interpretation meaningful?
 -   **Slope:** For each additional square foot, we expect the sales price of Duke Forest houses to be higher by `r dollar(slope)`, on average.
 
 ## From sample to population {.midi}
@@ -195,9 +162,25 @@ slope <- tidy(df_fit) |> filter(term == "area") |> pull(estimate) |> round()
 
 -   For our inferences to be valid, the sample should be random and representative of the population we're interested in
 
+## Statistical inference
+
+:::::: columns
+:::: {.column width="40%"}
+::: midi
+-   **Statistical inference** provides methods and tools so we can use the single observed sample to make valid statements (inferences) about the population it comes from
+
+-   For our inferences to be valid, the sample should be representative (ideally random) of the population we're interested in
+:::
+::::
+
+::: {.column width="60%"}
+![Image source: Eugene Morgan © Penn State](images/04/inference.png){fig-align="center"}
+:::
+::::::
+
 ## Inference for simple linear regression
 
--   Calculate a confidence interval for the slope, $\beta_1$
+-   Compute a confidence interval for the slope, $\beta_1$
 
 -   Conduct a hypothesis test for the slope,$\beta_1$
 
@@ -539,6 +522,52 @@ df_boot_samples_100_hist <- ggplot(df_boot_samples_100_fit |> filter(term == "ar
 df_boot_samples_100_hist
 ```
 
+## Bootstrap distribution 
+
+Let's increase the number of bootstrap samples to 1000. The **bootstrap sampling distribution** is the distribution of estimated slopes given samples of size $n$ (the same as our data).
+
+```{r}
+#| echo: false
+set.seed(119)
+
+df_boot_samples_1000 <- duke_forest |>
+  specify(price ~ area) |>
+  generate(reps = 1000, type = "bootstrap")
+
+df_boot_samples_1000_fit <- df_boot_samples_1000 |>
+  fit()
+
+df_boot_samples_1000_hist <- ggplot(df_boot_samples_1000_fit |> filter(term == "area"), aes(x = estimate)) +
+  geom_histogram(binwidth = 10, color = "white") +
+  geom_vline(xintercept = slope, color = "#8F2D56", size = 1) +
+  labs(x = "Slope", y = "Count",
+       title = "Bootstrap sampling distribution", 
+       subtitle = "1000 bootstrap samples") +
+  scale_x_continuous(labels = label_dollar())
+
+df_boot_samples_1000_hist
+```
+
+## Bootstrap sampling distribution 
+
+:::: panel-tabset
+## Question
+
+::: midi
+-   What is the approximate center of the bootstrap sampling distribution?
+
+-   What does the spread of the bootstrap sampling distribution represent?
+:::
+
+## Submit - UPDATE!
+
+```{=html}
+<center><iframe width="640px" height="480px" src="https://forms.office.com/Pages/ResponsePage.aspx?id=TsVyyzFKnk2xSh6jbfrJTBw0r2_bKCVMs9lST1_-2sxUNUZEOUxISDJERFIyNzUyQTg5MjVUN1VOWi4u&embed=true" frameborder="0" marginwidth="0" marginheight="0" style="border: none; max-width:100%; max-height:100vh" allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen> </iframe></center>
+```
+::::
+
+🔗 <https://forms.office.com/r/NYMZZguyqP>
+
 ## Confidence level
 
 ::: question
@@ -547,26 +576,26 @@ How confident are you that the true slope is between \$0 and \$250? How about \$
 
 ```{r}
 #| echo: false
-df_boot_samples_100_hist
+df_boot_samples_1000_hist
 ```
 
 ## 95% confidence interval {.midi}
 
 ```{r}
 #| echo: false
-lower <- df_boot_samples_100_fit |>
+lower <- df_boot_samples_1000_fit |>
   ungroup() |>
   filter(term == "area") |>
   summarise(quantile(estimate, 0.025)) |>
   pull()
 
-upper <- df_boot_samples_100_fit |>
+upper <- df_boot_samples_1000_fit |>
   ungroup() |>
   filter(term == "area") |>
   summarise(quantile(estimate, 0.975)) |>
   pull()
 
-df_boot_samples_100_hist +
+df_boot_samples_1000_hist +
   geom_vline(xintercept = lower, color = "steelblue", size = 1, linetype = "dashed") +
   geom_vline(xintercept = upper, color = "steelblue", size = 1, linetype = "dashed")
 ```
@@ -614,6 +643,10 @@ boot_fits <- duke_forest |>
 boot_fits
 ```
 
+::: callout-note
+Use \~ 100 bootstrap samples to write code, and 1000+ samples for final analysis results.
+:::
+
 ## Computing the CI for the slope III
 
 **Percentile method:** Compute the 95% CI as the middle 95% of the bootstrap distribution:
@@ -646,23 +679,13 @@ If we want to be very certain that we capture the population parameter, should w
 How can we get best of both worlds -- high precision and high accuracy?
 :::
 
-## Changing confidence level
+. . .
 
 ::: question
-How would you modify the following code to calculate a 90% confidence interval? How would you modify it for a 99% confidence interval?
+Consider a 90%, 95%, and 99% confidence interval.
+
+-   Which interval is most precise? Which is most accurate?
 :::
-
-```{r}
-#| echo: true
-#| code-line-numbers: "|4"
-
-get_confidence_interval(
-  boot_fits, 
-  point_estimate = observed_fit, 
-  level = 0.95,
-  type = "percentile"
-)
-```
 
 ## Changing confidence level {.midi}
 
@@ -673,7 +696,7 @@ get_confidence_interval(
 get_confidence_interval(
   boot_fits, point_estimate = observed_fit, 
   level = 0.90, type = "percentile"
-)
+) 
 
 ## confidence level: 99%
 get_confidence_interval(
@@ -698,4 +721,5 @@ get_confidence_interval(
 
 ## For next class
 
--   Complete [Prepare for Lecture 05: Inference for simple linear regression](../prepare/prepare-lec05.html)
+-   Simulation-based inference: Permutation tests
+-   Complete [Lecture 05 prepare](../prepare/prepare-lec05.html)

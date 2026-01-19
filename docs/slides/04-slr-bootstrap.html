@@ -207,31 +207,22 @@
 <section id="announcements" class="slide level2">
 <h2>Announcements</h2>
 <ul>
-<li><p>HW 01 due Tuesday, January 28 at 11:59pm</p>
+<li><p>HW 01 due Tuesday, January 27 at 11:59pm</p>
 <ul>
 <li>Released after class today</li>
+<li>AI Disclosure</li>
 </ul></li>
 </ul>
 </section>
-<section>
-<section id="ae-03-follow-up" class="title-slide slide level1 center">
-<h1>AE 03 Follow-up</h1>
-
-</section>
-<section id="ae-03-follow-up-1" class="slide level2 midi">
-<h2>AE 03 Follow-up</h2>
-<p><strong>Goal:</strong> Use simple linear regression to model the relationship between temperature and daily bike rentals in the <strong>winter</strong> season</p>
-
-<img data-src="04-slr-bootstrap_files/figure-revealjs/unnamed-chunk-2-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:65.0%"></section></section>
-<section id="application-exercise" class="title-slide slide level1 center">
-<h1>Application exercise</h1>
+<section id="ae-03" class="title-slide slide level1 center">
+<h1>AE 03</h1>
 <div class="appex">
-<p>📋 <a href="https://sta210-sp25.netlify.app/ae/ae-03-slr.html" class="uri">https://sta210-sp25.netlify.app/ae/ae-03-slr.html</a></p>
-<p>Complete exercises 6 - 9.</p>
+<p>📋 <a href="../ae/ae-03-slr.html">sta210-sp26.github.io/ae/ae-03-slr.html</a></p>
+<p>Complete Ex 5 - 9.</p>
 </div>
 <ul>
 <li><p>Find your <code>ae-03</code> repo in the course GitHub organization.</p></li>
-<li><p>If you do not see an <code>ae-03</code> repo, use the link to create one: <a href="https://classroom.github.com/a/jxxCTVVo" class="uri">https://classroom.github.com/a/jxxCTVVo</a></p></li>
+<li><p>If you do not see an <code>ae-03</code> repo, use the link to create one: <a href="https://classroom.github.com/a/JpQEbKBU" class="uri">https://classroom.github.com/a/JpQEbKBU</a></p></li>
 </ul>
 </section>
 
@@ -287,14 +278,14 @@
 <span id="cb2-2"><a></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
 <span id="cb2-3"><a></a>  <span class="fu">labs</span>(</span>
 <span id="cb2-4"><a></a>    <span class="at">x =</span> <span class="st">"Area (square feet)"</span>,</span>
-<span id="cb2-5"><a></a>    <span class="at">y =</span> <span class="st">"sales price (USD)"</span>,</span>
+<span id="cb2-5"><a></a>    <span class="at">y =</span> <span class="st">"Sales price (USD)"</span>,</span>
 <span id="cb2-6"><a></a>    <span class="at">title =</span> <span class="st">"Price and area of houses in Duke Forest"</span></span>
 <span id="cb2-7"><a></a>  ) <span class="sc">+</span></span>
 <span id="cb2-8"><a></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> <span class="fu">label_dollar</span>()) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 
 </div>
-<img data-src="04-slr-bootstrap_files/figure-revealjs/unnamed-chunk-3-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"></section>
+<img data-src="04-slr-bootstrap_files/figure-revealjs/unnamed-chunk-1-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"></section>
 <section id="modeling" class="slide level2 midi">
 <h2>Modeling</h2>
 <div class="cell" data-layout-align="center">
@@ -336,7 +327,7 @@
 <ul>
 <li><strong>Intercept:</strong> Duke Forest houses that are 0 square feet are expected to sell, for $116,652, on average.
 <ul>
-<li>Is this interpretation useful?</li>
+<li>Is this interpretation meaningful?</li>
 </ul></li>
 <li><strong>Slope:</strong> For each additional square foot, we expect the sales price of Duke Forest houses to be higher by $159, on average.</li>
 </ul>
@@ -361,10 +352,29 @@
 <li><p>For our inferences to be valid, the sample should be random and representative of the population we’re interested in</p></li>
 </ul>
 </section>
+<section id="statistical-inference-1" class="slide level2">
+<h2>Statistical inference</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<div class="midi">
+<ul>
+<li><p><strong>Statistical inference</strong> provides methods and tools so we can use the single observed sample to make valid statements (inferences) about the population it comes from</p></li>
+<li><p>For our inferences to be valid, the sample should be representative (ideally random) of the population we’re interested in</p></li>
+</ul>
+</div>
+</div><div class="column" style="width:60%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/04/inference.png"></p>
+<figcaption>Image source: Eugene Morgan © Penn State</figcaption>
+</figure>
+</div>
+</div></div>
+</section>
 <section id="inference-for-simple-linear-regression" class="slide level2">
 <h2>Inference for simple linear regression</h2>
 <ul>
-<li><p>Calculate a confidence interval for the slope, <span class="math inline">\(\beta_1\)</span></p></li>
+<li><p>Compute a confidence interval for the slope, <span class="math inline">\(\beta_1\)</span></p></li>
 <li><p>Conduct a hypothesis test for the slope,<span class="math inline">\(\beta_1\)</span></p></li>
 </ul>
 </section></section>
@@ -421,6 +431,31 @@
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
+<p><img data-src="04-slr-bootstrap_files/figure-revealjs/unnamed-chunk-5-1.png" class="quarto-figure quarto-figure-center" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="04-slr-bootstrap_files/figure-revealjs/unnamed-chunk-6-1.png" class="quarto-figure quarto-figure-center" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="bootstrap-sample-2" class="slide level2">
+<h2>Bootstrap sample 2</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
 <p><img data-src="04-slr-bootstrap_files/figure-revealjs/unnamed-chunk-7-1.png" class="quarto-figure quarto-figure-center" style="width:100.0%"></p>
 </figure>
 </div>
@@ -438,8 +473,8 @@
 </div>
 </div></div>
 </section>
-<section id="bootstrap-sample-2" class="slide level2">
-<h2>Bootstrap sample 2</h2>
+<section id="bootstrap-sample-3" class="slide level2">
+<h2>Bootstrap sample 3</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell" data-layout-align="center">
@@ -463,8 +498,8 @@
 </div>
 </div></div>
 </section>
-<section id="bootstrap-sample-3" class="slide level2">
-<h2>Bootstrap sample 3</h2>
+<section id="bootstrap-sample-4" class="slide level2">
+<h2>Bootstrap sample 4</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell" data-layout-align="center">
@@ -488,8 +523,8 @@
 </div>
 </div></div>
 </section>
-<section id="bootstrap-sample-4" class="slide level2">
-<h2>Bootstrap sample 4</h2>
+<section id="bootstrap-sample-5" class="slide level2">
+<h2>Bootstrap sample 5</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell" data-layout-align="center">
@@ -512,9 +547,12 @@
 </div>
 </div>
 </div></div>
+<div class="fragment">
+<p><em>so on and so forth…</em></p>
+</div>
 </section>
-<section id="bootstrap-sample-5" class="slide level2">
-<h2>Bootstrap sample 5</h2>
+<section id="bootstrap-samples-1---5" class="slide level2">
+<h2>Bootstrap samples 1 - 5</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell" data-layout-align="center">
@@ -537,34 +575,6 @@
 </div>
 </div>
 </div></div>
-<div class="fragment">
-<p><em>so on and so forth…</em></p>
-</div>
-</section>
-<section id="bootstrap-samples-1---5" class="slide level2">
-<h2>Bootstrap samples 1 - 5</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="04-slr-bootstrap_files/figure-revealjs/unnamed-chunk-17-1.png" class="quarto-figure quarto-figure-center" style="width:100.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-</div><div class="column" style="width:50%;">
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="04-slr-bootstrap_files/figure-revealjs/unnamed-chunk-18-1.png" class="quarto-figure quarto-figure-center" style="width:100.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-</div></div>
 </section>
 <section id="bootstrap-samples-1---100" class="slide level2">
 <h2>Bootstrap samples 1 - 100</h2>
@@ -574,7 +584,7 @@
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="04-slr-bootstrap_files/figure-revealjs/unnamed-chunk-20-1.png" class="quarto-figure quarto-figure-center" style="width:100.0%"></p>
+<p><img data-src="04-slr-bootstrap_files/figure-revealjs/unnamed-chunk-18-1.png" class="quarto-figure quarto-figure-center" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -584,7 +594,7 @@
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="04-slr-bootstrap_files/figure-revealjs/unnamed-chunk-21-1.png" class="quarto-figure quarto-figure-center" style="width:100.0%"></p>
+<p><img data-src="04-slr-bootstrap_files/figure-revealjs/unnamed-chunk-19-1.png" class="quarto-figure quarto-figure-center" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -597,31 +607,56 @@
 <p><strong>Fill in the blank:</strong> For each additional square foot, the model predicts the sales price of Duke Forest houses to be higher, on average, by $159, plus or minus ___ dollars.</p>
 </div>
 
-<img data-src="04-slr-bootstrap_files/figure-revealjs/unnamed-chunk-22-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"></section>
+<img data-src="04-slr-bootstrap_files/figure-revealjs/unnamed-chunk-20-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"></section>
 <section id="slopes-of-bootstrap-samples-1" class="slide level2">
 <h2>Slopes of bootstrap samples</h2>
 <div class="question">
 <p><strong>Fill in the blank:</strong> For each additional square foot, we expect the sales price of Duke Forest houses to be higher, on average, by $159, plus or minus ___ dollars.</p>
 </div>
 
-<img data-src="04-slr-bootstrap_files/figure-revealjs/unnamed-chunk-23-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"></section>
+<img data-src="04-slr-bootstrap_files/figure-revealjs/unnamed-chunk-21-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"></section>
+<section id="bootstrap-distribution" class="slide level2">
+<h2>Bootstrap distribution</h2>
+<p>Let’s increase the number of bootstrap samples to 1000. The <strong>bootstrap sampling distribution</strong> is the distribution of estimated slopes given samples of size <span class="math inline">\(n\)</span> (the same as our data).</p>
+
+<img data-src="04-slr-bootstrap_files/figure-revealjs/unnamed-chunk-22-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"></section>
+<section id="bootstrap-sampling-distribution" class="slide level2">
+<h2>Bootstrap sampling distribution</h2>
+<div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Question</a></li><li><a href="#tabset-1-2">Submit - UPDATE!</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1">
+<div class="midi">
+<ul>
+<li><p>What is the approximate center of the bootstrap sampling distribution?</p></li>
+<li><p>What does the spread of the bootstrap sampling distribution represent?</p></li>
+</ul>
+</div>
+</div>
+<div id="tabset-1-2">
+<center><iframe width="640px" height="480px" src="https://forms.office.com/Pages/ResponsePage.aspx?id=TsVyyzFKnk2xSh6jbfrJTBw0r2_bKCVMs9lST1_-2sxUNUZEOUxISDJERFIyNzUyQTg5MjVUN1VOWi4u&amp;embed=true" frameborder="0" marginwidth="0" marginheight="0" style="border: none; max-width:100%; max-height:100vh" allowfullscreen="" webkitallowfullscreen="" mozallowfullscreen="" msallowfullscreen=""> </iframe></center>
+</div>
+</div>
+</div>
+<p>🔗 <a href="https://forms.office.com/r/NYMZZguyqP" class="uri">https://forms.office.com/r/NYMZZguyqP</a></p>
+</section>
 <section id="confidence-level" class="slide level2">
 <h2>Confidence level</h2>
 <div class="question">
 <p>How confident are you that the true slope is between $0 and $250? How about $150 and $170? How about $90 and $210?</p>
 </div>
 
-<img data-src="04-slr-bootstrap_files/figure-revealjs/unnamed-chunk-24-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"></section>
+<img data-src="04-slr-bootstrap_files/figure-revealjs/unnamed-chunk-23-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"></section>
 <section id="confidence-interval-1" class="slide level2 midi">
 <h2>95% confidence interval</h2>
 
-<img data-src="04-slr-bootstrap_files/figure-revealjs/unnamed-chunk-25-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"><ul>
+<img data-src="04-slr-bootstrap_files/figure-revealjs/unnamed-chunk-24-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"><ul>
 <li class="fragment">A 95% confidence interval is bounded by the middle 95% of the bootstrap distribution</li>
-<li class="fragment">We are 95% confident that for each additional square foot, sales price of Duke Forest houses to be higher, on average, by $90.43 to $205.77.</li>
+<li class="fragment">We are 95% confident that for each additional square foot, sales price of Duke Forest houses to be higher, on average, by $90.97 to $214.93.</li>
 </ul>
 </section></section>
 <section>
-<section id="application-exercise-1" class="title-slide slide level1 center">
+<section id="application-exercise" class="title-slide slide level1 center">
 <h1>Application exercise</h1>
 <div class="appex">
 <p>📋 <a href="..ae/ae-04-bootstrap.html">sta210-sp25.netlify.app/ae/ae-04-bootstrap.html</a></p>
@@ -675,6 +710,19 @@
 # ℹ 190 more rows</code></pre>
 </div>
 </div>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<p>Use ~ 100 bootstrap samples to write code, and 1000+ samples for final analysis results.</p>
+</div>
+</div>
+</div>
 </section>
 <section id="computing-the-ci-for-the-slope-iii" class="slide level2">
 <h2>Computing the CI for the slope III</h2>
@@ -709,36 +757,23 @@
 <div class="question">
 <p>How can we get best of both worlds – high precision and high accuracy?</p>
 </div>
-</section>
-<section id="changing-confidence-level" class="slide level2">
-<h2>Changing confidence level</h2>
+<div class="fragment">
 <div class="question">
-<p>How would you modify the following code to calculate a 90% confidence interval? How would you modify it for a 99% confidence interval?</p>
-</div>
-<div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10" data-code-line-numbers="|4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a><span class="fu">get_confidence_interval</span>(</span>
-<span id="cb10-2"><a></a>  boot_fits, </span>
-<span id="cb10-3"><a></a>  <span class="at">point_estimate =</span> observed_fit, </span>
-<span id="cb10-4"><a></a>  <span class="at">level =</span> <span class="fl">0.95</span>,</span>
-<span id="cb10-5"><a></a>  <span class="at">type =</span> <span class="st">"percentile"</span></span>
-<span id="cb10-6"><a></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 2 × 3
-  term      lower_ci upper_ci
-  &lt;chr&gt;        &lt;dbl&gt;    &lt;dbl&gt;
-1 area          92.1     223.
-2 intercept -36765.   296528.</code></pre>
+<p>Consider a 90%, 95%, and 99% confidence interval.</p>
+<ul>
+<li>Which interval is most precise? Which is most accurate?</li>
+</ul>
 </div>
 </div>
 </section>
-<section id="changing-confidence-level-1" class="slide level2 midi">
+<section id="changing-confidence-level" class="slide level2 midi">
 <h2>Changing confidence level</h2>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="do">## confidence level: 90%</span></span>
-<span id="cb12-2"><a></a><span class="fu">get_confidence_interval</span>(</span>
-<span id="cb12-3"><a></a>  boot_fits, <span class="at">point_estimate =</span> observed_fit, </span>
-<span id="cb12-4"><a></a>  <span class="at">level =</span> <span class="fl">0.90</span>, <span class="at">type =</span> <span class="st">"percentile"</span></span>
-<span id="cb12-5"><a></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a><span class="do">## confidence level: 90%</span></span>
+<span id="cb10-2"><a></a><span class="fu">get_confidence_interval</span>(</span>
+<span id="cb10-3"><a></a>  boot_fits, <span class="at">point_estimate =</span> observed_fit, </span>
+<span id="cb10-4"><a></a>  <span class="at">level =</span> <span class="fl">0.90</span>, <span class="at">type =</span> <span class="st">"percentile"</span></span>
+<span id="cb10-5"><a></a>) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 2 × 3
   term      lower_ci upper_ci
@@ -746,11 +781,11 @@
 1 area          104.     212.
 2 intercept  -24380.  256730.</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a><span class="do">## confidence level: 99%</span></span>
-<span id="cb14-2"><a></a><span class="fu">get_confidence_interval</span>(</span>
-<span id="cb14-3"><a></a>  boot_fits, <span class="at">point_estimate =</span> observed_fit, </span>
-<span id="cb14-4"><a></a>  <span class="at">level =</span> <span class="fl">0.99</span>, <span class="at">type =</span> <span class="st">"percentile"</span></span>
-<span id="cb14-5"><a></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="do">## confidence level: 99%</span></span>
+<span id="cb12-2"><a></a><span class="fu">get_confidence_interval</span>(</span>
+<span id="cb12-3"><a></a>  boot_fits, <span class="at">point_estimate =</span> observed_fit, </span>
+<span id="cb12-4"><a></a>  <span class="at">level =</span> <span class="fl">0.99</span>, <span class="at">type =</span> <span class="st">"percentile"</span></span>
+<span id="cb12-5"><a></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 2 × 3
   term      lower_ci upper_ci
@@ -774,7 +809,8 @@
 <section id="for-next-class" class="slide level2">
 <h2>For next class</h2>
 <ul>
-<li>Complete <a href="../prepare/prepare-lec05.html">Prepare for Lecture 05: Inference for simple linear regression</a></li>
+<li>Simulation-based inference: Permutation tests</li>
+<li>Complete <a href="../prepare/prepare-lec05.html">Lecture 05 prepare</a></li>
 </ul>
 
 
