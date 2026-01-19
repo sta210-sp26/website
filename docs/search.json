@@ -1215,13 +1215,6 @@
     "text": "Important\n\n\n\nThis assignment is due on Tuesday, January 27 at 11:59pm. To be considered on time, the following must be done by the due date:\n\nFinal .qmd and .pdf files pushed to your GitHub repo\nFinal .pdf file submitted on Gradescope"
   },
   {
-    "objectID": "hw/hw-01-DRAFT.html#instructions",
-    "href": "hw/hw-01-DRAFT.html#instructions",
-    "title": "HW 01: Simple linear regression",
-    "section": "Instructions",
-    "text": "Instructions\nType your responses to each question in your Quarto document. Write all narrative using complete sentences and include informative axis labels and titles on visualizations. Use a reproducible workflow by periodically rendering the Quarto document, writing an informative commit message, and pushing the updated .qmd and .pdf files to GitHub."
-  },
-  {
     "objectID": "hw/hw-01-DRAFT.html#part-1-exploratory-data-analysis",
     "href": "hw/hw-01-DRAFT.html#part-1-exploratory-data-analysis",
     "title": "HW 01: Simple linear regression",
@@ -1236,18 +1229,11 @@
     "text": "Part 2: Modeling\n\nExercise 4\nWe will use a linear regression model to explain variability in mc_preschool based on me_2018.\nWrite the form of the statistical (theoretical) model using mathematical notation. In your response, which variable (me_2018 or mc_preschool) is the predictor and which variable is the response.\n\n\n\n\n\n\nTip\n\n\n\nUse the following code format to make the variable names properly render in the PDF document.\n\\(\\text{me\\_2018}\\) = \\text{me\\_2018}\n\\(\\text{mc\\_preschool}\\) = \\text{mc\\_preschool}\n\n\n\n\nExercise 5\n\nFit the regression line corresponding to the statistical model in the previous exercise. Neatly display the model output using 3 digits.\nWrite the equation of the fitted model using mathematical notation. In your response, which variable (me_2018 or mc_preschool) is the predictor and which variable is the response.\n\n\n\nExercise 6\n\nInterpret the slope in the context of the data.\nDoes the intercept have a meaningful interpretation? If so, write the interpretation in the context of the data. Otherwise, briefly explain why not.\n\n\nThis is a good place to render, commit, and push changes to your hw-01 repo on GitHub. Write an informative commit message (e.g. “Completed exercises 4 -6”), and push every file to GitHub by clicking the check box next to each file in the Git pane. After you push the changes, the Git pane in RStudio should be empty."
   },
   {
-    "objectID": "hw/hw-01-DRAFT.html#part-3-inference-for-the-u.s.",
-    "href": "hw/hw-01-DRAFT.html#part-3-inference-for-the-u.s.",
+    "objectID": "hw/hw-01-DRAFT.html#part-3-inference",
+    "href": "hw/hw-01-DRAFT.html#part-3-inference",
     "title": "HW 01: Simple linear regression",
-    "section": "Part 3: Inference for the U.S.",
-    "text": "Part 3: Inference for the U.S.\nWe will use the data from these 600 randomly selected counties to draw conclusions about the relationship median household income and median costs for preschool for the over 3,000 counties in the United States.\n\nExercise 7\n\nWhat is the population in this analysis? What is the sample?\nIs it reasonable to treat the sample in this analysis as representative of the population? Briefly explain why or why not.\n\n\n\nExercise 8\nNext, compute a 90% bootstrap confidence interval for the slope. Use set.seed(2026) and 1000 iterations. Show all relevant code and output used to compute the interval.\nWrite the 90% confidence interval using 3 digits.\n\n\nExercise 9\n\nInterpret the interval from the previous exercise in the context of the data.\nSuppose you wanted to evaluate the claim that there is no linear relationship between median household income and the median cost for preschool. In other words, you want to evaluate the claim that \\(\\beta_1 = 0\\) in the model written in Exercise 4.\nDoes the confidence interval from the previous exercise support this claim? Briefly explain why or why not.\n\n\nNow is a good time to render your document again if you haven’t done so recently, commit (with an informative commit message), and push all updates."
-  },
-  {
-    "objectID": "hw/hw-01-DRAFT.html#footnotes",
-    "href": "hw/hw-01-DRAFT.html#footnotes",
-    "title": "HW 01: Simple linear regression",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\nClick here for a guide on writing mathematical symbols using LaTex.↩︎"
+    "section": "Part 3: Inference",
+    "text": "Part 3: Inference\nWe will use the data from these 600 randomly selected counties to draw conclusions about the relationship between earnings and weekly cost of preschool for the over 3,000 counties in the United States.\n\nExercise 7\n\nWhat is the population in this analysis? What is the sample?\nIs it reasonable to treat the sample in this analysis as representative of the population? Briefly explain why or why not.\n\n\n\nExercise 8\nConstruct a 90% bootstrap confidence interval for the slope. Use set.seed(2026) and 1000 iterations. Show all relevant code and output used to produce the interval.\nWrite the 90% confidence interval using 3 digits.\n\n\nExercise 9\n\nInterpret the interval from the previous exercise in the context of the data.\nYou want to use the confidence interval to evaluate the claim that there is no linear relationship between median earnings and cost of preschool. In other words, you want to evaluate the claim that \\(\\beta_1 = 0\\) in the model written in Exercise 4.\nDoes the confidence interval from the previous exercise support this claim? Briefly explain why or why not.\n\n\nNow is a good time to render your document again if you haven’t done so recently, commit (with an informative commit message), and push all updates."
   },
   {
     "objectID": "hw/hw-04.html",
@@ -2738,12 +2724,5 @@
       "Project",
       "Instructions"
     ]
-  },
-  {
-    "objectID": "hw/hw-01-DRAFT.html#part-3-inference",
-    "href": "hw/hw-01-DRAFT.html#part-3-inference",
-    "title": "HW 01: Simple linear regression",
-    "section": "Part 3: Inference",
-    "text": "Part 3: Inference\nWe will use the data from these 600 randomly selected counties to draw conclusions about the relationship between earnings and weekly cost of preschool for the over 3,000 counties in the United States.\n\nExercise 7\n\nWhat is the population in this analysis? What is the sample?\nIs it reasonable to treat the sample in this analysis as representative of the population? Briefly explain why or why not.\n\n\n\nExercise 8\nConstruct a 90% bootstrap confidence interval for the slope. Use set.seed(2026) and 1000 iterations. Show all relevant code and output used to produce the interval.\nWrite the 90% confidence interval using 3 digits.\n\n\nExercise 9\n\nInterpret the interval from the previous exercise in the context of the data.\nYou want to use the confidence interval to evaluate the claim that there is no linear relationship between median earnings and cost of preschool. In other words, you want to evaluate the claim that \\(\\beta_1 = 0\\) in the model written in Exercise 4.\nDoes the confidence interval from the previous exercise support this claim? Briefly explain why or why not.\n\n\nNow is a good time to render your document again if you haven’t done so recently, commit (with an informative commit message), and push all updates."
   }
 ]
