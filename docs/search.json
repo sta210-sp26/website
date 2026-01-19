@@ -2724,5 +2724,236 @@
       "Project",
       "Instructions"
     ]
+  },
+  {
+    "objectID": "slides/04-slr-bootstrap.html#announcements",
+    "href": "slides/04-slr-bootstrap.html#announcements",
+    "title": "SLR: Simulation-based inference",
+    "section": "Announcements",
+    "text": "Announcements\n\nHW 01 due Tuesday, January 28 at 11:59pm\n\nReleased after class today"
+  },
+  {
+    "objectID": "slides/04-slr-bootstrap.html#ae-03-follow-up-1",
+    "href": "slides/04-slr-bootstrap.html#ae-03-follow-up-1",
+    "title": "SLR: Simulation-based inference",
+    "section": "AE 03 Follow-up",
+    "text": "AE 03 Follow-up\nGoal: Use simple linear regression to model the relationship between temperature and daily bike rentals in the winter season"
+  },
+  {
+    "objectID": "slides/04-slr-bootstrap.html#topics",
+    "href": "slides/04-slr-bootstrap.html#topics",
+    "title": "SLR: Simulation-based inference",
+    "section": "Topics",
+    "text": "Topics\n\nIntroduce inference for a population slope\nFind range of plausible values for the slope using bootstrap confidence intervals"
+  },
+  {
+    "objectID": "slides/04-slr-bootstrap.html#computational-setup",
+    "href": "slides/04-slr-bootstrap.html#computational-setup",
+    "title": "SLR: Simulation-based inference",
+    "section": "Computational setup",
+    "text": "Computational setup\n\n# load packages\nlibrary(tidyverse)   # for data wrangling and visualization\nlibrary(tidymodels)  # for modeling\nlibrary(openintro)   # for Duke Forest dataset\nlibrary(scales)      # for pretty axis labels\nlibrary(glue)        # for constructing character strings\nlibrary(knitr)       # for neatly formatted tables\nlibrary(kableExtra)  # also for neatly formatted tablesf\n\n\n# set default theme and larger font size for ggplot2\nggplot2::theme_set(ggplot2::theme_bw(base_size = 16))"
+  },
+  {
+    "objectID": "slides/04-slr-bootstrap.html#data-houses-in-duke-forest",
+    "href": "slides/04-slr-bootstrap.html#data-houses-in-duke-forest",
+    "title": "SLR: Simulation-based inference",
+    "section": "Data: Houses in Duke Forest",
+    "text": "Data: Houses in Duke Forest\n\n\n\nData on houses that were sold in the Duke Forest neighborhood of Durham, NC around November 2020\nScraped from Zillow\nSource: openintro::duke_forest\n\n\n\n\nGoal: Use the area (in square feet) to understand variability in the price of houses in Duke Forest."
+  },
+  {
+    "objectID": "slides/04-slr-bootstrap.html#exploratory-data-analysis",
+    "href": "slides/04-slr-bootstrap.html#exploratory-data-analysis",
+    "title": "SLR: Simulation-based inference",
+    "section": "Exploratory data analysis",
+    "text": "Exploratory data analysis\n\n\nCode\nggplot(duke_forest, aes(x = area, y = price)) +\n  geom_point(alpha = 0.7) +\n  labs(\n    x = \"Area (square feet)\",\n    y = \"sales price (USD)\",\n    title = \"Price and area of houses in Duke Forest\"\n  ) +\n  scale_y_continuous(labels = label_dollar())"
+  },
+  {
+    "objectID": "slides/04-slr-bootstrap.html#modeling",
+    "href": "slides/04-slr-bootstrap.html#modeling",
+    "title": "SLR: Simulation-based inference",
+    "section": "Modeling",
+    "text": "Modeling\n\ndf_fit &lt;- lm(price ~ area, data = duke_forest)\n\ntidy(df_fit) |&gt;\n  kable(digits = 2) #neatly format table to 2 digits\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n116652.33\n53302.46\n2.19\n0.03\n\n\narea\n159.48\n18.17\n8.78\n0.00\n\n\n\n\n\n\n\nIntercept: Duke Forest houses that are 0 square feet are expected to sell, for $116,652, on average.\n\nIs this interpretation useful?\n\nSlope: For each additional square foot, we expect the sales price of Duke Forest houses to be higher by $159, on average."
+  },
+  {
+    "objectID": "slides/04-slr-bootstrap.html#from-sample-to-population",
+    "href": "slides/04-slr-bootstrap.html#from-sample-to-population",
+    "title": "SLR: Simulation-based inference",
+    "section": "From sample to population",
+    "text": "From sample to population\n\nFor each additional square foot, we expect the sales price of Duke Forest houses to be higher by $159, on average.\n\n\n\nThis estimate is valid for the single sample of 98 houses.\nBut what if we’re not interested quantifying the relationship between the size and price of a house in this single sample?\nWhat if we want to say something about the relationship between these variables for all houses in Duke Forest?"
+  },
+  {
+    "objectID": "slides/04-slr-bootstrap.html#statistical-inference",
+    "href": "slides/04-slr-bootstrap.html#statistical-inference",
+    "title": "SLR: Simulation-based inference",
+    "section": "Statistical inference",
+    "text": "Statistical inference\n\nStatistical inference provide methods and tools so we can use the single observed sample to make valid statements (inferences) about the population it comes from\nFor our inferences to be valid, the sample should be random and representative of the population we’re interested in"
+  },
+  {
+    "objectID": "slides/04-slr-bootstrap.html#inference-for-simple-linear-regression",
+    "href": "slides/04-slr-bootstrap.html#inference-for-simple-linear-regression",
+    "title": "SLR: Simulation-based inference",
+    "section": "Inference for simple linear regression",
+    "text": "Inference for simple linear regression\n\nCalculate a confidence interval for the slope, \\(\\beta_1\\)\nConduct a hypothesis test for the slope,\\(\\beta_1\\)"
+  },
+  {
+    "objectID": "slides/04-slr-bootstrap.html#confidence-interval",
+    "href": "slides/04-slr-bootstrap.html#confidence-interval",
+    "title": "SLR: Simulation-based inference",
+    "section": "Confidence interval",
+    "text": "Confidence interval\n\nA plausible range of values for a population parameter is called a confidence interval\nUsing only a single point estimate is like fishing in a murky lake with a spear, and using a confidence interval is like fishing with a net\n\nWe can throw a spear where we saw a fish but we will probably miss, if we toss a net in that area, we have a good chance of catching the fish\nSimilarly, if we report a point estimate, we probably will not hit the exact population parameter, but if we report a range of plausible values we have a good shot at capturing the parameter"
+  },
+  {
+    "objectID": "slides/04-slr-bootstrap.html#confidence-interval-for-the-slope-1",
+    "href": "slides/04-slr-bootstrap.html#confidence-interval-for-the-slope-1",
+    "title": "SLR: Simulation-based inference",
+    "section": "Confidence interval for the slope",
+    "text": "Confidence interval for the slope\nA confidence interval will allow us to make a statement like “For each additional square foot, the model predicts the sales price of Duke Forest houses to be higher, on average, by $159, plus or minus X dollars.”\n\n\nShould X be $10? $100? $1000?\nIf we were to take another sample of 98 would we expect the slope calculated based on that sample to be exactly $159? Off by $10? $100? $1000?\nThe answer depends on how variable (from one sample to another sample) the sample statistic (the slope) is\nWe need a way to quantify the variability of the sample statistic"
+  },
+  {
+    "objectID": "slides/04-slr-bootstrap.html#quantify-the-variability-of-the-slope",
+    "href": "slides/04-slr-bootstrap.html#quantify-the-variability-of-the-slope",
+    "title": "SLR: Simulation-based inference",
+    "section": "Quantify the variability of the slope",
+    "text": "Quantify the variability of the slope\nfor estimation\n\nTwo approaches:\n\nVia simulation (what we’ll do today)\nVia theoretical results and mathematical models (what we’ll do in an upcoming class)\n\nBootstrapping to quantify the variability of the slope for the purpose of estimation:\n\nBootstrap new samples from the original sample, i.e. take sample of size \\(n\\) with replacement\nFit models to each of the samples and estimate the slope\nUse features of the distribution of the bootstrapped slopes to construct a confidence interval"
+  },
+  {
+    "objectID": "slides/04-slr-bootstrap.html#bootstrap-sample-1",
+    "href": "slides/04-slr-bootstrap.html#bootstrap-sample-1",
+    "title": "SLR: Simulation-based inference",
+    "section": "Bootstrap sample 1",
+    "text": "Bootstrap sample 1"
+  },
+  {
+    "objectID": "slides/04-slr-bootstrap.html#bootstrap-sample-2",
+    "href": "slides/04-slr-bootstrap.html#bootstrap-sample-2",
+    "title": "SLR: Simulation-based inference",
+    "section": "Bootstrap sample 2",
+    "text": "Bootstrap sample 2"
+  },
+  {
+    "objectID": "slides/04-slr-bootstrap.html#bootstrap-sample-3",
+    "href": "slides/04-slr-bootstrap.html#bootstrap-sample-3",
+    "title": "SLR: Simulation-based inference",
+    "section": "Bootstrap sample 3",
+    "text": "Bootstrap sample 3"
+  },
+  {
+    "objectID": "slides/04-slr-bootstrap.html#bootstrap-sample-4",
+    "href": "slides/04-slr-bootstrap.html#bootstrap-sample-4",
+    "title": "SLR: Simulation-based inference",
+    "section": "Bootstrap sample 4",
+    "text": "Bootstrap sample 4"
+  },
+  {
+    "objectID": "slides/04-slr-bootstrap.html#bootstrap-sample-5",
+    "href": "slides/04-slr-bootstrap.html#bootstrap-sample-5",
+    "title": "SLR: Simulation-based inference",
+    "section": "Bootstrap sample 5",
+    "text": "Bootstrap sample 5\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nso on and so forth…"
+  },
+  {
+    "objectID": "slides/04-slr-bootstrap.html#bootstrap-samples-1---5",
+    "href": "slides/04-slr-bootstrap.html#bootstrap-samples-1---5",
+    "title": "SLR: Simulation-based inference",
+    "section": "Bootstrap samples 1 - 5",
+    "text": "Bootstrap samples 1 - 5"
+  },
+  {
+    "objectID": "slides/04-slr-bootstrap.html#bootstrap-samples-1---100",
+    "href": "slides/04-slr-bootstrap.html#bootstrap-samples-1---100",
+    "title": "SLR: Simulation-based inference",
+    "section": "Bootstrap samples 1 - 100",
+    "text": "Bootstrap samples 1 - 100"
+  },
+  {
+    "objectID": "slides/04-slr-bootstrap.html#slopes-of-bootstrap-samples",
+    "href": "slides/04-slr-bootstrap.html#slopes-of-bootstrap-samples",
+    "title": "SLR: Simulation-based inference",
+    "section": "Slopes of bootstrap samples",
+    "text": "Slopes of bootstrap samples\n\nFill in the blank: For each additional square foot, the model predicts the sales price of Duke Forest houses to be higher, on average, by $159, plus or minus ___ dollars."
+  },
+  {
+    "objectID": "slides/04-slr-bootstrap.html#slopes-of-bootstrap-samples-1",
+    "href": "slides/04-slr-bootstrap.html#slopes-of-bootstrap-samples-1",
+    "title": "SLR: Simulation-based inference",
+    "section": "Slopes of bootstrap samples",
+    "text": "Slopes of bootstrap samples\n\nFill in the blank: For each additional square foot, we expect the sales price of Duke Forest houses to be higher, on average, by $159, plus or minus ___ dollars."
+  },
+  {
+    "objectID": "slides/04-slr-bootstrap.html#confidence-level",
+    "href": "slides/04-slr-bootstrap.html#confidence-level",
+    "title": "SLR: Simulation-based inference",
+    "section": "Confidence level",
+    "text": "Confidence level\n\nHow confident are you that the true slope is between $0 and $250? How about $150 and $170? How about $90 and $210?"
+  },
+  {
+    "objectID": "slides/04-slr-bootstrap.html#confidence-interval-1",
+    "href": "slides/04-slr-bootstrap.html#confidence-interval-1",
+    "title": "SLR: Simulation-based inference",
+    "section": "95% confidence interval",
+    "text": "95% confidence interval\n\n\nA 95% confidence interval is bounded by the middle 95% of the bootstrap distribution\nWe are 95% confident that for each additional square foot, sales price of Duke Forest houses to be higher, on average, by $90.43 to $205.77."
+  },
+  {
+    "objectID": "slides/04-slr-bootstrap.html#computing-the-ci-for-the-slope-i",
+    "href": "slides/04-slr-bootstrap.html#computing-the-ci-for-the-slope-i",
+    "title": "SLR: Simulation-based inference",
+    "section": "Computing the CI for the slope I",
+    "text": "Computing the CI for the slope I\nCalculate the observed slope:\n\nobserved_fit &lt;- duke_forest |&gt;\n  specify(price ~ area) |&gt;\n  fit()\n\nobserved_fit\n\n# A tibble: 2 × 2\n  term      estimate\n  &lt;chr&gt;        &lt;dbl&gt;\n1 intercept  116652.\n2 area          159."
+  },
+  {
+    "objectID": "slides/04-slr-bootstrap.html#computing-the-ci-for-the-slope-ii",
+    "href": "slides/04-slr-bootstrap.html#computing-the-ci-for-the-slope-ii",
+    "title": "SLR: Simulation-based inference",
+    "section": "Computing the CI for the slope II",
+    "text": "Computing the CI for the slope II\nTake 100 bootstrap samples and fit models to each one:\n\nset.seed(1120)\n\nboot_fits &lt;- duke_forest |&gt;\n  specify(price ~ area) |&gt;\n  generate(reps = 100, type = \"bootstrap\") |&gt;\n  fit()\n\nboot_fits\n\n# A tibble: 200 × 3\n# Groups:   replicate [100]\n   replicate term      estimate\n       &lt;int&gt; &lt;chr&gt;        &lt;dbl&gt;\n 1         1 intercept   47819.\n 2         1 area          191.\n 3         2 intercept  144645.\n 4         2 area          134.\n 5         3 intercept  114008.\n 6         3 area          161.\n 7         4 intercept  100639.\n 8         4 area          166.\n 9         5 intercept  215264.\n10         5 area          125.\n# ℹ 190 more rows"
+  },
+  {
+    "objectID": "slides/04-slr-bootstrap.html#computing-the-ci-for-the-slope-iii",
+    "href": "slides/04-slr-bootstrap.html#computing-the-ci-for-the-slope-iii",
+    "title": "SLR: Simulation-based inference",
+    "section": "Computing the CI for the slope III",
+    "text": "Computing the CI for the slope III\nPercentile method: Compute the 95% CI as the middle 95% of the bootstrap distribution:\n\nget_confidence_interval(\n  boot_fits, \n  point_estimate = observed_fit, \n  level = 0.95,\n  type = \"percentile\" #default method\n)\n\n# A tibble: 2 × 3\n  term      lower_ci upper_ci\n  &lt;chr&gt;        &lt;dbl&gt;    &lt;dbl&gt;\n1 area          92.1     223.\n2 intercept -36765.   296528."
+  },
+  {
+    "objectID": "slides/04-slr-bootstrap.html#precision-vs.-accuracy",
+    "href": "slides/04-slr-bootstrap.html#precision-vs.-accuracy",
+    "title": "SLR: Simulation-based inference",
+    "section": "Precision vs. accuracy",
+    "text": "Precision vs. accuracy\n\nIf we want to be very certain that we capture the population parameter, should we use a wider or a narrower interval? What drawbacks are associated with using a wider interval?"
+  },
+  {
+    "objectID": "slides/04-slr-bootstrap.html#precision-vs.-accuracy-1",
+    "href": "slides/04-slr-bootstrap.html#precision-vs.-accuracy-1",
+    "title": "SLR: Simulation-based inference",
+    "section": "Precision vs. accuracy",
+    "text": "Precision vs. accuracy\n\nHow can we get best of both worlds – high precision and high accuracy?"
+  },
+  {
+    "objectID": "slides/04-slr-bootstrap.html#changing-confidence-level",
+    "href": "slides/04-slr-bootstrap.html#changing-confidence-level",
+    "title": "SLR: Simulation-based inference",
+    "section": "Changing confidence level",
+    "text": "Changing confidence level\n\nHow would you modify the following code to calculate a 90% confidence interval? How would you modify it for a 99% confidence interval?\n\n\nget_confidence_interval(\n  boot_fits, \n  point_estimate = observed_fit, \n  level = 0.95,\n  type = \"percentile\"\n)\n\n# A tibble: 2 × 3\n  term      lower_ci upper_ci\n  &lt;chr&gt;        &lt;dbl&gt;    &lt;dbl&gt;\n1 area          92.1     223.\n2 intercept -36765.   296528."
+  },
+  {
+    "objectID": "slides/04-slr-bootstrap.html#changing-confidence-level-1",
+    "href": "slides/04-slr-bootstrap.html#changing-confidence-level-1",
+    "title": "SLR: Simulation-based inference",
+    "section": "Changing confidence level",
+    "text": "Changing confidence level\n\n## confidence level: 90%\nget_confidence_interval(\n  boot_fits, point_estimate = observed_fit, \n  level = 0.90, type = \"percentile\"\n)\n\n# A tibble: 2 × 3\n  term      lower_ci upper_ci\n  &lt;chr&gt;        &lt;dbl&gt;    &lt;dbl&gt;\n1 area          104.     212.\n2 intercept  -24380.  256730.\n\n## confidence level: 99%\nget_confidence_interval(\n  boot_fits, point_estimate = observed_fit, \n  level = 0.99, type = \"percentile\"\n)\n\n# A tibble: 2 × 3\n  term      lower_ci upper_ci\n  &lt;chr&gt;        &lt;dbl&gt;    &lt;dbl&gt;\n1 area          56.3     226.\n2 intercept -61950.   370395."
+  },
+  {
+    "objectID": "slides/04-slr-bootstrap.html#recap",
+    "href": "slides/04-slr-bootstrap.html#recap",
+    "title": "SLR: Simulation-based inference",
+    "section": "Recap",
+    "text": "Recap\n\nPopulation: Complete set of observations of whatever we are studying, e.g., people, tweets, photographs, etc. (population size = \\(N\\))\nSample: Subset of the population, ideally random and representative (sample size = \\(n\\))\nSample statistic \\(\\ne\\) population parameter, but if the sample is good, it can be a good estimate\nStatistical inference: Discipline that concerns itself with the development of procedures, methods, and theorems that allow us to extract meaning and information from data that has been generated by stochastic (random) process\nWe report the estimate with a confidence interval, and the width of this interval depends on the variability of sample statistics from different samples from the population\nSince we can’t continue sampling from the population, we bootstrap from the one sample we have to estimate sampling variability"
+  },
+  {
+    "objectID": "slides/04-slr-bootstrap.html#for-next-class",
+    "href": "slides/04-slr-bootstrap.html#for-next-class",
+    "title": "SLR: Simulation-based inference",
+    "section": "For next class",
+    "text": "For next class\n\nComplete Prepare for Lecture 05: Inference for simple linear regression"
   }
 ]
