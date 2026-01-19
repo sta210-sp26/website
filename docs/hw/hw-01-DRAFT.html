@@ -395,13 +395,12 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introduction---update" id="toc-introduction---update" class="nav-link active" data-scroll-target="#introduction---update">Introduction - UPDATE</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
   <li><a href="#learning-goals" id="toc-learning-goals" class="nav-link" data-scroll-target="#learning-goals">Learning goals</a></li>
-  <li><a href="#getting-started---update" id="toc-getting-started---update" class="nav-link" data-scroll-target="#getting-started---update">Getting started - UPDATE</a></li>
-  <li><a href="#data-us-counties---update" id="toc-data-us-counties---update" class="nav-link" data-scroll-target="#data-us-counties---update">Data: US Counties - UPDATE</a></li>
-  <li><a href="#exercises---update" id="toc-exercises---update" class="nav-link" data-scroll-target="#exercises---update">Exercises - UPDATE</a>
+  <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started">Getting started</a></li>
+  <li><a href="#data-counties-in-the-united-states" id="toc-data-counties-in-the-united-states" class="nav-link" data-scroll-target="#data-counties-in-the-united-states">Data: Counties in the United States</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a>
   <ul class="collapse">
-  <li><a href="#instructions" id="toc-instructions" class="nav-link" data-scroll-target="#instructions">Instructions</a></li>
   <li><a href="#part-1-exploratory-data-analysis" id="toc-part-1-exploratory-data-analysis" class="nav-link" data-scroll-target="#part-1-exploratory-data-analysis">Part 1: Exploratory data analysis</a>
   <ul class="collapse">
   <li><a href="#exercise-1" id="toc-exercise-1" class="nav-link" data-scroll-target="#exercise-1">Exercise 1</a></li>
@@ -414,13 +413,14 @@ window.Quarto = {
   <li><a href="#exercise-5" id="toc-exercise-5" class="nav-link" data-scroll-target="#exercise-5">Exercise 5</a></li>
   <li><a href="#exercise-6" id="toc-exercise-6" class="nav-link" data-scroll-target="#exercise-6">Exercise 6</a></li>
   </ul></li>
-  <li><a href="#part-3-inference-for-the-u.s." id="toc-part-3-inference-for-the-u.s." class="nav-link" data-scroll-target="#part-3-inference-for-the-u.s.">Part 3: Inference for the U.S.</a>
+  <li><a href="#part-3-inference" id="toc-part-3-inference" class="nav-link" data-scroll-target="#part-3-inference">Part 3: Inference</a>
   <ul class="collapse">
   <li><a href="#exercise-7" id="toc-exercise-7" class="nav-link" data-scroll-target="#exercise-7">Exercise 7</a></li>
   <li><a href="#exercise-8" id="toc-exercise-8" class="nav-link" data-scroll-target="#exercise-8">Exercise 8</a></li>
   <li><a href="#exercise-9" id="toc-exercise-9" class="nav-link" data-scroll-target="#exercise-9">Exercise 9</a></li>
   </ul></li>
   </ul></li>
+  <li><a href="#ai-disclosure" id="toc-ai-disclosure" class="nav-link" data-scroll-target="#ai-disclosure">AI Disclosure</a></li>
   <li><a href="#submission" id="toc-submission" class="nav-link" data-scroll-target="#submission">Submission</a></li>
   <li><a href="#grading-50-points" id="toc-grading-50-points" class="nav-link" data-scroll-target="#grading-50-points">Grading (50 points)</a></li>
   </ul>
@@ -432,7 +432,7 @@ window.Quarto = {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">HW 01: Simple linear regression</h1>
-<p class="subtitle lead">UPDATE</p>
+<p class="subtitle lead">Cost of preschool in the United States</p>
 </div>
 
 
@@ -466,25 +466,25 @@ Important
 </ul>
 </div>
 </div>
-<section id="introduction---update" class="level1">
-<h1>Introduction - UPDATE</h1>
-<p>In this assignment, you will use simple linear regression to examine the association between the percent of adults with a bachelor’s degree and the median household income for counties in the United States.</p>
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
+<p>In this assignment, you will use simple linear regression to examine the association between median income and the median weekly cost of preschool in the United States.</p>
 </section>
 <section id="learning-goals" class="level1">
 <h1>Learning goals</h1>
 <p>In this assignment, you will…</p>
 <ul>
-<li><p>Fit and interpret simple linear regression models.</p></li>
-<li><p>Construct and interpret bootstrap confidence intervals for the population slope, <span class="math inline">\(\beta_1\)</span>.</p></li>
-<li><p>Create and interpret spatial data visualizations using R.</p></li>
-<li><p>Continue developing a workflow for reproducible data analysis.</p></li>
+<li><p>fit and interpret simple linear regression models.</p></li>
+<li><p>construct and interpret bootstrap confidence intervals for the population slope, <span class="math inline">\(\beta_1\)</span>.</p></li>
+<li><p>describe visualizations highlight different features of a distribution.</p></li>
+<li><p>continue developing a workflow for reproducible data analysis.</p></li>
 </ul>
 </section>
-<section id="getting-started---update" class="level1">
-<h1>Getting started - UPDATE</h1>
+<section id="getting-started" class="level1">
+<h1>Getting started</h1>
 <ul>
-<li><p>Go to the <a href="https://www.github.com/sta210-sp25">sta210-sp25</a> organization on GitHub. Click on the repo with the prefix <strong>hw-01</strong>. It contains the starter documents you need to complete the lab.</p></li>
-<li><p>Clone the repo and start a new project in RStudio. See the <a href="https://sta210-sp25.netlify.app/labs/lab-00#getting-started">Lab 00</a> for details on cloning a repo and starting a new project in R.</p></li>
+<li><p>Go to the <a href="https://www.github.com/sta210-sp26">sta210-sp26</a> organization on GitHub. Click on the repo with the prefix <strong>hw-01</strong>. It contains the starter documents you need to complete the lab.</p></li>
+<li><p>Clone the repo and start a new project in RStudio. See the <a href="../labs/lab-00.html">Lab 00</a> for details on cloning a repo and starting a new project in R.</p></li>
 </ul>
 <p>The following packages will be used in this assignment:</p>
 <div class="cell">
@@ -492,77 +492,93 @@ Important
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidymodels) <span class="co"># for modeling and inference </span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)      <span class="co"># to neatly format tables </span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)         <span class="co"># for working with spatial data</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tigris)     <span class="co"># has shape files for US counties</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tigris)     <span class="co"># for shape files of US counties</span></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># load other packages as needed </span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># load other packages as needed </span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="data-us-counties---update" class="level1">
-<h1>Data: US Counties - UPDATE</h1>
-<p>The data are from the <code>county_2019</code> data frame in the <a href="https://openintrostat.github.io/usdata/index.html">usdata</a> R package. These data were originally collected in the 2019 <a href="https://www.census.gov/programs-surveys/acs">American Community Survey</a> (ACS), an annual survey conducted by the United States Census Bureau that collects demographics and other information from a sample of households in the United States. The data frame <code>county_2019</code> contains county-level statistics from the ACS.</p>
-<p>The data for this analysis are available in the file <code>us-counties-sample.csv</code> in the <code>data</code> folder of your repo. It contains a random sample of 600 counties in the United States. This is about 19% of the counties in the United States.</p>
-<p>This analysis focuses on the following variables:</p>
+<section id="data-counties-in-the-united-states" class="level1">
+<h1>Data: Counties in the United States</h1>
+<p>The dataset in this assignment includes demographic, socioeconomic, and childcare cost information for 600 randomly selected counties in the United States (about 19% of all counties). The data are originally from the <a href="https://www.dol.gov/agencies/wb/topics/featured-childcare">National Database of Childcare Prices</a> and were featured as part of the <a href="https://github.com/rfordatascience/tidytuesday/blob/main/data/2023/2023-05-09/readme.md">TidyTuesday</a> weekly data visualization challenge in May 2023.</p>
+<p>The data are in the file <code>childcare-2018-sample.csv</code> located in the <code>data</code> folder of your GitHub repo. This analysis focuses on the following variables:</p>
 <ul>
-<li><p><code>bachelors</code>: Percent of population 25 years old and older that earned a Bachelor’s degree or higher</p></li>
-<li><p><code>median_household_income</code>: Median household income in US dollars</p></li>
+<li><p><code>me_2018</code>: Median income in 2018 for the population aged 16 years old or older.</p></li>
+<li><p><code>mc_preschool</code>: Aggregated weekly, full-time median price charged for Center-based Care for preschoolers (i.e.&nbsp;aged 36 through 54 months) in 2018</p></li>
 </ul>
-<p><a href="https://openintrostat.github.io/usdata/reference/county_2019.html">Click here</a> for the full codebook for the <code>county_2019</code> data set.</p>
-<!--# using the data set from fall 2023. Need to figure out how map_data_sample is created.-->
-<p>You will use two other data sets <code>county-map-sample.csv</code> and <code>county-map-all.csv</code> to create spatial visualizations of the ACS variables. Use the code below to load all of the data sets.</p>
+<p><a href="https://github.com/rfordatascience/tidytuesday/blob/main/data/2023/2023-05-09/readme.md">Click here</a> for the full codebook for the TidyTuesday data set.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>childcare <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/childcare-2018-sample.csv"</span>) </span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>map_data_sample <span class="ot">&lt;-</span>  <span class="fu">read_csv</span>(<span class="st">"data/county-map-2018.csv"</span>) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>childcare <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/childcare-2018-sample.csv"</span>) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="exercises---update" class="level1">
-<h1>Exercises - UPDATE</h1>
-<p>There is a lot of public interest in understanding the impact of graduating college, i.e., obtaining a bachelor’s degree, on one’s future career and lifetime earnings. The common convention is that individuals who have earned a bachelor’s degree (or higher) will earn more income over the course of a lifetime than an individual who does not have such a degree.</p>
-<p>We will explore this at a county-level and examine the association between the percent of adults 25 years old + with a Bachelor’s degree median household income. Specifically we’d like to answer questions such as, “do counties that have a higher percentage of college graduates have higher median household incomes, on average, compared to counties with a lower percentage of college graduates?”.</p>
-<section id="instructions" class="level2">
-<h2 class="anchored" data-anchor-id="instructions">Instructions</h2>
+<section id="exercises" class="level1">
+<h1>Exercises</h1>
+<p>The goal of this analysis is to explore the relationship between individuals’ annual earnings and the cost of preschool in a county. More specifically, we wish to describe how much the cost of preschool typically changes as the earnings in a county increase.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Instructions
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Type your responses to each question in your Quarto document. Write all narrative using complete sentences and include informative axis labels and titles on visualizations. Use a reproducible workflow by periodically rendering the Quarto document, writing an informative commit message, and pushing the updated <code>.qmd</code> and .<code>pdf</code> files to GitHub.</p>
-</section>
+</div>
+</div>
 <section id="part-1-exploratory-data-analysis" class="level2">
 <h2 class="anchored" data-anchor-id="part-1-exploratory-data-analysis">Part 1: Exploratory data analysis</h2>
 <section id="exercise-1" class="level3">
 <h3 class="anchored" data-anchor-id="exercise-1">Exercise 1</h3>
-<p>Create a histogram of the distribution of the response variable <code>mc_preschool</code> and calculate appropriate summary statistics. Use the visualization and summary statistics to describe the distribution. Include an informative title and axis labels on the plot.</p>
+<p>Create a histogram of the distribution of the response variable <code>mc_preschool</code> and compute the summary statistics. Use the visualization and summary statistics to describe the distribution. Include an informative title and axis labels on the plot.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The description should include shape, center, spread, and presence of outliers. Use specific values in your description. See <a href="https://intro-regression.github.io/03-eda.html#sec-univar-eda-quant">Section 3.4.2</a> of <em>Introduction to Regression Analysis</em> for more information about describing univariate distributions. See the <a href="https://ggplot2.tidyverse.org/reference/index.html#geoms">ggplot2 reference</a> for example code and plots.</p>
+</div>
+</div>
 </section>
 <section id="exercise-2" class="level3">
 <h3 class="anchored" data-anchor-id="exercise-2">Exercise 2</h3>
-<p>Let’s view the data in another way. Below is a map showing the 600 counties in our sample filled in based on <code>mc_preschool</code>.</p>
+<p>Let’s view the data in another way. Below is a map showing the 600 counties in our sample filled in based on values of <code>mc_preschool</code>. The code for the map was adapted from code produced by ChatGPT (model GPT-5.2).</p>
+<!--# how do i cite AI?-->
 <ol type="a">
 <li>What are 2 observations you have from the map?</li>
-</ol>
-<!-- -->
-<ol start="2" type="a">
 <li>What is a feature that is apparent in the map that wasn’t as easily apparent from the histogram in the previous exercise? What is a feature that is apparent in the histogram that is not as easily apparent from the map?</li>
 </ol>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create data frame containing mapping data for all counties</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>counties_sf <span class="ot">&lt;-</span> <span class="fu">counties</span>(<span class="at">cb =</span> <span class="cn">TRUE</span>, <span class="at">year =</span> <span class="dv">2018</span>) <span class="sc">|&gt;</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">st_as_sf</span>() <span class="sc">|&gt;</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">fips =</span> <span class="fu">paste0</span>(STATEFP, COUNTYFP))</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># join mapping data to analysis data</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>county_map_data <span class="ot">&lt;-</span> counties_sf <span class="sc">|&gt;</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(childcare, <span class="at">by =</span> <span class="st">"fips"</span>) </span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co"># produce map</span></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>county_map <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(county_map_data) <span class="sc">+</span></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> mc_toddler), <span class="at">color =</span> <span class="cn">NA</span>) <span class="sc">+</span></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_viridis_c</span>(<span class="at">na.value =</span> <span class="st">"grey90"</span>) <span class="sc">+</span></span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_sf</span>(</span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">xlim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">125</span>, <span class="sc">-</span><span class="dv">66</span>),</span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">24</span>, <span class="dv">50</span>),</span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">expand =</span> <span class="cn">FALSE</span>)  <span class="sc">+</span></span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Median weekly preschool costs"</span>,</span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"in United States 600 counties"</span>,</span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>       <span class="at">fill =</span> <span class="st">"Median cost"</span>) <span class="sc">+</span></span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_void</span>() </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>map_data_sample <span class="ot">&lt;-</span>  <span class="fu">read_csv</span>(<span class="st">"data/county-map-2018.csv"</span>) </span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># create data frame containing mapping data for all counties</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>counties_sf <span class="ot">&lt;-</span> <span class="fu">counties</span>(<span class="at">cb =</span> <span class="cn">TRUE</span>, <span class="at">year =</span> <span class="dv">2018</span>) <span class="sc">|&gt;</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">st_as_sf</span>() <span class="sc">|&gt;</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">fips =</span> <span class="fu">paste0</span>(STATEFP, COUNTYFP))</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co"># join mapping data to analysis data</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>county_map_data <span class="ot">&lt;-</span> counties_sf <span class="sc">|&gt;</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(childcare, <span class="at">by =</span> <span class="st">"fips"</span>) </span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="co"># produce map</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>county_map <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(county_map_data) <span class="sc">+</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> mc_toddler), <span class="at">color =</span> <span class="cn">NA</span>) <span class="sc">+</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_viridis_c</span>(<span class="at">na.value =</span> <span class="st">"grey90"</span>) <span class="sc">+</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_sf</span>(</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">xlim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">125</span>, <span class="sc">-</span><span class="dv">66</span>),</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">24</span>, <span class="dv">50</span>),</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">expand =</span> <span class="cn">FALSE</span>)  <span class="sc">+</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Median weekly preschool costs"</span>,</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"in United States 600 counties"</span>,</span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>       <span class="at">fill =</span> <span class="st">"Median cost"</span>) <span class="sc">+</span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_void</span>() </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 <div class="cell">
@@ -588,7 +604,7 @@ Important
 <section id="exercise-4" class="level3">
 <h3 class="anchored" data-anchor-id="exercise-4">Exercise 4</h3>
 <p>We will use a linear regression model to explain variability in <code>mc_preschool</code> based on <code>me_2018</code>.</p>
-<p>Write the form of the statistical (theoretical) model we will use for this task using mathematical notation. Use variable names (<code>bachelors</code> and <code>median_household_income</code>) in the equation for your model<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
+<p>Write the form of the statistical (theoretical) model using mathematical notation. In your response, which variable (<code>me_2018</code> or <code>mc_preschool</code>) is the predictor and which variable is the response.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -599,9 +615,9 @@ Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Write median household income in LaTex as</p>
-<p><code>\text{median\_household\_income}</code></p>
-<p>to make it properly render in the .pdf document.</p>
+<p>Use the following code format to make the variable names properly render in the PDF document.</p>
+<p><span class="math inline">\(\text{me\_2018}\)</span> = <code>\text{me\_2018}</code></p>
+<p><span class="math inline">\(\text{mc\_preschool}\)</span> = <code>\text{mc\_preschool}</code></p>
 </div>
 </div>
 </section>
@@ -609,7 +625,7 @@ Tip
 <h3 class="anchored" data-anchor-id="exercise-5">Exercise 5</h3>
 <ol type="a">
 <li><p>Fit the regression line corresponding to the statistical model in the previous exercise. Neatly display the model output using 3 digits.</p></li>
-<li><p>Write the equation of the fitted model using mathematical notation. Use variable names (<code>bachelors</code> and <code>median_household_income</code>) in the equation.</p></li>
+<li><p>Write the equation of the fitted model using mathematical notation. In your response, which variable (<code>me_2018</code> or <code>mc_preschool</code>) is the predictor and which variable is the response.</p></li>
 </ol>
 </section>
 <section id="exercise-6" class="level3">
@@ -623,9 +639,9 @@ Tip
 </div>
 </section>
 </section>
-<section id="part-3-inference-for-the-u.s." class="level2">
-<h2 class="anchored" data-anchor-id="part-3-inference-for-the-u.s.">Part 3: Inference for the U.S.</h2>
-<p>We will use the data from these 600 randomly selected counties to draw conclusions about the relationship median household income and median costs for preschool for the over 3,000 counties in the United States.</p>
+<section id="part-3-inference" class="level2">
+<h2 class="anchored" data-anchor-id="part-3-inference">Part 3: Inference</h2>
+<p>We will use the data from these 600 randomly selected counties to draw conclusions about the relationship between earnings and weekly cost of preschool for the over 3,000 counties in the United States.</p>
 <section id="exercise-7" class="level3">
 <h3 class="anchored" data-anchor-id="exercise-7">Exercise 7</h3>
 <ol type="a">
@@ -635,14 +651,14 @@ Tip
 </section>
 <section id="exercise-8" class="level3">
 <h3 class="anchored" data-anchor-id="exercise-8">Exercise 8</h3>
-<p>Next, compute a 90% bootstrap confidence interval for the slope. Use <code>set.seed(2026)</code> and 1000 iterations. Show all relevant code and output used to compute the interval.</p>
+<p>Construct a 90% bootstrap confidence interval for the slope. Use <code>set.seed(2026)</code> and 1000 iterations. Show all relevant code and output used to produce the interval.</p>
 <p>Write the 90% confidence interval using 3 digits.</p>
 </section>
 <section id="exercise-9" class="level3">
 <h3 class="anchored" data-anchor-id="exercise-9">Exercise 9</h3>
 <ol type="a">
 <li><p>Interpret the interval from the previous exercise in the context of the data.</p></li>
-<li><p>Suppose you wanted to evaluate the claim that there is no linear relationship between median household income and the median cost for preschool. In other words, you want to evaluate the claim that <span class="math inline">\(\beta_1 = 0\)</span> in the model written in Exercise 4.</p>
+<li><p>You want to use the confidence interval to evaluate the claim that there is no linear relationship between median earnings and cost of preschool. In other words, you want to evaluate the claim that <span class="math inline">\(\beta_1 = 0\)</span> in the model written in <a href="#exercise-4">Exercise 4</a>.</p>
 <p>Does the confidence interval from the previous exercise support this claim? Briefly explain why or why not.</p></li>
 </ol>
 <div class="render-commit-push">
@@ -650,6 +666,21 @@ Tip
 </div>
 </section>
 </section>
+</section>
+<section id="ai-disclosure" class="level1">
+<h1>AI Disclosure</h1>
+<p>Did you use an LLM / Generative AI tool to complete this assignment? If not, copy and paste the first option in your Quarto document. Otherwise, copy and paste <u><strong>all</strong></u> statements that describe how you used it. The purpose of the disclosure is for you to reflect on how you’re using AI in this course. It also helps learn how students are most effectively using AI.</p>
+<ul>
+<li>I didn’t an LLM / Generative AI tool.</li>
+<li>I asked it to clarify one or more exercises.</li>
+<li>I asked it clarifying questions to better understand a concept.</li>
+<li>I asked it to help write code to complete an exercise.</li>
+<li>I gave it my code and asked it to help me fix it.</li>
+<li>I asked it about an error or why code would do something I didn’t want.</li>
+<li>I pasted the exercise prompt in AI and asked for help, but I wrote my answer myself.</li>
+<li>I pasted the exercise prompt in AI and copied and pasted at least some of the answer into my Quarto document.</li>
+<li>Other:______</li>
+</ul>
 </section>
 <section id="submission" class="level1">
 <h1>Submission</h1>
@@ -669,7 +700,7 @@ Warning
 </div>
 <p>To submit your assignment:</p>
 <ul>
-<li><p>Access Gradescope through the <a href="[https://canvas.duke.edu/courses/68771](https://canvas.duke.edu/courses/68771)">STA 210 Canvas site</a>.</p></li>
+<li><p>Access Gradescope through the <a href="https://canvas.duke.edu/courses/68771">STA 210 Canvas site</a>.</p></li>
 <li><p>Click on the assignment, and you’ll be prompted to submit it.</p></li>
 <li><p>Mark the pages associated with each exercise. All of the pages of your lab should be associated with at least one question (i.e., should be “checked”).</p></li>
 <li><p>Select the first page of your .PDF submission to be associated with the <em>“Workflow &amp; formatting”</em> section.</p></li>
@@ -722,6 +753,10 @@ Warning
 <td>5</td>
 </tr>
 <tr class="even">
+<td>Completing AI Disclosure</td>
+<td></td>
+</tr>
+<tr class="odd">
 <td>Workflow &amp; formatting</td>
 <td>5</td>
 </tr>
@@ -732,13 +767,7 @@ Warning
 
 </section>
 
-
-<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
-
-<ol>
-<li id="fn1"><p><a href="https://oeis.org/wiki/List_of_LaTeX_mathematical_symbols">Click here</a> for a guide on writing mathematical symbols using LaTex.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
-</section></div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

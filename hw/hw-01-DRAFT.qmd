@@ -1,6 +1,6 @@
 ---
 title: "HW 01: Simple linear regression"
-subtitle: "UPDATE"
+subtitle: "Cost of preschool in the United States"
 editor: visual
 execute:
   freeze: auto
@@ -18,27 +18,27 @@ This assignment is due on **Tuesday, January 27 at 11:59pm.** To be considered o
 -   Final `.pdf` file submitted on Gradescope
 :::
 
-# Introduction - UPDATE
+# Introduction
 
-In this assignment, you will use simple linear regression to examine the association between the percent of adults with a bachelor's degree and the median household income for counties in the United States.
+In this assignment, you will use simple linear regression to examine the association between median income and the median weekly cost of preschool in the United States.
 
 # Learning goals
 
 In this assignment, you will...
 
--   Fit and interpret simple linear regression models.
+-   fit and interpret simple linear regression models.
 
--   Construct and interpret bootstrap confidence intervals for the population slope, $\beta_1$.
+-   construct and interpret bootstrap confidence intervals for the population slope, $\beta_1$.
 
--   Create and interpret spatial data visualizations using R.
+-   describe visualizations highlight different features of a distribution.
 
--   Continue developing a workflow for reproducible data analysis.
+-   continue developing a workflow for reproducible data analysis.
 
-# Getting started - UPDATE
+# Getting started
 
--   Go to the [sta210-sp25](https://www.github.com/sta210-sp25) organization on GitHub. Click on the repo with the prefix **hw-01**. It contains the starter documents you need to complete the lab.
+-   Go to the [sta210-sp26](https://www.github.com/sta210-sp26) organization on GitHub. Click on the repo with the prefix **hw-01**. It contains the starter documents you need to complete the lab.
 
--   Clone the repo and start a new project in RStudio. See the [Lab 00](https://sta210-sp25.netlify.app/labs/lab-00#getting-started) for details on cloning a repo and starting a new project in R.
+-   Clone the repo and start a new project in RStudio. See the [Lab 00](../labs/lab-00.html) for details on cloning a repo and starting a new project in R.
 
 The following packages will be used in this assignment:
 
@@ -47,68 +47,65 @@ library(tidyverse)  # for data wrangling
 library(tidymodels) # for modeling and inference 
 library(knitr)      # to neatly format tables 
 library(sf)         # for working with spatial data
-library(tigris)     # has shape files for US counties
-
+library(tigris)     # for shape files of US counties
 
 # load other packages as needed 
 
 ```
 
-# Data: US Counties - UPDATE
+# Data: Counties in the United States
 
-The data are from the `county_2019` data frame in the [usdata](https://openintrostat.github.io/usdata/index.html) R package. These data were originally collected in the 2019 [American Community Survey](https://www.census.gov/programs-surveys/acs) (ACS), an annual survey conducted by the United States Census Bureau that collects demographics and other information from a sample of households in the United States. The data frame `county_2019` contains county-level statistics from the ACS.
+The dataset in this assignment includes demographic, socioeconomic, and childcare cost information for 600 randomly selected counties in the United States (about 19% of all counties). The data are originally from the [National Database of Childcare Prices](https://www.dol.gov/agencies/wb/topics/featured-childcare) and were featured as part of the [TidyTuesday](https://github.com/rfordatascience/tidytuesday/blob/main/data/2023/2023-05-09/readme.md) weekly data visualization challenge in May 2023.
 
-The data for this analysis are available in the file `us-counties-sample.csv` in the `data` folder of your repo. It contains a random sample of 600 counties in the United States. This is about 19% of the counties in the United States.
+The data are in the file `childcare-2018-sample.csv` located in the `data` folder of your GitHub repo. This analysis focuses on the following variables:
 
-This analysis focuses on the following variables:
+-   `me_2018`: Median income in 2018 for the population aged 16 years old or older.
 
--   `bachelors`: Percent of population 25 years old and older that earned a Bachelor's degree or higher
+-   `mc_preschool`: Aggregated weekly, full-time median price charged for Center-based Care for preschoolers (i.e. aged 36 through 54 months) in 2018
 
--   `median_household_income`: Median household income in US dollars
-
-[Click here](https://openintrostat.github.io/usdata/reference/county_2019.html) for the full codebook for the `county_2019` data set.
-
-<!--# using the data set from fall 2023. Need to figure out how map_data_sample is created.-->
-
-You will use two other data sets `county-map-sample.csv` and `county-map-all.csv` to create spatial visualizations of the ACS variables. Use the code below to load all of the data sets.
+[Click here](https://github.com/rfordatascience/tidytuesday/blob/main/data/2023/2023-05-09/readme.md) for the full codebook for the TidyTuesday data set.
 
 ```{r}
 #| eval: true
 
 childcare <- read_csv("data/childcare-2018-sample.csv") 
-map_data_sample <-  read_csv("data/county-map-2018.csv") 
 ```
 
-# Exercises - UPDATE
+# Exercises
 
-There is a lot of public interest in understanding the impact of graduating college, i.e., obtaining a bachelor's degree, on one's future career and lifetime earnings. The common convention is that individuals who have earned a bachelor's degree (or higher) will earn more income over the course of a lifetime than an individual who does not have such a degree.
+The goal of this analysis is to explore the relationship between individuals' annual earnings and the cost of preschool in a county. More specifically, we wish to describe how much the cost of preschool typically changes as the earnings in a county increase.
 
-We will explore this at a county-level and examine the association between the percent of adults 25 years old + with a Bachelor's degree median household income. Specifically we'd like to answer questions such as, "do counties that have a higher percentage of college graduates have higher median household incomes, on average, compared to counties with a lower percentage of college graduates?".
-
+::: callout-important
 ## Instructions
 
 Type your responses to each question in your Quarto document. Write all narrative using complete sentences and include informative axis labels and titles on visualizations. Use a reproducible workflow by periodically rendering the Quarto document, writing an informative commit message, and pushing the updated `.qmd` and .`pdf` files to GitHub.
+:::
 
 ## Part 1: Exploratory data analysis
 
-### Exercise 1 
+### Exercise 1
 
-Create a histogram of the distribution of the response variable `mc_preschool` and calculate appropriate summary statistics. Use the visualization and summary statistics to describe the distribution. Include an informative title and axis labels on the plot.
+Create a histogram of the distribution of the response variable `mc_preschool` and compute the summary statistics. Use the visualization and summary statistics to describe the distribution. Include an informative title and axis labels on the plot.
 
-### Exercise 2 
+::: callout-tip
+The description should include shape, center, spread, and presence of outliers. Use specific values in your description. See [Section 3.4.2](https://intro-regression.github.io/03-eda.html#sec-univar-eda-quant) of *Introduction to Regression Analysis* for more information about describing univariate distributions. See the [ggplot2 reference](https://ggplot2.tidyverse.org/reference/index.html#geoms) for example code and plots.
+:::
 
-Let's view the data in another way. Below is a map showing the 600 counties in our sample filled in based on `mc_preschool`.
+### Exercise 2
+
+Let's view the data in another way. Below is a map showing the 600 counties in our sample filled in based on values of `mc_preschool`. The code for the map was adapted from code produced by ChatGPT (model GPT-5.2).
+
+<!--# how do i cite AI?-->
 
 a.  What are 2 observations you have from the map?
-
-<!-- -->
-
 b.  What is a feature that is apparent in the map that wasn't as easily apparent from the histogram in the previous exercise? What is a feature that is apparent in the histogram that is not as easily apparent from the map?
 
 ```{r}
 #| echo: true
 #| output: false
 #| code-fold: true
+
+map_data_sample <-  read_csv("data/county-map-2018.csv") 
 
 # create data frame containing mapping data for all counties
 counties_sf <- counties(cb = TRUE, year = 2018) |>
@@ -153,23 +150,21 @@ This is a good place to render, commit, and push changes to your hw-01 repo on G
 
 We will use a linear regression model to explain variability in `mc_preschool` based on `me_2018`.
 
-Write the form of the statistical (theoretical) model we will use for this task using mathematical notation. Use variable names (`bachelors` and `median_household_income`) in the equation for your model[^1].
-
-[^1]: [Click here](https://oeis.org/wiki/List_of_LaTeX_mathematical_symbols) for a guide on writing mathematical symbols using LaTex.
+Write the form of the statistical (theoretical) model using mathematical notation. In your response, which variable (`me_2018` or `mc_preschool`) is the predictor and which variable is the response.
 
 ::: callout-tip
-Write median household income in LaTex as
+Use the following code format to make the variable names properly render in the PDF document.
 
-`\text{median\_household\_income}`
+$\text{me\_2018}$ = `\text{me\_2018}`
 
-to make it properly render in the .pdf document.
+$\text{mc\_preschool}$ = `\text{mc\_preschool}`
 :::
 
 ### Exercise 5
 
 a.  Fit the regression line corresponding to the statistical model in the previous exercise. Neatly display the model output using 3 digits.
 
-b.  Write the equation of the fitted model using mathematical notation. Use variable names (`bachelors` and `median_household_income`) in the equation.
+b.  Write the equation of the fitted model using mathematical notation. In your response, which variable (`me_2018` or `mc_preschool`) is the predictor and which variable is the response.
 
 ### Exercise 6
 
@@ -180,9 +175,9 @@ b.  Does the intercept have a meaningful interpretation? If so, write the interp
 This is a good place to render, commit, and push changes to your hw-01 repo on GitHub. Write an informative commit message (e.g. “Completed exercises 4 -6”), and push every file to GitHub by clicking the check box next to each file in the Git pane. After you push the changes, the Git pane in RStudio should be empty.
 :::
 
-## Part 3: Inference for the U.S.
+## Part 3: Inference 
 
-We will use the data from these 600 randomly selected counties to draw conclusions about the relationship median household income and median costs for preschool for the over 3,000 counties in the United States.
+We will use the data from these 600 randomly selected counties to draw conclusions about the relationship between earnings and weekly cost of preschool for the over 3,000 counties in the United States.
 
 ### Exercise 7
 
@@ -192,7 +187,7 @@ b.  Is it reasonable to treat the sample in this analysis as representative of t
 
 ### Exercise 8
 
-Next, compute a 90% bootstrap confidence interval for the slope. Use `set.seed(2026)` and 1000 iterations. Show all relevant code and output used to compute the interval.
+Construct a 90% bootstrap confidence interval for the slope. Use `set.seed(2026)` and 1000 iterations. Show all relevant code and output used to produce the interval.
 
 Write the 90% confidence interval using 3 digits.
 
@@ -200,13 +195,27 @@ Write the 90% confidence interval using 3 digits.
 
 a.  Interpret the interval from the previous exercise in the context of the data.
 
-b.  Suppose you wanted to evaluate the claim that there is no linear relationship between median household income and the median cost for preschool. In other words, you want to evaluate the claim that $\beta_1 = 0$ in the model written in Exercise 4.
+b.  You want to use the confidence interval to evaluate the claim that there is no linear relationship between median earnings and cost of preschool. In other words, you want to evaluate the claim that $\beta_1 = 0$ in the model written in [Exercise 4].
 
     Does the confidence interval from the previous exercise support this claim? Briefly explain why or why not.
 
 ::: render-commit-push
 Now is a good time to render your document again if you haven't done so recently, commit (with an informative commit message), and push all updates.
 :::
+
+# AI Disclosure
+
+Did you use an LLM / Generative AI tool to complete this assignment? If not, copy and paste the first option in your Quarto document. Otherwise, copy and paste [**all**]{.underline} statements that describe how you used it. The purpose of the disclosure is for you to reflect on how you’re using AI in this course. It also helps learn how students are most effectively using AI.
+
+-   I didn't an LLM / Generative AI tool.
+-   I asked it to clarify one or more exercises.
+-   I asked it clarifying questions to better understand a concept.
+-   I asked it to help write code to complete an exercise.
+-   I gave it my code and asked it to help me fix it.
+-   I asked it about an error or why code would do something I didn't want.
+-   I pasted the exercise prompt in AI and asked for help, but I wrote my answer myself.
+-   I pasted the exercise prompt in AI and copied and pasted at least some of the answer into my Quarto document.
+-   Other:\_\_\_\_\_\_
 
 # Submission
 
@@ -218,7 +227,7 @@ Remember – you must turn in a PDF file to the Gradescope page before the submi
 
 To submit your assignment:
 
--   Access Gradescope through the [STA 210 Canvas site]([https://canvas.duke.edu/courses/68771](https://canvas.duke.edu/courses/68771)).
+-   Access Gradescope through the [STA 210 Canvas site](https://canvas.duke.edu/courses/68771).
 
 -   Click on the assignment, and you’ll be prompted to submit it.
 
@@ -228,17 +237,18 @@ To submit your assignment:
 
 # Grading (50 points)
 
-| Component             | Points |
-|-----------------------|--------|
-| Ex 1                  | 5      |
-| Ex 2                  | 5      |
-| Ex 3                  | 5      |
-| Ex 4                  | 5      |
-| Ex 5                  | 5      |
-| Ex 6                  | 5      |
-| Ex 7                  | 5      |
-| Ex 8                  | 5      |
-| Ex 9                  | 5      |
-| Workflow & formatting | 5      |
+| Component                | Points |
+|--------------------------|--------|
+| Ex 1                     | 5      |
+| Ex 2                     | 5      |
+| Ex 3                     | 5      |
+| Ex 4                     | 5      |
+| Ex 5                     | 5      |
+| Ex 6                     | 5      |
+| Ex 7                     | 5      |
+| Ex 8                     | 5      |
+| Ex 9                     | 5      |
+| Completing AI Disclosure |        |
+| Workflow & formatting    | 5      |
 
 The “Workflow & formatting” grade is to assess the reproducible workflow and document format for the applied exercises. This includes having at least 3 informative commit messages, a neatly organized document with readable code and your name and the date updated in the YAML.
