@@ -158,12 +158,6 @@ slope <- tidy(df_fit) |> filter(term == "area") |> pull(estimate) |> round()
 
 ## Statistical inference
 
--   **Statistical inference** provide methods and tools so we can use the single observed sample to make valid statements (inferences) about the population it comes from
-
--   For our inferences to be valid, the sample should be random and representative of the population we're interested in
-
-## Statistical inference
-
 :::::: columns
 :::: {.column width="40%"}
 ::: midi
@@ -182,7 +176,13 @@ slope <- tidy(df_fit) |> filter(term == "area") |> pull(estimate) |> round()
 
 -   Compute a confidence interval for the slope, $\beta_1$
 
--   Conduct a hypothesis test for the slope,$\beta_1$
+-   Conduct a hypothesis test for the slope, $\beta_1$
+
+<br>
+
+::: callout-note
+We can use the same methods for inference on the intercept, $\beta_0$, but we are often not interested in inference on the intercept in practice.
+:::
 
 # Confidence interval for the slope
 
@@ -522,7 +522,7 @@ df_boot_samples_100_hist <- ggplot(df_boot_samples_100_fit |> filter(term == "ar
 df_boot_samples_100_hist
 ```
 
-## Bootstrap distribution
+## Bootstrap sampling distribution {.midi}
 
 Let's increase the number of bootstrap samples to 1000. The **bootstrap sampling distribution** is the distribution of estimated slopes given samples of size $n$ (the same as our data).
 
@@ -552,27 +552,28 @@ df_boot_samples_1000_hist
 
 ```{r}
 #| echo: false
-
 boot_dist_sd <- df_boot_samples_1000_fit |> ungroup() |> filter(term == "area") |> summarise(sd(estimate)) |> pull() 
 ```
 
-:::: panel-tabset
+::::: panel-tabset
 ## Question
 
-::: midi
+:::: midi
+::: appex
 -   What is the approximate center of the bootstrap sampling distribution?
 
 -   The standard deviation of the bootstrap sampling distribution is `r  round(boot_dist_sd, 3)`. What does this value represent?
 :::
+
+🔗 <https://forms.office.com/r/naWVT11vBu>
+::::
 
 ## Submit
 
 ```{=html}
 <center><iframe width="640px" height="480px" src="https://forms.office.com/r/naWVT11vBu?embed=true" frameborder="0" marginwidth="0" marginheight="0" style="border: none; max-width:100%; max-height:100vh" allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen> </iframe></center>
 ```
-::::
-
-🔗 <https://forms.office.com/r/naWVT11vBu>
+:::::
 
 ## Confidence level
 
@@ -611,12 +612,6 @@ df_boot_samples_1000_hist +
 -   We are 95% confident that for each additional square foot, sales price of Duke Forest houses to be higher, on average, by `r dollar(lower)` to `r dollar(upper)`.
 :::
 
-# Application exercise
-
-::: appex
-📋 [sta210-sp25.netlify.app/ae/ae-04-bootstrap.html](..ae/ae-04-bootstrap.html)
-:::
-
 ## Computing the CI for the slope I
 
 Calculate the observed slope:
@@ -635,6 +630,8 @@ observed_fit
 
 Take `100` bootstrap samples and fit models to each one:
 
+::::: columns
+::: {.column width="55%"}
 ```{r}
 #| echo: true
 #| code-line-numbers: "1|3,4|5|6"
@@ -648,10 +645,12 @@ boot_fits <- duke_forest |>
 
 boot_fits
 ```
+:::
 
-::: callout-note
+::: {.column width="40%"}
 Use \~ 100 bootstrap samples to write code, and 1000+ samples for final analysis results.
 :::
+:::::
 
 ## Computing the CI for the slope III
 
@@ -685,12 +684,15 @@ If we want to be very certain that we capture the population parameter, should w
 How can we get best of both worlds -- high precision and high accuracy?
 :::
 
+<br>
+
 . . .
 
 ::: question
 Consider a 90%, 95%, and 99% confidence interval.
 
--   Which interval is most precise? Which is most accurate?
+-   Which interval is most precise?
+-   Which is most accurate?
 :::
 
 ## Changing confidence level {.midi}

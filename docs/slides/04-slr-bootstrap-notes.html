@@ -407,7 +407,6 @@ window.Quarto = {
   <li><a href="#modeling" id="toc-modeling" class="nav-link" data-scroll-target="#modeling">Modeling</a></li>
   <li><a href="#from-sample-to-population" id="toc-from-sample-to-population" class="nav-link" data-scroll-target="#from-sample-to-population">From sample to population</a></li>
   <li><a href="#statistical-inference" id="toc-statistical-inference" class="nav-link" data-scroll-target="#statistical-inference">Statistical inference</a></li>
-  <li><a href="#statistical-inference-1" id="toc-statistical-inference-1" class="nav-link" data-scroll-target="#statistical-inference-1">Statistical inference</a></li>
   <li><a href="#inference-for-simple-linear-regression" id="toc-inference-for-simple-linear-regression" class="nav-link" data-scroll-target="#inference-for-simple-linear-regression">Inference for simple linear regression</a></li>
   </ul></li>
   <li><a href="#confidence-interval-for-the-slope" id="toc-confidence-interval-for-the-slope" class="nav-link" data-scroll-target="#confidence-interval-for-the-slope">Confidence interval for the slope</a>
@@ -424,13 +423,10 @@ window.Quarto = {
   <li><a href="#bootstrap-samples-1---100" id="toc-bootstrap-samples-1---100" class="nav-link" data-scroll-target="#bootstrap-samples-1---100">Bootstrap samples 1 - 100</a></li>
   <li><a href="#slopes-of-bootstrap-samples" id="toc-slopes-of-bootstrap-samples" class="nav-link" data-scroll-target="#slopes-of-bootstrap-samples">Slopes of bootstrap samples</a></li>
   <li><a href="#slopes-of-bootstrap-samples-1" id="toc-slopes-of-bootstrap-samples-1" class="nav-link" data-scroll-target="#slopes-of-bootstrap-samples-1">Slopes of bootstrap samples</a></li>
-  <li><a href="#bootstrap-distribution" id="toc-bootstrap-distribution" class="nav-link" data-scroll-target="#bootstrap-distribution">Bootstrap distribution</a></li>
   <li><a href="#bootstrap-sampling-distribution" id="toc-bootstrap-sampling-distribution" class="nav-link" data-scroll-target="#bootstrap-sampling-distribution">Bootstrap sampling distribution</a></li>
+  <li><a href="#bootstrap-sampling-distribution-1" id="toc-bootstrap-sampling-distribution-1" class="nav-link" data-scroll-target="#bootstrap-sampling-distribution-1">Bootstrap sampling distribution</a></li>
   <li><a href="#confidence-level" id="toc-confidence-level" class="nav-link" data-scroll-target="#confidence-level">Confidence level</a></li>
   <li><a href="#confidence-interval-1" id="toc-confidence-interval-1" class="nav-link" data-scroll-target="#confidence-interval-1">95% confidence interval</a></li>
-  </ul></li>
-  <li><a href="#application-exercise" id="toc-application-exercise" class="nav-link" data-scroll-target="#application-exercise">Application exercise</a>
-  <ul class="collapse">
   <li><a href="#computing-the-ci-for-the-slope-i" id="toc-computing-the-ci-for-the-slope-i" class="nav-link" data-scroll-target="#computing-the-ci-for-the-slope-i">Computing the CI for the slope I</a></li>
   <li><a href="#computing-the-ci-for-the-slope-ii" id="toc-computing-the-ci-for-the-slope-ii" class="nav-link" data-scroll-target="#computing-the-ci-for-the-slope-ii">Computing the CI for the slope II</a></li>
   <li><a href="#computing-the-ci-for-the-slope-iii" id="toc-computing-the-ci-for-the-slope-iii" class="nav-link" data-scroll-target="#computing-the-ci-for-the-slope-iii">Computing the CI for the slope III</a></li>
@@ -617,13 +613,6 @@ window.Quarto = {
 </section>
 <section id="statistical-inference" class="level2">
 <h2 class="anchored" data-anchor-id="statistical-inference">Statistical inference</h2>
-<ul>
-<li><p><strong>Statistical inference</strong> provide methods and tools so we can use the single observed sample to make valid statements (inferences) about the population it comes from</p></li>
-<li><p>For our inferences to be valid, the sample should be random and representative of the population we’re interested in</p></li>
-</ul>
-</section>
-<section id="statistical-inference-1" class="level2">
-<h2 class="anchored" data-anchor-id="statistical-inference-1">Statistical inference</h2>
 <div class="columns">
 <div class="column" style="width:40%;">
 <div class="midi">
@@ -646,8 +635,22 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="inference-for-simple-linear-regression">Inference for simple linear regression</h2>
 <ul>
 <li><p>Compute a confidence interval for the slope, <span class="math inline">\(\beta_1\)</span></p></li>
-<li><p>Conduct a hypothesis test for the slope,<span class="math inline">\(\beta_1\)</span></p></li>
+<li><p>Conduct a hypothesis test for the slope, <span class="math inline">\(\beta_1\)</span></p></li>
 </ul>
+<p><br></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We can use the same methods for inference on the intercept, <span class="math inline">\(\beta_0\)</span>, but we are often not interested in inference on the intercept in practice.</p>
+</div>
+</div>
 </section>
 </section>
 <section id="confidence-interval-for-the-slope" class="level1">
@@ -909,8 +912,8 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="bootstrap-distribution" class="level2">
-<h2 class="anchored" data-anchor-id="bootstrap-distribution">Bootstrap distribution</h2>
+<section id="bootstrap-sampling-distribution" class="level2 midi">
+<h2 class="midi anchored" data-anchor-id="bootstrap-sampling-distribution">Bootstrap sampling distribution</h2>
 <p>Let’s increase the number of bootstrap samples to 1000. The <strong>bootstrap sampling distribution</strong> is the distribution of estimated slopes given samples of size <span class="math inline">\(n\)</span> (the same as our data).</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
@@ -922,17 +925,20 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="bootstrap-sampling-distribution" class="level2">
-<h2 class="anchored" data-anchor-id="bootstrap-sampling-distribution">Bootstrap sampling distribution</h2>
+<section id="bootstrap-sampling-distribution-1" class="level2">
+<h2 class="anchored" data-anchor-id="bootstrap-sampling-distribution-1">Bootstrap sampling distribution</h2>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="" aria-current="page">Question</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Submit</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <div class="midi">
+<div class="appex">
 <ul>
 <li><p>What is the approximate center of the bootstrap sampling distribution?</p></li>
 <li><p>The standard deviation of the bootstrap sampling distribution is 32.319. What does this value represent?</p></li>
 </ul>
+</div>
+<p>🔗 <a href="https://forms.office.com/r/naWVT11vBu" class="uri">https://forms.office.com/r/naWVT11vBu</a></p>
 </div>
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
@@ -940,7 +946,6 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<p>🔗 <a href="https://forms.office.com/r/naWVT11vBu" class="uri">https://forms.office.com/r/naWVT11vBu</a></p>
 </section>
 <section id="confidence-level" class="level2">
 <h2 class="anchored" data-anchor-id="confidence-level">Confidence level</h2>
@@ -975,12 +980,6 @@ window.Quarto = {
 </ul>
 </div>
 </section>
-</section>
-<section id="application-exercise" class="level1">
-<h1>Application exercise</h1>
-<div class="appex">
-<p>📋 <a href="..ae/ae-04-bootstrap.html">sta210-sp25.netlify.app/ae/ae-04-bootstrap.html</a></p>
-</div>
 <section id="computing-the-ci-for-the-slope-i" class="level2">
 <h2 class="anchored" data-anchor-id="computing-the-ci-for-the-slope-i">Computing the CI for the slope I</h2>
 <p>Calculate the observed slope:</p>
@@ -1002,6 +1001,8 @@ window.Quarto = {
 <section id="computing-the-ci-for-the-slope-ii" class="level2 smaller">
 <h2 class="smaller anchored" data-anchor-id="computing-the-ci-for-the-slope-ii">Computing the CI for the slope II</h2>
 <p>Take <code>100</code> bootstrap samples and fit models to each one:</p>
+<div class="columns">
+<div class="column" style="width:55%;">
 <div class="cell" data-layout-align="center">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">set.seed</span>(<span class="dv">1120</span>)</span>
 <span id="cb6-2"><a href="#cb6-2"></a></span>
@@ -1029,16 +1030,7 @@ window.Quarto = {
 # ℹ 190 more rows</code></pre>
 </div>
 </div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
+</div><div class="column" style="width:40%;">
 <p>Use ~ 100 bootstrap samples to write code, and 1000+ samples for final analysis results.</p>
 </div>
 </div>
@@ -1075,11 +1067,13 @@ Note
 <div class="question">
 <p>How can we get best of both worlds – high precision and high accuracy?</p>
 </div>
+<p><br></p>
 <p>. . .</p>
 <div class="question">
 <p>Consider a 90%, 95%, and 99% confidence interval.</p>
 <ul>
-<li>Which interval is most precise? Which is most accurate?</li>
+<li>Which interval is most precise?</li>
+<li>Which is most accurate?</li>
 </ul>
 </div>
 </section>

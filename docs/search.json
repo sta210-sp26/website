@@ -1730,13 +1730,6 @@
     "href": "slides/04-slr-bootstrap-notes.html#statistical-inference",
     "title": "SLR: Simulation-based inference",
     "section": "Statistical inference",
-    "text": "Statistical inference\n\nStatistical inference provide methods and tools so we can use the single observed sample to make valid statements (inferences) about the population it comes from\nFor our inferences to be valid, the sample should be random and representative of the population we’re interested in"
-  },
-  {
-    "objectID": "slides/04-slr-bootstrap-notes.html#statistical-inference-1",
-    "href": "slides/04-slr-bootstrap-notes.html#statistical-inference-1",
-    "title": "SLR: Simulation-based inference",
-    "section": "Statistical inference",
     "text": "Statistical inference\n\n\n\n\nStatistical inference provides methods and tools so we can use the single observed sample to make valid statements (inferences) about the population it comes from\nFor our inferences to be valid, the sample should be representative (ideally random) of the population we’re interested in\n\n\n\n\n\n\nImage source: Eugene Morgan © Penn State"
   },
   {
@@ -1744,7 +1737,7 @@
     "href": "slides/04-slr-bootstrap-notes.html#inference-for-simple-linear-regression",
     "title": "SLR: Simulation-based inference",
     "section": "Inference for simple linear regression",
-    "text": "Inference for simple linear regression\n\nCompute a confidence interval for the slope, \\(\\beta_1\\)\nConduct a hypothesis test for the slope,\\(\\beta_1\\)"
+    "text": "Inference for simple linear regression\n\nCompute a confidence interval for the slope, \\(\\beta_1\\)\nConduct a hypothesis test for the slope, \\(\\beta_1\\)\n\n\n\n\n\n\n\n\nNote\n\n\n\nWe can use the same methods for inference on the intercept, \\(\\beta_0\\), but we are often not interested in inference on the intercept in practice."
   },
   {
     "objectID": "slides/04-slr-bootstrap-notes.html#confidence-interval",
@@ -1831,18 +1824,18 @@
     "text": "Slopes of bootstrap samples\n\nFill in the blank: For each additional square foot, we expect the sales price of Duke Forest houses to be higher, on average, by $159, plus or minus ___ dollars."
   },
   {
-    "objectID": "slides/04-slr-bootstrap-notes.html#bootstrap-distribution",
-    "href": "slides/04-slr-bootstrap-notes.html#bootstrap-distribution",
-    "title": "SLR: Simulation-based inference",
-    "section": "Bootstrap distribution",
-    "text": "Bootstrap distribution\nLet’s increase the number of bootstrap samples to 1000. The bootstrap sampling distribution is the distribution of estimated slopes given samples of size \\(n\\) (the same as our data)."
-  },
-  {
     "objectID": "slides/04-slr-bootstrap-notes.html#bootstrap-sampling-distribution",
     "href": "slides/04-slr-bootstrap-notes.html#bootstrap-sampling-distribution",
     "title": "SLR: Simulation-based inference",
     "section": "Bootstrap sampling distribution",
-    "text": "Bootstrap sampling distribution\n\nQuestionSubmit\n\n\n\n\nWhat is the approximate center of the bootstrap sampling distribution?\nThe standard deviation of the bootstrap sampling distribution is 32.319. What does this value represent?\n\n\n\n\n \n\n\n\n🔗 https://forms.office.com/r/naWVT11vBu"
+    "text": "Bootstrap sampling distribution\nLet’s increase the number of bootstrap samples to 1000. The bootstrap sampling distribution is the distribution of estimated slopes given samples of size \\(n\\) (the same as our data)."
+  },
+  {
+    "objectID": "slides/04-slr-bootstrap-notes.html#bootstrap-sampling-distribution-1",
+    "href": "slides/04-slr-bootstrap-notes.html#bootstrap-sampling-distribution-1",
+    "title": "SLR: Simulation-based inference",
+    "section": "Bootstrap sampling distribution",
+    "text": "Bootstrap sampling distribution\n\nQuestionSubmit\n\n\n\n\n\nWhat is the approximate center of the bootstrap sampling distribution?\nThe standard deviation of the bootstrap sampling distribution is 32.319. What does this value represent?\n\n\n🔗 https://forms.office.com/r/naWVT11vBu"
   },
   {
     "objectID": "slides/04-slr-bootstrap-notes.html#confidence-level",
@@ -1870,7 +1863,7 @@
     "href": "slides/04-slr-bootstrap-notes.html#computing-the-ci-for-the-slope-ii",
     "title": "SLR: Simulation-based inference",
     "section": "Computing the CI for the slope II",
-    "text": "Computing the CI for the slope II\nTake 100 bootstrap samples and fit models to each one:\n\nset.seed(1120)\n\nboot_fits &lt;- duke_forest |&gt;\n  specify(price ~ area) |&gt;\n  generate(reps = 100, type = \"bootstrap\") |&gt;\n  fit()\n\nboot_fits\n\n# A tibble: 200 × 3\n# Groups:   replicate [100]\n   replicate term      estimate\n       &lt;int&gt; &lt;chr&gt;        &lt;dbl&gt;\n 1         1 intercept   47819.\n 2         1 area          191.\n 3         2 intercept  144645.\n 4         2 area          134.\n 5         3 intercept  114008.\n 6         3 area          161.\n 7         4 intercept  100639.\n 8         4 area          166.\n 9         5 intercept  215264.\n10         5 area          125.\n# ℹ 190 more rows\n\n\n\n\n\n\n\n\nNote\n\n\n\nUse ~ 100 bootstrap samples to write code, and 1000+ samples for final analysis results."
+    "text": "Computing the CI for the slope II\nTake 100 bootstrap samples and fit models to each one:\n\n\n\nset.seed(1120)\n\nboot_fits &lt;- duke_forest |&gt;\n  specify(price ~ area) |&gt;\n  generate(reps = 100, type = \"bootstrap\") |&gt;\n  fit()\n\nboot_fits\n\n# A tibble: 200 × 3\n# Groups:   replicate [100]\n   replicate term      estimate\n       &lt;int&gt; &lt;chr&gt;        &lt;dbl&gt;\n 1         1 intercept   47819.\n 2         1 area          191.\n 3         2 intercept  144645.\n 4         2 area          134.\n 5         3 intercept  114008.\n 6         3 area          161.\n 7         4 intercept  100639.\n 8         4 area          166.\n 9         5 intercept  215264.\n10         5 area          125.\n# ℹ 190 more rows\n\n\n\nUse ~ 100 bootstrap samples to write code, and 1000+ samples for final analysis results."
   },
   {
     "objectID": "slides/04-slr-bootstrap-notes.html#computing-the-ci-for-the-slope-iii",
@@ -1891,7 +1884,7 @@
     "href": "slides/04-slr-bootstrap-notes.html#precision-vs.-accuracy-1",
     "title": "SLR: Simulation-based inference",
     "section": "Precision vs. accuracy",
-    "text": "Precision vs. accuracy\n\nHow can we get best of both worlds – high precision and high accuracy?\n\n. . .\n\nConsider a 90%, 95%, and 99% confidence interval.\n\nWhich interval is most precise? Which is most accurate?"
+    "text": "Precision vs. accuracy\n\nHow can we get best of both worlds – high precision and high accuracy?\n\n\n. . .\n\nConsider a 90%, 95%, and 99% confidence interval.\n\nWhich interval is most precise?\nWhich is most accurate?"
   },
   {
     "objectID": "slides/04-slr-bootstrap-notes.html#changing-confidence-level",
@@ -1968,13 +1961,6 @@
     "href": "slides/04-slr-bootstrap.html#statistical-inference",
     "title": "SLR: Simulation-based inference",
     "section": "Statistical inference",
-    "text": "Statistical inference\n\nStatistical inference provide methods and tools so we can use the single observed sample to make valid statements (inferences) about the population it comes from\nFor our inferences to be valid, the sample should be random and representative of the population we’re interested in"
-  },
-  {
-    "objectID": "slides/04-slr-bootstrap.html#statistical-inference-1",
-    "href": "slides/04-slr-bootstrap.html#statistical-inference-1",
-    "title": "SLR: Simulation-based inference",
-    "section": "Statistical inference",
     "text": "Statistical inference\n\n\n\n\nStatistical inference provides methods and tools so we can use the single observed sample to make valid statements (inferences) about the population it comes from\nFor our inferences to be valid, the sample should be representative (ideally random) of the population we’re interested in\n\n\n\n\n\n\nImage source: Eugene Morgan © Penn State"
   },
   {
@@ -1982,7 +1968,7 @@
     "href": "slides/04-slr-bootstrap.html#inference-for-simple-linear-regression",
     "title": "SLR: Simulation-based inference",
     "section": "Inference for simple linear regression",
-    "text": "Inference for simple linear regression\n\nCompute a confidence interval for the slope, \\(\\beta_1\\)\nConduct a hypothesis test for the slope,\\(\\beta_1\\)"
+    "text": "Inference for simple linear regression\n\nCompute a confidence interval for the slope, \\(\\beta_1\\)\nConduct a hypothesis test for the slope, \\(\\beta_1\\)\n\n\n\n\n\n\n\n\nNote\n\n\nWe can use the same methods for inference on the intercept, \\(\\beta_0\\), but we are often not interested in inference on the intercept in practice."
   },
   {
     "objectID": "slides/04-slr-bootstrap.html#confidence-interval",
@@ -2069,18 +2055,18 @@
     "text": "Slopes of bootstrap samples\n\nFill in the blank: For each additional square foot, we expect the sales price of Duke Forest houses to be higher, on average, by $159, plus or minus ___ dollars."
   },
   {
-    "objectID": "slides/04-slr-bootstrap.html#bootstrap-distribution",
-    "href": "slides/04-slr-bootstrap.html#bootstrap-distribution",
-    "title": "SLR: Simulation-based inference",
-    "section": "Bootstrap distribution",
-    "text": "Bootstrap distribution\nLet’s increase the number of bootstrap samples to 1000. The bootstrap sampling distribution is the distribution of estimated slopes given samples of size \\(n\\) (the same as our data)."
-  },
-  {
     "objectID": "slides/04-slr-bootstrap.html#bootstrap-sampling-distribution",
     "href": "slides/04-slr-bootstrap.html#bootstrap-sampling-distribution",
     "title": "SLR: Simulation-based inference",
     "section": "Bootstrap sampling distribution",
-    "text": "Bootstrap sampling distribution\n\nQuestionSubmit\n\n\n\n\nWhat is the approximate center of the bootstrap sampling distribution?\nThe standard deviation of the bootstrap sampling distribution is 32.319. What does this value represent?\n\n\n\n\n \n\n\n\n🔗 https://forms.office.com/r/naWVT11vBu"
+    "text": "Bootstrap sampling distribution\nLet’s increase the number of bootstrap samples to 1000. The bootstrap sampling distribution is the distribution of estimated slopes given samples of size \\(n\\) (the same as our data)."
+  },
+  {
+    "objectID": "slides/04-slr-bootstrap.html#bootstrap-sampling-distribution-1",
+    "href": "slides/04-slr-bootstrap.html#bootstrap-sampling-distribution-1",
+    "title": "SLR: Simulation-based inference",
+    "section": "Bootstrap sampling distribution",
+    "text": "Bootstrap sampling distribution\n\nQuestionSubmit\n\n\n\n\n\nWhat is the approximate center of the bootstrap sampling distribution?\nThe standard deviation of the bootstrap sampling distribution is 32.319. What does this value represent?\n\n\n🔗 https://forms.office.com/r/naWVT11vBu"
   },
   {
     "objectID": "slides/04-slr-bootstrap.html#confidence-level",
@@ -2108,7 +2094,7 @@
     "href": "slides/04-slr-bootstrap.html#computing-the-ci-for-the-slope-ii",
     "title": "SLR: Simulation-based inference",
     "section": "Computing the CI for the slope II",
-    "text": "Computing the CI for the slope II\nTake 100 bootstrap samples and fit models to each one:\n\nset.seed(1120)\n\nboot_fits &lt;- duke_forest |&gt;\n  specify(price ~ area) |&gt;\n  generate(reps = 100, type = \"bootstrap\") |&gt;\n  fit()\n\nboot_fits\n\n# A tibble: 200 × 3\n# Groups:   replicate [100]\n   replicate term      estimate\n       &lt;int&gt; &lt;chr&gt;        &lt;dbl&gt;\n 1         1 intercept   47819.\n 2         1 area          191.\n 3         2 intercept  144645.\n 4         2 area          134.\n 5         3 intercept  114008.\n 6         3 area          161.\n 7         4 intercept  100639.\n 8         4 area          166.\n 9         5 intercept  215264.\n10         5 area          125.\n# ℹ 190 more rows\n\n\n\n\n\n\n\n\nNote\n\n\nUse ~ 100 bootstrap samples to write code, and 1000+ samples for final analysis results."
+    "text": "Computing the CI for the slope II\nTake 100 bootstrap samples and fit models to each one:\n\n\n\nset.seed(1120)\n\nboot_fits &lt;- duke_forest |&gt;\n  specify(price ~ area) |&gt;\n  generate(reps = 100, type = \"bootstrap\") |&gt;\n  fit()\n\nboot_fits\n\n# A tibble: 200 × 3\n# Groups:   replicate [100]\n   replicate term      estimate\n       &lt;int&gt; &lt;chr&gt;        &lt;dbl&gt;\n 1         1 intercept   47819.\n 2         1 area          191.\n 3         2 intercept  144645.\n 4         2 area          134.\n 5         3 intercept  114008.\n 6         3 area          161.\n 7         4 intercept  100639.\n 8         4 area          166.\n 9         5 intercept  215264.\n10         5 area          125.\n# ℹ 190 more rows\n\n\n\nUse ~ 100 bootstrap samples to write code, and 1000+ samples for final analysis results."
   },
   {
     "objectID": "slides/04-slr-bootstrap.html#computing-the-ci-for-the-slope-iii",
@@ -2129,7 +2115,7 @@
     "href": "slides/04-slr-bootstrap.html#precision-vs.-accuracy-1",
     "title": "SLR: Simulation-based inference",
     "section": "Precision vs. accuracy",
-    "text": "Precision vs. accuracy\n\nHow can we get best of both worlds – high precision and high accuracy?\n\n\n\nConsider a 90%, 95%, and 99% confidence interval.\n\nWhich interval is most precise? Which is most accurate?"
+    "text": "Precision vs. accuracy\n\nHow can we get best of both worlds – high precision and high accuracy?\n\n\n\n\nConsider a 90%, 95%, and 99% confidence interval.\n\nWhich interval is most precise?\nWhich is most accurate?"
   },
   {
     "objectID": "slides/04-slr-bootstrap.html#changing-confidence-level",
