@@ -522,7 +522,7 @@ df_boot_samples_100_hist <- ggplot(df_boot_samples_100_fit |> filter(term == "ar
 df_boot_samples_100_hist
 ```
 
-## Bootstrap distribution 
+## Bootstrap distribution
 
 Let's increase the number of bootstrap samples to 1000. The **bootstrap sampling distribution** is the distribution of estimated slopes given samples of size $n$ (the same as our data).
 
@@ -548,7 +548,7 @@ df_boot_samples_1000_hist <- ggplot(df_boot_samples_1000_fit |> filter(term == "
 df_boot_samples_1000_hist
 ```
 
-## Bootstrap sampling distribution 
+## Bootstrap sampling distribution
 
 ```{r}
 #| echo: false
@@ -565,7 +565,7 @@ boot_dist_sd <- df_boot_samples_1000_fit |> ungroup() |> filter(term == "area") 
 -   The standard deviation of the bootstrap sampling distribution is `r  round(boot_dist_sd, 3)`. What does this value represent?
 :::
 
-## Submit 
+## Submit
 
 ```{=html}
 <center><iframe width="640px" height="480px" src="https://forms.office.com/r/naWVT11vBu?embed=true" frameborder="0" marginwidth="0" marginheight="0" style="border: none; max-width:100%; max-height:100vh" allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen> </iframe></center>
