@@ -174,11 +174,9 @@ b.  Does the intercept have a meaningful interpretation? If so, write the interp
 1.  In 2018, the median income in Durham County was \$35436. What is the predicted median weekly cost for preschool based on the model in [Exercise 5]?
 2.  The actual median cost for preschool was \$173 per week. What is the residual?
 
-:::: render-commit-push
 ::: render-commit-push
 This is a good place to render, commit, and push changes to your hw-01 repo on GitHub. Write an informative commit message (e.g. “Completed exercises 4 -7”), and push every file to GitHub by clicking the check box next to each file in the Git pane. After you push the changes, the Git pane in RStudio should be empty.
 :::
-::::
 
 ## Part 3: Inference
 
