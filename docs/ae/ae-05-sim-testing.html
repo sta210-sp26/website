@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-01-23">
+<meta name="dcterms.date" content="2026-01-22">
 
 <title>AE 05: Permutation test for the slope – STA 210 - Spring 2026</title>
 <style>
@@ -375,14 +375,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#state-the-null-and-alternative-hypotheses" id="toc-state-the-null-and-alternative-hypotheses" class="nav-link" data-scroll-target="#state-the-null-and-alternative-hypotheses">State the null and alternative hypotheses</a></li>
   <li><a href="#generate-null-distribution-using-permutation" id="toc-generate-null-distribution-using-permutation" class="nav-link" data-scroll-target="#generate-null-distribution-using-permutation">Generate null distribution using permutation</a></li>
   <li><a href="#visualize-distribution" id="toc-visualize-distribution" class="nav-link" data-scroll-target="#visualize-distribution">Visualize distribution</a></li>
-  <li><a href="#calculate-the-p-value." id="toc-calculate-the-p-value." class="nav-link" data-scroll-target="#calculate-the-p-value.">Calculate the p-value.</a></li>
+  <li><a href="#compute-the-p-value" id="toc-compute-the-p-value" class="nav-link" data-scroll-target="#compute-the-p-value">Compute the p-value</a></li>
   <li><a href="#state-conclusion" id="toc-state-conclusion" class="nav-link" data-scroll-target="#state-conclusion">State conclusion</a></li>
   </ul></li>
-  <li><a href="#bootstrap-ci-time-permitting" id="toc-bootstrap-ci-time-permitting" class="nav-link" data-scroll-target="#bootstrap-ci-time-permitting">Bootstrap CI (time permitting)</a>
+  <li><a href="#bootstrap-ci" id="toc-bootstrap-ci" class="nav-link" data-scroll-target="#bootstrap-ci">Bootstrap CI</a>
   <ul class="collapse">
   <li><a href="#construct-the-bootstrap-ci" id="toc-construct-the-bootstrap-ci" class="nav-link" data-scroll-target="#construct-the-bootstrap-ci">Construct the bootstrap CI</a></li>
   <li><a href="#draw-conclusion" id="toc-draw-conclusion" class="nav-link" data-scroll-target="#draw-conclusion">Draw conclusion</a></li>
   </ul></li>
+  <li><a href="#wrapping-up" id="toc-wrapping-up" class="nav-link" data-scroll-target="#wrapping-up">Wrapping up</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/sta210-sp26/website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -403,7 +404,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">January 23, 2025</p>
+      <p class="date">January 22, 2026</p>
     </div>
   </div>
   
@@ -425,8 +426,7 @@ Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Go to the <a href="https://github.com/sta210-sp25">course GitHub organization</a> and locate your <code>ae-05</code> repo to get started.</p>
-<p>Render, commit, and push your responses to GitHub by the end of class.</p>
+<p>Go to the <a href="https://github.com/sta210-sp26">course GitHub organization</a> and locate your <code>ae-05</code> repo to get started.</p>
 </div>
 </div>
 <div class="cell">
@@ -528,7 +528,7 @@ Tip
 <p>Fill in the code, then set <code>eval: true</code> .</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>n <span class="ot">=</span> <span class="dv">100</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">01232025</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">012226</span>)</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>null_dist <span class="ot">&lt;-</span> _____ <span class="sc">|&gt;</span></span>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">specify</span>(______) <span class="sc">|&gt;</span></span>
@@ -543,8 +543,8 @@ Tip
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Code for histogram of null distribution</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="calculate-the-p-value." class="level3">
-<h3 class="anchored" data-anchor-id="calculate-the-p-value.">Calculate the p-value.</h3>
+<section id="compute-the-p-value" class="level3">
+<h3 class="anchored" data-anchor-id="compute-the-p-value">Compute the p-value</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># get observed fit </span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>observed_fit <span class="ot">&lt;-</span> duke_forest <span class="sc">|&gt;</span></span>
@@ -564,8 +564,8 @@ Tip
 <p>Write your conclusion in the context of the data. You can use 0.05 as the decision-making threshold.</p>
 </section>
 </section>
-<section id="bootstrap-ci-time-permitting" class="level2">
-<h2 class="anchored" data-anchor-id="bootstrap-ci-time-permitting">Bootstrap CI (time permitting)</h2>
+<section id="bootstrap-ci" class="level2">
+<h2 class="anchored" data-anchor-id="bootstrap-ci">Bootstrap CI</h2>
 <section id="construct-the-bootstrap-ci" class="level3">
 <h3 class="anchored" data-anchor-id="construct-the-bootstrap-ci">Construct the bootstrap CI</h3>
 <p>Construct a 95% bootstrap confidence interval.</p>
@@ -576,6 +576,10 @@ Tip
 <li><p>Interpret the interval in the context of the data.</p></li>
 <li><p>Is the interval consistent with the conclusion from your hypothesis test? Briefly explain why or why not.</p></li>
 </ul>
+</section>
+</section>
+<section id="wrapping-up" class="level1">
+<h1>Wrapping up</h1>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -586,16 +590,15 @@ Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>To submit the AE:</p>
+<p>Once you’ve completed the AE:</p>
 <ul>
-<li>Render the document to produce the PDF with all of your work from today’s class.</li>
-<li>Push all your work to your <code>ae-05</code> repo on GitHub. (You do not submit AEs on Gradescope).</li>
+<li><p>Render the document to produce the PDF with all of your work from today’s class.</p></li>
+<li><p>Push all your work to your AE repo on GitHub. You’re done! 🎉</p></li>
 </ul>
 </div>
 </div>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->

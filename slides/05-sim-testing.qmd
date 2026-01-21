@@ -1,0 +1,620 @@
+---
+title: "SLR: Permutation test for the slope"
+author: "Prof. Maria Tackett"
+date: "01-22-2026"
+date-format: "MMMM DD, YYYY"
+footer: "🔗 [sta210-sp26.github.io](https://sta210-sp26.github.io)"
+logo: "../images/logo.png"
+format: 
+  revealjs: 
+    theme: slides.scss
+    multiplex: false
+    transition: fade
+    slide-number: true
+    incremental: false 
+    chalkboard: true
+    include-before: [ '<script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {enableAssistiveMml: false}});</script>']
+  html: 
+    output-file: 05-sim-testing-notes.html
+html-math-method:
+  method: mathjax
+  url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+execute:
+  freeze: auto
+  echo: true
+knitr:
+  opts_chunk: 
+    R.options:      
+    width: 200
+bibliography: references.bib
+---
+
+```{r setup}
+#| include: false
+
+library(countdown)
+
+knitr::opts_chunk$set(
+  fig.width = 8,
+  fig.asp = 0.618,
+  fig.retina = 3,
+  dpi = 300,
+  out.width = "80%",
+  fig.align = "center"
+)
+```
+
+## Announcements
+
+-   HW 01 due Tuesday, January 27 at 11:59pm
+
+-   Labs resume Monday (stayed tuned for any weather related updates)
+
+## Topics
+
+-   Describe accuracy versus precision for confidence intervals
+
+<!-- -->
+
+-   Evaluate a claim about the slope using hypothesis testing
+
+-   Construct a null distribution using simulation
+
+-   Compute a p-value and use it to draw conclusions
+
+## Computational setup
+
+```{r packages}
+#| echo: true
+#| message: false
+
+# load packages
+library(tidyverse)   # for data wrangling and visualization
+library(tidymodels)  # for modeling
+library(usdata)      # for the county_2019 dataset
+library(openintro)   # for Duke Forest dataset
+library(scales)      # for pretty axis labels
+library(glue)        # for constructing character strings
+library(knitr)       # for neatly formatted tables
+library(kableExtra)  # also for neatly formatted tablesf
+
+
+# set default theme and larger font size for ggplot2
+ggplot2::theme_set(ggplot2::theme_bw(base_size = 16))
+```
+
+# Recap of last lecture
+
+## Data: Duke Forest houses
+
+```{r}
+#| echo: false
+ggplot(duke_forest, aes(x = area, y = price)) +
+  geom_point(alpha = 0.7) +
+  labs(
+    x = "Area (square feet)",
+    y = "Sale price (USD)",
+    title = "Price and area of houses in Duke Forest"
+  ) +
+  scale_y_continuous(labels = label_dollar()) +
+  scale_x_continuous(labels = label_number())
+```
+
+## The regression model
+
+```{r}
+
+df_fit <- lm(price ~ area, data = duke_forest)
+
+tidy(df_fit) |>
+  kable(digits = 2)
+
+```
+
+. . .
+
+```{r}
+#| echo: false
+intercept <- tidy(df_fit) |> filter(term == "(Intercept)") |> pull(estimate) |> round()
+slope <- tidy(df_fit) |> filter(term == "area") |> pull(estimate) |> round()
+```
+
+**Slope:** For each additional square foot, we expect the sale price of Duke Forest houses to be higher by `r dollar(slope)`, on average.
+
+## Inference for simple linear regression
+
+-   Calculate a confidence interval for the slope, $\beta_1$
+
+-   Conduct a hypothesis test for the slope, $\beta_1$
+
+## Statistical inference
+
+![Image source: Eugene Morgan © Penn State](images/04/inference.png){fig-align="center"}
+
+## Sampling is natural {.midi}
+
+![](images/05/soup.png){fig-alt="Illustration of a bowl of soup" fig-align="center"}
+
+-   When you taste a spoonful of soup and decide the spoonful you tasted isn't salty enough, that's exploratory analysis
+-   If you generalize and conclude that your entire soup needs salt, that's an inference
+-   For your inference to be valid, the spoonful you tasted (the sample) needs to be representative of the entire pot (the population)
+
+## Confidence interval via bootstrapping
+
+-   Bootstrap new samples from the original sample
+-   Fit models to each of the samples and estimate the slope
+-   Use features of the distribution of the bootstrapped slopes to construct a confidence interval
+
+## Bootstrapping pipeline I
+
+```{r}
+#| echo: true
+#| code-line-numbers: "|1|3|4"
+
+set.seed(210)
+
+duke_forest |>
+  specify(price ~ area)
+```
+
+## Bootstrapping pipeline II
+
+```{r}
+#| echo: true
+#| code-line-numbers: "|5"
+
+set.seed(210)
+
+duke_forest |>
+  specify(price ~ area) |>
+  generate(reps = 1000, type = "bootstrap")
+```
+
+## Bootstrapping pipeline III
+
+```{r}
+#| echo: true
+#| code-line-numbers: "|6"
+
+set.seed(210)
+
+duke_forest |>
+  specify(price ~ area) |>
+  generate(reps = 1000, type = "bootstrap") |>
+  fit()
+```
+
+## Bootstrapping pipeline IV
+
+```{r}
+#| echo: true
+#| code-line-numbers: "|3"
+
+set.seed(210)
+
+boot_dist <- duke_forest |>
+  specify(price ~ area) |>
+  generate(reps = 1000, type = "bootstrap") |>
+  fit()
+```
+
+## Visualize the bootstrap distribution
+
+```{r}
+#| echo: true
+#| code-line-numbers: "|2"
+
+boot_dist |>
+  filter(term == "area") |>
+  ggplot(aes(x = estimate)) +
+  geom_histogram(binwidth = 10)
+```
+
+## Compute the CI
+
+```{r}
+#| echo: false
+boot_dist |>
+  filter(term == "area") |>
+  ggplot(aes(x = estimate)) +
+  geom_histogram(binwidth = 10)
+```
+
+## But first...
+
+```{r}
+#| echo: true
+
+obs_fit <- duke_forest |>
+  specify(price ~ area) |>
+  fit()
+
+obs_fit
+```
+
+## Compute 95% confidence interval {.midi}
+
+```{r}
+#| echo: true
+
+boot_dist |>
+  get_confidence_interval(
+    point_estimate = obs_fit,
+    level = 0.95,
+    type = "percentile"
+  )
+```
+
+## Precision vs. accuracy
+
+::: question
+If we want to be very certain that we capture the population parameter, should we use a wider or a narrower interval? What drawbacks are associated with using a wider interval?
+:::
+
+. . .
+
+![](images/05/snow-forecast.jpg){fig-align="center" width="70%"}
+
+## Precision vs. accuracy
+
+::: question
+How can we get best of both worlds -- high precision and high accuracy?
+:::
+
+<br>
+
+. . .
+
+::: question
+Consider a 90%, 95%, and 99% confidence interval.
+
+-   Which interval is most precise?
+-   Which is most accurate?
+:::
+
+## Changing confidence level {.midi}
+
+```{r}
+#| echo: false
+set.seed(210)
+boot_fits <- duke_forest |>
+  specify(price ~ area) |>
+  generate(reps = 1000, type = "bootstrap") |>
+  fit()
+```
+
+```{r}
+#| echo: true
+
+## confidence level: 90%
+get_confidence_interval(
+  boot_fits, point_estimate = obs_fit, 
+  level = 0.90, type = "percentile"
+) 
+
+## confidence level: 99%
+get_confidence_interval(
+  boot_fits, point_estimate = obs_fit, 
+  level = 0.99, type = "percentile"
+)
+```
+
+# Hypothesis test for the slope
+
+## Research question and hypotheses
+
+"Do the data provide sufficient evidence that $\beta_1$ (the true slope for the population) is different from 0?"
+
+. . .
+
+**Null hypothesis**: there is no linear relationship between `area` and `price`
+
+$$
+H_0: \beta_1 = 0
+$$
+
+. . .
+
+**Alternative hypothesis**: there is a linear relationship between `area` and `price`
+
+$$
+H_a: \beta_1 \ne 0
+$$
+
+## Hypothesis testing as a US court trial
+
+::: incremental
+-   **Null hypothesis**, $H_0$: Defendant is innocent
+-   **Alternative hypothesis**, $H_a$: Defendant is guilty
+-   **Present the evidence:** Collect data
+-   **Judge the evidence:** "Could these data plausibly have happened by chance if the null hypothesis were true?"
+    -   Yes: Fail to reject $H_0$
+
+    -   No: Reject $H_0$
+:::
+
+## Hypothesis testing framework {.midi}
+
+::: incremental
+-   Start with a null hypothesis, $H_0$ that represents the status quo
+-   Set an alternative hypothesis, $H_a$ that represents the research question, i.e. claim we're testing
+-   Conduct a hypothesis test under the assumption that the null hypothesis is true and calculate a **p-value** (probability of getting the observed or a more extreme outcome given that the null hypothesis is true)
+    -   if the test results suggest that the data do not provide convincing evidence for the alternative hypothesis, stick with the null hypothesis
+    -   if they do, then reject the null hypothesis in favor of the alternative
+:::
+
+## Quantify the variability of the slope {.midi}
+
+**for testing**
+
+::: incremental
+-   Two approaches:
+    1.  Via simulation
+    2.  Via mathematical models
+-   Use **Permutation** to quantify the variability of the slope for the purpose of testing, *under the assumption that the null hypothesis is true*:
+    -   Simulate new samples from the original sample via permutation
+    -   Fit models to each of the samples and estimate the slope
+    -   Use features of the distribution of the permuted slopes to conduct a hypothesis test
+:::
+
+## Permutation, described {.smaller}
+
+::::: columns
+::: {.column width="40%"}
+-   Use permuting to simulate data under the assumption the null hypothesis is true and measure the natural variability in the data due to sampling, [**not**]{.underline} due to variables being correlated
+    -   Permute one variable to eliminate any existing relationship between the variables
+-   Each `price` value is randomly assigned to the `area` of a given house, i.e. `area` and `price` are no longer matched for a given house
+:::
+
+::: {.column width="60%"}
+```{r}
+#| echo: false
+set.seed(1234)
+
+duke_forest_rand <- duke_forest |>
+  mutate(
+    price_Observed = price,
+    price_Permuted = sample(price, size = nrow(duke_forest))
+    ) |>
+  select(contains("price_"), area)
+duke_forest_rand
+```
+:::
+:::::
+
+## Permutation, visualized
+
+::::: columns
+::: {.column width="50%"}
+-   Each of the observed values for `area` (and for `price`) exist in both the observed data plot as well as the permuted `price` plot
+-   The permutation removes the relationship between `area` and `price`
+:::
+
+::: {.column width="50%"}
+```{r}
+#| out.width: "100%"
+#| fig.asp: 1.2
+#| echo: false
+
+duke_forest_rand |>
+  pivot_longer(cols = contains("price_"), names_to = "price_type", names_prefix = "price_", values_to = "price") |>
+  ggplot(aes(x = area, y = price)) +
+  geom_point() +
+  geom_smooth(aes(color = price_type), method = "lm", se = FALSE, show.legend = FALSE) +
+  facet_wrap(~price_type, nrow = 2) +
+  scale_color_manual(values = c("#8F2D56", "gray")) +
+  scale_x_continuous(labels = label_number()) +
+  scale_y_continuous(labels = label_dollar()) +
+  labs(x = "Area", y = "Price")
+```
+:::
+:::::
+
+## Permutation, repeated
+
+Repeated permutations allow for quantifying the variability in the slope under the condition that there is no linear relationship (i.e., that the null hypothesis is true)
+
+```{r}
+#| echo: false
+
+set.seed(210)
+
+df_perms_1000 <- duke_forest |>
+  specify(price ~ area) |>
+  hypothesize(null = "independence") |>
+  generate(reps = 1000, type = "permute")
+
+ggplot(df_perms_1000, 
+       aes(x = area, y = price, group = replicate)) +
+  geom_line(stat = "smooth", method = "lm", se = FALSE, alpha = 0.1) +
+  labs(
+    x = "Area (square feet)",
+    y = "Sale price (USD)",
+    title = "1,000 permuted samples"
+  ) +
+  scale_y_continuous(labels = label_dollar(), limits = c(min(duke_forest$price), max(duke_forest$price))) +
+  scale_x_continuous(labels = label_number(), limits = c(min(duke_forest$area), max(duke_forest$area))) +
+  geom_abline(intercept = intercept, slope = slope, color = "#8F2D56")
+```
+
+## Concluding the hypothesis test {.smaller}
+
+::: question
+Is the observed slope of $\hat{\beta_1} = 159$ (or an even more extreme slope) a likely outcome under the null hypothesis that $\beta = 0$? What does this mean for our original question: "Do the data provide sufficient evidence that $\beta_1$ (the true slope for the population) is different from 0?"
+:::
+
+```{r}
+#| out.width: "60%"
+#| fig.asp: 0.618
+#| echo: false
+
+null_dist <- df_perms_1000 |>
+  fit()
+
+ggplot(null_dist |> filter(term == "area"),
+       aes(x = estimate)) +
+  geom_histogram(binwidth = 10, color = "white") +
+  labs(x = "Slope", y = "Count",
+       title = "Slopes of 1000 permuted samples") +
+  geom_vline(xintercept = slope, color = "#8F2D56", size = 1) +
+  geom_vline(xintercept = -1*slope, color = "#8F2D56", size = 1, linetype = "dashed") +
+  scale_x_continuous(limits = c(-slope, slope), breaks = seq(-150, 150, 50))
+```
+
+## Permutation pipeline I
+
+```{r}
+#| echo: true
+#| code-line-numbers: "|1|3|4"
+
+set.seed(210)
+
+duke_forest |>
+  specify(price ~ area)
+```
+
+## Permutation pipeline II
+
+```{r}
+#| echo: true
+#| code-line-numbers: "|5"
+
+set.seed(210)
+
+duke_forest |>
+  specify(price ~ area) |>
+  hypothesize(null = "independence")
+```
+
+## Permutation pipeline III
+
+```{r}
+#| echo: true
+#| code-line-numbers: "|6"
+
+set.seed(210)
+
+duke_forest |>
+  specify(price ~ area) |>
+  hypothesize(null = "independence") |>
+  generate(reps = 1000, type = "permute")
+```
+
+## Permutation pipeline IV
+
+```{r}
+#| echo: true
+#| code-line-numbers: "|7"
+
+set.seed(210)
+
+duke_forest |>
+  specify(price ~ area) |>
+  hypothesize(null = "independence") |>
+  generate(reps = 1000, type = "permute") |>
+  fit()
+```
+
+## Permutation pipeline V
+
+```{r}
+#| echo: true
+#| code-line-numbers: "|3"
+
+set.seed(210)
+
+null_dist <- duke_forest |>
+  specify(price ~ area) |>
+  hypothesize(null = "independence") |>
+  generate(reps = 1000, type = "permute") |>
+  fit()
+```
+
+## Visualize the null distribution
+
+```{r}
+#| echo: true
+#| code-line-numbers: "|2"
+
+null_dist |>
+  filter(term == "area") |>
+  ggplot(aes(x = estimate)) +
+  geom_histogram(binwidth = 10, color = "white")
+```
+
+## Reason around the p-value {.smaller}
+
+::: question
+In a world where the there is no relationship between the area of a Duke Forest house and in its price ($\beta_1 = 0$), what is the probability that we observe a sample of `r nrow(duke_forest)` houses where the slope fo the model predicting price from area is 159 or even more extreme?
+:::
+
+```{r}
+#| echo: false
+
+null_dist |>
+  filter(term == "area") |>
+  ggplot(aes(x = estimate)) +
+  geom_histogram(binwidth = 10, color = "white") +
+  geom_vline(xintercept = slope, color = "#8F2D56", size = 1) +
+  geom_vline(xintercept = -1*slope, color = "#8F2D56", size = 1, linetype = "dashed") +
+  scale_x_continuous(limits = c(-slope, slope), breaks = seq(-150, 150, 50))
+```
+
+## Compute the p-value
+
+::: question
+What does this warning mean?
+:::
+
+```{r}
+#| echo: true
+#| warning: true
+
+get_p_value(
+  null_dist,
+  obs_stat = obs_fit,
+  direction = "two-sided"
+)
+```
+
+## p-value warning
+
+::::: panel-tabset
+## Question
+
+:::: midi
+::: appex
+What does the warning from R mean?
+:::
+
+🔗 <https://forms.office.com/r/Ji4YKVRwSj>
+::::
+
+## Submit
+
+```{=html}
+<center><iframe width="640px" height="480px" src="https://forms.office.com/r/Ji4YKVRwSj?embed=true" frameborder="0" marginwidth="0" marginheight="0" style="border: none; max-width:100%; max-height:100vh" allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen> </iframe></center>
+```
+:::::
+
+# Application exercise
+
+::: appex
+📋 [https://sta210-sp26.github.io/ae/ae-05-sim-testing.html](../ae/ae-05-sim-testing.html)
+:::
+
+## Recap
+
+-   Described accuracy versus precision for confidence intervals
+
+-   Evaluated a claim about the slope using hypothesis testing
+
+-   Constructed a null distribution using simulation
+
+-   Computed a p-value and use it to draw conclusions
+
+## For next class
+
+-   Inference using mathematical models
+
+-   Complete [Lecture 06 prepare](../prepare/prepare-lec06.html)

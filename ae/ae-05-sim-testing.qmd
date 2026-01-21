@@ -1,18 +1,19 @@
 ---
 title: "AE 05: Permutation test for the slope"
 subtitle: "Houses in Duke Forest"
-date: "January 23, 2025"
+date: "January 22, 2026"
 editor: visual
 ---
 
 ::: callout-important
-Go to the [course GitHub organization](https://github.com/sta210-sp25) and locate your `ae-05` repo to get started.
-
-Render, commit, and push your responses to GitHub by the end of class.
+Go to the [course GitHub organization](https://github.com/sta210-sp26) and locate your `ae-05` repo to get started.
 :::
 
-```{r load-packages}
+```{r}
+#| label: load-packages
 #| message: false
+#| warning: false
+
 library(tidyverse)
 library(tidymodels)
 library(openintro)
@@ -75,7 +76,7 @@ Fill in the code, then set `eval: true` .
 #| eval: false
 
 n = 100
-set.seed(01232025)
+set.seed(012226)
 
 null_dist <- _____ |>
   specify(______) |>
@@ -90,7 +91,7 @@ null_dist <- _____ |>
 # Code for histogram of null distribution
 ```
 
-### Calculate the p-value.
+### Compute the p-value
 
 ```{r calc-pvalue}
 #| eval: false 
@@ -112,7 +113,7 @@ get_p_value(
 
 Write your conclusion in the context of the data. You can use 0.05 as the decision-making threshold.
 
-## Bootstrap CI (time permitting)
+## Bootstrap CI 
 
 ### Construct the bootstrap CI
 
@@ -128,9 +129,12 @@ Construct a 95% bootstrap confidence interval.
 
 -   Is the interval consistent with the conclusion from your hypothesis test? Briefly explain why or why not.
 
-::: callout-important
-To submit the AE:
+# Wrapping up
 
--   Render the document to produce the PDF with all of your work from today's class.
--   Push all your work to your `ae-05` repo on GitHub. (You do not submit AEs on Gradescope).
+::: callout-important
+Once you’ve completed the AE:
+
+-   Render the document to produce the PDF with all of your work from today’s class.
+
+-   Push all your work to your AE repo on GitHub. You’re done! 🎉
 :::
