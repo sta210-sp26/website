@@ -96,6 +96,7 @@ The description should include shape, center, spread, and presence of outliers. 
 Let's view the data in another way. Below is a map showing the 600 counties in our sample filled in based on values of `mc_preschool`. The code for the map was adapted from code produced by ChatGPT (model GPT-5.2).
 
 a.  What are 2 observations you have from the map?
+
 b.  What is a feature that is apparent in the map that wasn't as easily apparent from the histogram in the previous exercise? What is a feature that is apparent in the histogram that is not as easily apparent from the map?
 
 ```{r}
@@ -148,7 +149,7 @@ This is a good place to render, commit, and push changes to your hw-01 repo on G
 
 We will use a linear regression model to explain variability in `mc_preschool` based on `me_2018`.
 
-Write the form of the statistical (theoretical) model using mathematical notation. In your response, which variable (`me_2018` or `mc_preschool`) is the predictor and which variable is the response.
+Write the form of the statistical (theoretical) model using mathematical notation. In your response, make it clear which variable (`me_2018` or `mc_preschool`) is the predictor and which variable is the response.
 
 ::: callout-tip
 Use the following code format to make the variable names properly render in the PDF document.
@@ -162,17 +163,18 @@ $\text{mc\_preschool}$ = `\text{mc\_preschool}`
 
 a.  Fit the regression line corresponding to the statistical model in the previous exercise. Neatly display the model output using 3 digits.
 
-b.  Write the equation of the fitted model using mathematical notation. In your response, which variable (`me_2018` or `mc_preschool`) is the predictor and which variable is the response.
+b.  Write the equation of the fitted model using mathematical notation. In your response, make it clear which variable (`me_2018` or `mc_preschool`) is the predictor and which variable is the response.
 
 ### Exercise 6
 
 a.  Interpret the slope in the context of the data.
+
 b.  Does the intercept have a meaningful interpretation? If so, write the interpretation in the context of the data. Otherwise, briefly explain why not.
 
 ### Exercise 7
 
-1.  In 2018, the median income in Durham County was \$35436. What is the predicted median weekly cost for preschool based on the model in [Exercise 5]?
-2.  The actual median cost for preschool was \$173 per week. What is the residual?
+a.  In 2018, the median income in Durham County was \$35,436. What is the predicted median weekly cost for preschool based on the model in [Exercise 5]?
+b.  The actual median cost for preschool was \$173 per week. What is the residual?
 
 ::: render-commit-push
 This is a good place to render, commit, and push changes to your hw-01 repo on GitHub. Write an informative commit message (e.g. “Completed exercises 4 -7”), and push every file to GitHub by clicking the check box next to each file in the Git pane. After you push the changes, the Git pane in RStudio should be empty.
