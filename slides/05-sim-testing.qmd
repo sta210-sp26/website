@@ -603,6 +603,8 @@ What does the warning from R mean?
 📋 [https://sta210-sp26.github.io/ae/ae-05-sim-testing.html](../ae/ae-05-sim-testing.html)
 :::
 
+-   Find **ae-05** repo on GitHub
+
 ## Recap
 
 -   Described accuracy versus precision for confidence intervals
