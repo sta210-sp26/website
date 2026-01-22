@@ -113,7 +113,7 @@ get_p_value(
 
 Write your conclusion in the context of the data. You can use 0.05 as the decision-making threshold.
 
-## Bootstrap CI 
+## Bootstrap CI
 
 ### Construct the bootstrap CI
 
@@ -121,6 +121,9 @@ Construct a 95% bootstrap confidence interval.
 
 ```{r}
 #| label: construct-ci
+
+# Code for ci
+
 ```
 
 ### Draw conclusion

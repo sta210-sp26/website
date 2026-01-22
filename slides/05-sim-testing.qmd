@@ -253,7 +253,7 @@ If we want to be very certain that we capture the population parameter, should w
 
 . . .
 
-![](images/05/snow-forecast.jpg){fig-align="center" width="70%"}
+![](images/05/snow-forecast.jpg){fig-align="center" width="50%"}
 
 ## Precision vs. accuracy
 
@@ -303,7 +303,7 @@ get_confidence_interval(
 
 ## Research question and hypotheses
 
-"Do the data provide sufficient evidence that $\beta_1$ (the true slope for the population) is different from 0?"
+"Do the data provide sufficient evidence that $\beta_1$ (the true population slope) is different from 0?"
 
 . . .
 
