@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Lab 01 – STA 210 - Spring 2026</title>
+<title>Lab 01: Linear regression – STA 210 - Spring 2026</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -328,15 +363,41 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a>
+  <ul class="collapse">
+  <li><a href="#learning-goals" id="toc-learning-goals" class="nav-link" data-scroll-target="#learning-goals">Learning goals</a></li>
+  </ul></li>
+  <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started">Getting started</a></li>
+  <li><a href="#packages" id="toc-packages" class="nav-link" data-scroll-target="#packages">Packages</a></li>
+  <li><a href="#data-ice-cover-and-air-temperature" id="toc-data-ice-cover-and-air-temperature" class="nav-link" data-scroll-target="#data-ice-cover-and-air-temperature">Data: Ice cover and air temperature</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a>
+  <ul class="collapse">
+  <li><a href="#exercise-1" id="toc-exercise-1" class="nav-link" data-scroll-target="#exercise-1">Exercise 1</a></li>
+  <li><a href="#exercise-2" id="toc-exercise-2" class="nav-link" data-scroll-target="#exercise-2">Exercise 2</a></li>
+  <li><a href="#exercise-3" id="toc-exercise-3" class="nav-link" data-scroll-target="#exercise-3">Exercise 3</a></li>
+  <li><a href="#exercise-4" id="toc-exercise-4" class="nav-link" data-scroll-target="#exercise-4">Exercise 4</a></li>
+  <li><a href="#exercise-5" id="toc-exercise-5" class="nav-link" data-scroll-target="#exercise-5">Exercise 5</a></li>
+  <li><a href="#exercise-6" id="toc-exercise-6" class="nav-link" data-scroll-target="#exercise-6">Exercise 6</a></li>
+  <li><a href="#exercise-7" id="toc-exercise-7" class="nav-link" data-scroll-target="#exercise-7">Exercise 7</a></li>
+  <li><a href="#exercise-8" id="toc-exercise-8" class="nav-link" data-scroll-target="#exercise-8">Exercise 8</a></li>
+  </ul></li>
+  <li><a href="#submission" id="toc-submission" class="nav-link" data-scroll-target="#submission">Submission</a></li>
+  <li><a href="#grading-10pts" id="toc-grading-10pts" class="nav-link" data-scroll-target="#grading-10pts"><strong>Grading (10pts)</strong></a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/sta210-sp26/website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../labs/lab-00.html">Labs</a></li><li class="breadcrumb-item"><a href="../labs/lab-01.html">Lab 01</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Lab 01</h1>
+<h1 class="title">Lab 01: Linear regression</h1>
+<p class="subtitle lead">Ice duration and air temperature in Madison, WI</p>
 </div>
 
 
@@ -353,9 +414,290 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>To be posted.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This lab is due on <strong>Thursday, January 29 at 11:59pm.</strong> To be considered on time, the following must be done by the due date:</p>
+<ul>
+<li><p>Final <code>.qmd</code> and <code>.pdf</code> files pushed to your GitHub repo</p></li>
+<li><p>Final <code>.pdf</code> file submitted on Gradescope</p></li>
+</ul>
+</div>
+</div>
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
+<p>In this lab, you will use linear regression to understand the changes in ice duration over time and explore the relationship between air temperature and ice duration for two lakes in Wisconsin.</p>
+<section id="learning-goals" class="level2">
+<h2 class="anchored" data-anchor-id="learning-goals">Learning goals</h2>
+<p>By the end of the lab you will…</p>
+<ul>
+<li>Fit and interpret a linear regression models in R.</li>
+<li>Use simulation-based inference to draw conclusions about the slope.</li>
+<li>Continue developing a workflow for reproducible data analysis.</li>
+</ul>
+</section>
+</section>
+<section id="getting-started" class="level1">
+<h1>Getting started</h1>
+<ul>
+<li><p>Go to the <a href="https://www.github.com/sta210-sp26">sta210-sp26</a> organization on GitHub. Click on the repo with the prefix <strong>lab-01-</strong>. It contains the starter documents you need to complete the lab.</p></li>
+<li><p>Clone the repo and start a new project in RStudio. See the <a href="../labs/lab-00.html">Lab 00 instructions</a> for details on cloning a repo, starting a new project in R, and configuring git.</p></li>
+</ul>
+</section>
+<section id="packages" class="level1">
+<h1>Packages</h1>
+<p>The following packages are used in the lab:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidymodels)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># add other packages as needed</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="data-ice-cover-and-air-temperature" class="level1">
+<h1>Data: Ice cover and air temperature</h1>
+<p>The datasets <code>wi-icecover.csv</code> and <code>wi-air-temperature.csv</code> contain information about ice cover and air temperature, respectively, at Lake Monona and Lake Mendota (both in Madison, Wisconsin) for days in 1886 through 2019. The data were obtained from the <a href="https://lter.github.io/lterdatasampler/reference/ntl_icecover.html"><code>ntl_icecover</code></a> and <a href="https://lter.github.io/lterdatasampler/reference/ntl_airtemp.html"><code>ntl_airtemp</code></a> data frames in the <a href="https://lter.github.io/lterdatasampler/">lterdatasampler</a> R package. They were originally collected by the <a href="https://lternet.edu/">US Long Term Ecological Research program (LTER) Network</a>.</p>
+<p>The primary variables for this analysis are</p>
+<ul>
+<li><p><code>year</code>: year of observation</p></li>
+<li><p><code>lakeid</code>: lake name</p></li>
+<li><p><code>ice_duration</code>: number of days between the freeze and ice breakup dates of each lake</p></li>
+<li><p><code>air_temp_avg</code>: yearly average air temperature in Madison, WI (degrees Celsius)</p></li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>icecover <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/wi-icecover.csv"</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>airtemp <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/wi-air-temperature.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="exercises" class="level1">
+<h1>Exercises</h1>
+<p><strong>Goal</strong>: The goal of this analysis is to use linear regression understand the change in ice duration over time and the association between average air temperature and ice duration for two lakes in Madison, Wisconsin that freeze for a portion of the year. Because ice cover is impacted by various environmental factors, researchers are interested in examining the association between these factors to better understand the changing climate.</p>
+<hr>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Instructions
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Write all code and narrative in your Quarto file. Write all narrative in complete sentences. Throughout the assignment, you should periodically <strong>render</strong> your Quarto document to produce the updated PDF, <strong>commit</strong> the changes in the Git pane, and <strong>push</strong> the updated files to GitHub.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Make sure we can read all of your code in your PDF document. This means you will need to break up long lines of code. One way to help avoid long lines of code is is start a new line after every pipe (<code>|&gt;</code>) and plus sign (<code>+</code>).</p>
+</div>
+</div>
+<section id="exercise-1" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-1">Exercise 1</h3>
+<p>We’ll start by combining the data into a single data frame.</p>
+<ol type="a">
+<li><p>Join <code>icecover</code> and <code>airtemp</code> to create a new data frame that contains both the ice temperature and average air temperature. Your new data frame will have one row per lake per year.</p></li>
+<li><p>How many observations (rows) are in the new data frame? How many variables (columns)?</p></li>
+<li><p>Part of this analysis will focus on the change in ice duration over time. Add a new variable to the combined data frame that is the number of years since 1886 (the first year in the data set).</p></li>
+</ol>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You will use the combined data for the remainder of the lab.</p>
+</div>
+</div>
+</section>
+<section id="exercise-2" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-2">Exercise 2</h3>
+<ol type="a">
+<li><p>Make a histogram to visualize the distribution of the response variable <code>ice_duration</code>, then calculate summary statistics for the center and spread of the distribution. Include informative axis labels and title on the visualization.</p></li>
+<li><p>Use the visualization and summary statistics to describe the distribution of <code>ice_duration</code>. Include the shape, center, spread, and potential presence of outliers in the description.</p></li>
+</ol>
+</section>
+<section id="exercise-3" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-3">Exercise 3</h3>
+<ol type="a">
+<li>Visualize the distribution of <code>ice_duration</code> using a different type of plot.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>See the <a href="https://rstudio.github.io/cheatsheets/data-visualization.pdf">Data visualization with ggplot2 cheatsheet</a> or the <a href="https://ggplot2.tidyverse.org/reference/index.html#geoms">ggplot2 reference page</a> for inspiration.</p>
+</div>
+</div>
+<ol start="2" type="a">
+<li>What type of plot did you make? What is one feature of the distribution of ice duration that is more apparent in the plot from this exercise than the histogram? What is one feature of the distribution that is more apparent in the histogram than the plot in this exercise?</li>
+</ol>
+<div class="render-commit-push">
+<p>This is a good place to render, commit, and push changes to your remote lab repo on GitHub. Click the checkbox next to each file in the Git pane to stage the updates you’ve made, write an informative commit message (e.g., “Completed Exercises 1 - 3”), and push. After you push the changes, the Git pane in RStudio should be empty.</p>
+</div>
+</section>
+<section id="exercise-4" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-4">Exercise 4</h3>
+<p>Now we will explore the change in ice duration over time.</p>
+<ol type="a">
+<li><p>Visualize ice duration over time for each lake. Include informative axis labels and title on the visualization.</p></li>
+<li><p>Use the visualization to describe how ice duration has generally changed over time.</p></li>
+<li><p>Based on the visualization, do you think <code>lakeid</code> is a useful predictor of ice duration? Briefly explain why or why not.</p></li>
+</ol>
+</section>
+<section id="exercise-5" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-5">Exercise 5</h3>
+<ol type="a">
+<li><p>Fit the linear regression model using years since 1886 to understand variability in ice duration. Neatly display the results using 3 digits.</p></li>
+<li><p>Interpret the slope in the context of the data.</p></li>
+<li><p>Does the intercept have a meaningful interpretation in this context? If so, interpret the intercept in the context of the data. Otherwise, explain why not.</p></li>
+</ol>
+</section>
+<section id="exercise-6" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-6">Exercise 6</h3>
+<p>Conduct a permutation test for the slope to assess whether there is sufficient evidence of a change in ice duration over time. In your response:</p>
+<ul>
+<li>State the null and alternative hypotheses in words and mathematical notation.</li>
+<li>Show all relevant code and output used to conduct the test. Use <code>set.seed(210)</code> and 1000 iterations to construct the appropriate distribution.</li>
+<li>Visualize the simulated null distribution.</li>
+<li>State the conclusion in the context of the data.</li>
+</ul>
+<div class="render-commit-push">
+<p>This is a good place to render, commit, and push changes to your remote lab repo on GitHub. Click the checkbox next to each file in the Git pane to stage the updates you’ve made, write an informative commit message (e.g., “Completed Exercises 4 - 6”), and push. After you push the changes, the Git pane in RStudio should be empty.</p>
+</div>
+</section>
+<section id="exercise-7" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-7">Exercise 7</h3>
+<p>Now let’s analyze the primary relationship of interest - the relationship between air temperature and ice duration.</p>
+<ol type="a">
+<li><p>Fit the linear regression model using average air temperature to understand variability in ice duration. Neatly display the results using 3 digits.</p></li>
+<li><p>Construct a 92% bootstrap confidence interval for the slope using the same seed as before (<code>210)</code>. In your response:</p>
+<ul>
+<li>Show all relevant code and output used construct the bootstrap distribution and compute the confidence interval. Use 1000 iterations to construct the distribution.</li>
+<li>Visualize the bootstrap distribution.</li>
+</ul></li>
+<li><p>Interpret the 92% confidence interval for the slope in the context of the data.</p></li>
+</ol>
+</section>
+<section id="exercise-8" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-8">Exercise 8</h3>
+<p>Previous exercises have shown evidence of changing ice duration over time and the effect air temperature on ice duration. Now let’s consider both of these factors in a single model.</p>
+<ol type="a">
+<li>Fit a linear regression model using years since 1886 <u><strong>and</strong></u> average air temperature to understand variability in ice duration. Neatly display the results using 3 digits.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Below is template code for a model with 2 predictor variables:</p>
+<center>
+<code>model &lt;- lm(y ~ x1 + x2, data = my_data)</code>
+</center>
+</div>
+</div>
+<ol start="2" type="a">
+<li><p>How does the slope of <code>air_temp_avg</code> in this model compare to the slope in the model from the previous exercise? Does the slope indicate a stronger, weaker, or equal effect of air temperature on ice duration?</p></li>
+<li><p>Briefly explain why the slopes of air temperature differ between the two models.</p></li>
+</ol>
+<div class="render-commit-push">
+<p>Render, commit, and push your final changes to your remote lab repo on GitHub. Click the checkbox next to each file in the Git pane to stage the updates you’ve made, write an informative commit message, and push. After you push the changes, the Git pane in RStudio should be empty.</p>
+</div>
+</section>
+</section>
+<section id="submission" class="level1">
+<h1>Submission</h1>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Before you wrap up the assignment, make sure all documents are updated on your GitHub repo. We will be checking these to make sure you have been practicing how to commit and push changes.</p>
+<p>Remember – you must turn in a PDF file to the Gradescope page before the submission deadline for full credit.</p>
+</div>
+</div>
+<p>To submit your assignment:</p>
+<ul>
+<li><p>Access Gradescope through the <a href="https://canvas.duke.edu/courses/68771">STA 210 Canvas site</a>.</p></li>
+<li><p>Click on the assignment, and you’ll be prompted to submit it.</p></li>
+<li><p>Mark the pages associated with each exercise. All of the pages of your lab should be associated with at least one question (i.e., should be “checked”).</p></li>
+<li><p>Select the first page of your .PDF submission to be associated with the <em>“Workflow &amp; formatting”</em> section.</p></li>
+</ul>
+</section>
+<section id="grading-10pts" class="level1">
+<h1><strong>Grading (10pts)</strong></h1>
+<p>This lab will be graded based on completion and workflow &amp; formatting. The point breakdown is as follows:</p>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><strong>Component</strong></td>
+<td><strong>Points</strong></td>
+</tr>
+<tr class="even">
+<td>Completion</td>
+<td>8</td>
+</tr>
+<tr class="odd">
+<td>Workflow &amp; formatting</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Completion:</strong> Points will be awarded for completion based on the following:</p>
+<ul>
+<li><p>8pts: Complete all exercises</p></li>
+<li><p>7 pts: 6-7 exercises complete</p></li>
+<li><p>6 pts: 5 exercises complete</p></li>
+<li><p>5 pts: 4 exercises complete</p></li>
+<li><p>4 pts: 3 exercises complete</p></li>
+<li><p>3 pts: 2 exercises complete</p></li>
+<li><p>0 pts: 0 - 1 exercises complete</p></li>
+</ul>
+<p><strong>Workflow &amp; formatting</strong></p>
+<p>Each assignment will have a portion associated with “Workflow &amp; formatting”. This grade is to assess the reproducible workflow and document format. This includes having at least 3 informative commit messages, a neatly organized document with readable code and your name and the date updated in the YAML.</p>
+<ul>
+<li><p>2 pts: Meet all criteria</p></li>
+<li><p>1 pt: Meet some criteria</p></li>
+<li><p>0 pt: Meet no criteria</p></li>
+</ul>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -778,7 +1120,7 @@ ul.task-list li input[type="checkbox"] {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/sta210-sp26/website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/sta210-sp26/website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This site is built with <a href="https://quarto.org/">Quarto</a></p>
 </div>
