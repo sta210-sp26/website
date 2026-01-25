@@ -3807,5 +3807,243 @@
       "Project",
       "Instructions"
     ]
+  },
+  {
+    "objectID": "slides/06-slr-math-models.html#announcements",
+    "href": "slides/06-slr-math-models.html#announcements",
+    "title": "SLR: Mathematical models for inference",
+    "section": "Announcements",
+    "text": "Announcements\n\nHW 01 due TODAY at 11:59pm\nLab 01 due Thursday at 11:59pm\n\nQuestions?"
+  },
+  {
+    "objectID": "slides/06-slr-math-models.html#topics",
+    "href": "slides/06-slr-math-models.html#topics",
+    "title": "SLR: Mathematical models for inference",
+    "section": "Topics",
+    "text": "Topics\n\nDefine mathematical models to conduct inference for the slope\nUse mathematical models to\n\ncalculate confidence interval for the slope\nconduct a hypothesis test for the slope\nconstruct intervals for predictions"
+  },
+  {
+    "objectID": "slides/06-slr-math-models.html#computational-setup",
+    "href": "slides/06-slr-math-models.html#computational-setup",
+    "title": "SLR: Mathematical models for inference",
+    "section": "Computational setup",
+    "text": "Computational setup\n\n# load packages\nlibrary(tidyverse)   # for data wrangling and visualization\nlibrary(tidymodels)  # for modeling\nlibrary(openintro)   # for the duke_forest dataset\nlibrary(scales)      # for pretty axis labels\nlibrary(knitr)       # for pretty tables\nlibrary(kableExtra)  # also for pretty tables\nlibrary(patchwork)   # arrange plots\n\n# set default theme and larger font size for ggplot2\nggplot2::theme_set(ggplot2::theme_bw(base_size = 20))"
+  },
+  {
+    "objectID": "slides/06-slr-math-models.html#the-regression-model-revisited",
+    "href": "slides/06-slr-math-models.html#the-regression-model-revisited",
+    "title": "SLR: Mathematical models for inference",
+    "section": "The regression model, revisited",
+    "text": "The regression model, revisited\n\ndf_fit &lt;- lm(price ~ area, data = duke_forest)\n\ntidy(df_fit) |&gt;\n  kable(digits = 3)\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n116652.325\n53302.463\n2.188\n0.031\n\n\narea\n159.483\n18.171\n8.777\n0.000"
+  },
+  {
+    "objectID": "slides/06-slr-math-models.html#inference-revisited",
+    "href": "slides/06-slr-math-models.html#inference-revisited",
+    "title": "SLR: Mathematical models for inference",
+    "section": "Inference, revisited",
+    "text": "Inference, revisited\n\nEarlier we computed a confidence interval and conducted a hypothesis test via simulation:\n\nCI: Bootstrap the observed sample to simulate the distribution of the slope\nHT: Permute the observed sample to simulate the distribution of the slope under the assumption that the null hypothesis is true\n\nNow we’ll do these based on theoretical results, i.e., by using the Central Limit Theorem to define the distribution of the slope and use features (shape, center, spread) of this distribution to compute bounds of the confidence interval and the p-value for the hypothesis test"
+  },
+  {
+    "objectID": "slides/06-slr-math-models.html#mathematical-representation-of-the-model",
+    "href": "slides/06-slr-math-models.html#mathematical-representation-of-the-model",
+    "title": "SLR: Mathematical models for inference",
+    "section": "Mathematical representation of the model",
+    "text": "Mathematical representation of the model\n\\[\n\\begin{aligned}\nY &= \\text{Model} + \\text{Error} \\\\[8pt]\n&= f(X) + \\epsilon \\\\[8pt]\n&= E(Y|X) + \\epsilon \\\\[8pt]\n&= \\beta_0 + \\beta_1 X + \\epsilon\n\\end{aligned}\n\\]\nwhere the errors are independent and normally distributed:\n\n\nindependent: Knowing the error term for one observation doesn’t tell you anything about the error term for another observation\nnormally distributed: \\(\\epsilon \\sim N(0, \\sigma_\\epsilon^2)\\)"
+  },
+  {
+    "objectID": "slides/06-slr-math-models.html#side-note-expected-value-and-variance",
+    "href": "slides/06-slr-math-models.html#side-note-expected-value-and-variance",
+    "title": "SLR: Mathematical models for inference",
+    "section": "Side note: Expected value and variance",
+    "text": "Side note: Expected value and variance\nLet \\(X\\) be a random variable and \\(a\\) and \\(b\\) be constants.\n\nExpected value\n\\[\nE(aX+b) = E(aX) + E(b) = aE(X) + b\n\\]\n\nVariance\n\\[\nVar(aX + b) = a^2Var(X)\n\\]"
+  },
+  {
+    "objectID": "slides/06-slr-math-models.html#mathematical-representation-visualized",
+    "href": "slides/06-slr-math-models.html#mathematical-representation-visualized",
+    "title": "SLR: Mathematical models for inference",
+    "section": "Mathematical representation, visualized",
+    "text": "Mathematical representation, visualized\n\\[\nY|X \\sim N(\\beta_0 + \\beta_1 X, \\sigma_\\epsilon^2)\n\\]\n\n\n\n\n\nImage source: Introduction to the Practice of Statistics (5th ed)\n\n\n\n\nMean: \\(\\beta_0 + \\beta_1 X\\), the predicted value based on the regression model\nVariance: \\(\\sigma_\\epsilon^2\\), constant across the range of \\(X\\)\n\nHow do we estimate \\(\\sigma_\\epsilon^2\\)?"
+  },
+  {
+    "objectID": "slides/06-slr-math-models.html#regression-standard-error",
+    "href": "slides/06-slr-math-models.html#regression-standard-error",
+    "title": "SLR: Mathematical models for inference",
+    "section": "Regression standard error",
+    "text": "Regression standard error\nOnce we fit the model, we can use the residuals to estimate the regression standard error, the average distance between the observed values and the regression line\n\\[\n\\hat{\\sigma}_\\epsilon = \\sqrt{\\frac{\\sum_\\limits{i=1}^n(y_i - \\hat{y}_i)^2}{n-2}} = \\sqrt{\\frac{\\sum_\\limits{i=1}^ne_i^2}{n-2}}\n\\]\n\n\n\nWhy divide by \\(n - 2\\)?\nWhy do we care about the value of the regression standard error?"
+  },
+  {
+    "objectID": "slides/06-slr-math-models.html#standard-error-of-hatbeta_1",
+    "href": "slides/06-slr-math-models.html#standard-error-of-hatbeta_1",
+    "title": "SLR: Mathematical models for inference",
+    "section": "Standard error of \\(\\hat{\\beta}_1\\)",
+    "text": "Standard error of \\(\\hat{\\beta}_1\\)\nThe standard error of \\(\\hat{\\beta}_1\\) quantifies the sampling variability in the estimated slopes\n\\[\nSE_{\\hat{\\beta}_1} = \\hat{\\sigma}_\\epsilon\\sqrt{\\frac{1}{(n-1)s_X^2}}\n\\]\n\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n116652.33\n53302.46\n2.19\n0.03\n\n\narea\n159.48\n18.17\n8.78\n0.00"
+  },
+  {
+    "objectID": "slides/06-slr-math-models.html#hypothesis-test-for-the-slope",
+    "href": "slides/06-slr-math-models.html#hypothesis-test-for-the-slope",
+    "title": "SLR: Mathematical models for inference",
+    "section": "Hypothesis test for the slope",
+    "text": "Hypothesis test for the slope\nHypotheses: \\(H_0: \\beta_1 = 0\\) vs. \\(H_a: \\beta_1 \\ne 0\\)\n\nTest statistic: Number of standard errors the estimate is away from the null\n\\[\nT = \\frac{\\text{Estimate - Null}}{\\text{Standard error}} \\\\\n\\]\n\n\np-value: Probability of observing a test statistic at least as extreme (in the direction of the alternative hypothesis) from the null value as the one observed\n\\[\n\\text{p-value} = P(|t| &gt; |T|),\n\\]\ncalculated from a \\(t\\) distribution with \\(n - 2\\) degrees of freedom"
+  },
+  {
+    "objectID": "slides/06-slr-math-models.html#hypothesis-test-test-statistic",
+    "href": "slides/06-slr-math-models.html#hypothesis-test-test-statistic",
+    "title": "SLR: Mathematical models for inference",
+    "section": "Hypothesis test: Test statistic",
+    "text": "Hypothesis test: Test statistic\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n116652.33\n53302.46\n2.19\n0.03\n\n\narea\n159.48\n18.17\n8.78\n0.00\n\n\n\n\n\n\\[\nT = \\frac{\\hat{\\beta}_1 - 0}{SE_{\\hat{\\beta}_1}} = \\frac{159.48 - 0}{18.17} = 8.78\n\\]"
+  },
+  {
+    "objectID": "slides/06-slr-math-models.html#interpreting-the-test-statistic",
+    "href": "slides/06-slr-math-models.html#interpreting-the-test-statistic",
+    "title": "SLR: Mathematical models for inference",
+    "section": "Interpreting the test statistic",
+    "text": "Interpreting the test statistic\n\nThe test statistic is 8.78. What is the best interpretation?\n\nThe estimated slope of 159.48 is 8.78 standard errors away from the mean.\nThe estimated slope of 159.48 is 8.78 standard errors above the mean.\nThe estimated slope of 159.48 is 8.78 standard errors above 0, the hypothesized mean.\nThe estimated slope of 159.48 is 8.78 standard errors away from 0, the hypothesized mean."
+  },
+  {
+    "objectID": "slides/06-slr-math-models.html#hypothesis-test-p-value",
+    "href": "slides/06-slr-math-models.html#hypothesis-test-p-value",
+    "title": "SLR: Mathematical models for inference",
+    "section": "Hypothesis test: p-value",
+    "text": "Hypothesis test: p-value\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n116652.33\n53302.46\n2.19\n0.03\n\n\narea\n159.48\n18.17\n8.78\n0.00"
+  },
+  {
+    "objectID": "slides/06-slr-math-models.html#hypothesis-test-p-value-1",
+    "href": "slides/06-slr-math-models.html#hypothesis-test-p-value-1",
+    "title": "SLR: Mathematical models for inference",
+    "section": "Hypothesis test: p-value",
+    "text": "Hypothesis test: p-value\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n116652.33\n53302.46\n2.19\n0.03\n\n\narea\n159.48\n18.17\n8.78\n0.00\n\n\n\n\n\nA more exact p-value\n\n2 * pt(q = 8.78, df = 96, lower.tail = FALSE)\n\n[1] 6.19602e-14"
+  },
+  {
+    "objectID": "slides/06-slr-math-models.html#interpreting-the-p-value",
+    "href": "slides/06-slr-math-models.html#interpreting-the-p-value",
+    "title": "SLR: Mathematical models for inference",
+    "section": "Interpreting the p-value",
+    "text": "Interpreting the p-value\n\nWhat does the p-value mean in the context of the data?\n\nThe probability there is no linear relationship between area and price is approximately 0.\nGiven there is no linear relationship between area and price, the probability of observing a slope of 159.48 is approximately 0.\nGiven there is a linear relationship between area and price, the probability of observing a slope of 159.48 is approximately 0.\nGiven there is no linear relationship between area and price, the probability of observing a slope of 159.48 or more extreme is approximately 0."
+  },
+  {
+    "objectID": "slides/06-slr-math-models.html#understanding-the-p-value",
+    "href": "slides/06-slr-math-models.html#understanding-the-p-value",
+    "title": "SLR: Mathematical models for inference",
+    "section": "Understanding the p-value",
+    "text": "Understanding the p-value\n\n\n\nMagnitude of p-value\nInterpretation\n\n\n\n\np-value &lt; 0.01\nstrong evidence against \\(H_0\\)\n\n\n0.01 &lt; p-value &lt; 0.05\nmoderate evidence against \\(H_0\\)\n\n\n0.05 &lt; p-value &lt; 0.1\nweak evidence against \\(H_0\\)\n\n\np-value &gt; 0.1\neffectively no evidence against \\(H_0\\)\n\n\n\n\n\n\n\n\n\nImportant\n\n\nThese are general guidelines. The strength of evidence depends on the context of the problem."
+  },
+  {
+    "objectID": "slides/06-slr-math-models.html#hypothesis-test-conclusion-in-context",
+    "href": "slides/06-slr-math-models.html#hypothesis-test-conclusion-in-context",
+    "title": "SLR: Mathematical models for inference",
+    "section": "Hypothesis test: Conclusion, in context",
+    "text": "Hypothesis test: Conclusion, in context\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n116652.33\n53302.46\n2.19\n0.03\n\n\narea\n159.48\n18.17\n8.78\n0.00\n\n\n\n\n\n\n\nThe data provide convincing evidence that the population slope \\(\\beta_1\\) is different from 0.\nThe data provide convincing evidence of a linear relationship between area and price of houses in Duke Forest."
+  },
+  {
+    "objectID": "slides/06-slr-math-models.html#confidence-interval-for-the-slope",
+    "href": "slides/06-slr-math-models.html#confidence-interval-for-the-slope",
+    "title": "SLR: Mathematical models for inference",
+    "section": "Confidence interval for the slope",
+    "text": "Confidence interval for the slope\n\\[\n\\text{Estimate} \\pm \\text{ (critical value) } \\times \\text{SE}\n\\]\n\n\\[\n\\hat{\\beta}_1 \\pm t^* \\times SE_{\\hat{\\beta}_1}\n\\]\nwhere \\(t^*\\) is calculated from a \\(t\\) distribution with \\(n-2\\) degrees of freedom"
+  },
+  {
+    "objectID": "slides/06-slr-math-models.html#confidence-interval-critical-value",
+    "href": "slides/06-slr-math-models.html#confidence-interval-critical-value",
+    "title": "SLR: Mathematical models for inference",
+    "section": "Confidence interval: Critical value",
+    "text": "Confidence interval: Critical value\n\n\n\n\n# confidence level: 95%\nqt(0.975, df = nrow(duke_forest) - 2)\n\n[1] 1.984984\n\n\n\n\n\n# confidence level: 90%\nqt(0.95, df = nrow(duke_forest) - 2)\n\n[1] 1.660881\n\n\n\n\n\n# confidence level: 99%\nqt(0.995, df = nrow(duke_forest) - 2)\n\n[1] 2.628016"
+  },
+  {
+    "objectID": "slides/06-slr-math-models.html#ci-for-the-slope-calculation",
+    "href": "slides/06-slr-math-models.html#ci-for-the-slope-calculation",
+    "title": "SLR: Mathematical models for inference",
+    "section": "95% CI for the slope: Calculation",
+    "text": "95% CI for the slope: Calculation\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n116652.33\n53302.46\n2.19\n0.03\n\n\narea\n159.48\n18.17\n8.78\n0.00\n\n\n\n\n\n\\[\\hat{\\beta}_1 = 159.48 \\hspace{15mm} t^* = 1.98 \\hspace{15mm} SE_{\\hat{\\beta}_1} = 18.17\\]\n\n\\[\n159.48 \\pm 1.98 \\times 18.17 = (123.50, 195.46)\n\\]"
+  },
+  {
+    "objectID": "slides/06-slr-math-models.html#ci-for-the-slope-computation",
+    "href": "slides/06-slr-math-models.html#ci-for-the-slope-computation",
+    "title": "SLR: Mathematical models for inference",
+    "section": "95% CI for the slope: Computation",
+    "text": "95% CI for the slope: Computation\n\ntidy(df_fit, conf.int = TRUE, conf.level = 0.95) |&gt; \n  kable(digits = 2)\n\n\n\n\n\n\n\n\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\nconf.low\nconf.high\n\n\n\n\n(Intercept)\n116652.33\n53302.46\n2.19\n0.03\n10847.77\n222456.88\n\n\narea\n159.48\n18.17\n8.78\n0.00\n123.41\n195.55"
+  },
+  {
+    "objectID": "slides/06-slr-math-models.html#intervals-for-predictions-1",
+    "href": "slides/06-slr-math-models.html#intervals-for-predictions-1",
+    "title": "SLR: Mathematical models for inference",
+    "section": "Intervals for predictions",
+    "text": "Intervals for predictions\n\nSuppose we want to answer the question “What is the predicted sale price of a Duke Forest house that is 2,800 square feet?”\nWe said reporting a single estimate for the slope is not wise, and we should report a plausible range instead\nSimilarly, reporting a single prediction for a new value is not wise, and we should report a plausible range instead"
+  },
+  {
+    "objectID": "slides/06-slr-math-models.html#two-types-of-predictions",
+    "href": "slides/06-slr-math-models.html#two-types-of-predictions",
+    "title": "SLR: Mathematical models for inference",
+    "section": "Two types of predictions",
+    "text": "Two types of predictions\n\nPrediction for the mean: “What is the average predicted sale price of Duke Forest houses that are 2,800 square feet?”\nPrediction for an individual observation: “What is the predicted sale price of a Duke Forest house that is 2,800 square feet?”\n\n\n\nWhich would you expect to be more variable? The average prediction or the prediction for an individual observation? Based on your answer, how would you expect the widths of plausible ranges for these two predictions to compare?"
+  },
+  {
+    "objectID": "slides/06-slr-math-models.html#uncertainty-in-predictions",
+    "href": "slides/06-slr-math-models.html#uncertainty-in-predictions",
+    "title": "SLR: Mathematical models for inference",
+    "section": "Uncertainty in predictions",
+    "text": "Uncertainty in predictions\nConfidence interval for the mean outcome: \\[\\large{\\hat{y} \\pm t_{n-2}^* \\times \\color{purple}{\\mathbf{SE}_{\\hat{\\boldsymbol{\\mu}}}}}\\]\n\nPrediction interval for an individual observation: \\[\\large{\\hat{y} \\pm t_{n-2}^* \\times \\color{purple}{\\mathbf{SE_{\\hat{y}}}}}\\]"
+  },
+  {
+    "objectID": "slides/06-slr-math-models.html#standard-errors",
+    "href": "slides/06-slr-math-models.html#standard-errors",
+    "title": "SLR: Mathematical models for inference",
+    "section": "Standard errors",
+    "text": "Standard errors\nStandard error of the mean outcome: \\[SE_{\\hat{\\mu}} = \\hat{\\sigma}_\\epsilon\\sqrt{\\frac{1}{n} + \\frac{(x-\\bar{x})^2}{\\sum\\limits_{i=1}^n(x_i - \\bar{x})^2}}\\]\n\nStandard error of an individual outcome: \\[SE_{\\hat{y}} = \\hat{\\sigma}_\\epsilon\\sqrt{1 + \\frac{1}{n} + \\frac{(x-\\bar{x})^2}{\\sum\\limits_{i=1}^n(x_i - \\bar{x})^2}}\\]"
+  },
+  {
+    "objectID": "slides/06-slr-math-models.html#standard-errors-1",
+    "href": "slides/06-slr-math-models.html#standard-errors-1",
+    "title": "SLR: Mathematical models for inference",
+    "section": "Standard errors",
+    "text": "Standard errors\nStandard error of the mean outcome: \\[SE_{\\hat{\\mu}} = \\hat{\\sigma}_\\epsilon\\sqrt{\\frac{1}{n} + \\frac{(x-\\bar{x})^2}{\\sum\\limits_{i=1}^n(x_i - \\bar{x})^2}}\\]\nStandard error of an individual outcome: \\[SE_{\\hat{y}} = \\hat{\\sigma}_\\epsilon\\sqrt{\\mathbf{\\color{purple}{\\Large{1}}} + \\frac{1}{n} + \\frac{(x-\\bar{x})^2}{\\sum\\limits_{i=1}^n(x_i - \\bar{x})^2}}\\]"
+  },
+  {
+    "objectID": "slides/06-slr-math-models.html#confidence-interval",
+    "href": "slides/06-slr-math-models.html#confidence-interval",
+    "title": "SLR: Mathematical models for inference",
+    "section": "Confidence interval",
+    "text": "Confidence interval\nThe 95% confidence interval for the mean outcome:\n\nnew_house &lt;- tibble(area = 2800)\n\npredict(df_fit, new_house, interval = \"confidence\", level = 0.95) |&gt;\n  kable()\n\n\n\n\nfit\nlwr\nupr\n\n\n\n\n563205.5\n529351\n597060.1\n\n\n\n\n\n\nWe are 95% confident that mean sale price of Duke Forest houses that are 2,800 square feet is between $529,351 and $597,060."
+  },
+  {
+    "objectID": "slides/06-slr-math-models.html#prediction-interval",
+    "href": "slides/06-slr-math-models.html#prediction-interval",
+    "title": "SLR: Mathematical models for inference",
+    "section": "Prediction interval",
+    "text": "Prediction interval\nThe 95% prediction interval for an individual outcome:\n\nnew_house &lt;- tibble(area = 2800)\n\npredict(df_fit, new_house, interval = \"prediction\", level = 0.95) |&gt;\n  kable()\n\n\n\n\nfit\nlwr\nupr\n\n\n\n\n563205.5\n226438.3\n899972.7\n\n\n\n\n\n\nWe are 95% confident that predicted sale price of a Duke Forest house that is 2,800 square feet is between $226,438 and $899,973."
+  },
+  {
+    "objectID": "slides/06-slr-math-models.html#comparing-intervals",
+    "href": "slides/06-slr-math-models.html#comparing-intervals",
+    "title": "SLR: Mathematical models for inference",
+    "section": "Comparing intervals",
+    "text": "Comparing intervals"
+  },
+  {
+    "objectID": "slides/06-slr-math-models.html#extrapolation",
+    "href": "slides/06-slr-math-models.html#extrapolation",
+    "title": "SLR: Mathematical models for inference",
+    "section": "Extrapolation",
+    "text": "Extrapolation\nUsing the model to predict for values outside the range of the original data is extrapolation.\n\n\n\n\nCalculate the prediction interval for the sale price of a “tiny house” in Duke Forest that is 225 square feet.\n\n\n\n\n\n\n\n\n\n\nNo, thanks!"
+  },
+  {
+    "objectID": "slides/06-slr-math-models.html#next-class",
+    "href": "slides/06-slr-math-models.html#next-class",
+    "title": "SLR: Mathematical models for inference",
+    "section": "Next class",
+    "text": "Next class\n\nMultiple linear regression\nComplete Lecture 07 prepare"
+  },
+  {
+    "objectID": "slides/06-slr-math-models.html#interpreting-the-test-statistic---make-a-submit-question",
+    "href": "slides/06-slr-math-models.html#interpreting-the-test-statistic---make-a-submit-question",
+    "title": "SLR: Mathematical models for inference",
+    "section": "Interpreting the test statistic - Make a Submit question!",
+    "text": "Interpreting the test statistic - Make a Submit question!\n\nThe test statistic is 8.78. What is the best interpretation?\n\nThe estimated slope of 159.48 is 8.78 standard errors away from the mean.\nThe estimated slope of 159.48 is 8.78 standard errors above the mean.\nThe estimated slope of 159.48 is 8.78 standard errors above 0, the hypothesized mean.\nThe estimated slope of 159.48 is 8.78 standard errors away from 0, the hypothesized mean."
+  },
+  {
+    "objectID": "slides/06-slr-math-models.html#interpreting-the-p-value---make-a-submit-question",
+    "href": "slides/06-slr-math-models.html#interpreting-the-p-value---make-a-submit-question",
+    "title": "SLR: Mathematical models for inference",
+    "section": "Interpreting the p-value - Make a submit question",
+    "text": "Interpreting the p-value - Make a submit question\n\nWhat does the p-value mean in the context of the data?\n\nThe probability there is no linear relationship between area and price is approximately 0.\nGiven there is no linear relationship between area and price, the probability of observing a slope of 159.48 is approximately 0.\nGiven there is a linear relationship between area and price, the probability of observing a slope of 159.48 is approximately 0.\nGiven there is no linear relationship between area and price, the probability of observing a slope of 159.48 or more extreme is approximately 0."
   }
 ]
