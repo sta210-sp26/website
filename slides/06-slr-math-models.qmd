@@ -228,17 +228,6 @@ $$
 T = \frac{\hat{\beta}_1 - 0}{SE_{\hat{\beta}_1}} = \frac{159.48 - 0}{18.17} = 8.78
 $$
 
-## Interpreting the test statistic - Make a Submit question! 
-
-::: question
-The test statistic is 8.78. What is the best interpretation?
-
-a.  The estimated slope of 159.48 is 8.78 standard errors away from the mean.
-b.  The estimated slope of 159.48 is 8.78 standard errors above the mean.
-c.  The estimated slope of 159.48 is 8.78 standard errors above 0, the hypothesized mean.
-d.  The estimated slope of 159.48 is 8.78 standard errors away from 0, the hypothesized mean.
-:::
-
 ## Hypothesis test: p-value
 
 ```{r}
@@ -268,16 +257,27 @@ tidy(df_fit) |>
 2 * pt(q = 8.78, df = 96, lower.tail = FALSE)
 ```
 
-## Interpreting the p-value - Make a submit question {.midi}
+## Interpreting test statistic & p-value {.midi}
 
-::: question
-What does the p-value mean in the context of the data?
+::::: panel-tabset
+## Question
 
-1.  The probability there is no linear relationship between area and price is approximately 0.
-2.  Given there is no linear relationship between area and price, the probability of observing a slope of 159.48 is approximately 0.
-3.  Given there is a linear relationship between area and price, the probability of observing a slope of 159.48 is approximately 0.
-4.  Given there is no linear relationship between area and price, the probability of observing a slope of 159.48 or more extreme is approximately 0.
+:::: midi
+::: appex
+1.  The test statistic is 8.78. What is the best interpretation?
+
+2.  What does the p-value mean in the context of the data?
 :::
+
+🔗 <https://forms.office.com/r/78iNHayavx>
+::::
+
+## Submit
+
+```{=html}
+<center><iframe width="640px" height="480px" src="https://forms.office.com/r/78iNHayavx?embed=true" frameborder="0" marginwidth="0" marginheight="0" style="border: none; max-width:100%; max-height:100vh" allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen> </iframe></center>
+```
+:::::
 
 ## Understanding the p-value
 
