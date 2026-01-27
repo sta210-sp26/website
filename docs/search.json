@@ -628,11 +628,11 @@
     "text": "Mathematical representation of the model\n\\[\n\\begin{aligned}\nY &= \\text{Model} + \\text{Error} \\\\[8pt]\n&= f(X) + \\epsilon \\\\[8pt]\n&= E(Y|X) + \\epsilon \\\\[8pt]\n&= \\beta_0 + \\beta_1 X + \\epsilon\n\\end{aligned}\n\\]\nwhere the errors are independent and normally distributed:\n\n\nindependent: Knowing the error term for one observation doesn’t tell you anything about the error term for another observation\nnormally distributed: \\(\\epsilon \\sim N(0, \\sigma_\\epsilon^2)\\)"
   },
   {
-    "objectID": "slides/06-slr-math-models.html#side-note-expected-value-and-variance",
-    "href": "slides/06-slr-math-models.html#side-note-expected-value-and-variance",
+    "objectID": "slides/06-slr-math-models.html#side-note-distribution-of-random-variables",
+    "href": "slides/06-slr-math-models.html#side-note-distribution-of-random-variables",
     "title": "SLR: Mathematical models for inference",
-    "section": "Side note: Expected value and variance",
-    "text": "Side note: Expected value and variance\nLet \\(X\\) be a random variable and \\(a\\) and \\(b\\) be constants.\n\nExpected value\n\\[\nE(aX+b) = E(aX) + E(b) = aE(X) + b\n\\]\n\nVariance\n\\[\nVar(aX + b) = a^2Var(X)\n\\]"
+    "section": "Side note: Distribution of random variables",
+    "text": "Side note: Distribution of random variables\nLet \\(X\\) be a random variable and \\(a\\) and \\(b\\) be constants.\n\nExpected value\n\\[\nE(aX+b) = E(aX) + E(b) = aE(X) + b\n\\]\n\nVariance\n\\[\nVar(X) = E[(X - E(X))^2]\n\\]\n\nNormality\nIf \\(X\\) is normally distributed, then \\(aX + b\\) is normally distributed."
   },
   {
     "objectID": "slides/06-slr-math-models.html#mathematical-representation-visualized",
@@ -744,7 +744,7 @@
     "href": "slides/06-slr-math-models.html#two-types-of-predictions",
     "title": "SLR: Mathematical models for inference",
     "section": "Two types of predictions",
-    "text": "Two types of predictions\n\nPrediction for the mean: “What is the average predicted sale price of Duke Forest houses that are 2,800 square feet?”\nPrediction for an individual observation: “What is the predicted sale price of a Duke Forest house that is 2,800 square feet?”\n\n\n\nWhich would you expect to be more variable? The average prediction or the prediction for an individual observation? Based on your answer, how would you expect the widths of plausible ranges for these two predictions to compare?"
+    "text": "Two types of predictions\n\nPrediction for the mean: “What is the average predicted sale price of Duke Forest houses that are 2,800 square feet?”\nPrediction for an individual observation: “What is the predicted sale price of a Duke Forest house that is 2,800 square feet?”\n\n\n\n\nWhich would you expect to be more variable? The average prediction or the prediction for an individual observation?\nBased on your answer, how would you expect the widths of plausible ranges for these two predictions to compare?"
   },
   {
     "objectID": "slides/06-slr-math-models.html#uncertainty-in-predictions",
@@ -852,11 +852,11 @@
     "text": "Mathematical representation of the model\n\\[\n\\begin{aligned}\nY &= \\text{Model} + \\text{Error} \\\\[8pt]\n&= f(X) + \\epsilon \\\\[8pt]\n&= E(Y|X) + \\epsilon \\\\[8pt]\n&= \\beta_0 + \\beta_1 X + \\epsilon\n\\end{aligned}\n\\]\nwhere the errors are independent and normally distributed:\n. . .\n\nindependent: Knowing the error term for one observation doesn’t tell you anything about the error term for another observation\nnormally distributed: \\(\\epsilon \\sim N(0, \\sigma_\\epsilon^2)\\)"
   },
   {
-    "objectID": "slides/06-slr-math-models-notes.html#side-note-expected-value-and-variance",
-    "href": "slides/06-slr-math-models-notes.html#side-note-expected-value-and-variance",
+    "objectID": "slides/06-slr-math-models-notes.html#side-note-distribution-of-random-variables",
+    "href": "slides/06-slr-math-models-notes.html#side-note-distribution-of-random-variables",
     "title": "SLR: Mathematical models for inference",
-    "section": "Side note: Expected value and variance",
-    "text": "Side note: Expected value and variance\nLet \\(X\\) be a random variable and \\(a\\) and \\(b\\) be constants.\n\nExpected value\n\\[\nE(aX+b) = E(aX) + E(b) = aE(X) + b\n\\]\n\nVariance\n\\[\nVar(aX + b) = a^2Var(X)\n\\]"
+    "section": "Side note: Distribution of random variables",
+    "text": "Side note: Distribution of random variables\nLet \\(X\\) be a random variable and \\(a\\) and \\(b\\) be constants.\n\nExpected value\n\\[\nE(aX+b) = E(aX) + E(b) = aE(X) + b\n\\]\n\nVariance\n\\[\nVar(X) = E[(X - E(X))^2]\n\\]\n\nNormality\nIf \\(X\\) is normally distributed, then \\(aX + b\\) is normally distributed."
   },
   {
     "objectID": "slides/06-slr-math-models-notes.html#mathematical-representation-visualized",
@@ -968,7 +968,7 @@
     "href": "slides/06-slr-math-models-notes.html#two-types-of-predictions",
     "title": "SLR: Mathematical models for inference",
     "section": "Two types of predictions",
-    "text": "Two types of predictions\n\nPrediction for the mean: “What is the average predicted sale price of Duke Forest houses that are 2,800 square feet?”\nPrediction for an individual observation: “What is the predicted sale price of a Duke Forest house that is 2,800 square feet?”\n\n. . .\n\nWhich would you expect to be more variable? The average prediction or the prediction for an individual observation? Based on your answer, how would you expect the widths of plausible ranges for these two predictions to compare?"
+    "text": "Two types of predictions\n\nPrediction for the mean: “What is the average predicted sale price of Duke Forest houses that are 2,800 square feet?”\nPrediction for an individual observation: “What is the predicted sale price of a Duke Forest house that is 2,800 square feet?”\n\n. . .\n\n\nWhich would you expect to be more variable? The average prediction or the prediction for an individual observation?\nBased on your answer, how would you expect the widths of plausible ranges for these two predictions to compare?"
   },
   {
     "objectID": "slides/06-slr-math-models-notes.html#uncertainty-in-predictions",

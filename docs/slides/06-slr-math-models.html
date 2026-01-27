@@ -316,8 +316,8 @@ Y &amp;= \text{Model} + \text{Error} \\[8pt]
 </ul>
 </div>
 </section>
-<section id="side-note-expected-value-and-variance" class="slide level2" data-background-color="#D9E3E4">
-<h2>Side note: Expected value and variance</h2>
+<section id="side-note-distribution-of-random-variables" class="slide level2 midi" data-background-color="#D9E3E4">
+<h2>Side note: Distribution of random variables</h2>
 <p>Let <span class="math inline">\(X\)</span> be a random variable and <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> be constants.</p>
 <p><br></p>
 <p><strong>Expected value</strong></p>
@@ -327,8 +327,11 @@ E(aX+b) = E(aX) + E(b) = aE(X) + b
 <p><br></p>
 <p><strong>Variance</strong></p>
 <p><span class="math display">\[
-Var(aX + b) = a^2Var(X)
+Var(X) = E[(X - E(X))^2]
 \]</span></p>
+<p><br></p>
+<p><strong>Normality</strong></p>
+<p>If <span class="math inline">\(X\)</span> is normally distributed, then <span class="math inline">\(aX + b\)</span> is normally distributed.</p>
 </section>
 <section id="mathematical-representation-visualized" class="slide level2 midi">
 <h2>Mathematical representation, visualized</h2>
@@ -814,7 +817,10 @@ T = \frac{\hat{\beta}_1 - 0}{SE_{\hat{\beta}_1}} = \frac{159.48 - 0}{18.17} = 8.
 </ol>
 <div class="fragment">
 <div class="question">
-<p>Which would you expect to be more variable? The average prediction or the prediction for an individual observation? Based on your answer, how would you expect the widths of plausible ranges for these two predictions to compare?</p>
+<ul>
+<li><p>Which would you expect to be more variable? The average prediction or the prediction for an individual observation?</p></li>
+<li><p>Based on your answer, how would you expect the widths of plausible ranges for these two predictions to compare?</p></li>
+</ul>
 </div>
 </div>
 </section>

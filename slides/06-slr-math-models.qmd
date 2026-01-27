@@ -120,7 +120,7 @@ where the errors are independent and normally distributed:
 -   **independent**: Knowing the error term for one observation doesn't tell you anything about the error term for another observation
 -   **normally distributed**: $\epsilon \sim N(0, \sigma_\epsilon^2)$
 
-## Side note: Expected value and variance {background-color="#D9E3E4"}
+## Side note: Distribution of random variables {.midi background-color="#D9E3E4"}
 
 Let $X$ be a random variable and $a$ and $b$ be constants.
 
@@ -137,8 +137,14 @@ $$
 **Variance**
 
 $$
-Var(aX + b) = a^2Var(X)
+Var(X) = E[(X - E(X))^2]
 $$
+
+<br>
+
+**Normality**
+
+If $X$ is normally distributed, then $aX + b$ is normally distributed.
 
 ## Mathematical representation, visualized {.midi}
 
@@ -445,7 +451,9 @@ ggplot(duke_forest, aes(x = area, y = price)) +
 . . .
 
 ::: question
-Which would you expect to be more variable? The average prediction or the prediction for an individual observation? Based on your answer, how would you expect the widths of plausible ranges for these two predictions to compare?
+-   Which would you expect to be more variable? The average prediction or the prediction for an individual observation?
+
+-   Based on your answer, how would you expect the widths of plausible ranges for these two predictions to compare?
 :::
 
 ## Uncertainty in predictions

@@ -405,7 +405,7 @@ window.Quarto = {
   <li><a href="#the-regression-model-revisited" id="toc-the-regression-model-revisited" class="nav-link" data-scroll-target="#the-regression-model-revisited">The regression model, revisited</a></li>
   <li><a href="#inference-revisited" id="toc-inference-revisited" class="nav-link" data-scroll-target="#inference-revisited">Inference, revisited</a></li>
   <li><a href="#mathematical-representation-of-the-model" id="toc-mathematical-representation-of-the-model" class="nav-link" data-scroll-target="#mathematical-representation-of-the-model">Mathematical representation of the model</a></li>
-  <li><a href="#side-note-expected-value-and-variance" id="toc-side-note-expected-value-and-variance" class="nav-link" data-scroll-target="#side-note-expected-value-and-variance">Side note: Expected value and variance</a></li>
+  <li><a href="#side-note-distribution-of-random-variables" id="toc-side-note-distribution-of-random-variables" class="nav-link" data-scroll-target="#side-note-distribution-of-random-variables">Side note: Distribution of random variables</a></li>
   <li><a href="#mathematical-representation-visualized" id="toc-mathematical-representation-visualized" class="nav-link" data-scroll-target="#mathematical-representation-visualized">Mathematical representation, visualized</a></li>
   <li><a href="#regression-standard-error" id="toc-regression-standard-error" class="nav-link" data-scroll-target="#regression-standard-error">Regression standard error</a></li>
   <li><a href="#standard-error-of-hatbeta_1" id="toc-standard-error-of-hatbeta_1" class="nav-link" data-scroll-target="#standard-error-of-hatbeta_1">Standard error of <span class="math inline">\(\hat{\beta}_1\)</span></a></li>
@@ -579,8 +579,8 @@ Y &amp;= \text{Model} + \text{Error} \\[8pt]
 <li><strong>normally distributed</strong>: <span class="math inline">\(\epsilon \sim N(0, \sigma_\epsilon^2)\)</span></li>
 </ul>
 </section>
-<section id="side-note-expected-value-and-variance" class="level2" data-background-color="#D9E3E4">
-<h2 data-background-color="#D9E3E4" class="anchored" data-anchor-id="side-note-expected-value-and-variance">Side note: Expected value and variance</h2>
+<section id="side-note-distribution-of-random-variables" class="level2 midi" data-background-color="#D9E3E4">
+<h2 class="midi anchored" data-background-color="#D9E3E4" data-anchor-id="side-note-distribution-of-random-variables">Side note: Distribution of random variables</h2>
 <p>Let <span class="math inline">\(X\)</span> be a random variable and <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> be constants.</p>
 <p><br></p>
 <p><strong>Expected value</strong></p>
@@ -590,8 +590,11 @@ E(aX+b) = E(aX) + E(b) = aE(X) + b
 <p><br></p>
 <p><strong>Variance</strong></p>
 <p><span class="math display">\[
-Var(aX + b) = a^2Var(X)
+Var(X) = E[(X - E(X))^2]
 \]</span></p>
+<p><br></p>
+<p><strong>Normality</strong></p>
+<p>If <span class="math inline">\(X\)</span> is normally distributed, then <span class="math inline">\(aX + b\)</span> is normally distributed.</p>
 </section>
 <section id="mathematical-representation-visualized" class="level2 midi">
 <h2 class="midi anchored" data-anchor-id="mathematical-representation-visualized">Mathematical representation, visualized</h2>
@@ -1084,7 +1087,10 @@ Important
 </ol>
 <p>. . .</p>
 <div class="question">
-<p>Which would you expect to be more variable? The average prediction or the prediction for an individual observation? Based on your answer, how would you expect the widths of plausible ranges for these two predictions to compare?</p>
+<ul>
+<li><p>Which would you expect to be more variable? The average prediction or the prediction for an individual observation?</p></li>
+<li><p>Based on your answer, how would you expect the widths of plausible ranges for these two predictions to compare?</p></li>
+</ul>
 </div>
 </section>
 <section id="uncertainty-in-predictions" class="level2">
