@@ -152,6 +152,335 @@
     "text": "About this site\n\n1 + 1\n\n[1] 2"
   },
   {
+    "objectID": "slides/07-mlr.html#computational-setup",
+    "href": "slides/07-mlr.html#computational-setup",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Computational setup",
+    "text": "Computational setup\n\n# load packages\nlibrary(tidyverse)\nlibrary(tidymodels)\nlibrary(openintro)\nlibrary(patchwork)\nlibrary(knitr)\nlibrary(kableExtra)\nlibrary(colorblindr)\nlibrary(palmerpenguins)\n\n# set default theme and larger font size for ggplot2\nggplot2::theme_set(ggplot2::theme_minimal(base_size = 16))"
+  },
+  {
+    "objectID": "slides/07-mlr.html#topics",
+    "href": "slides/07-mlr.html#topics",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Topics",
+    "text": "Topics\n\nIntroduce multiple linear regression\nInterpret coefficients in multiple linear regression model\nCompute predictions and associated intervals for multiple linear regression models"
+  },
+  {
+    "objectID": "slides/07-mlr.html#data-palmer-penguins",
+    "href": "slides/07-mlr.html#data-palmer-penguins",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Data: Palmer penguins",
+    "text": "Data: Palmer penguins\nThe penguins data set contains data for penguins found on three islands in the Palmer Archipelago, Antarctica. Data were collected and made available by Dr. Kristen Gorman and the Palmer Station, Antarctica LTER, a member of the Long Term Ecological Research Network. These data can be found in the palmerpenguins R package.\n\n\n\n# A tibble: 342 × 4\n   body_mass_g flipper_length_mm bill_length_mm species\n         &lt;int&gt;             &lt;int&gt;          &lt;dbl&gt; &lt;fct&gt;  \n 1        3750               181           39.1 Adelie \n 2        3800               186           39.5 Adelie \n 3        3250               195           40.3 Adelie \n 4        3450               193           36.7 Adelie \n 5        3650               190           39.3 Adelie \n 6        3625               181           38.9 Adelie \n 7        4675               195           39.2 Adelie \n 8        3475               193           34.1 Adelie \n 9        4250               190           42   Adelie \n10        3300               186           37.8 Adelie \n# ℹ 332 more rows"
+  },
+  {
+    "objectID": "slides/07-mlr.html#palmer-penguins",
+    "href": "slides/07-mlr.html#palmer-penguins",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Palmer penguins",
+    "text": "Palmer penguins\n\nSource: https://allisonhorst.github.io/palmerpenguins/"
+  },
+  {
+    "objectID": "slides/07-mlr.html#variables",
+    "href": "slides/07-mlr.html#variables",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Variables",
+    "text": "Variables\nPredictors:\n\nbill_length_mm: Bill length in millimeters\nflipper_length_mm: Flipper length in millimeters\nspecies: Adelie, Gentoo, or Chinstrap species\n\nResponse: body_mass_g: Body mass in grams\n\nThe goal of this analysis is to use the bill length, flipper length, and species to predict body mass."
+  },
+  {
+    "objectID": "slides/07-mlr.html#response-body_mass_g",
+    "href": "slides/07-mlr.html#response-body_mass_g",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Response: body_mass_g",
+    "text": "Response: body_mass_g\n\n\n\n\n\n\nmin\nmedian\nmax\niqr\n\n\n\n\n2700\n4050\n6300\n1200"
+  },
+  {
+    "objectID": "slides/07-mlr.html#predictors",
+    "href": "slides/07-mlr.html#predictors",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Predictors",
+    "text": "Predictors"
+  },
+  {
+    "objectID": "slides/07-mlr.html#response-vs.-predictors",
+    "href": "slides/07-mlr.html#response-vs.-predictors",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Response vs. predictors",
+    "text": "Response vs. predictors\n\n\n\nWhy do we want to use a single model with all the predictors instead of 3 separate models?"
+  },
+  {
+    "objectID": "slides/07-mlr.html#multiple-linear-regression-mlr",
+    "href": "slides/07-mlr.html#multiple-linear-regression-mlr",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Multiple linear regression (MLR)",
+    "text": "Multiple linear regression (MLR)\nBased on the analysis goals, we will use a multiple linear regression model of the following form\n\\[\n\\begin{aligned}\\widehat{\\text{body_mass_g}} ~ =\n\\hat{\\beta}_0 & + \\hat{\\beta}_1 \\times \\text{flipper_length_mm} \\\\ & + \\hat{\\beta}_2 \\times  \\text{species}_1  \\\\\n&+\\hat{\\beta}_3 \\times \\text{species}_2  \\\\ &+ \\hat{\\beta}_4 \\times \\text{bill_length_mm}\n\\end{aligned}\n\\]\nSimilar to simple linear regression, this model assumes that at each combination of the predictor variables, the values body_mass_g follow a Normal distribution."
+  },
+  {
+    "objectID": "slides/07-mlr.html#multiple-linear-regression-1",
+    "href": "slides/07-mlr.html#multiple-linear-regression-1",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Multiple linear regression",
+    "text": "Multiple linear regression\nRecall: The simple linear regression model assumes\n\\[\nY|X\\sim N(\\beta_0 + \\beta_1 X, \\sigma_{\\epsilon}^2)\n\\]\n\nSimilarly: The multiple linear regression model assumes\n\\[\nY|X_1, X_2, \\ldots, X_p \\sim N(\\beta_0 + \\beta_1 X_1 + \\beta_2 X_2 + \\dots + \\beta_p X_p, \\sigma_{\\epsilon}^2)\n\\]"
+  },
+  {
+    "objectID": "slides/07-mlr.html#multiple-linear-regression-2",
+    "href": "slides/07-mlr.html#multiple-linear-regression-2",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Multiple linear regression",
+    "text": "Multiple linear regression\nAt any combination of the predictors, the mean value of the response \\(Y\\), is\n\\[\nE(Y|X_1, \\ldots, X_p) = \\beta_0 + \\beta_1 X_{1} + \\beta_2 X_2 + \\dots + \\beta_p X_p\n\\]\n\nUsing multiple linear regression, we can estimate the mean response for any combination of predictors\n\\[\n\\hat{Y} = \\hat{\\beta}_0 + \\hat{\\beta}_1 X_{1} + \\hat{\\beta}_2 X_2 + \\dots + \\hat{\\beta}_p X_{p}\n\\]\n\n\n\nSee Appendix A.3: Estimating the Coefficients for details."
+  },
+  {
+    "objectID": "slides/07-mlr.html#model-fit",
+    "href": "slides/07-mlr.html#model-fit",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Model fit",
+    "text": "Model fit\n\npenguin_fit &lt;- lm(body_mass_g ~ flipper_length_mm + species + \n                bill_length_mm, data = penguins)\n\ntidy(penguin_fit) |&gt;\n  kable(digits = 3)\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n-3904.387\n529.257\n-7.377\n0.000\n\n\nflipper_length_mm\n27.429\n3.176\n8.638\n0.000\n\n\nspeciesChinstrap\n-748.562\n81.534\n-9.181\n0.000\n\n\nspeciesGentoo\n90.435\n88.647\n1.020\n0.308\n\n\nbill_length_mm\n61.736\n7.126\n8.664\n0.000"
+  },
+  {
+    "objectID": "slides/07-mlr.html#model-equation",
+    "href": "slides/07-mlr.html#model-equation",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Model equation",
+    "text": "Model equation\n\\[\n\\begin{align}\\widehat{\\text{body_mass_g}} =  -3904.387 &+27.429 \\times \\text{flipper_length_mm}\\\\\n& -748.562 \\times \\text{Chinstrap}\\\\  \n&+ 90.435 \\times \\text{Gentoo}\\\\\n&+ 61.736 \\times \\text{bill_length_mm}\n\\end{align}\n\\]\n\n\n\n\n\n\nNote\n\n\nWe will talk about why there are two terms in the model for species soon!"
+  },
+  {
+    "objectID": "slides/07-mlr.html#interpreting-hatbeta_j",
+    "href": "slides/07-mlr.html#interpreting-hatbeta_j",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Interpreting \\(\\hat{\\beta}_j\\)",
+    "text": "Interpreting \\(\\hat{\\beta}_j\\)"
+  },
+  {
+    "objectID": "slides/07-mlr.html#interpreting-test-statistic-p-value",
+    "href": "slides/07-mlr.html#interpreting-test-statistic-p-value",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Interpreting test statistic & p-value",
+    "text": "Interpreting test statistic & p-value\n\nQuestionSubmit\n\n\n\n\nThe coefficient of bill_length_mm is 61.736. Select the best interpretation.\n\n🔗 https://forms.office.com/r/eVJuUUkfrP"
+  },
+  {
+    "objectID": "slides/07-mlr.html#interpreting-hatbeta_j-1",
+    "href": "slides/07-mlr.html#interpreting-hatbeta_j-1",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Interpreting \\(\\hat{\\beta}_j\\)",
+    "text": "Interpreting \\(\\hat{\\beta}_j\\)\nThe estimated coefficient \\(\\hat{\\beta}_j\\) is the expected change in the expected value (mean) of \\(Y\\) when \\(X_j\\) increases by one unit, holding the values of all other predictor variables constant.\n\nExample: The estimated coefficient for flipper_length_mm is 27.429. This means for each additional millimeter in a penguin’s flipper length, its body mass is expected to be greater by 27.429 grams, on average, holding species and bill length constant."
+  },
+  {
+    "objectID": "slides/07-mlr.html#prediction",
+    "href": "slides/07-mlr.html#prediction",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Prediction",
+    "text": "Prediction\n\nWhat is the predicted body mass for a Gentoo penguin with a flipper length of 200 millimeters and bill length of 45 millimeters?\n\n\n\n-3904.387 + 27.429 * 200 - 748.562 * 0 + 90.435 * 1 + 61.736 * 45\n\n[1] 4449.968\n\n\n\n\nThe predicted body mass for a Gentoo penguin with a flipper length of 200 millimeters and bill length of 45 millimeters is 4449.968 grams."
+  },
+  {
+    "objectID": "slides/07-mlr.html#prediction-revisited",
+    "href": "slides/07-mlr.html#prediction-revisited",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Prediction, revisited",
+    "text": "Prediction, revisited\nJust like with simple linear regression, we can use the predict() function in R to calculate the appropriate intervals for our predicted values:\n\nnew_penguin &lt;- tibble(\n  flipper_length_mm  = 200, \n  species = \"Gentoo\", \n  bill_length_mm = 45\n)\n\npredict(penguin_fit, new_penguin)\n\n       1 \n4449.955 \n\n\n\n\n\n\n\n\nNote\n\n\nDifference in predicted value due to rounding the coefficients on the previous slide."
+  },
+  {
+    "objectID": "slides/07-mlr.html#confidence-interval-for-hatmu_y",
+    "href": "slides/07-mlr.html#confidence-interval-for-hatmu_y",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Confidence interval for \\(\\hat{\\mu}_y\\)",
+    "text": "Confidence interval for \\(\\hat{\\mu}_y\\)\n\nCalculate a 90% confidence interval for the estimated mean body mass a Gentoo penguins with a flipper length of 200 millimeters and bill length of 45 millimeters.\n\n\n\npredict(penguin_fit, new_penguin, interval = \"confidence\", \n        level = 0.90) |&gt; \n  kable(digits = 3)\n\n\n\n\nfit\nlwr\nupr\n\n\n\n\n4449.955\n4355.238\n4544.671"
+  },
+  {
+    "objectID": "slides/07-mlr.html#prediction-interval-for-haty",
+    "href": "slides/07-mlr.html#prediction-interval-for-haty",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Prediction interval for \\(\\hat{y}\\)",
+    "text": "Prediction interval for \\(\\hat{y}\\)\n\nCalculate a 90% prediction interval for the estimated body mass for an individual Gentoo penguin with a flipper length of 200 millimeters and bill length of 45 millimeters.\n\n\n\npredict(penguin_fit, new_penguin, interval = \"prediction\", \n        level = 0.90) |&gt;\n  kable(digits = 3)\n\n\n\n\nfit\nlwr\nupr\n\n\n\n\n4449.955\n3881.035\n5018.875"
+  },
+  {
+    "objectID": "slides/07-mlr.html#cautions",
+    "href": "slides/07-mlr.html#cautions",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Cautions",
+    "text": "Cautions\n\nDo not extrapolate! Because there are multiple predictor variables, there is the potential to extrapolate in many directions\nThe multiple regression model only shows association, not causality\n\nTo show causality, you must have a carefully designed experiment or carefully account for confounding variables in an observational study"
+  },
+  {
+    "objectID": "slides/07-mlr.html#recap",
+    "href": "slides/07-mlr.html#recap",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Recap",
+    "text": "Recap\n\nIntroduced multiple linear regression\nInterpreted coefficients in multiple linear regression model\nComputed predictions and associated intervals for multiple linear regression models"
+  },
+  {
+    "objectID": "slides/07-mlr.html#next-class",
+    "href": "slides/07-mlr.html#next-class",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Next class",
+    "text": "Next class\n\nTypes of predictors in multiple linear regression model\nComplete Lecture 08 prepare"
+  },
+  {
+    "objectID": "slides/07-mlr-notes.html",
+    "href": "slides/07-mlr-notes.html",
+    "title": "Multiple linear regression (MLR)",
+    "section": "",
+    "text": "# load packages\nlibrary(tidyverse)\nlibrary(tidymodels)\nlibrary(openintro)\nlibrary(patchwork)\nlibrary(knitr)\nlibrary(kableExtra)\nlibrary(colorblindr)\nlibrary(palmerpenguins)\n\n# set default theme and larger font size for ggplot2\nggplot2::theme_set(ggplot2::theme_minimal(base_size = 16))"
+  },
+  {
+    "objectID": "slides/07-mlr-notes.html#computational-setup",
+    "href": "slides/07-mlr-notes.html#computational-setup",
+    "title": "Multiple linear regression (MLR)",
+    "section": "",
+    "text": "# load packages\nlibrary(tidyverse)\nlibrary(tidymodels)\nlibrary(openintro)\nlibrary(patchwork)\nlibrary(knitr)\nlibrary(kableExtra)\nlibrary(colorblindr)\nlibrary(palmerpenguins)\n\n# set default theme and larger font size for ggplot2\nggplot2::theme_set(ggplot2::theme_minimal(base_size = 16))"
+  },
+  {
+    "objectID": "slides/07-mlr-notes.html#topics",
+    "href": "slides/07-mlr-notes.html#topics",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Topics",
+    "text": "Topics\n\nIntroduce multiple linear regression\nInterpret coefficients in multiple linear regression model\nCompute predictions and associated intervals for multiple linear regression models"
+  },
+  {
+    "objectID": "slides/07-mlr-notes.html#data-palmer-penguins",
+    "href": "slides/07-mlr-notes.html#data-palmer-penguins",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Data: Palmer penguins",
+    "text": "Data: Palmer penguins\nThe penguins data set contains data for penguins found on three islands in the Palmer Archipelago, Antarctica. Data were collected and made available by Dr. Kristen Gorman and the Palmer Station, Antarctica LTER, a member of the Long Term Ecological Research Network. These data can be found in the palmerpenguins R package.\n. . .\n\n\n# A tibble: 342 × 4\n   body_mass_g flipper_length_mm bill_length_mm species\n         &lt;int&gt;             &lt;int&gt;          &lt;dbl&gt; &lt;fct&gt;  \n 1        3750               181           39.1 Adelie \n 2        3800               186           39.5 Adelie \n 3        3250               195           40.3 Adelie \n 4        3450               193           36.7 Adelie \n 5        3650               190           39.3 Adelie \n 6        3625               181           38.9 Adelie \n 7        4675               195           39.2 Adelie \n 8        3475               193           34.1 Adelie \n 9        4250               190           42   Adelie \n10        3300               186           37.8 Adelie \n# ℹ 332 more rows"
+  },
+  {
+    "objectID": "slides/07-mlr-notes.html#palmer-penguins",
+    "href": "slides/07-mlr-notes.html#palmer-penguins",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Palmer penguins",
+    "text": "Palmer penguins\n\n\n\nSource: https://allisonhorst.github.io/palmerpenguins/"
+  },
+  {
+    "objectID": "slides/07-mlr-notes.html#variables",
+    "href": "slides/07-mlr-notes.html#variables",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Variables",
+    "text": "Variables\nPredictors:\n\nbill_length_mm: Bill length in millimeters\nflipper_length_mm: Flipper length in millimeters\nspecies: Adelie, Gentoo, or Chinstrap species\n\nResponse: body_mass_g: Body mass in grams\n\nThe goal of this analysis is to use the bill length, flipper length, and species to predict body mass."
+  },
+  {
+    "objectID": "slides/07-mlr-notes.html#response-body_mass_g",
+    "href": "slides/07-mlr-notes.html#response-body_mass_g",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Response: body_mass_g",
+    "text": "Response: body_mass_g\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nmin\nmedian\nmax\niqr\n\n\n\n\n2700\n4050\n6300\n1200"
+  },
+  {
+    "objectID": "slides/07-mlr-notes.html#predictors",
+    "href": "slides/07-mlr-notes.html#predictors",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Predictors",
+    "text": "Predictors"
+  },
+  {
+    "objectID": "slides/07-mlr-notes.html#response-vs.-predictors",
+    "href": "slides/07-mlr-notes.html#response-vs.-predictors",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Response vs. predictors",
+    "text": "Response vs. predictors\n\n\n\n\n\n\n\n\n\n. . .\n\nWhy do we want to use a single model with all the predictors instead of 3 separate models?"
+  },
+  {
+    "objectID": "slides/07-mlr-notes.html#multiple-linear-regression-mlr",
+    "href": "slides/07-mlr-notes.html#multiple-linear-regression-mlr",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Multiple linear regression (MLR)",
+    "text": "Multiple linear regression (MLR)\nBased on the analysis goals, we will use a multiple linear regression model of the following form\n\\[\n\\begin{aligned}\\widehat{\\text{body_mass_g}} ~ =\n\\hat{\\beta}_0 & + \\hat{\\beta}_1 \\times \\text{flipper_length_mm} \\\\ & + \\hat{\\beta}_2 \\times  \\text{species}_1  \\\\\n&+\\hat{\\beta}_3 \\times \\text{species}_2  \\\\ &+ \\hat{\\beta}_4 \\times \\text{bill_length_mm}\n\\end{aligned}\n\\]\nSimilar to simple linear regression, this model assumes that at each combination of the predictor variables, the values body_mass_g follow a Normal distribution."
+  },
+  {
+    "objectID": "slides/07-mlr-notes.html#multiple-linear-regression-1",
+    "href": "slides/07-mlr-notes.html#multiple-linear-regression-1",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Multiple linear regression",
+    "text": "Multiple linear regression\nRecall: The simple linear regression model assumes\n\\[\nY|X\\sim N(\\beta_0 + \\beta_1 X, \\sigma_{\\epsilon}^2)\n\\]\n. . .\nSimilarly: The multiple linear regression model assumes\n\\[\nY|X_1, X_2, \\ldots, X_p \\sim N(\\beta_0 + \\beta_1 X_1 + \\beta_2 X_2 + \\dots + \\beta_p X_p, \\sigma_{\\epsilon}^2)\n\\]"
+  },
+  {
+    "objectID": "slides/07-mlr-notes.html#multiple-linear-regression-2",
+    "href": "slides/07-mlr-notes.html#multiple-linear-regression-2",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Multiple linear regression",
+    "text": "Multiple linear regression\nAt any combination of the predictors, the mean value of the response \\(Y\\), is\n\\[\nE(Y|X_1, \\ldots, X_p) = \\beta_0 + \\beta_1 X_{1} + \\beta_2 X_2 + \\dots + \\beta_p X_p\n\\]\n. . .\nUsing multiple linear regression, we can estimate the mean response for any combination of predictors\n\\[\n\\hat{Y} = \\hat{\\beta}_0 + \\hat{\\beta}_1 X_{1} + \\hat{\\beta}_2 X_2 + \\dots + \\hat{\\beta}_p X_{p}\n\\]\n\n\nSee Appendix A.3: Estimating the Coefficients for details."
+  },
+  {
+    "objectID": "slides/07-mlr-notes.html#model-fit",
+    "href": "slides/07-mlr-notes.html#model-fit",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Model fit",
+    "text": "Model fit\n\npenguin_fit &lt;- lm(body_mass_g ~ flipper_length_mm + species + \n                bill_length_mm, data = penguins)\n\ntidy(penguin_fit) |&gt;\n  kable(digits = 3)\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n-3904.387\n529.257\n-7.377\n0.000\n\n\nflipper_length_mm\n27.429\n3.176\n8.638\n0.000\n\n\nspeciesChinstrap\n-748.562\n81.534\n-9.181\n0.000\n\n\nspeciesGentoo\n90.435\n88.647\n1.020\n0.308\n\n\nbill_length_mm\n61.736\n7.126\n8.664\n0.000"
+  },
+  {
+    "objectID": "slides/07-mlr-notes.html#model-equation",
+    "href": "slides/07-mlr-notes.html#model-equation",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Model equation",
+    "text": "Model equation\n\\[\n\\begin{align}\\widehat{\\text{body_mass_g}} =  -3904.387 &+27.429 \\times \\text{flipper_length_mm}\\\\\n& -748.562 \\times \\text{Chinstrap}\\\\  \n&+ 90.435 \\times \\text{Gentoo}\\\\\n&+ 61.736 \\times \\text{bill_length_mm}\n\\end{align}\n\\]\n\n\n\n\n\n\nNote\n\n\n\nWe will talk about why there are two terms in the model for species soon!"
+  },
+  {
+    "objectID": "slides/07-mlr-notes.html#interpreting-hatbeta_j",
+    "href": "slides/07-mlr-notes.html#interpreting-hatbeta_j",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Interpreting \\(\\hat{\\beta}_j\\)",
+    "text": "Interpreting \\(\\hat{\\beta}_j\\)"
+  },
+  {
+    "objectID": "slides/07-mlr-notes.html#interpreting-test-statistic-p-value",
+    "href": "slides/07-mlr-notes.html#interpreting-test-statistic-p-value",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Interpreting test statistic & p-value",
+    "text": "Interpreting test statistic & p-value\n\nQuestionSubmit\n\n\n\n\nThe coefficient of bill_length_mm is 61.736. Select the best interpretation.\n\n🔗 https://forms.office.com/r/eVJuUUkfrP"
+  },
+  {
+    "objectID": "slides/07-mlr-notes.html#interpreting-hatbeta_j-1",
+    "href": "slides/07-mlr-notes.html#interpreting-hatbeta_j-1",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Interpreting \\(\\hat{\\beta}_j\\)",
+    "text": "Interpreting \\(\\hat{\\beta}_j\\)\nThe estimated coefficient \\(\\hat{\\beta}_j\\) is the expected change in the expected value (mean) of \\(Y\\) when \\(X_j\\) increases by one unit, holding the values of all other predictor variables constant.\n. . .\nExample: The estimated coefficient for flipper_length_mm is 27.429. This means for each additional millimeter in a penguin’s flipper length, its body mass is expected to be greater by 27.429 grams, on average, holding species and bill length constant."
+  },
+  {
+    "objectID": "slides/07-mlr-notes.html#prediction",
+    "href": "slides/07-mlr-notes.html#prediction",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Prediction",
+    "text": "Prediction\n\nWhat is the predicted body mass for a Gentoo penguin with a flipper length of 200 millimeters and bill length of 45 millimeters?\n\n\n\n-3904.387 + 27.429 * 200 - 748.562 * 0 + 90.435 * 1 + 61.736 * 45\n\n[1] 4449.968\n\n\n\n. . .\nThe predicted body mass for a Gentoo penguin with a flipper length of 200 millimeters and bill length of 45 millimeters is 4449.968 grams."
+  },
+  {
+    "objectID": "slides/07-mlr-notes.html#prediction-revisited",
+    "href": "slides/07-mlr-notes.html#prediction-revisited",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Prediction, revisited",
+    "text": "Prediction, revisited\nJust like with simple linear regression, we can use the predict() function in R to calculate the appropriate intervals for our predicted values:\n\nnew_penguin &lt;- tibble(\n  flipper_length_mm  = 200, \n  species = \"Gentoo\", \n  bill_length_mm = 45\n)\n\npredict(penguin_fit, new_penguin)\n\n       1 \n4449.955 \n\n\n\n\n\n\n\n\nNote\n\n\n\nDifference in predicted value due to rounding the coefficients on the previous slide."
+  },
+  {
+    "objectID": "slides/07-mlr-notes.html#confidence-interval-for-hatmu_y",
+    "href": "slides/07-mlr-notes.html#confidence-interval-for-hatmu_y",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Confidence interval for \\(\\hat{\\mu}_y\\)",
+    "text": "Confidence interval for \\(\\hat{\\mu}_y\\)\n\nCalculate a 90% confidence interval for the estimated mean body mass a Gentoo penguins with a flipper length of 200 millimeters and bill length of 45 millimeters.\n\n\n\npredict(penguin_fit, new_penguin, interval = \"confidence\", \n        level = 0.90) |&gt; \n  kable(digits = 3)\n\n\n\n\nfit\nlwr\nupr\n\n\n\n\n4449.955\n4355.238\n4544.671"
+  },
+  {
+    "objectID": "slides/07-mlr-notes.html#prediction-interval-for-haty",
+    "href": "slides/07-mlr-notes.html#prediction-interval-for-haty",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Prediction interval for \\(\\hat{y}\\)",
+    "text": "Prediction interval for \\(\\hat{y}\\)\n\nCalculate a 90% prediction interval for the estimated body mass for an individual Gentoo penguin with a flipper length of 200 millimeters and bill length of 45 millimeters.\n\n\n\npredict(penguin_fit, new_penguin, interval = \"prediction\", \n        level = 0.90) |&gt;\n  kable(digits = 3)\n\n\n\n\nfit\nlwr\nupr\n\n\n\n\n4449.955\n3881.035\n5018.875"
+  },
+  {
+    "objectID": "slides/07-mlr-notes.html#cautions",
+    "href": "slides/07-mlr-notes.html#cautions",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Cautions",
+    "text": "Cautions\n\nDo not extrapolate! Because there are multiple predictor variables, there is the potential to extrapolate in many directions\nThe multiple regression model only shows association, not causality\n\nTo show causality, you must have a carefully designed experiment or carefully account for confounding variables in an observational study"
+  },
+  {
+    "objectID": "slides/07-mlr-notes.html#recap",
+    "href": "slides/07-mlr-notes.html#recap",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Recap",
+    "text": "Recap\n\nIntroduced multiple linear regression\nInterpreted coefficients in multiple linear regression model\nComputed predictions and associated intervals for multiple linear regression models"
+  },
+  {
+    "objectID": "slides/07-mlr-notes.html#next-class",
+    "href": "slides/07-mlr-notes.html#next-class",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Next class",
+    "text": "Next class\n\nTypes of predictors in multiple linear regression model\nComplete Lecture 08 prepare"
+  },
+  {
     "objectID": "slides/02-big-picture.html#announcements",
     "href": "slides/02-big-picture.html#announcements",
     "title": "The big picture",
@@ -2735,7 +3064,7 @@
     "href": "index.html",
     "title": "STA 210 - Regression Analysis",
     "section": "",
-    "text": "This page contains an outline of the topics, content, and assignments for the semester. Note that this schedule will be updated as the semester progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\nweek\ndow\ndate\ntopic\nprepare\nslides\nnotes\nae\nhw\nlab\nproject\ndue\n\n\n\n\n1\nTh\nJan 8\nWelcome to STA 210!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n2\nM\nJan 12\nLab 00\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nJan 13\nThe big picture\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nJan 15\nSimple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n3\nM\nJan 19\nNo lab: Martin Luther King Jr. Day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nJan 20\nInference: Bootstrap confidence intervals\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nJan 22\nInference: Permutation tests\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n4\nM\nJan 26\nLab 01: Linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nJan 27\nInference: Mathematical models\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 01 due\n\n\n\nTh\nJan 29\nMultiple linear regression (MLR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 01 due\n\n\n5\nM\nFeb 2\nLab 02\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nFeb 3\nMLR: Types of predictors\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nFeb 5\nInference for MLR\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 02 due\n\n\n6\nM\nFeb 9\nLab 03\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nFeb 10\nModel conditions + diagnostics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 02 due\n\n\n\nTh\nFeb 12\nExam 01 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 03 due\n\n\n7\nM\nFeb 16\nLab 04: Exam 01 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 04 due at end of lab\n\n\n\nTu\nFeb 17\nExam 01\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nFeb 19\nVariable transformations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n8\nM\nFeb 23\nLab: Project proposal\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nFeb 24\nModel selection\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nFeb 26\nCross validation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n9\nM\nMar 2\nLab 06\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nMar 3\nWrapping up MLR\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nMar 5\nEthics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 05 due\n\n\n10\nM\nMar 9\nNo Lab: Spring break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nMar 10\nNo Lecture: Spring Break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nMar 12\nNo Lecture: Spring break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n11\nM\nMar 16\nLab\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nMar 17\nLogistic regression (LR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 03 due\n\n\n\nTh\nMar 19\nLR: Prediction + Assessment\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n12\nM\nMar 23\nLab 06\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nMar 24\nLR: Inference\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nMar 26\nLR: Model selection\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 06 due\n\n\n13\nM\nMar 30\nLab 07\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nMar 31\nSpecial topic/ Catch up\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 04 due\n\n\n\nTh\nApr 2\nExam 02 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 07 due\n\n\n14\nM\nApr 6\nLab 08: Exam 02 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 08 due at end of lab\n\n\n\nTu\nApr 7\nExam 02\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nApr 9\nSpecial topic\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n15\nM\nApr 13\nProject work day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nApr 14\nProject presentations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nApr 16\nProject presentations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n16\nM\nApr 20\nLab: Draft peer review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nApr 21\nProject meetings\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStatistics experience due\n\n\nExam period",
+    "text": "This page contains an outline of the topics, content, and assignments for the semester. Note that this schedule will be updated as the semester progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\nweek\ndow\ndate\ntopic\nprepare\nslides\nnotes\nae\nhw\nlab\nproject\ndue\n\n\n\n\n1\nTh\nJan 8\nWelcome to STA 210!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n2\nM\nJan 12\nLab 00\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nJan 13\nThe big picture\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nJan 15\nSimple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n3\nM\nJan 19\nNo lab: Martin Luther King Jr. Day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nJan 20\nInference: Bootstrap confidence intervals\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nJan 22\nInference: Permutation tests\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n4\nM\nJan 26\nLab 01: Linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nJan 27\nInference: Mathematical models\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 01 due\n\n\n\nTh\nJan 29\nInference cont'd\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 01 due\n\n\n\n\n\n\nMultiple linear regression (MLR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n5\nM\nFeb 2\nLab 02\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nFeb 3\nMLR: Types of predictors\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nFeb 5\nInference for MLR\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 02 due\n\n\n6\nM\nFeb 9\nLab 03\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nFeb 10\nModel conditions + diagnostics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 02 due\n\n\n\nTh\nFeb 12\nExam 01 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 03 due\n\n\n7\nM\nFeb 16\nLab 04: Exam 01 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 04 due at end of lab\n\n\n\nTu\nFeb 17\nExam 01\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nFeb 19\nVariable transformations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n8\nM\nFeb 23\nLab: Project proposal\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nFeb 24\nModel selection\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nFeb 26\nCross validation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n9\nM\nMar 2\nLab 06\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nMar 3\nWrapping up MLR\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nMar 5\nEthics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 05 due\n\n\n10\nM\nMar 9\nNo Lab: Spring break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nMar 10\nNo Lecture: Spring Break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nMar 12\nNo Lecture: Spring break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n11\nM\nMar 16\nLab\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nMar 17\nLogistic regression (LR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 03 due\n\n\n\nTh\nMar 19\nLR: Prediction + Assessment\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n12\nM\nMar 23\nLab 06\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nMar 24\nLR: Inference\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nMar 26\nLR: Model selection\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 06 due\n\n\n13\nM\nMar 30\nLab 07\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nMar 31\nSpecial topic/ Catch up\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 04 due\n\n\n\nTh\nApr 2\nExam 02 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 07 due\n\n\n14\nM\nApr 6\nLab 08: Exam 02 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 08 due at end of lab\n\n\n\nTu\nApr 7\nExam 02\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nApr 9\nSpecial topic\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n15\nM\nApr 13\nProject work day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nApr 14\nProject presentations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nApr 16\nProject presentations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n16\nM\nApr 20\nLab: Draft peer review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nApr 21\nProject meetings\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStatistics experience due\n\n\nExam period",
     "crumbs": [
       "Schedule"
     ]
@@ -3565,6 +3894,349 @@
     "title": "Welcome to STA 210!",
     "section": "Before next class",
     "text": "Before next class\n\nComplete Lecture 02 Prepare\nReview the syllabus\nLabs start on Monday, January 12\nOffice hours start on Monday, January 12"
+  },
+  {
+    "objectID": "slides/06-slr-math-models-contd-notes.html",
+    "href": "slides/06-slr-math-models-contd-notes.html",
+    "title": "SLR: Mathematical models for inference cont’d",
+    "section": "",
+    "text": "Lab 01 due TODAY at 11:59pm\nStatistics experience due April 21\nSSMU Mini DataFest - February 8\n\nSee Ed Discussion for announcement"
+  },
+  {
+    "objectID": "slides/06-slr-math-models-contd-notes.html#announcements",
+    "href": "slides/06-slr-math-models-contd-notes.html#announcements",
+    "title": "SLR: Mathematical models for inference cont’d",
+    "section": "",
+    "text": "Lab 01 due TODAY at 11:59pm\nStatistics experience due April 21\nSSMU Mini DataFest - February 8\n\nSee Ed Discussion for announcement"
+  },
+  {
+    "objectID": "slides/06-slr-math-models-contd-notes.html#topics",
+    "href": "slides/06-slr-math-models-contd-notes.html#topics",
+    "title": "SLR: Mathematical models for inference cont’d",
+    "section": "Topics",
+    "text": "Topics\n\nUse mathematical models to\n\nconduct a hypothesis test for the slope\nconstruct confidence intervals for the slope\nconstruct intervals for predictions"
+  },
+  {
+    "objectID": "slides/06-slr-math-models-contd-notes.html#computational-setup",
+    "href": "slides/06-slr-math-models-contd-notes.html#computational-setup",
+    "title": "SLR: Mathematical models for inference cont’d",
+    "section": "Computational setup",
+    "text": "Computational setup\n\n# load packages\nlibrary(tidyverse)   # for data wrangling and visualization\nlibrary(tidymodels)  # for modeling\nlibrary(openintro)   # for the duke_forest dataset\nlibrary(scales)      # for pretty axis labels\nlibrary(knitr)       # for pretty tables\nlibrary(kableExtra)  # also for pretty tables\nlibrary(patchwork)   # arrange plots\n\n# set default theme and larger font size for ggplot2\nggplot2::theme_set(ggplot2::theme_bw(base_size = 20))"
+  },
+  {
+    "objectID": "slides/06-slr-math-models-contd-notes.html#mathematical-representation-of-the-model",
+    "href": "slides/06-slr-math-models-contd-notes.html#mathematical-representation-of-the-model",
+    "title": "SLR: Mathematical models for inference cont’d",
+    "section": "Mathematical representation of the model",
+    "text": "Mathematical representation of the model\n\\[\n\\begin{aligned}\nY &= \\text{Model} + \\text{Error} \\\\[8pt]\n&= f(X) + \\epsilon \\\\[8pt]\n&= E(Y|X) + \\epsilon \\\\[8pt]\n&= \\beta_0 + \\beta_1 X + \\epsilon\n\\end{aligned}\n\\]\nwhere the errors are independent and normally distributed:\n\nindependent: Knowing the error term for one observation doesn’t tell you anything about the error term for another observation\nnormally distributed: \\(\\epsilon \\sim N(0, \\sigma_\\epsilon^2)\\)"
+  },
+  {
+    "objectID": "slides/06-slr-math-models-contd-notes.html#mathematical-representation-visualized",
+    "href": "slides/06-slr-math-models-contd-notes.html#mathematical-representation-visualized",
+    "title": "SLR: Mathematical models for inference cont’d",
+    "section": "Mathematical representation, visualized",
+    "text": "Mathematical representation, visualized\n\\[\nY|X \\sim N(\\beta_0 + \\beta_1 X, \\sigma_\\epsilon^2)\n\\]\n\n\n\n\n\nImage source: Introduction to the Practice of Statistics (5th ed)\n\n\n\n\nMean: \\(\\beta_0 + \\beta_1 X\\), the predicted value based on the regression model\nVariance: \\(\\sigma_\\epsilon^2\\), constant across the range of \\(X\\)\n\nHow do we estimate \\(\\sigma_\\epsilon^2\\)?"
+  },
+  {
+    "objectID": "slides/06-slr-math-models-contd-notes.html#regression-standard-error",
+    "href": "slides/06-slr-math-models-contd-notes.html#regression-standard-error",
+    "title": "SLR: Mathematical models for inference cont’d",
+    "section": "Regression standard error",
+    "text": "Regression standard error\nOnce we fit the model, we can use the residuals to estimate the regression standard error, the average distance between the observed values and the regression line\n\\[\n\\hat{\\sigma}_\\epsilon = \\sqrt{\\frac{\\sum_\\limits{i=1}^n(y_i - \\hat{y}_i)^2}{n-2}} = \\sqrt{\\frac{\\sum_\\limits{i=1}^ne_i^2}{n-2}}\n\\]"
+  },
+  {
+    "objectID": "slides/06-slr-math-models-contd-notes.html#standard-error-of-hatbeta_1",
+    "href": "slides/06-slr-math-models-contd-notes.html#standard-error-of-hatbeta_1",
+    "title": "SLR: Mathematical models for inference cont’d",
+    "section": "Standard error of \\(\\hat{\\beta}_1\\)",
+    "text": "Standard error of \\(\\hat{\\beta}_1\\)\nThe standard error of \\(\\hat{\\beta}_1\\) quantifies the sampling variability in the estimated slopes\n\\[\nSE_{\\hat{\\beta}_1} = \\hat{\\sigma}_\\epsilon\\sqrt{\\frac{1}{(n-1)s_X^2}}\n\\]\n. . .\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n116652.33\n53302.46\n2.19\n0.03\n\n\narea\n159.48\n18.17\n8.78\n0.00"
+  },
+  {
+    "objectID": "slides/06-slr-math-models-contd-notes.html#hypothesis-test-for-beta_1",
+    "href": "slides/06-slr-math-models-contd-notes.html#hypothesis-test-for-beta_1",
+    "title": "SLR: Mathematical models for inference cont’d",
+    "section": "Hypothesis test for \\(\\beta_1\\)",
+    "text": "Hypothesis test for \\(\\beta_1\\)\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n116652.33\n53302.46\n2.19\n0.03\n\n\narea\n159.48\n18.17\n8.78\n0.00\n\n\n\n\n\n\\[\nH_0: \\beta_1 = 0 \\hspace{2mm} \\text{ vs }\\hspace{2mm} \\beta_1 \\neq 0\n\\]"
+  },
+  {
+    "objectID": "slides/06-slr-math-models-contd-notes.html#hypothesis-test-for-beta_1-1",
+    "href": "slides/06-slr-math-models-contd-notes.html#hypothesis-test-for-beta_1-1",
+    "title": "SLR: Mathematical models for inference cont’d",
+    "section": "Hypothesis test for \\(\\beta_1\\)",
+    "text": "Hypothesis test for \\(\\beta_1\\)\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n116652.33\n53302.46\n2.19\n0.03\n\n\narea\n159.48\n18.17\n8.78\n0.00\n\n\n\n\n\n\\[\nT = \\frac{\\hat{\\beta}_1 - 0}{SE_{\\hat{\\beta}_1}} = \\frac{159.48 - 0}{18.17} = 8.78\n\\]\n. . .\n\n2 * pt(q = 8.78, df = 96, lower.tail = FALSE)\n\n[1] 6.19602e-14"
+  },
+  {
+    "objectID": "slides/06-slr-math-models-contd-notes.html#hypothesis-test-for-beta_1-2",
+    "href": "slides/06-slr-math-models-contd-notes.html#hypothesis-test-for-beta_1-2",
+    "title": "SLR: Mathematical models for inference cont’d",
+    "section": "Hypothesis test for \\(\\beta_1\\)",
+    "text": "Hypothesis test for \\(\\beta_1\\)\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n116652.33\n53302.46\n2.19\n0.03\n\n\narea\n159.48\n18.17\n8.78\n0.00\n\n\n\n\n\n\n\nThe data provide convincing evidence that the population slope \\(\\beta_1\\) is different from 0.\nThe data provide convincing evidence of a linear relationship between area and price of houses in Duke Forest."
+  },
+  {
+    "objectID": "slides/06-slr-math-models-contd-notes.html#confidence-interval-for-the-slope",
+    "href": "slides/06-slr-math-models-contd-notes.html#confidence-interval-for-the-slope",
+    "title": "SLR: Mathematical models for inference cont’d",
+    "section": "Confidence interval for the slope",
+    "text": "Confidence interval for the slope\n\\[\n\\text{Estimate} \\pm \\text{ (critical value) } \\times \\text{SE}\n\\]\n. . .\n\\[\n\\hat{\\beta}_1 \\pm t^* \\times SE_{\\hat{\\beta}_1}\n\\]\nwhere \\(t^*\\) is calculated from a \\(t\\) distribution with \\(n-2\\) degrees of freedom"
+  },
+  {
+    "objectID": "slides/06-slr-math-models-contd-notes.html#confidence-interval-critical-value",
+    "href": "slides/06-slr-math-models-contd-notes.html#confidence-interval-critical-value",
+    "title": "SLR: Mathematical models for inference cont’d",
+    "section": "Confidence interval: Critical value",
+    "text": "Confidence interval: Critical value\n\n\n\n\n# confidence level: 95%\nqt(0.975, df = nrow(duke_forest) - 2)\n\n[1] 1.984984\n\n\n\n\n\n# confidence level: 90%\nqt(0.95, df = nrow(duke_forest) - 2)\n\n[1] 1.660881\n\n\n\n\n\n# confidence level: 99%\nqt(0.995, df = nrow(duke_forest) - 2)\n\n[1] 2.628016"
+  },
+  {
+    "objectID": "slides/06-slr-math-models-contd-notes.html#ci-for-the-slope-calculation",
+    "href": "slides/06-slr-math-models-contd-notes.html#ci-for-the-slope-calculation",
+    "title": "SLR: Mathematical models for inference cont’d",
+    "section": "95% CI for the slope: Calculation",
+    "text": "95% CI for the slope: Calculation\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n116652.33\n53302.46\n2.19\n0.03\n\n\narea\n159.48\n18.17\n8.78\n0.00\n\n\n\n\n\n\\[\\hat{\\beta}_1 = 159.48 \\hspace{15mm} t^* = 1.98 \\hspace{15mm} SE_{\\hat{\\beta}_1} = 18.17\\]\n. . .\n\\[\n159.48 \\pm 1.98 \\times 18.17 = (123.50, 195.46)\n\\]"
+  },
+  {
+    "objectID": "slides/06-slr-math-models-contd-notes.html#ci-for-the-slope-computation",
+    "href": "slides/06-slr-math-models-contd-notes.html#ci-for-the-slope-computation",
+    "title": "SLR: Mathematical models for inference cont’d",
+    "section": "95% CI for the slope: Computation",
+    "text": "95% CI for the slope: Computation\n\ntidy(df_fit, conf.int = TRUE, conf.level = 0.95) |&gt; \n  kable(digits = 2)\n\n\n\n\n\n\n\n\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\nconf.low\nconf.high\n\n\n\n\n(Intercept)\n116652.33\n53302.46\n2.19\n0.03\n10847.77\n222456.88\n\n\narea\n159.48\n18.17\n8.78\n0.00\n123.41\n195.55"
+  },
+  {
+    "objectID": "slides/06-slr-math-models-contd-notes.html#intervals-for-predictions-1",
+    "href": "slides/06-slr-math-models-contd-notes.html#intervals-for-predictions-1",
+    "title": "SLR: Mathematical models for inference cont’d",
+    "section": "Intervals for predictions",
+    "text": "Intervals for predictions\n\nSuppose we want to answer the question “What is the predicted sale price of a Duke Forest house that is 2,800 square feet?”\nWe said reporting a single estimate for the slope is not wise, and we should report a plausible range instead\nSimilarly, reporting a single prediction for a new value is not wise, and we should report a plausible range instead"
+  },
+  {
+    "objectID": "slides/06-slr-math-models-contd-notes.html#two-types-of-predictions",
+    "href": "slides/06-slr-math-models-contd-notes.html#two-types-of-predictions",
+    "title": "SLR: Mathematical models for inference cont’d",
+    "section": "Two types of predictions",
+    "text": "Two types of predictions\n\nPrediction for the mean: “What is the average predicted sale price of Duke Forest houses that are 2,800 square feet?”\nPrediction for an individual observation: “What is the predicted sale price of a Duke Forest house that is 2,800 square feet?”\n\n. . .\n\n\nWhich would you expect to be more variable? The average prediction or the prediction for an individual observation?\nBased on your answer, how would you expect the widths of plausible ranges for these two predictions to compare?"
+  },
+  {
+    "objectID": "slides/06-slr-math-models-contd-notes.html#uncertainty-in-predictions",
+    "href": "slides/06-slr-math-models-contd-notes.html#uncertainty-in-predictions",
+    "title": "SLR: Mathematical models for inference cont’d",
+    "section": "Uncertainty in predictions",
+    "text": "Uncertainty in predictions\nConfidence interval for the mean outcome: \\[\\large{\\hat{y} \\pm t_{n-2}^* \\times \\color{purple}{\\mathbf{SE}_{\\hat{\\boldsymbol{\\mu}}}}}\\]\n. . .\nPrediction interval for an individual observation: \\[\\large{\\hat{y} \\pm t_{n-2}^* \\times \\color{purple}{\\mathbf{SE_{\\hat{y}}}}}\\]"
+  },
+  {
+    "objectID": "slides/06-slr-math-models-contd-notes.html#standard-errors",
+    "href": "slides/06-slr-math-models-contd-notes.html#standard-errors",
+    "title": "SLR: Mathematical models for inference cont’d",
+    "section": "Standard errors",
+    "text": "Standard errors\nStandard error of the mean outcome: \\[SE_{\\hat{\\mu}} = \\hat{\\sigma}_\\epsilon\\sqrt{\\frac{1}{n} + \\frac{(x-\\bar{x})^2}{\\sum\\limits_{i=1}^n(x_i - \\bar{x})^2}}\\]\n. . .\nStandard error of an individual outcome: \\[SE_{\\hat{y}} = \\hat{\\sigma}_\\epsilon\\sqrt{1 + \\frac{1}{n} + \\frac{(x-\\bar{x})^2}{\\sum\\limits_{i=1}^n(x_i - \\bar{x})^2}}\\]"
+  },
+  {
+    "objectID": "slides/06-slr-math-models-contd-notes.html#standard-errors-1",
+    "href": "slides/06-slr-math-models-contd-notes.html#standard-errors-1",
+    "title": "SLR: Mathematical models for inference cont’d",
+    "section": "Standard errors",
+    "text": "Standard errors\nStandard error of the mean outcome: \\[SE_{\\hat{\\mu}} = \\hat{\\sigma}_\\epsilon\\sqrt{\\frac{1}{n} + \\frac{(x-\\bar{x})^2}{\\sum\\limits_{i=1}^n(x_i - \\bar{x})^2}}\\]\nStandard error of an individual outcome: \\[SE_{\\hat{y}} = \\hat{\\sigma}_\\epsilon\\sqrt{\\mathbf{\\color{purple}{\\Large{1}}} + \\frac{1}{n} + \\frac{(x-\\bar{x})^2}{\\sum\\limits_{i=1}^n(x_i - \\bar{x})^2}}\\]"
+  },
+  {
+    "objectID": "slides/06-slr-math-models-contd-notes.html#confidence-interval",
+    "href": "slides/06-slr-math-models-contd-notes.html#confidence-interval",
+    "title": "SLR: Mathematical models for inference cont’d",
+    "section": "Confidence interval",
+    "text": "Confidence interval\nThe 95% confidence interval for the mean outcome:\n\nnew_house &lt;- tibble(area = 2800)\n\npredict(df_fit, new_house, interval = \"confidence\", level = 0.95) |&gt;\n  kable()\n\n\n\n\nfit\nlwr\nupr\n\n\n\n\n563205.5\n529351\n597060.1\n\n\n\n\n\n. . .\nWe are 95% confident that mean sale price of Duke Forest houses that are 2,800 square feet is between $529,351 and $597,060."
+  },
+  {
+    "objectID": "slides/06-slr-math-models-contd-notes.html#prediction-interval",
+    "href": "slides/06-slr-math-models-contd-notes.html#prediction-interval",
+    "title": "SLR: Mathematical models for inference cont’d",
+    "section": "Prediction interval",
+    "text": "Prediction interval\nThe 95% prediction interval for an individual outcome:\n\nnew_house &lt;- tibble(area = 2800)\n\npredict(df_fit, new_house, interval = \"prediction\", level = 0.95) |&gt;\n  kable()\n\n\n\n\nfit\nlwr\nupr\n\n\n\n\n563205.5\n226438.3\n899972.7\n\n\n\n\n\n. . .\nWe are 95% confident that predicted sale price of a Duke Forest house that is 2,800 square feet is between $226,438 and $899,973."
+  },
+  {
+    "objectID": "slides/06-slr-math-models-contd-notes.html#comparing-intervals",
+    "href": "slides/06-slr-math-models-contd-notes.html#comparing-intervals",
+    "title": "SLR: Mathematical models for inference cont’d",
+    "section": "Comparing intervals",
+    "text": "Comparing intervals"
+  },
+  {
+    "objectID": "slides/06-slr-math-models-contd-notes.html#extrapolation",
+    "href": "slides/06-slr-math-models-contd-notes.html#extrapolation",
+    "title": "SLR: Mathematical models for inference cont’d",
+    "section": "Extrapolation",
+    "text": "Extrapolation\nUsing the model to predict for values outside the range of the original data is extrapolation.\n. . .\n\n\n\nCalculate the prediction interval for the sale price of a “tiny house” in Duke Forest that is 225 square feet.\n\n\n\n\n\n\n\n\n\n. . .\nNo, thanks!"
+  },
+  {
+    "objectID": "slides/06-slr-math-models-contd-notes.html#recap",
+    "href": "slides/06-slr-math-models-contd-notes.html#recap",
+    "title": "SLR: Mathematical models for inference cont’d",
+    "section": "Recap",
+    "text": "Recap\n\nDefined mathematical models to conduct inference for the slope\nUsed mathematical models to\n\ncalculate confidence interval for the slope\nconduct a hypothesis test for the slope\nconstruct intervals for predictions"
+  },
+  {
+    "objectID": "slides/06-slr-math-models-contd.html#announcements",
+    "href": "slides/06-slr-math-models-contd.html#announcements",
+    "title": "SLR: Mathematical models for inference cont’d",
+    "section": "Announcements",
+    "text": "Announcements\n\nLab 01 due TODAY at 11:59pm\nStatistics experience due April 21\nSSMU Mini DataFest - February 8\n\nSee Ed Discussion for announcement"
+  },
+  {
+    "objectID": "slides/06-slr-math-models-contd.html#topics",
+    "href": "slides/06-slr-math-models-contd.html#topics",
+    "title": "SLR: Mathematical models for inference cont’d",
+    "section": "Topics",
+    "text": "Topics\n\nUse mathematical models to\n\nconduct a hypothesis test for the slope\nconstruct confidence intervals for the slope\nconstruct intervals for predictions"
+  },
+  {
+    "objectID": "slides/06-slr-math-models-contd.html#computational-setup",
+    "href": "slides/06-slr-math-models-contd.html#computational-setup",
+    "title": "SLR: Mathematical models for inference cont’d",
+    "section": "Computational setup",
+    "text": "Computational setup\n\n# load packages\nlibrary(tidyverse)   # for data wrangling and visualization\nlibrary(tidymodels)  # for modeling\nlibrary(openintro)   # for the duke_forest dataset\nlibrary(scales)      # for pretty axis labels\nlibrary(knitr)       # for pretty tables\nlibrary(kableExtra)  # also for pretty tables\nlibrary(patchwork)   # arrange plots\n\n# set default theme and larger font size for ggplot2\nggplot2::theme_set(ggplot2::theme_bw(base_size = 20))"
+  },
+  {
+    "objectID": "slides/06-slr-math-models-contd.html#mathematical-representation-of-the-model",
+    "href": "slides/06-slr-math-models-contd.html#mathematical-representation-of-the-model",
+    "title": "SLR: Mathematical models for inference cont’d",
+    "section": "Mathematical representation of the model",
+    "text": "Mathematical representation of the model\n\\[\n\\begin{aligned}\nY &= \\text{Model} + \\text{Error} \\\\[8pt]\n&= f(X) + \\epsilon \\\\[8pt]\n&= E(Y|X) + \\epsilon \\\\[8pt]\n&= \\beta_0 + \\beta_1 X + \\epsilon\n\\end{aligned}\n\\]\nwhere the errors are independent and normally distributed:\n\nindependent: Knowing the error term for one observation doesn’t tell you anything about the error term for another observation\nnormally distributed: \\(\\epsilon \\sim N(0, \\sigma_\\epsilon^2)\\)"
+  },
+  {
+    "objectID": "slides/06-slr-math-models-contd.html#mathematical-representation-visualized",
+    "href": "slides/06-slr-math-models-contd.html#mathematical-representation-visualized",
+    "title": "SLR: Mathematical models for inference cont’d",
+    "section": "Mathematical representation, visualized",
+    "text": "Mathematical representation, visualized\n\\[\nY|X \\sim N(\\beta_0 + \\beta_1 X, \\sigma_\\epsilon^2)\n\\]\n\n\n\n\n\nImage source: Introduction to the Practice of Statistics (5th ed)\n\n\n\n\nMean: \\(\\beta_0 + \\beta_1 X\\), the predicted value based on the regression model\nVariance: \\(\\sigma_\\epsilon^2\\), constant across the range of \\(X\\)\n\nHow do we estimate \\(\\sigma_\\epsilon^2\\)?"
+  },
+  {
+    "objectID": "slides/06-slr-math-models-contd.html#regression-standard-error",
+    "href": "slides/06-slr-math-models-contd.html#regression-standard-error",
+    "title": "SLR: Mathematical models for inference cont’d",
+    "section": "Regression standard error",
+    "text": "Regression standard error\nOnce we fit the model, we can use the residuals to estimate the regression standard error, the average distance between the observed values and the regression line\n\\[\n\\hat{\\sigma}_\\epsilon = \\sqrt{\\frac{\\sum_\\limits{i=1}^n(y_i - \\hat{y}_i)^2}{n-2}} = \\sqrt{\\frac{\\sum_\\limits{i=1}^ne_i^2}{n-2}}\n\\]"
+  },
+  {
+    "objectID": "slides/06-slr-math-models-contd.html#standard-error-of-hatbeta_1",
+    "href": "slides/06-slr-math-models-contd.html#standard-error-of-hatbeta_1",
+    "title": "SLR: Mathematical models for inference cont’d",
+    "section": "Standard error of \\(\\hat{\\beta}_1\\)",
+    "text": "Standard error of \\(\\hat{\\beta}_1\\)\nThe standard error of \\(\\hat{\\beta}_1\\) quantifies the sampling variability in the estimated slopes\n\\[\nSE_{\\hat{\\beta}_1} = \\hat{\\sigma}_\\epsilon\\sqrt{\\frac{1}{(n-1)s_X^2}}\n\\]\n\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n116652.33\n53302.46\n2.19\n0.03\n\n\narea\n159.48\n18.17\n8.78\n0.00"
+  },
+  {
+    "objectID": "slides/06-slr-math-models-contd.html#hypothesis-test-for-beta_1",
+    "href": "slides/06-slr-math-models-contd.html#hypothesis-test-for-beta_1",
+    "title": "SLR: Mathematical models for inference cont’d",
+    "section": "Hypothesis test for \\(\\beta_1\\)",
+    "text": "Hypothesis test for \\(\\beta_1\\)\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n116652.33\n53302.46\n2.19\n0.03\n\n\narea\n159.48\n18.17\n8.78\n0.00\n\n\n\n\n\n\\[\nH_0: \\beta_1 = 0 \\hspace{2mm} \\text{ vs }\\hspace{2mm} \\beta_1 \\neq 0\n\\]"
+  },
+  {
+    "objectID": "slides/06-slr-math-models-contd.html#hypothesis-test-for-beta_1-1",
+    "href": "slides/06-slr-math-models-contd.html#hypothesis-test-for-beta_1-1",
+    "title": "SLR: Mathematical models for inference cont’d",
+    "section": "Hypothesis test for \\(\\beta_1\\)",
+    "text": "Hypothesis test for \\(\\beta_1\\)\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n116652.33\n53302.46\n2.19\n0.03\n\n\narea\n159.48\n18.17\n8.78\n0.00\n\n\n\n\n\n\\[\nT = \\frac{\\hat{\\beta}_1 - 0}{SE_{\\hat{\\beta}_1}} = \\frac{159.48 - 0}{18.17} = 8.78\n\\]\n\n\n2 * pt(q = 8.78, df = 96, lower.tail = FALSE)\n\n[1] 6.19602e-14"
+  },
+  {
+    "objectID": "slides/06-slr-math-models-contd.html#hypothesis-test-for-beta_1-2",
+    "href": "slides/06-slr-math-models-contd.html#hypothesis-test-for-beta_1-2",
+    "title": "SLR: Mathematical models for inference cont’d",
+    "section": "Hypothesis test for \\(\\beta_1\\)",
+    "text": "Hypothesis test for \\(\\beta_1\\)\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n116652.33\n53302.46\n2.19\n0.03\n\n\narea\n159.48\n18.17\n8.78\n0.00\n\n\n\n\n\n\n\nThe data provide convincing evidence that the population slope \\(\\beta_1\\) is different from 0.\nThe data provide convincing evidence of a linear relationship between area and price of houses in Duke Forest."
+  },
+  {
+    "objectID": "slides/06-slr-math-models-contd.html#confidence-interval-for-the-slope",
+    "href": "slides/06-slr-math-models-contd.html#confidence-interval-for-the-slope",
+    "title": "SLR: Mathematical models for inference cont’d",
+    "section": "Confidence interval for the slope",
+    "text": "Confidence interval for the slope\n\\[\n\\text{Estimate} \\pm \\text{ (critical value) } \\times \\text{SE}\n\\]\n\n\\[\n\\hat{\\beta}_1 \\pm t^* \\times SE_{\\hat{\\beta}_1}\n\\]\nwhere \\(t^*\\) is calculated from a \\(t\\) distribution with \\(n-2\\) degrees of freedom"
+  },
+  {
+    "objectID": "slides/06-slr-math-models-contd.html#confidence-interval-critical-value",
+    "href": "slides/06-slr-math-models-contd.html#confidence-interval-critical-value",
+    "title": "SLR: Mathematical models for inference cont’d",
+    "section": "Confidence interval: Critical value",
+    "text": "Confidence interval: Critical value\n\n\n\n\n# confidence level: 95%\nqt(0.975, df = nrow(duke_forest) - 2)\n\n[1] 1.984984\n\n\n\n\n\n# confidence level: 90%\nqt(0.95, df = nrow(duke_forest) - 2)\n\n[1] 1.660881\n\n\n\n\n\n# confidence level: 99%\nqt(0.995, df = nrow(duke_forest) - 2)\n\n[1] 2.628016"
+  },
+  {
+    "objectID": "slides/06-slr-math-models-contd.html#ci-for-the-slope-calculation",
+    "href": "slides/06-slr-math-models-contd.html#ci-for-the-slope-calculation",
+    "title": "SLR: Mathematical models for inference cont’d",
+    "section": "95% CI for the slope: Calculation",
+    "text": "95% CI for the slope: Calculation\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n116652.33\n53302.46\n2.19\n0.03\n\n\narea\n159.48\n18.17\n8.78\n0.00\n\n\n\n\n\n\\[\\hat{\\beta}_1 = 159.48 \\hspace{15mm} t^* = 1.98 \\hspace{15mm} SE_{\\hat{\\beta}_1} = 18.17\\]\n\n\\[\n159.48 \\pm 1.98 \\times 18.17 = (123.50, 195.46)\n\\]"
+  },
+  {
+    "objectID": "slides/06-slr-math-models-contd.html#ci-for-the-slope-computation",
+    "href": "slides/06-slr-math-models-contd.html#ci-for-the-slope-computation",
+    "title": "SLR: Mathematical models for inference cont’d",
+    "section": "95% CI for the slope: Computation",
+    "text": "95% CI for the slope: Computation\n\ntidy(df_fit, conf.int = TRUE, conf.level = 0.95) |&gt; \n  kable(digits = 2)\n\n\n\n\n\n\n\n\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\nconf.low\nconf.high\n\n\n\n\n(Intercept)\n116652.33\n53302.46\n2.19\n0.03\n10847.77\n222456.88\n\n\narea\n159.48\n18.17\n8.78\n0.00\n123.41\n195.55"
+  },
+  {
+    "objectID": "slides/06-slr-math-models-contd.html#intervals-for-predictions-1",
+    "href": "slides/06-slr-math-models-contd.html#intervals-for-predictions-1",
+    "title": "SLR: Mathematical models for inference cont’d",
+    "section": "Intervals for predictions",
+    "text": "Intervals for predictions\n\nSuppose we want to answer the question “What is the predicted sale price of a Duke Forest house that is 2,800 square feet?”\nWe said reporting a single estimate for the slope is not wise, and we should report a plausible range instead\nSimilarly, reporting a single prediction for a new value is not wise, and we should report a plausible range instead"
+  },
+  {
+    "objectID": "slides/06-slr-math-models-contd.html#two-types-of-predictions",
+    "href": "slides/06-slr-math-models-contd.html#two-types-of-predictions",
+    "title": "SLR: Mathematical models for inference cont’d",
+    "section": "Two types of predictions",
+    "text": "Two types of predictions\n\nPrediction for the mean: “What is the average predicted sale price of Duke Forest houses that are 2,800 square feet?”\nPrediction for an individual observation: “What is the predicted sale price of a Duke Forest house that is 2,800 square feet?”\n\n\n\n\nWhich would you expect to be more variable? The average prediction or the prediction for an individual observation?\nBased on your answer, how would you expect the widths of plausible ranges for these two predictions to compare?"
+  },
+  {
+    "objectID": "slides/06-slr-math-models-contd.html#uncertainty-in-predictions",
+    "href": "slides/06-slr-math-models-contd.html#uncertainty-in-predictions",
+    "title": "SLR: Mathematical models for inference cont’d",
+    "section": "Uncertainty in predictions",
+    "text": "Uncertainty in predictions\nConfidence interval for the mean outcome: \\[\\large{\\hat{y} \\pm t_{n-2}^* \\times \\color{purple}{\\mathbf{SE}_{\\hat{\\boldsymbol{\\mu}}}}}\\]\n\nPrediction interval for an individual observation: \\[\\large{\\hat{y} \\pm t_{n-2}^* \\times \\color{purple}{\\mathbf{SE_{\\hat{y}}}}}\\]"
+  },
+  {
+    "objectID": "slides/06-slr-math-models-contd.html#standard-errors",
+    "href": "slides/06-slr-math-models-contd.html#standard-errors",
+    "title": "SLR: Mathematical models for inference cont’d",
+    "section": "Standard errors",
+    "text": "Standard errors\nStandard error of the mean outcome: \\[SE_{\\hat{\\mu}} = \\hat{\\sigma}_\\epsilon\\sqrt{\\frac{1}{n} + \\frac{(x-\\bar{x})^2}{\\sum\\limits_{i=1}^n(x_i - \\bar{x})^2}}\\]\n\nStandard error of an individual outcome: \\[SE_{\\hat{y}} = \\hat{\\sigma}_\\epsilon\\sqrt{1 + \\frac{1}{n} + \\frac{(x-\\bar{x})^2}{\\sum\\limits_{i=1}^n(x_i - \\bar{x})^2}}\\]"
+  },
+  {
+    "objectID": "slides/06-slr-math-models-contd.html#standard-errors-1",
+    "href": "slides/06-slr-math-models-contd.html#standard-errors-1",
+    "title": "SLR: Mathematical models for inference cont’d",
+    "section": "Standard errors",
+    "text": "Standard errors\nStandard error of the mean outcome: \\[SE_{\\hat{\\mu}} = \\hat{\\sigma}_\\epsilon\\sqrt{\\frac{1}{n} + \\frac{(x-\\bar{x})^2}{\\sum\\limits_{i=1}^n(x_i - \\bar{x})^2}}\\]\nStandard error of an individual outcome: \\[SE_{\\hat{y}} = \\hat{\\sigma}_\\epsilon\\sqrt{\\mathbf{\\color{purple}{\\Large{1}}} + \\frac{1}{n} + \\frac{(x-\\bar{x})^2}{\\sum\\limits_{i=1}^n(x_i - \\bar{x})^2}}\\]"
+  },
+  {
+    "objectID": "slides/06-slr-math-models-contd.html#confidence-interval",
+    "href": "slides/06-slr-math-models-contd.html#confidence-interval",
+    "title": "SLR: Mathematical models for inference cont’d",
+    "section": "Confidence interval",
+    "text": "Confidence interval\nThe 95% confidence interval for the mean outcome:\n\nnew_house &lt;- tibble(area = 2800)\n\npredict(df_fit, new_house, interval = \"confidence\", level = 0.95) |&gt;\n  kable()\n\n\n\n\nfit\nlwr\nupr\n\n\n\n\n563205.5\n529351\n597060.1\n\n\n\n\n\n\nWe are 95% confident that mean sale price of Duke Forest houses that are 2,800 square feet is between $529,351 and $597,060."
+  },
+  {
+    "objectID": "slides/06-slr-math-models-contd.html#prediction-interval",
+    "href": "slides/06-slr-math-models-contd.html#prediction-interval",
+    "title": "SLR: Mathematical models for inference cont’d",
+    "section": "Prediction interval",
+    "text": "Prediction interval\nThe 95% prediction interval for an individual outcome:\n\nnew_house &lt;- tibble(area = 2800)\n\npredict(df_fit, new_house, interval = \"prediction\", level = 0.95) |&gt;\n  kable()\n\n\n\n\nfit\nlwr\nupr\n\n\n\n\n563205.5\n226438.3\n899972.7\n\n\n\n\n\n\nWe are 95% confident that predicted sale price of a Duke Forest house that is 2,800 square feet is between $226,438 and $899,973."
+  },
+  {
+    "objectID": "slides/06-slr-math-models-contd.html#comparing-intervals",
+    "href": "slides/06-slr-math-models-contd.html#comparing-intervals",
+    "title": "SLR: Mathematical models for inference cont’d",
+    "section": "Comparing intervals",
+    "text": "Comparing intervals"
+  },
+  {
+    "objectID": "slides/06-slr-math-models-contd.html#extrapolation",
+    "href": "slides/06-slr-math-models-contd.html#extrapolation",
+    "title": "SLR: Mathematical models for inference cont’d",
+    "section": "Extrapolation",
+    "text": "Extrapolation\nUsing the model to predict for values outside the range of the original data is extrapolation.\n\n\n\n\nCalculate the prediction interval for the sale price of a “tiny house” in Duke Forest that is 225 square feet.\n\n\n\n\n\n\n\n\n\n\nNo, thanks!"
+  },
+  {
+    "objectID": "slides/06-slr-math-models-contd.html#recap",
+    "href": "slides/06-slr-math-models-contd.html#recap",
+    "title": "SLR: Mathematical models for inference cont’d",
+    "section": "Recap",
+    "text": "Recap\n\nDefined mathematical models to conduct inference for the slope\nUsed mathematical models to\n\ncalculate confidence interval for the slope\nconduct a hypothesis test for the slope\nconstruct intervals for predictions"
   },
   {
     "objectID": "slides/05-sim-testing-notes.html",

@@ -1,0 +1,374 @@
+---
+title: "Multiple linear regression (MLR)"
+author: "Prof. Maria Tackett"
+date: "01-26-2026"
+date-format: "MMMM DD, YYYY"
+footer: "🔗 [sta210-sp26.github.io](https://sta210-sp26.github.io)"
+logo: "../images/logo.png"
+format: 
+  revealjs: 
+    theme: slides.scss
+    multiplex: false
+    transition: fade
+    slide-number: true
+    incremental: false 
+    chalkboard: true
+    include-before: [ '<script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {enableAssistiveMml: false}});</script>']
+  html: 
+    output-file: 07-mlr-notes.html
+html-math-method:
+  method: mathjax
+  url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+execute:
+  freeze: auto
+  echo: true
+knitr:
+  opts_chunk: 
+    R.options:      
+    width: 200
+bibliography: references.bib
+---
+
+## Computational setup
+
+```{r packages}
+#| echo: true
+#| message: false
+
+# load packages
+library(tidyverse)
+library(tidymodels)
+library(openintro)
+library(patchwork)
+library(knitr)
+library(kableExtra)
+library(colorblindr)
+library(palmerpenguins)
+
+# set default theme and larger font size for ggplot2
+ggplot2::theme_set(ggplot2::theme_minimal(base_size = 16))
+```
+
+## Topics
+
+-   Introduce multiple linear regression
+
+-   Interpret coefficients in multiple linear regression model
+
+-   Compute predictions and associated intervals for multiple linear regression models
+
+# Considering multiple variables
+
+## Data: Palmer penguins {.midi}
+
+The `penguins` data set contains data for penguins found on three islands in the Palmer Archipelago, Antarctica. Data were collected and made available by [Dr. Kristen Gorman](https://www.uaf.edu/cfos/people/faculty/detail/kristen-gorman.php) and the [Palmer Station, Antarctica LTER](https://pal.lternet.edu/), a member of the [Long Term Ecological Research Network](https://lternet.edu/). These data can be found in the **palmerpenguins** R package.
+
+. . .
+
+```{r}
+#| echo: false
+
+penguins <- penguins |>
+  select(body_mass_g, flipper_length_mm, bill_length_mm, species) |>
+  drop_na()
+
+penguins
+```
+
+## Palmer penguins
+
+![Source: https://allisonhorst.github.io/palmerpenguins/](images/clipboard-2049446366.png)
+
+## Variables
+
+**Predictors**:
+
+-   `bill_length_mm`: Bill length in millimeters
+-   `flipper_length_mm`: Flipper length in millimeters
+-   `species`: Adelie, Gentoo, or Chinstrap species
+
+**Response**: `body_mass_g`: Body mass in grams
+
+<br>
+
+**The goal of this analysis is to use the bill length, flipper length, and species to predict body mass.**
+
+## Response: `body_mass_g`
+
+```{r}
+#| echo: false
+ggplot(penguins, aes(x = body_mass_g)) +
+  geom_density(fill = "steelblue") +
+  labs(x = "Body mass in grams",
+    title = "Distribution of body mass of Palmer Penguins")
+```
+
+```{r}
+#| echo: false
+penguins |>
+  summarise(
+    min = min(body_mass_g),
+    median = median(body_mass_g),
+    max = max(body_mass_g),
+    iqr = IQR(body_mass_g)
+  ) |>
+  kable()
+```
+
+## Predictors {.small}
+
+```{r}
+#| echo: false
+#| out.width: "100%"
+p1 <- ggplot(penguins, aes(y = species)) +
+  geom_bar(fill = "steelblue", color = "black") +
+  labs(title = "Species", 
+       y = "")
+
+p2 <- ggplot(penguins, aes(x = flipper_length_mm)) +
+  geom_histogram(fill = "steelblue", color = "black") +
+  labs(title = "",
+       x = "Flipper length in mm")
+
+p3 <- ggplot(penguins, aes(x = bill_length_mm)) +
+  geom_histogram(fill = "steelblue", color = "black") +
+  labs(title = "",
+       x = "Bill length in mm")
+
+p1 + p2 / p3
+```
+
+## Response vs. predictors {.small}
+
+```{r}
+#| echo: false
+p4 <- ggplot(penguins, aes(x = species, y = body_mass_g)) +
+  geom_boxplot(fill = "steelblue") +
+  labs(
+    y = "Body mass in grams",
+    x = "Species"
+  )
+
+p5 <- ggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g)) +
+  geom_point(color = "steelblue") +
+  labs(
+    y = NULL,
+    x = "Flipper length in mm"
+  )
+
+
+p6 <- ggplot(penguins, aes(x = bill_length_mm, y = body_mass_g)) +
+  geom_point(color = "steelblue") +
+  labs(
+    y = NULL,
+    x = "Bill length in mm"
+  )
+
+p4 + p5 / p6
+```
+
+. . .
+
+::: question
+Why do we want to use a single model with all the predictors instead of 3 separate models?
+:::
+
+# Multiple linear regression
+
+## Multiple linear regression (MLR)
+
+Based on the analysis goals, we will use a **multiple linear regression** model of the following form
+
+$$
+\begin{aligned}\widehat{\text{body_mass_g}} ~ = 
+\hat{\beta}_0 & + \hat{\beta}_1 \times \text{flipper_length_mm} \\ & + \hat{\beta}_2 \times  \text{species}_1  \\
+&+\hat{\beta}_3 \times \text{species}_2  \\ &+ \hat{\beta}_4 \times \text{bill_length_mm}
+\end{aligned}
+$$
+
+Similar to simple linear regression, this model assumes that at each combination of the predictor variables, the values `body_mass_g` follow a Normal distribution.
+
+## Multiple linear regression
+
+**Recall:** The simple linear regression model assumes
+
+$$
+Y|X\sim N(\beta_0 + \beta_1 X, \sigma_{\epsilon}^2)
+$$
+
+. . .
+
+**Similarly:** The multiple linear regression model assumes
+
+$$
+Y|X_1, X_2, \ldots, X_p \sim N(\beta_0 + \beta_1 X_1 + \beta_2 X_2 + \dots + \beta_p X_p, \sigma_{\epsilon}^2)
+$$
+
+## Multiple linear regression
+
+At any combination of the predictors, the mean value of the response $Y$, is
+
+$$
+E(Y|X_1, \ldots, X_p) = \beta_0 + \beta_1 X_{1} + \beta_2 X_2 + \dots + \beta_p X_p
+$$
+
+. . .
+
+Using multiple linear regression, we can estimate the mean response for any combination of predictors
+
+$$
+\hat{Y} = \hat{\beta}_0 + \hat{\beta}_1 X_{1} + \hat{\beta}_2 X_2 + \dots + \hat{\beta}_p X_{p}
+$$
+
+::: aside
+See [Appendix A.3: Estimating the Coefficients](https://intro-regression.github.io/appendix-linear.html#sec-mlr-estimation-matrix) for details.
+:::
+
+## Model fit
+
+```{r}
+#| echo: true
+
+penguin_fit <- lm(body_mass_g ~ flipper_length_mm + species + 
+                bill_length_mm, data = penguins)
+
+tidy(penguin_fit) |>
+  kable(digits = 3)
+```
+
+## Model equation
+
+$$
+\begin{align}\widehat{\text{body_mass_g}} =  -3904.387 &+27.429 \times \text{flipper_length_mm}\\
+& -748.562 \times \text{Chinstrap}\\  
+&+ 90.435 \times \text{Gentoo}\\
+&+ 61.736 \times \text{bill_length_mm}
+\end{align}
+$$
+
+::: callout-note
+We will talk about why there are two terms in the model for `species` soon!
+:::
+
+## Interpreting $\hat{\beta}_j$
+
+## Interpreting test statistic & p-value {.midi}
+
+::::: panel-tabset
+## Question
+
+:::: midi
+::: appex
+The coefficient of bill_length_mm is 61.736. Select the best interpretation.
+:::
+
+🔗 <https://forms.office.com/r/eVJuUUkfrP>
+::::
+
+## Submit
+
+```{=html}
+<center><iframe width="640px" height="480px" src="https://forms.office.com/r/eVJuUUkfrP?embed=true" frameborder="0" marginwidth="0" marginheight="0" style="border: none; max-width:100%; max-height:100vh" allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen> </iframe></center>
+```
+:::::
+
+## Interpreting $\hat{\beta}_j$
+
+The estimated coefficient $\hat{\beta}_j$ is the expected change in the expected value (mean) of $Y$ when $X_j$ increases by one unit, <i>holding the values of all other predictor variables constant</i>.
+
+. . .
+
+**Example:** The estimated coefficient for `flipper_length_mm` is 27.429. This means for each additional millimeter in a penguin's flipper length, its body mass is expected to be greater by 27.429 grams, on average, holding species and bill length constant.
+
+## Prediction
+
+::: question
+What is the predicted body mass for a Gentoo penguin with a flipper length of 200 millimeters and bill length of 45 millimeters?
+:::
+
+<br>
+
+```{r}
+#| echo: true
+
+-3904.387 + 27.429 * 200 - 748.562 * 0 + 90.435 * 1 + 61.736 * 45
+
+```
+
+<br>
+
+. . .
+
+The predicted body mass for a Gentoo penguin with a flipper length of 200 millimeters and bill length of 45 millimeters is `r round(-3904.387 + 27.429 * 200 - 748.562 * 0 + 90.435 * 1 + 61.736 * 45, 3)` grams.
+
+## Prediction, revisited {.midi}
+
+Just like with simple linear regression, we can use the `predict()` function in R to calculate the appropriate intervals for our predicted values:
+
+```{r}
+#| echo: true
+
+new_penguin <- tibble(
+  flipper_length_mm  = 200, 
+  species = "Gentoo", 
+  bill_length_mm = 45
+)
+
+predict(penguin_fit, new_penguin)
+```
+
+::: callout-note
+Difference in predicted value due to rounding the coefficients on the previous slide.
+:::
+
+## Confidence interval for $\hat{\mu}_y$
+
+::: question
+Calculate a 90% confidence interval for the **estimated mean body mass** a Gentoo penguins with a flipper length of 200 millimeters and bill length of 45 millimeters.
+:::
+
+<br>
+
+```{r}
+#| echo: true
+
+predict(penguin_fit, new_penguin, interval = "confidence", 
+        level = 0.90) |> 
+  kable(digits = 3)
+```
+
+## Prediction interval for $\hat{y}$
+
+::: question
+Calculate a 90% prediction interval for the **estimated body mass** **for an individual** Gentoo penguin with a flipper length of 200 millimeters and bill length of 45 millimeters.
+:::
+
+<br>
+
+```{r}
+#| echo: true
+
+predict(penguin_fit, new_penguin, interval = "prediction", 
+        level = 0.90) |>
+  kable(digits = 3)
+```
+
+## Cautions
+
+-   **Do not extrapolate!** Because there are multiple predictor variables, there is the potential to extrapolate in many directions
+-   The multiple regression model only shows **association, not causality**
+    -   To show causality, you must have a carefully designed experiment or carefully account for confounding variables in an observational study
+
+## Recap
+
+-   Introduced multiple linear regression
+
+-   Interpreted coefficients in multiple linear regression model
+
+-   Computed predictions and associated intervals for multiple linear regression models
+
+## Next class
+
+-   Types of predictors in multiple linear regression model
+
+-   Complete [Lecture 08 prepare](../prepare/prepare-lec08.html)
