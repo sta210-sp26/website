@@ -54,7 +54,7 @@ This list is not exhaustive. You may listen to other podcasts or watch other sta
 
 Participate in a statistics or data science competition. You can participate individually or with a team.
 
-**Note: DataFest will be April March 20 - 22 in Penn Pavilion. [Click here](https://dukestatsci.github.io/datafest/) to learn more.**
+**Note: DataFest will be March 20 - 22 in Penn Pavilion. [Click here](https://dukestatsci.github.io/datafest/) to learn more.**
 
 ### Category 5: Read a book on statistics/data science
 

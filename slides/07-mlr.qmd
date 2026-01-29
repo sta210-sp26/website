@@ -1,7 +1,7 @@
 ---
 title: "Multiple linear regression (MLR)"
 author: "Prof. Maria Tackett"
-date: "01-26-2026"
+date: "01-29-2026"
 date-format: "MMMM DD, YYYY"
 footer: "🔗 [sta210-sp26.github.io](https://sta210-sp26.github.io)"
 logo: "../images/logo.png"
